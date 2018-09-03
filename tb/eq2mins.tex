@@ -1,0 +1,48 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{S}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+\midrule
+Cancellation (dummy)&      13.730\sym{***}&       4.825\sym{***}&       4.873\sym{***}&       5.597\sym{***}&       4.808\sym{***}&       5.560\sym{***}&       4.258\sym{***}&       4.792\sym{***}\\
+                    &     (0.267)         &     (0.261)         &     (0.266)         &     (0.272)         &     (0.270)         &     (0.271)         &     (0.269)         &     (0.272)         \\
+\addlinespace
+No-show (dummy)     &      11.178\sym{***}&       4.863\sym{***}&       4.918\sym{***}&       5.711\sym{***}&       4.849\sym{***}&       5.585\sym{***}&       4.649\sym{***}&       6.419\sym{***}\\
+                    &     (0.421)         &     (0.398)         &     (0.403)         &     (0.403)         &     (0.403)         &     (0.406)         &     (0.415)         &     (0.418)         \\
+\addlinespace
+Cumulative hours    &     -37.472\sym{***}&     -26.740\sym{***}&     -26.723\sym{***}&     -26.680\sym{***}&     -26.198\sym{***}&     -26.642\sym{***}&     -26.561\sym{***}&     -26.053\sym{***}\\
+                    &     (0.162)         &     (0.203)         &     (0.203)         &     (0.203)         &     (0.203)         &     (0.203)         &     (0.206)         &     (0.206)         \\
+\addlinespace
+Cumulative income ('00 SGD)&     -34.899\sym{***}&     -42.529\sym{***}&     -42.546\sym{***}&     -42.436\sym{***}&     -52.237\sym{***}&     -42.432\sym{***}&     -42.428\sym{***}&     -52.298\sym{***}\\
+                    &     (0.582)         &     (0.566)         &     (0.567)         &     (0.567)         &     (0.623)         &     (0.567)         &     (0.570)         &     (0.626)         \\
+\addlinespace
+Demand density      &       7.770\sym{***}&       4.549\sym{***}&      13.759\sym{***}&       8.262\sym{***}&       7.577\sym{***}&       8.306\sym{***}&       8.178\sym{***}&       7.780\sym{***}\\
+                    &     (0.187)         &     (0.112)         &     (0.372)         &     (0.173)         &     (0.172)         &     (0.175)         &     (0.173)         &     (0.174)         \\
+\addlinespace
+Previous bookings (count)&                     &                     &                     &                     &       4.530\sym{***}&                     &                     &       4.625\sym{***}\\
+                    &                     &                     &                     &                     &     (0.087)         &                     &                     &     (0.088)         \\
+\addlinespace
+Vehicles within 500m ('000)&                     &                     &                     &                     &                     &     -13.015\sym{***}&                     &      -4.893\sym{***}\\
+                    &                     &                     &                     &                     &                     &     (1.219)         &                     &     (1.222)         \\
+\addlinespace
+Distance to pickup (km)&                     &                     &                     &                     &                     &                     &       0.143         &      -0.661\sym{***}\\
+                    &                     &                     &                     &                     &                     &                     &     (0.173)         &     (0.177)         \\
+\addlinespace
+On-call duration (mins)&                     &                     &                     &                     &                     &                     &       0.304\sym{***}&      -0.335\sym{***}\\
+                    &                     &                     &                     &                     &                     &                     &     (0.030)         &     (0.031)         \\
+\addlinespace
+Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Date FE           &       {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+\addlinespace
+Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+\addlinespace
+Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\midrule
+Observations        &\num{31563560}         &\num{31563560}         &\num{28528407}         &\num{28510154}         &\num{28510154}         &\num{28192061}         &\num{28118335}         &\num{27805742}         \\
+$R^2$             &     {0.596}         &     {0.634}         &     {0.636}         &     {0.636}         &     {0.636}         &     {0.635}         &     {0.637}         &     {0.637}         \\
+\bottomrule
+\end{tabular}
+}

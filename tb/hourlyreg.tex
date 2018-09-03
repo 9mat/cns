@@ -1,0 +1,37 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{S}}
+\toprule
+                    &\multicolumn{3}{c}{Hourly earnings (SGD)}                        &\multicolumn{3}{c}{Hourly idle time (mins)}                      \\
+                    \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+Cancellations in current hour (count)&     -0.0324\sym{**} &     -0.0804\sym{***}&     -0.0426\sym{**} &      0.6572\sym{***}&      0.7096\sym{***}&      0.6611\sym{***}\\
+                    &    (0.0156)         &    (0.0173)         &    (0.0200)         &    (0.0192)         &    (0.0215)         &    (0.0249)         \\
+\addlinespace
+No-shows in current hour (count)&     -2.7567\sym{***}&     -2.7824\sym{***}&     -2.6767\sym{***}&      3.9570\sym{***}&      4.0199\sym{***}&      3.9155\sym{***}\\
+                    &    (0.0267)         &    (0.0297)         &    (0.0346)         &    (0.0330)         &    (0.0371)         &    (0.0434)         \\
+\addlinespace
+Cancellations in last hour (count)&                     &      0.8043\sym{***}&      0.8008\sym{***}&                     &     -0.9357\sym{***}&     -0.9518\sym{***}\\
+                    &                     &    (0.0161)         &    (0.0185)         &                     &    (0.0201)         &    (0.0236)         \\
+\addlinespace
+No-shows in last hour (count)&                     &      0.5661\sym{***}&      0.5852\sym{***}&                     &     -0.7714\sym{***}&     -0.7906\sym{***}\\
+                    &                     &    (0.0302)         &    (0.0353)         &                     &    (0.0386)         &    (0.0452)         \\
+\addlinespace
+Cancellations 2 hours ago (count)&                     &                     &     -0.0349\sym{*}  &                     &                     &      0.1039\sym{***}\\
+                    &                     &                     &    (0.0185)         &                     &                     &    (0.0234)         \\
+\addlinespace
+No-shows 2 hours ago (count)&                     &                     &     -0.0585         &                     &                     &      0.1286\sym{***}\\
+                    &                     &                     &    (0.0363)         &                     &                     &    (0.0459)         \\
+\addlinespace
+Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Hour FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\midrule
+Observations        &\num{13954248}         &\num{10838888}         &\num{8209562}         &\num{13954248}         &\num{10838888}         &\num{8209562}         \\
+$R^2$             &     {0.188}         &     {0.185}         &     {0.185}         &     {0.160}         &     {0.161}         &     {0.162}         \\
+\bottomrule
+\end{tabular}
+}

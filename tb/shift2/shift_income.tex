@@ -1,0 +1,22 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{S}}
+\toprule
+                    &\multicolumn{2}{c}{Shift income (SGD)}     \\
+                    \cmidrule{2-3}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         \\
+\midrule
+Cancellations (count)&      12.273\sym{***}&       3.445\sym{***}\\
+                    &     (0.114)         &     (0.070)         \\
+\addlinespace
+No-shows (count)    &       9.341\sym{***}&       0.680\sym{***}\\
+                    &     (0.180)         &     (0.112)         \\
+\addlinespace
+Shift duration (hours)&                     &      18.933\sym{***}\\
+                    &                     &     (0.042)         \\
+\midrule
+Observations        &\num{2073595}         &\num{2073595}         \\
+\(R^2\)             &     {0.517}         &     {0.800}         \\
+\bottomrule
+\end{tabular}
+}

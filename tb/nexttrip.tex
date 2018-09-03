@@ -1,0 +1,24 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{S}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+                    &\multicolumn{1}{p{2.5cm}}{\centering Distance to next job (km)}&\multicolumn{1}{p{2.5cm}}{\centering Time to next job (mins)}&\multicolumn{1}{p{2.5cm}}{\centering Speed to next job (km/h)}\\
+\midrule
+Cancellation        &     -0.9560\sym{***}&     -4.7513\sym{***}&      3.6285\sym{***}\\
+                    &    (0.0117)         &    (0.1212)         &    (0.1207)         \\
+\addlinespace
+No-show             &     -1.0752\sym{***}&     -4.9562\sym{***}&      0.7910\sym{***}\\
+                    &    (0.0200)         &    (0.2063)         &    (0.2053)         \\
+\addlinespace
+Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Date FE             &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Hour*day of week*zone FE&       {Yes}         &       {Yes}         &       {Yes}         \\
+\midrule
+Observations        &\num{27769530}         &\num{27769530}         &\num{27769257}         \\
+\(R^2\)             &     {0.198}         &     {0.048}         &     {0.014}         \\
+\bottomrule
+\end{tabular}
+}
