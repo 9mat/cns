@@ -1,0 +1,39 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{S}}
+\toprule
+                    &\multicolumn{2}{c}{Remaining time (mins)}  &\multicolumn{2}{c}{Remaining wage (SGD/h)} \\
+                    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\midrule
+Cancellation     &       7.540\sym{***}&      10.161\sym{***}&       0.632\sym{***}&       0.434\sym{***}\\
+                    &     (0.206)         &     (0.409)         &     (0.010)         &     (0.020)         \\
+\addlinespace
+No-show           &       7.663\sym{***}&      10.896\sym{***}&       0.079\sym{***}&       0.017         \\
+                    &     (0.393)         &     (1.029)         &     (0.019)         &     (0.049)         \\
+\addlinespace
+Cancellation\(\times\)Solo driver&       3.378\sym{***}&                     &      -0.062\sym{**} &                     \\
+                    &     (0.506)         &                     &     (0.024)         &                     \\
+\addlinespace
+No-show\(\times\)Solo driver&       1.233         &                     &      -0.023         &                     \\
+                    &     (0.981)         &                     &     (0.047)         &                     \\
+\addlinespace
+Cancellation\(\times\)Join before 2014&                     &      -2.613\sym{***}&                     &       0.238\sym{***}\\
+                    &                     &     (0.460)         &                     &     (0.022)         \\
+\addlinespace
+No-show\(\times\)Join before 2014&                     &      -3.461\sym{***}&                     &       0.066         \\
+                    &                     &     (1.098)         &                     &     (0.053)         \\
+\addlinespace
+Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Hour FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%\addlinespace
+%cum\_hours\_bins      &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\midrule
+Observations        &\num{31563556}         &\num{31563556}         &\num{26511772}         &\num{26511772}         \\
+$R^2$             &     {0.633}         &     {0.633}         &     {0.423}         &     {0.423}         \\
+\bottomrule
+\end{tabular}
+}
