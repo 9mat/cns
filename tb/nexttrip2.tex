@@ -2,8 +2,11 @@
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \begin{tabular}{l*{6}{S}}
 \toprule
+                    &\multicolumn{2}{c}{Distance to next job (km)}&\multicolumn{2}{c}{Time to next job (mins)}&\multicolumn{2}{c}{Speed to next job (km/h)}
+                    \\
+                    \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
-                    &\multicolumn{1}{p{2cm}}{\centering Distance to next job (km)}&\multicolumn{1}{p{2cm}}{\centering Distance to next job (km)}&\multicolumn{1}{p{2cm}}{\centering Time to next job (mins)}&\multicolumn{1}{p{2cm}}{\centering Time to next job (mins)}&\multicolumn{1}{p{2cm}}{\centering Speed to next job (km/h)}&\multicolumn{1}{p{2cm}}{\centering Speed to next job (km/h)}\\
+
 \midrule
 Cancellation        &     -0.9560\sym{***}&     -0.8704\sym{***}&     -4.7513\sym{***}&     -4.5632\sym{***}&      3.6285\sym{***}&      3.7225\sym{***}\\
                     &    (0.0151)         &    (0.0152)         &    (0.0624)         &    (0.0627)         &    (0.0965)         &    (0.0979)         \\
@@ -11,10 +14,10 @@ Cancellation        &     -0.9560\sym{***}&     -0.8704\sym{***}&     -4.7513\sy
 No-show             &     -1.0752\sym{***}&     -0.9916\sym{***}&     -4.9562\sym{***}&     -4.7723\sym{***}&      0.7910\sym{***}&      0.8913\sym{***}\\
                     &    (0.0188)         &    (0.0189)         &    (0.0801)         &    (0.0807)         &    (0.0754)         &    (0.0762)         \\
 \addlinespace
-(sum) demand        &                     &     -1.6811\sym{***}&                     &     -5.1314\sym{***}&                     &     -3.4812\sym{***}\\
+Demand density      &                     &     -1.6811\sym{***}&                     &     -5.1314\sym{***}&                     &     -3.4812\sym{***}\\
                     &                     &    (0.0095)         &                     &    (0.0453)         &                     &    (0.0817)         \\
 \addlinespace
-nearby\_500m         &                     &      3.9700\sym{***}&                     &      7.1141\sym{***}&                     &      2.9125\sym{***}\\
+Vehicles within 500 m ('000)&                     &      3.9700\sym{***}&                     &      7.1141\sym{***}&                     &      2.9125\sym{***}\\
                     &                     &    (0.0653)         &                     &    (0.2729)         &                     &    (0.4189)         \\
 \addlinespace
 Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
