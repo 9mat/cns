@@ -48,6 +48,7 @@
 		\usebibmacro{date}%
 	}% ADDED
 	\newunit}
+\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
 
 \sectionfont{\normalfont\scshape\centering}
 \renewcommand{\thesection}{\Roman{section}.}
@@ -328,6 +329,7 @@ driver can drive multiple vehicles, although the great majority of drivers stick
 
 Following the literature \citep{farber2015you,agarwal2015singaporean,martin2017quit,chen2015dynamic}, we cluster trips and bookings into shifts. A shift is defined as a series of trips and bookings less than 6 hours apart by the same driver. In other words, any gap between two consecutive trips or bookings of more than 6 hours marks the end of one shift and the beginning of the next. We conduct several data-cleaning steps to remove irrelevant or erroneous observations and outliers, including:
 \begin{itemize}
+	\itemsep0em 
 	\item failed bookings (bookings for which the system failed to assign a taxicab; 2.65\% of total observations)
 	\item cancellations before confirmation (bookings that were cancelled before the system could assign a taxi; 2.00\%)
 	\item observations with missing vehicle information (30 observations)
