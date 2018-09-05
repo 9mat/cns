@@ -1,9 +1,10 @@
 % AER-Article.tex for AEA last revised 22 June 2011
-\documentclass[review]{AEA}
+\documentclass[draftmode]{AEA}
 
 % The mathtime package uses a Times font instead of Computer Modern.
 % Uncomment the line below if you wish to use the mathtime package:
 %\usepackage[cmbold]{mathtime}
+
 % Note that miktex, by default, configures the mathtime package to use commercial fonts
 % which you may not have. If you would like to use mathtime but you are seeing error
 % messages about missing fonts (mtex.pfb, mtsy.pfb, or rmtmi.pfb) then please see
@@ -21,32 +22,32 @@
 
 \usepackage{hyperref}
 
+\usepackage{booktabs}
+
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
 \draftSpacing{1.5}
 
 \begin{document}
 
-\title{Title}
-\shortTitle{Short title for running head}
-\author{Author1 and Author2\thanks{Surname1: affiliation1, address1, email1. 
-		Surname2: affiliation2, address2, email2. Acknowledgements}}
+\title{Making lemonade from lemons: Taxi drivers' response to cancellations and no-shows}
+\shortTitle{Making lemonade from lemons}
+\author{Hai Long Duong, Junhong Chu and Dai Yao\thanks{Duong: NUS Business School, Business Link 1, Singapore, bizdhl@nus.edu.sg. Chu: NUS Business School, 15 Kent Ridge Drive, Singapore, bizcj@nus.edu.sg. Yao: NUS Business School, 15 Kent Ridge Drive, Singapore, dai.yao@nus.edu.sg. We gratefully acknowledge funding from Singapore Ministry of Education Social Science Research Thematic Grant, MOE2016-SSRTG-059, SPIRE. We are very grateful to one of the leading taxi companies in Singapore for providing us with the data for this research, and deeply indebted to its management team for sharing with us their insights on the taxi industry.}}
 \date{\today}
 \pubMonth{Month}
 \pubYear{Year}
 \pubVolume{Vol}
 \pubIssue{Issue}
-\JEL{}
+\JEL{J22, J24, D91}
 \Keywords{}
 
 \begin{abstract}
-	We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity in Singapore's taxi industry. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one of the leading taxi operators in Singapore. Our analysis shows that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Interestingly, working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers, with better job search skills than less experienced drivers, tend to work more diligently to increase productivity; solo drivers, with more flexible schedule than sharing drivers, tend to work more hours. Furthermore, these effects are strong in the immediate following hour and afterward fade away. Our results demonstrate the resiliency of platform markets and shed new light on how service providers react to negative shocks due to changes in customers' needs.
+	%We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity in Singapore's taxi industry. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one of the leading taxi operators in Singapore. Our analysis shows that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Interestingly, working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers, with better job search skills than less experienced drivers, tend to work more diligently to increase productivity; solo drivers, with more flexible schedule than sharing drivers, tend to work more hours. Furthermore, these effects are strong in the immediate following hour and afterward fade away. Our results demonstrate the resiliency of platform markets and shed new light on how service providers react to negative shocks due to changes in customers' needs.
+	We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one major taxi operator in Singapore. We find that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers tend to increase productivity, and solo drivers tend to work more hours. 
 \end{abstract}
-
 
 \maketitle
 
-\section{Introduction}
 %After receiving rejections from journal editors, do academic researchers give up, or do they put in even more effort to better the chance of acceptance in the future? After machine breakdowns, do factory workers get more distressed, or do you become more motivated to continue the work? Does losing at halftime demoralize basketball teams, or does it make them more competitive in the second half? After a booking is cancelled, or a passenger fail to show up, do taxi drivers?
 
 Negative shocks are an integral part of our lives: Researchers' articles are rejected by editors, factory workers are unable to work due to machine breakdowns, and taxi drivers' bookings get cancelled by riders. People have different reactions to and adopt different coping strategies for these shocks. On one hand, negative shocks typically generate negative emotions, which can further aggravate the situation; for example, \citet{cai2017recover} find that machine breakdowns not only render workers unable to work on the same day, but also decrease their productivity on the following day. On the other hand, if well managed, adverse outcomes can be significantly reduced and even reversed. For instance, \citet{berger2011can} find that in professional basketball, losing by one point at half-time actually increases the team's chance of winning the game.
