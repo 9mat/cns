@@ -23,6 +23,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{booktabs}
 \usepackage{enumitem}
+\usepackage{tabularx}
 
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
@@ -476,323 +477,345 @@ The substitutability between working longer and increasing productivity suggests
 \bibliographystyle{aea}
 \bibliography{cdg}
 
-% The appendix command is issued once, prior to all appendices, if any.
-%
-%%\begin{table}
-%%	\centering
-%%	\caption{Incidents of irrelevant, erroneous and outlier observations}
-%%	\label{tb:dropcount}
-%%	\begin{threeparttable}
-%%		\input{tb/dropcount.tex}
-%%	
-%%		\begin{tablenotes}
-%%			\item[] \footnotesize Notes: The steps are carried out sequentially, i.e., the number of observations removed in each step are conditional on removing observations in previous steps. Percentages are calculated by dividing by the total number of observations in the original data.
-%%		\end{tablenotes}
-%%	\end{threeparttable}
-%%\end{table}
-%%
-%%
-%%\begin{table}
-%%	\centering
-%%	\caption{Number of trips and bookings by status}
-%%	\label{tb:freq}
-%%
-%%	\begin{threeparttable}
-%%		\input{tb/freq.tex}
-%%		\begin{tablenotes}
-%%	\item[]{\footnotesize Notes: \emph{Cancellations before confirmation} refer to bookings that are cancelled before the system assigns a cab to them; \emph{Cancellations after confirmation} refer to bookings that are cancelled after the systems assigns a cab to them; and \emph{Failed bookings} refer to bookings for which the system fails to assign any cab.}
-%%		\end{tablenotes}
-%%	\end{threeparttable}
-%%\end{table}
-%
+The appendix command is issued once, prior to all appendices, if any.
+
 %\begin{table}
 %	\centering
-%	\caption{Summary statistics: Completed trips}
-%	\label{tb:sumstat1}
-%%	\begin{threeparttable}
-%%		\input{tb/sumstats1.tex}
-%%		\begin{tablenotes}
-%%			\item[]{\footnotesize \textit{Notes:} trip fares for booking trip include booking fees; trip durations for booking trip exclude on-call time. Completed trips include both street hail trips and completed bookings.}
-%%		\end{tablenotes}
-%%	\end{threeparttable}
-%\end{table}
-%
-%\begin{table}
-%	\centering
-%	\caption{Summary statistics: Shifts}
-%	\label{tb:shiftstats}
-%%	\begin{threeparttable}
-%%		\small
-%%		\input{tb/shiftstats2.tex}	
-%%		\begin{tablenotes}
-%%			\item[]\footnotesize\textit{Notes:} The table reports summary statistics of shift-level data. Each observation is a shift---a shift is defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
-%%		\end{tablenotes}	
-%%	\end{threeparttable}
-%%	
-%\end{table}
-%
-%%\begin{table}
-%%	\centering
-%%	\caption{Summary statistics: Shifts}
-%%	\label{tb:shiftstatsold}
-%%
-%%	\input{tb/shiftstats.tex}
-%%\end{table}
-%
-%
-%\begin{table}
-%	\centering
-%	\caption{Model-free evidences}
-%	\label{tb:evidencefree}
-%%	\begin{threeparttable}
-%%		\input{tb/evidencefree.tex}
-%%		\begin{tablenotes}
-%%			\item[]\footnotesize\textit{Notes:} The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.
-%%		\end{tablenotes}
-%%	\end{threeparttable}
-%\end{table}
-%
-%%\begin{table}
-%%	\centering
-%%	\caption{Hazard rate of stopping work}
-%%	\label{tb:quit}
-%%	\begin{threeparttable}
-%%		\small
-%%	\input{tb/eq5quit.tex}
-%%	\begin{tablenotes}
-%%		\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%%	\end{tablenotes}
-%%	\end{threeparttable}
-%%\end{table}
-%
-%
-%\begin{landscape}
-%	\begin{table}
-%		\centering
-%		\caption{Hazard rate of stopping work}
-%		\label{tb:robustquit}
-%%		\begin{threeparttable}
-%%			\footnotesize
-%%			\setlength{\tabcolsep}{2pt}
-%%			\input{tb/eq1quit.tex}
-%%			\begin{tablenotes}
-%%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%%			\end{tablenotes}
-%%		\end{threeparttable}
-%	\end{table}
-%\end{landscape}
-%
-%\begin{landscape}
-%	\begin{table}
-%		\centering
-%		\caption{Remaining work time (mins)}
-%		\label{tb:robustmins}
-%		
-%%		\begin{threeparttable}
-%%			\footnotesize
-%%			\setlength{\tabcolsep}{2pt}
-%%			\input{tb/eq2mins.tex}
-%%			\begin{tablenotes}
-%%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%%			\end{tablenotes}
-%%		\end{threeparttable}
-%	\end{table}
-%\end{landscape}
-%
-%\begin{landscape}
-%	\begin{table}
-%		\centering
-%		\caption{Idle percentage after a trip/booking (\%)}
-%		\label{tb:robustidle}
-%		
-%%		\begin{threeparttable}
-%%			\footnotesize
-%%			\setlength{\tabcolsep}{2pt}
-%%			\input{tb/eq4idle.tex}
-%%			\begin{tablenotes}
-%%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%%			\end{tablenotes}
-%%		\end{threeparttable}
-%	\end{table}
-%\end{landscape}
-%
-%\begin{landscape}
-%	\begin{table}
-%		\centering
-%		\caption{Average hourly wage after a trip/booking (SGD/h)}
-%		\label{tb:robustwage}
-%%		\begin{threeparttable}
-%%			\footnotesize
-%%			\setlength{\tabcolsep}{2pt}
-%%			\input{tb/eq3wage.tex}
-%%			\begin{tablenotes}
-%%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining average hourly wage, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%%			\end{tablenotes}
-%%		\end{threeparttable}
-%	\end{table}
-%\end{landscape}
-%
-%
-%\begin{landscape}
-%	\begin{table}
-%		\centering
-%		\caption{Dynamic effects of cancellations and no-shows}
-%		\label{tb:hourlyreg}
-%%		\begin{threeparttable}
-%%			\small
-%%			\setlength{\tabcolsep}{2pt}
-%%			\input{tb/hourlyreg.tex}
-%%			\begin{tablenotes}
-%%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a driver-hour. The dependent variable in Columns (1), (2), and (3) is the earnings received in the respective hour. The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p<0.05, ^{***} p<0.01$.
-%%			\end{tablenotes}
-%%		\end{threeparttable}
-%	\end{table}
-%\end{landscape}
-%
-%
-%
-%
-%\begin{table}
-%	\centering
-%	\caption{Heterogeneity}
-%	\label{tb:heterogeneity}
-%	%	\includegraphics[width=0.6\linewidth]{tb/solo}
-%	
-%%	\begin{threeparttable}
-%%		\input{tb/heterogeneity.tex}
-%		TBA
-%		\begin{tablenotes}
-%			\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes. The dependent variable in Column (3) and (4) is the remaining average wage in SGD/h. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%		\end{tablenotes}
-%%	\end{threeparttable}
-%\end{table}
-%
-%
-%
-%\begin{table}
-%	\centering
-%	\caption{Net effects of C\&NSs on total shift income}
-%	\label{tb:overcompensate}
-%%	\begin{threeparttable}
-%		
-%%		\centering
-%%		
-%%		\begin{subtable}[c]{0.8\textwidth}\centering
-%%			\small
-%%			\subcaption{Net effects of C\&NSs in the first 2 hours}	
-%%			\input{tb/shift2/shift_income2h.tex}
-%%			\vspace{0.5cm}
-%%		\end{subtable}
-%%		%		\begin{subtable}[c]{0.8\textwidth}\centering
-%%		%			\small
-%%		%			\input{tb/shift2/shift_income4h.tex}	
-%%		%			\subcaption{Net effects of C\&NS in the first 4 hours}	
-%%		%		\end{subtable}
-%%		\begin{subtable}[c]{0.8\textwidth}\centering
-%%			\small
-%%			\subcaption{Net effects of C\&NSs in the first 6 hours}	
-%%			\input{tb/shift2/shift_income6h.tex}	
-%%			\vspace{0.5cm}
-%%		\end{subtable}
-%%		\begin{subtable}[c]{0.5\textwidth}\centering
-%%			\small
-%%			\subcaption{Net effects of C\&NSs}	
-%%			\input{tb/shift2/shift_income.tex}	
-%%			\vspace{0.5cm}
-%%		\end{subtable}
-%%		
-%%		\makeatletter\def\TPT@hsize{}\makeatletter
-%
-%		TBA
-%		
-%		\begin{tablenotes}[flushleft]
-%			\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a shift. The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. All regressions control for driver fixed effects, date fixed effects and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%		\end{tablenotes}
-%%	\end{threeparttable}
-%\end{table}
-%
-%
-%
-%\begin{table}
-%%	\addtocounter{table}{-1}
-%	\centering
-%	\caption{How drivers improve earnings after C\&NSs}
-%	\label{tb:earningsbreakdown}
-%%	\begin{threeparttable}
-%%		\small
-%%		\setlength{\tabcolsep}{3pt}
-%%		\input{tb/earningsbreakdown.tex}
-%		TBA
-%		
-%		\begin{tablenotes}
-%			\item[]\footnotesize\textit{Notes:} Each column is a separate regression. An observation is a driver-hour. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%		\end{tablenotes}
-%%	\end{threeparttable}
-%\end{table}
-%
-%
-%
-%\begin{table}
-%	\centering
-%	\caption{Distance, time and speed to the next job}
-%	\label{tb:nexttrip}
+%	\caption{Incidents of irrelevant, erroneous and outlier observations}
+%	\label{tb:dropcount}
 %	\begin{threeparttable}
-%%		\small
-%%		\setlength{\tabcolsep}{-2pt}
-%%		\input{tb/nexttrip2.tex}
-%		TBA
-%		
+%		\input{tb/dropcount.tex}
+%	
 %		\begin{tablenotes}
-%			\item[]\footnotesize\textit{Notes:} Each column is a separate regression. An observation is a trip or booking. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+%			\item[] \footnotesize Notes: The steps are carried out sequentially, i.e., the number of observations removed in each step are conditional on removing observations in previous steps. Percentages are calculated by dividing by the total number of observations in the original data.
 %		\end{tablenotes}
 %	\end{threeparttable}
 %\end{table}
 %
 %
+%\begin{table}
+%	\centering
+%	\caption{Number of trips and bookings by status}
+%	\label{tb:freq}
+%
+%	\begin{threeparttable}
+%		\input{tb/freq.tex}
+%		\begin{tablenotes}
+%	\item[]{\footnotesize Notes: \emph{Cancellations before confirmation} refer to bookings that are cancelled before the system assigns a cab to them; \emph{Cancellations after confirmation} refer to bookings that are cancelled after the systems assigns a cab to them; and \emph{Failed bookings} refer to bookings for which the system fails to assign any cab.}
+%		\end{tablenotes}
+%	\end{threeparttable}
+%\end{table}
+
+\begin{table}
+	\centering
+	\caption{Summary statistics: Completed trips}
+	\label{tb:sumstat1}
+% 	\begin{threeparttable}
+% 		\input{tb/sumstats1.tex}
+		\footnotesize
+        {
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+        \begin{tabularx}{\textwidth}{l*{1}{cccccccc}}
+        \toprule
+                            &         Obs&        Mean&        S.D.&      5\%ile&          Q1&      Median&          Q3&     95\%ile\\
+        \midrule
+        Street hail trips   &            &            &            &            &            &            &            &            \\
+        Trip fare (SGD)     &  24,225,499&       12.72&        7.40&        4.70&        7.30&       10.75&       16.30&       26.85\\
+        Trip duration (mins)&  24,225,499&       15.77&        9.69&        3.73&        8.72&       14.23&       21.00&       32.75\\
+        \midrule
+        Completed bookings  &            &            &            &            &            &            &            &            \\
+        Trip fare (SGD)     &   6,724,026&       17.53&        7.70&        8.10&       11.85&       16.00&       21.60&       31.95\\
+        Trip duration (mins)&   6,724,026&       20.04&       10.34&        6.30&       12.65&       18.70&       25.60&       38.52\\
+        \midrule
+        Completed trips     &            &            &            &            &            &            &            &            \\
+        Trip fare (SGD)     &  30,949,525&       13.76&        7.73&        4.95&        8.00&       11.95&       17.75&       28.35\\
+        Trip duration (mins)&  30,949,525&       16.70&        9.99&        4.05&        9.40&       15.20&       22.10&       34.28\\
+        \bottomrule
+        \end{tabularx}
+        }
+
+		\begin{tablenotes}
+        Trip fares for booking trip include booking fees; trip durations for booking trip exclude on-call time. Completed trips include both street hail trips and completed bookings.
+		\end{tablenotes}
+% 	\end{threeparttable}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Summary statistics: Shifts}
+	\label{tb:shiftstats}
+%	\begin{threeparttable}
+%		\small
+%		\input{tb/shiftstats2.tex}	
+%		\begin{tablenotes}
+%			\item[]\footnotesize\textit{Notes:} The table reports summary statistics of shift-level data. Each observation is a shift---a shift is defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
+%		\end{tablenotes}	
+%	\end{threeparttable}
+%	
+\end{table}
+
+%\begin{table}
+%	\centering
+%	\caption{Summary statistics: Shifts}
+%	\label{tb:shiftstatsold}
+%
+%	\input{tb/shiftstats.tex}
+%\end{table}
 
 
-%
-%
-%\begin{figure}
+\begin{table}
+	\centering
+	\caption{Model-free evidences}
+	\label{tb:evidencefree}
+%	\begin{threeparttable}
+%		\input{tb/evidencefree.tex}
+%		\begin{tablenotes}
+%			\item[]\footnotesize\textit{Notes:} The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.
+%		\end{tablenotes}
+%	\end{threeparttable}
+\end{table}
+
+%\begin{table}
 %	\centering
-%	\includegraphics[width=0.8\linewidth]{./fg/completedtripsdow.pdf}
-%	\caption{Average hourly completed trips by day of week and trip start hour}
-%	\label{fg:trips}
-%\end{figure}
-%
-%\begin{figure}
-%	\centering
-%	%	\includegraphics[width=0.8\linewidth]{./fg/cancellationsdow.pdf}
-%	\includegraphics[width=0.8\linewidth]{./fg/cns_pct_dow.pdf}
-%	\caption{Percentage of cancellations and no-shows over total hourly bookings by day of week and hour of day}
-%	\label{fg:cancellations}
-%\end{figure}
-%
-%\begin{figure}
-%%	{\centering
-%		\includegraphics[width=0.8\linewidth]{./fg/modelfree_quit.pdf}
-%		\caption{Proportion of drivers who stop work: with and without C\&NSs}
-%		\label{fg:quitbyhour}
-%%	}
-%%	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
-%\end{figure}
-%
-%%\begin{figure}
-%%	\centering
-%%	\includegraphics[width=0.8\linewidth]{./fg/earningsbyhour.pdf}
-%%	\caption{Average hourly earnings: with and without C\&NSs in the previous hour}
-%%	\label{fg:earningsbyhour}
-%%\end{figure}
-%
-%
-%\begin{figure}
-%%	{\centering
-%		\includegraphics[width=0.8\linewidth]{./fg/modelfree_earnings.pdf}
-%		\caption{Average hourly earnings: with and without C\&NSs in the previous hour}
-%		\label{fg:earningsbyhour}
-%%	}
-%%	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earning in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
-%\end{figure}
+%	\caption{Hazard rate of stopping work}
+%	\label{tb:quit}
+%	\begin{threeparttable}
+%		\small
+%	\input{tb/eq5quit.tex}
+%	\begin{tablenotes}
+%		\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+%	\end{tablenotes}
+%	\end{threeparttable}
+%\end{table}
+
+
+%\begin{landscape}
+	\begin{table}
+		\centering
+		\caption{Hazard rate of stopping work}
+		\label{tb:robustquit}
+%		\begin{threeparttable}
+%			\footnotesize
+%			\setlength{\tabcolsep}{2pt}
+%			\input{tb/eq1quit.tex}
+%			\begin{tablenotes}
+%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+%			\end{tablenotes}
+%		\end{threeparttable}
+	\end{table}
+%\end{landscape}
+
+% \begin{landscape}
+% 	\begin{table}
+% 		\centering
+% 		\caption{Remaining work time (mins)}
+% 		\label{tb:robustmins}
+		
+% %		\begin{threeparttable}
+% %			\footnotesize
+% %			\setlength{\tabcolsep}{2pt}
+% %			\input{tb/eq2mins.tex}
+% %			\begin{tablenotes}
+% %				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% %			\end{tablenotes}
+% %		\end{threeparttable}
+% 	\end{table}
+% \end{landscape}
+
+% \begin{landscape}
+% 	\begin{table}
+% 		\centering
+% 		\caption{Idle percentage after a trip/booking (\%)}
+% 		\label{tb:robustidle}
+		
+% %		\begin{threeparttable}
+% %			\footnotesize
+% %			\setlength{\tabcolsep}{2pt}
+% %			\input{tb/eq4idle.tex}
+% %			\begin{tablenotes}
+% %				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% %			\end{tablenotes}
+% %		\end{threeparttable}
+% 	\end{table}
+% \end{landscape}
+
+% \begin{landscape}
+% 	\begin{table}
+% 		\centering
+% 		\caption{Average hourly wage after a trip/booking (SGD/h)}
+% 		\label{tb:robustwage}
+% %		\begin{threeparttable}
+% %			\footnotesize
+% %			\setlength{\tabcolsep}{2pt}
+% %			\input{tb/eq3wage.tex}
+% %			\begin{tablenotes}
+% %				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining average hourly wage, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% %			\end{tablenotes}
+% %		\end{threeparttable}
+% 	\end{table}
+% \end{landscape}
+
+
+% \begin{landscape}
+% 	\begin{table}
+% 		\centering
+% 		\caption{Dynamic effects of cancellations and no-shows}
+% 		\label{tb:hourlyreg}
+% %		\begin{threeparttable}
+% %			\small
+% %			\setlength{\tabcolsep}{2pt}
+% %			\input{tb/hourlyreg.tex}
+% %			\begin{tablenotes}
+% %				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a driver-hour. The dependent variable in Columns (1), (2), and (3) is the earnings received in the respective hour. The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p<0.05, ^{***} p<0.01$.
+% %			\end{tablenotes}
+% %		\end{threeparttable}
+% 	\end{table}
+% \end{landscape}
+
+
+
+
+% \begin{table}
+% 	\centering
+% 	\caption{Heterogeneity}
+% 	\label{tb:heterogeneity}
+% 	%	\includegraphics[width=0.6\linewidth]{tb/solo}
+	
+% %	\begin{threeparttable}
+% %		\input{tb/heterogeneity.tex}
+% 		TBA
+% 		\begin{tablenotes}
+% 			\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes. The dependent variable in Column (3) and (4) is the remaining average wage in SGD/h. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% 		\end{tablenotes}
+% %	\end{threeparttable}
+% \end{table}
+
+
+
+% \begin{table}
+% 	\centering
+% 	\caption{Net effects of C\&NSs on total shift income}
+% 	\label{tb:overcompensate}
+% %	\begin{threeparttable}
+		
+% %		\centering
+% %		
+% %		\begin{subtable}[c]{0.8\textwidth}\centering
+% %			\small
+% %			\subcaption{Net effects of C\&NSs in the first 2 hours}	
+% %			\input{tb/shift2/shift_income2h.tex}
+% %			\vspace{0.5cm}
+% %		\end{subtable}
+% %		%		\begin{subtable}[c]{0.8\textwidth}\centering
+% %		%			\small
+% %		%			\input{tb/shift2/shift_income4h.tex}	
+% %		%			\subcaption{Net effects of C\&NS in the first 4 hours}	
+% %		%		\end{subtable}
+% %		\begin{subtable}[c]{0.8\textwidth}\centering
+% %			\small
+% %			\subcaption{Net effects of C\&NSs in the first 6 hours}	
+% %			\input{tb/shift2/shift_income6h.tex}	
+% %			\vspace{0.5cm}
+% %		\end{subtable}
+% %		\begin{subtable}[c]{0.5\textwidth}\centering
+% %			\small
+% %			\subcaption{Net effects of C\&NSs}	
+% %			\input{tb/shift2/shift_income.tex}	
+% %			\vspace{0.5cm}
+% %		\end{subtable}
+% %		
+% %		\makeatletter\def\TPT@hsize{}\makeatletter
+
+% 		TBA
+		
+% 		\begin{tablenotes}[flushleft]
+% 			\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a shift. The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. All regressions control for driver fixed effects, date fixed effects and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% 		\end{tablenotes}
+% %	\end{threeparttable}
+% \end{table}
+
+
+
+% \begin{table}
+% %	\addtocounter{table}{-1}
+% 	\centering
+% 	\caption{How drivers improve earnings after C\&NSs}
+% 	\label{tb:earningsbreakdown}
+% %	\begin{threeparttable}
+% %		\small
+% %		\setlength{\tabcolsep}{3pt}
+% %		\input{tb/earningsbreakdown.tex}
+% 		TBA
+		
+% 		\begin{tablenotes}
+% 			\item[]\footnotesize\textit{Notes:} Each column is a separate regression. An observation is a driver-hour. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% 		\end{tablenotes}
+% %	\end{threeparttable}
+% \end{table}
+
+
+
+% \begin{table}
+% 	\centering
+% 	\caption{Distance, time and speed to the next job}
+% 	\label{tb:nexttrip}
+% 	\begin{threeparttable}
+% %		\small
+% %		\setlength{\tabcolsep}{-2pt}
+% %		\input{tb/nexttrip2.tex}
+% 		TBA
+		
+% 		\begin{tablenotes}
+% 			\item[]\footnotesize\textit{Notes:} Each column is a separate regression. An observation is a trip or booking. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+% 		\end{tablenotes}
+% 	\end{threeparttable}
+% \end{table}
+
+
+
+
+
+
+% \begin{figure}
+% 	\centering
+% 	\includegraphics[width=0.8\linewidth]{./fg/completedtripsdow.pdf}
+% 	\caption{Average hourly completed trips by day of week and trip start hour}
+% 	\label{fg:trips}
+% \end{figure}
+
+% \begin{figure}
+% 	\centering
+% 	%	\includegraphics[width=0.8\linewidth]{./fg/cancellationsdow.pdf}
+% 	\includegraphics[width=0.8\linewidth]{./fg/cns_pct_dow.pdf}
+% 	\caption{Percentage of cancellations and no-shows over total hourly bookings by day of week and hour of day}
+% 	\label{fg:cancellations}
+% \end{figure}
+
+% \begin{figure}
+% %	{\centering
+% 		\includegraphics[width=0.8\linewidth]{./fg/modelfree_quit.pdf}
+% 		\caption{Proportion of drivers who stop work: with and without C\&NSs}
+% 		\label{fg:quitbyhour}
+% %	}
+% %	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
+% \end{figure}
+
+% %\begin{figure}
+% %	\centering
+% %	\includegraphics[width=0.8\linewidth]{./fg/earningsbyhour.pdf}
+% %	\caption{Average hourly earnings: with and without C\&NSs in the previous hour}
+% %	\label{fg:earningsbyhour}
+% %\end{figure}
+
+
+% \begin{figure}
+% %	{\centering
+% 		\includegraphics[width=0.8\linewidth]{./fg/modelfree_earnings.pdf}
+% 		\caption{Average hourly earnings: with and without C\&NSs in the previous hour}
+% 		\label{fg:earningsbyhour}
+% %	}
+% %	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earning in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
+% \end{figure}
 
 
 \end{document}
