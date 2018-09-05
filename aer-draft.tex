@@ -533,21 +533,21 @@ The appendix command is issued once, prior to all appendices, if any.
 % 	\begin{threeparttable}
 % 		\input{tb/sumstats1.tex}
 		\footnotesize
-        \begin{tabularx}{\textwidth}{lc*5{>{\centering\arraybackslash}X}}
+        \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*6{S}}
         \toprule
-                            &         Obs&        Mean&        S.D.&          Q1&      Median&          Q3\\
+                            		&         \multicolumn{1}{c}{Obs}&        \multicolumn{1}{c}{Mean}&        \multicolumn{1}{c}{S.D.}&          \multicolumn{1}{c}{Q1}&      \multicolumn{1}{c}{Median}&          \multicolumn{1}{c}{Q3}\\
         \midrule
         Street hail trips   &            &            &            &            &            &            \\
-        Trip fare (SGD)     &  24,225,499&       12.72&        7.40&        7.30&       10.75&       16.30\\
-        Trip duration (mins)&  24,225,499&       15.77&        9.69&        8.72&       14.23&       21.00\\
+        Trip fare (SGD)     &  \num{24225499}&       12.72&        7.40&        7.30&       10.75&       16.30\\
+        Trip duration (mins)&  \num{24225499}&       15.77&        9.69&        8.72&       14.23&       21.00\\
         \midrule
         Completed bookings  &            &            &            &            &            &            \\
-        Trip fare (SGD)     &   6,724,026&       17.53&        7.70&       11.85&       16.00&       21.60\\
-        Trip duration (mins)&   6,724,026&       20.04&       10.34&       12.65&       18.70&       25.60\\
+        Trip fare (SGD)     &   \num{6724026}&       17.53&        7.70&       11.85&       16.00&       21.60\\
+        Trip duration (mins)&   \num{6724026}&       20.04&       10.34&       12.65&       18.70&       25.60\\
         \midrule
         Completed trips     &            &            &            &            &            &            \\
-        Trip fare (SGD)     &  30,949,525&       13.76&        7.73&        8.00&       11.95&       17.75\\
-        Trip duration (mins)&  30,949,525&       16.70&        9.99&        9.40&       15.20&       22.10\\
+        Trip fare (SGD)     &  \num{30949525}&       13.76&        7.73&        8.00&       11.95&       17.75\\
+        Trip duration (mins)&  \num{30949525}&       16.70&        9.99&        9.40&       15.20&       22.10\\
 %         \bottomrule
 %         \end{tabularx}
 
@@ -567,7 +567,7 @@ The appendix command is issued once, prior to all appendices, if any.
 % 		\footnotesize
 %         \begin{tabular}{l*{6}{S}}
         \toprule
-                            		&         {Obs}&        {Mean}&        {S.D.}&          {Q1}&      {Median}&          {Q3}\\
+                            		&         \multicolumn{1}{c}{Obs}&        \multicolumn{1}{c}{Mean}&        \multicolumn{1}{c}{S.D.}&          \multicolumn{1}{c}{Q1}&      \multicolumn{1}{c}{Median}&          \multicolumn{1}{c}{Q3}\\
         \midrule
         Shift income (SGD)  		&     \num{2126285}&      200.51&       86.33&      139.65&      194.90&      253.30\\
         Shift duration (hours)		&     \num{2126285}&        8.60&        3.39&        6.42&        8.62&       10.57\\
@@ -603,26 +603,13 @@ The appendix command is issued once, prior to all appendices, if any.
 	\centering
 	\caption{Model-free evidences}
 	\label{tb:evidencefree}
-%	\begin{threeparttable}
-%		\input{tb/evidencefree.tex}
-%		\begin{tablenotes}
-%			\item[]\footnotesize\textit{Notes:} The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.
-%		\end{tablenotes}
-%	\end{threeparttable}
+% 	\begin{threeparttable}
+		\input{tb/evidencefree.tex}
+		\begin{tablenotes}
+        The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.
+		\end{tablenotes}
+% 	\end{threeparttable}
 \end{table}
-
-%\begin{table}
-%	\centering
-%	\caption{Hazard rate of stopping work}
-%	\label{tb:quit}
-%	\begin{threeparttable}
-%		\small
-%	\input{tb/eq5quit.tex}
-%	\begin{tablenotes}
-%		\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%	\end{tablenotes}
-%	\end{threeparttable}
-%\end{table}
 
 
 %\begin{landscape}
@@ -631,12 +618,61 @@ The appendix command is issued once, prior to all appendices, if any.
 		\caption{Hazard rate of stopping work}
 		\label{tb:robustquit}
 %		\begin{threeparttable}
-%			\footnotesize
-%			\setlength{\tabcolsep}{2pt}
-%			\input{tb/eq1quit.tex}
-%			\begin{tablenotes}
-%				\item[]\footnotesize \textit{Notes:} Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
-%			\end{tablenotes}
+			\small
+			\setlength{\tabcolsep}{2pt}
+% 			\input{tb/eq1quit.tex}
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{S}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+\midrule
+Cancellation (dummy)&      -0.018\sym{***}&      -0.021\sym{***}&      -0.024\sym{***}&      -0.018\sym{***}&      -0.018\sym{***}&      -0.020\sym{***}&      -0.021\sym{***}&      -0.024\sym{***}\\
+                    &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
+\addlinespace
+No-show (dummy)     &      -0.020\sym{***}&      -0.021\sym{***}&      -0.025\sym{***}&      -0.018\sym{***}&      -0.018\sym{***}&      -0.020\sym{***}&      -0.020\sym{***}&      -0.025\sym{***}\\
+                    &     (0.000)         &     (0.000)         &     (0.001)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.001)         &     (0.001)         \\
+\addlinespace
+Cumulative hours    &       0.019\sym{***}&       0.020\sym{***}&       0.020\sym{***}&       0.020\sym{***}&       0.020\sym{***}&       0.020\sym{***}&       0.020\sym{***}&       0.019\sym{***}\\
+                    &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
+\addlinespace
+Cumulative income ('00 SGD)&       0.020\sym{***}&       0.019\sym{***}&       0.020\sym{***}&       0.019\sym{***}&       0.028\sym{***}&       0.019\sym{***}&       0.019\sym{***}&       0.029\sym{***}\\
+                    &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         \\
+\addlinespace
+Demand density      &      -0.061\sym{***}&      -0.041\sym{***}&      -0.028\sym{***}&      -0.025\sym{***}&      -0.024\sym{***}&      -0.024\sym{***}&      -0.025\sym{***}&      -0.024\sym{***}\\
+                    &     (0.000)         &     (0.000)         &     (0.001)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
+\addlinespace
+Previous bookings (count)&                     &                     &                     &                     &      -0.004\sym{***}&                     &                     &      -0.004\sym{***}\\
+                    &                     &                     &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
+\addlinespace
+Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -0.101\sym{***}&                     &      -0.110\sym{***}\\
+                    &                     &                     &                     &                     &                     &     (0.002)         &                     &     (0.002)         \\
+\addlinespace
+Distance to pickup (km)&                     &                     &                     &                     &                     &                     &       0.000         &       0.000         \\
+                    &                     &                     &                     &                     &                     &                     &     (0.000)         &     (0.000)         \\
+\addlinespace
+On-call duration (mins)&                     &                     &                     &                     &                     &                     &       0.000\sym{***}&       0.001\sym{***}\\
+                    &                     &                     &                     &                     &                     &                     &     (0.000)         &     (0.000)         \\
+\addlinespace
+Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Date FE           &       {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\addlinespace
+Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+\addlinespace
+Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+\addlinespace
+Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+\midrule
+Observations        &\num{31563560}         &\num{31563560}         &\num{28528407}         &\num{28510154}         &\num{28510154}         &\num{28192061}         &\num{28118335}         &\num{27805742}         \\
+$R^2$             &     {0.110}         &     {0.128}         &     {0.143}         &     {0.144}         &     {0.145}         &     {0.144}         &     {0.144}         &     {0.145}         \\
+\bottomrule
+\end{tabular}
+}
+
+			\begin{tablenotes}
+            Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p < 0.05, ^{***} p < 0.01$.
+			\end{tablenotes}
 %		\end{threeparttable}
 	\end{table}
 %\end{landscape}
