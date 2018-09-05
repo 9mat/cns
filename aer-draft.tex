@@ -24,10 +24,30 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{tabularx}
+\usepackage[input-symbols = ()]{siunitx}
 
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
 \draftSpacing{1.5}
+
+\sisetup{
+	detect-all,
+	round-integer-to-decimal = true,
+	group-digits             = true,
+	group-minimum-digits     = 3,
+	round-mode				 = off, 
+	round-precision			 = 3,
+	group-separator          =  {,},
+	table-align-text-pre     = false,
+	table-align-text-post    = false,
+	group-digits			 = integer,
+	input-signs              = + -,
+	input-symbols            = {*} {**} {***},
+	input-open-uncertainty   = ,
+	input-close-uncertainty  = ,
+	retain-explicit-plus
+}
+
 
 \begin{document}
 
@@ -513,45 +533,61 @@ The appendix command is issued once, prior to all appendices, if any.
 % 	\begin{threeparttable}
 % 		\input{tb/sumstats1.tex}
 		\footnotesize
-        {
-        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-        \begin{tabularx}{\textwidth}{l*{1}{cccccccc}}
+        \begin{tabularx}{\textwidth}{lc*5{>{\centering\arraybackslash}X}}
         \toprule
-                            &         Obs&        Mean&        S.D.&      5\%ile&          Q1&      Median&          Q3&     95\%ile\\
+                            &         Obs&        Mean&        S.D.&          Q1&      Median&          Q3\\
         \midrule
-        Street hail trips   &            &            &            &            &            &            &            &            \\
-        Trip fare (SGD)     &  24,225,499&       12.72&        7.40&        4.70&        7.30&       10.75&       16.30&       26.85\\
-        Trip duration (mins)&  24,225,499&       15.77&        9.69&        3.73&        8.72&       14.23&       21.00&       32.75\\
+        Street hail trips   &            &            &            &            &            &            \\
+        Trip fare (SGD)     &  24,225,499&       12.72&        7.40&        7.30&       10.75&       16.30\\
+        Trip duration (mins)&  24,225,499&       15.77&        9.69&        8.72&       14.23&       21.00\\
         \midrule
-        Completed bookings  &            &            &            &            &            &            &            &            \\
-        Trip fare (SGD)     &   6,724,026&       17.53&        7.70&        8.10&       11.85&       16.00&       21.60&       31.95\\
-        Trip duration (mins)&   6,724,026&       20.04&       10.34&        6.30&       12.65&       18.70&       25.60&       38.52\\
+        Completed bookings  &            &            &            &            &            &            \\
+        Trip fare (SGD)     &   6,724,026&       17.53&        7.70&       11.85&       16.00&       21.60\\
+        Trip duration (mins)&   6,724,026&       20.04&       10.34&       12.65&       18.70&       25.60\\
         \midrule
-        Completed trips     &            &            &            &            &            &            &            &            \\
-        Trip fare (SGD)     &  30,949,525&       13.76&        7.73&        4.95&        8.00&       11.95&       17.75&       28.35\\
-        Trip duration (mins)&  30,949,525&       16.70&        9.99&        4.05&        9.40&       15.20&       22.10&       34.28\\
+        Completed trips     &            &            &            &            &            &            \\
+        Trip fare (SGD)     &  30,949,525&       13.76&        7.73&        8.00&       11.95&       17.75\\
+        Trip duration (mins)&  30,949,525&       16.70&        9.99&        9.40&       15.20&       22.10\\
+%         \bottomrule
+%         \end{tabularx}
+
+% 		\begin{tablenotes}
+%         Trip fares for booking trip include booking fees; trip durations for booking trip exclude on-call time. Completed trips include both street hail trips and completed bookings.
+% 		\end{tablenotes}
+% % 	\end{threeparttable}
+% \end{table}
+
+% \begin{table}
+% 	\centering
+% 	\caption{Summary statistics: Shifts}
+% 	\label{tb:shiftstats}
+% % 	\begin{threeparttable}
+% % 		\small
+% % 		\input{tb/shiftstats2.tex}	
+% 		\footnotesize
+%         \begin{tabular}{l*{6}{S}}
+        \toprule
+                            		&         {Obs}&        {Mean}&        {S.D.}&          {Q1}&      {Median}&          {Q3}\\
+        \midrule
+        Shift income (SGD)  		&     \num{2126285}&      200.51&       86.33&      139.65&      194.90&      253.30\\
+        Shift duration (hours)		&     \num{2126285}&        8.60&        3.39&        6.42&        8.62&       10.57\\
+        Shift wage (SGD/h)  		&     \num{2126285}&       24.12&        6.91&       19.49&       23.95&       28.43\\
+        Idle percentage (\%)   		&     \num{2126285}&       51.52&       12.94&       42.67&       51.12&       60.23\\
+        Number of street hail trips	&     \num{2126285}&       11.40&        5.64&        7.00&       11.00&       15.00\\
+        Number of completed bookings&     \num{2126285}&        3.16&        2.95&        1.00&        2.00&        5.00\\
+        Number of cancellations		&     \num{2126285}&        0.23&        0.57&        0.00&        0.00&        0.00\\
+        Number of no-shows  		&     \num{2126285}&        0.06&        0.26&        0.00&        0.00&        0.00\\
+        Start between 4 a.m. and 10 a.m.&     \num{2126285}&        0.49&        0.50&        0.00&        0.00&        1.00\\
+        Start between 10 a.m. and 4 p.m.&     \num{2126285}&        0.14&        0.35&        0.00&        0.00&        0.00\\
+        Start between 4 p.m. and 10 p.m.&     \num{2126285}&        0.33&        0.47&        0.00&        0.00&        1.00\\
         \bottomrule
         \end{tabularx}
-        }
 
 		\begin{tablenotes}
-        Trip fares for booking trip include booking fees; trip durations for booking trip exclude on-call time. Completed trips include both street hail trips and completed bookings.
-		\end{tablenotes}
+        The table reports summary statistics of shift-level data. Each observation is a shift---a shift is defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
+		\end{tablenotes}	
 % 	\end{threeparttable}
-\end{table}
-
-\begin{table}
-	\centering
-	\caption{Summary statistics: Shifts}
-	\label{tb:shiftstats}
-%	\begin{threeparttable}
-%		\small
-%		\input{tb/shiftstats2.tex}	
-%		\begin{tablenotes}
-%			\item[]\footnotesize\textit{Notes:} The table reports summary statistics of shift-level data. Each observation is a shift---a shift is defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
-%		\end{tablenotes}	
-%	\end{threeparttable}
-%	
+	
 \end{table}
 
 %\begin{table}
