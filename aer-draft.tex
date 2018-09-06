@@ -235,7 +235,7 @@ In total, 31,563,560 observations, or 93\% of the original data, survive this pr
 \end{center}
 
 
-Summary statistics for shifts are reported in Panel B of Table \ref{tb:shiftstats}. We identified 2,126,285 shifts in total. On average, a shift lasts for 8.6 hours and earns the driver 201 SGD. During a shift, an average driver is idle (not on fare) around one-half the time, and receives 11.4 street hail trips and 3.2 bookings.  Singapore taxi drivers' time utilization is on par with Uber and Lyft drivers, and far above that of traditional taxi drivers in the U.S. \citep{cramer2016disruptive}. The average number of cancellations and no-shows in a shift is 0.23 and 0.06, respectively---or in equivalent terms, a driver on average encounters a cancellation once every five shifts and a no-show once every 16 shifts. Half of the shifts start between 4:00 a.m. and 10:00 a.m., and around one-third start in the late afternoon or early evening (4:00 p.m. to 10:00 p.m.). The other 14\% of shifts start between 10:00 a.m. and 4:00 p.m., and a small percentage start in the late evening or early morning (10:00 p.m. to 4:00 a.m.).
+Summary statistics for shifts are reported in Panel B of Table \ref{tb:sumstat1}. We identified 2,126,285 shifts in total. On average, a shift lasts for 8.6 hours and earns the driver 201 SGD. During a shift, an average driver is idle (not on fare) around one-half the time, and receives 11.4 street hail trips and 3.2 bookings.  Singapore taxi drivers' time utilization is on par with Uber and Lyft drivers, and far above that of traditional taxi drivers in the U.S. \citep{cramer2016disruptive}. The average number of cancellations and no-shows in a shift is 0.23 and 0.06, respectively---or in equivalent terms, a driver on average encounters a cancellation once every five shifts and a no-show once every 16 shifts. Half of the shifts start between 4:00 a.m. and 10:00 a.m., and around one-third start in the late afternoon or early evening (4:00 p.m. to 10:00 p.m.). The other 14\% of shifts start between 10:00 a.m. and 4:00 p.m., and a small percentage start in the late evening or early morning (10:00 p.m. to 4:00 a.m.).
 
 
 We focus on four outcome variables: probability of ending a shift after each trip, remaining time, remaining income, and remaining idle percentage. The first two variables measure driver's labor supply, and the last two measures driver's productivity. The probability of ending a shift refers to whether the current trip is the last trip of a shift. The remaining time is the time drivers stay on the job after each trip, i.e., the period from the end time of a trip to the end of the corresponding shift. The remaining income is the total income drivers receive during the remaining time, i.e., after the trip and before ending the shift. The remaining idle percentage is the percentage of time driver is not with a passenger during the remaining time. The average probability of stopping is 14.6\%; the average remaining time after each trip and booking is 4.73 hours. This is around one-half of the average shift duration, and is expected since trips are spread out during the shift. Average remaining earnings are 108.74 SGD, which is around one-half of average shift earnings. The average remaining idle percentage is 53.83\%; this is slightly higher than the average idle percentage, probably due to the uneven distribution of trips during the shift.
@@ -364,7 +364,6 @@ In this section, we present estimates of the effects of C\&NSs on drivers' subse
 \label{eq:outcomes}
 Y_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it}+ \gamma X_{it} + \alpha_i  + u_{it}
 \end{equation}
-
 $Y_{it}$ is driver $i$'s average productivity from the end of trip/booking $t$ to the end of the shift. Results with $Y_{it}$ being the idle percentage are reported in Table \ref{tb:robustidle}, and results for hourly earnings are in Table \ref{tb:robustwage}.
 
 \begin{center}
@@ -388,7 +387,6 @@ To examine the dynamic effects of C\&NSs, we aggregate trip-level data to constr
 \begin{equation}
 Y_{ih} = \sum_{s=0}^p \beta_{c,s} N^{cancel}_{i,h-s} + \sum_{s=0}^p \beta_{ns,s} N^{noshow}_{i,h-s} + \gamma X_{ih} + \alpha_i + u_{ih}
 \end{equation}
-
 $Y_{ih}$ is the outcome variable for driver $i$ in clock hour $h$, $N^{cancel}_{i, h-s}$ and $N^{noshow}_{i, h-s}$ are the number of C\&NSs that driver $i$ encounters in clock hour $h-s$ (i.e., $s$ hours before $h$), and $\alpha_i$ and $X_{ih}$ are defined as before.
 
 \begin{center}
