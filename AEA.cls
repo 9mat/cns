@@ -459,10 +459,12 @@
 
 % AER is default
 % margins 
-\setlength\textwidth{135.5mm}
-\setlength\textheight{200mm}
+%\setlength\textwidth{135.5mm}
+\setlength\textwidth{154mm}
+%\setlength\textheight{200mm}
+\setlength\textheight{216mm}
 \setlength\topmargin{-10pt}
-\setlength\oddsidemargin{14mm}
+\setlength\oddsidemargin{7mm}
 \setlength\evensidemargin{\oddsidemargin}
 \setlength\headheight{24pt}
 \setlength\headsep   {14pt}
