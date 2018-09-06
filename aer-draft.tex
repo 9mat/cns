@@ -302,11 +302,9 @@ $\alpha_i$ is the driver fixed effect, which accounts for not only drivers' pref
 We follow \citet{farber2015you} in using a linear probability model instead of a logistic model to estimate this discrete choice equation for a similar reason: Inclusion of driver and time fixed effects renders logistic estimation computationally costly. We also conduct a robustness check from a logistic regression on a subsample of drivers and obtain robust results (available from the authors).
 %As a robustness check, in the next section we present estimates from a logistic regression on a subsample of drivers, and show that the results in this section are robust to the choice of functional form.
 
-
 \begin{center}
 	[Insert Table \ref{tb:robustquit} here]
 \end{center}
-
 
 Results of the linear probability model are reported in Table \ref{tb:robustquit}. Each of the eight specifications in the table uses a different set of control variables and fixed effects. The first specification, in Column (1), controls for cumulative working hours, cumulative income, driver fixed effects, and demand density, which is defined as the number of jobs (bookings or trips) within 1 km and within 1 hour. 
 %According to this specification, C\&NS status is associated with 1.8 and 2.0 ppts decrease in the hazard rate of stopping work. The pure OLS estimates (without any controls, not shown for brevity) are 4.2-ppts for cancellations and 4.1 ppts for no-shows, so the set of controls in Column (1) account for a substantial portion of correlation between C\&NS and drivers' labor supply decisions.%\footnote{To be specific, including cumulative hours to the pure OLS regression reduces the magnitude of estimates from 4.1 and 4.2 ppts down to 2.9 and 2.7 ppts; further including driver fixed effects reduces them to 2.2 and 2.4 ppts; including cumulative income does not change the estimates much, while the demand density helps lower them to 1.8 and 1.9 ppts as in Column (1). These specifications are omitted for brevity.}. 
@@ -352,7 +350,6 @@ Other variables are defined the same as in Equation \eqref{eq:quit}.
 	[Insert Table \ref{tb:robustmins} here]
 \end{center}
 
-
 Table \ref{tb:robustmins} reports estimates for eight specifications of Equation \eqref{eq:rmins}, each of which uses a different set of control variables and fixed effects. While the dependent variable in Table \ref{tb:robustquit} reflects the short-term relationship between C\&NSs and labor supply---i.e., how C\&NSs affect the decision to stop immediately after the trip or booking---the dependent variable in Table \ref{tb:robustmins} captures the lasting effects of C\&NSs on labor supply. Specification (1) includes cumulative hour, cumulative income, demand density, and driver fixed effects as control variables. According to this specification, a cancellation is associated with an average increase of 13.7 minutes in the remaining working time, and a no-show with an average increase of 11.2 minutes. However, the magnitudes of these coefficients are substantially lower when we account for hour of day and day of week fixed effects in Specification (2), according to which the estimated increase in remaining work time after a cancellation is only 4.8 minutes and the increase after a no-show is 4.9 minutes. Controlling for spatial heterogeneity with  postal code fixed effects (Specification (3)) and controlling for time-location interactions with the hour $\times$ day of week $\times$ zone fixed effects (Specification (4)) do not change the estimates much, and actually slightly increase the magnitude of the estimates. 
 
 Similarly to the analyses conducted in Table \ref{tb:robustquit}, Specifications (5) to (7) separately control for number of previous bookings, number of vehicles within a radius of 500 m, distance to pickup location, and the on-call duration to take into account prior aggressive bidding behavior, supply density, and the factors that influence passengers' decisions to cancel or not show up, all of which are potentially correlated with drivers' labor supply decisions. Specification (8) combines all of the aforementioned control variables in the same regression. The results of these last four specifications are fairly consistent, with the estimated effect of cancellation ranging from 4.2 to 5.5 minutes, and that of no-show from 4.6 to 5.6 minutes, which are about one-third of an average trip's duration. The effect of cancellation on the remaining working time is equivalent to the effect of driving 11 minutes less or earning 9 SGD less, and the effect of no-show is equivalent to driving 15 minutes less or earning 12 SGD less. These numbers are also close to the estimates in Specifications (2) to (4), in which we do not control for these additional factors. Therefore, it is unlikely that these additional factors are driving the positive effects of C\&NSs on remaining work time. Thus, it seems that remaining on the shift for a longer duration is how Singapore's taxi drivers respond to C\&NSs.
@@ -368,9 +365,6 @@ $Y_{it}$ is driver $i$'s average productivity from the end of trip/booking $t$ t
 
 \begin{center}
 	[Insert Table \ref{tb:robustidle} here]
-\end{center}
-
-\begin{center}
 	[Insert Table \ref{tb:robustwage} here]
 \end{center}
 
@@ -1084,7 +1078,7 @@ The substitutability between working longer and increasing productivity suggests
 		\end{tabularx}
 		}
 		\begin{tablenotes}
-			Each column is a separate regression. An observation is a driver-hour. All regressions control fro driver fixed effects, date fixed effects and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses. 
+			Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, date fixed effects and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses. 
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
@@ -1137,7 +1131,7 @@ The substitutability between working longer and increasing productivity suggests
 		}
 		
 		\begin{tablenotes}
-			Each column is a separate regression. An observation is a trip or booking. All regressions control fro driver fixed effects, date fixed effects and hour of day\(\times\)day of week\(\times\)zone fixed effects. Standard errors clustered by drivers in parentheses. 
+			Each column is a separate regression. An observation is a trip or booking. All regressions control for driver fixed effects, date fixed effects and hour of day\(\times\)day of week\(\times\)zone fixed effects. Standard errors clustered by drivers in parentheses. 
 		\end{tablenotes}
 	% \end{threeparttable}
 \end{table}
