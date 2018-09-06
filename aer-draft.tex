@@ -26,6 +26,7 @@
 \usepackage{tabularx}
 \usepackage[input-symbols = ()]{siunitx}
 \usepackage{lscape}
+\usepackage{graphicx}
 
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
@@ -1204,12 +1205,12 @@ The appendix command is issued once, prior to all appendices, if any.
 
 
 
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.8\linewidth]{./fg/completedtripsdow.pdf}
-% 	\caption{Average hourly completed trips by day of week and trip start hour}
-% 	\label{fg:trips}
-% \end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{./fg/dowplot.pdf}
+	\caption{Average number of completed trips and rate of C\&NS by day of week and hour of day}
+	\label{fg:trips}
+\end{figure}
 
 % \begin{figure}
 % 	\centering
@@ -1219,31 +1220,24 @@ The appendix command is issued once, prior to all appendices, if any.
 % 	\label{fg:cancellations}
 % \end{figure}
 
-% \begin{figure}
-% %	{\centering
-% 		\includegraphics[width=0.8\linewidth]{./fg/modelfree_quit.pdf}
-% 		\caption{Proportion of drivers who stop work: with and without C\&NSs}
-% 		\label{fg:quitbyhour}
-% %	}
-% %	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
-% \end{figure}
-
-% %\begin{figure}
-% %	\centering
-% %	\includegraphics[width=0.8\linewidth]{./fg/earningsbyhour.pdf}
-% %	\caption{Average hourly earnings: with and without C\&NSs in the previous hour}
-% %	\label{fg:earningsbyhour}
-% %\end{figure}
+\begin{figure}
+%	{\centering
+		\includegraphics[width=0.8\textwidth]{./fg/modelfree_quit_vert.pdf}
+		\caption{Proportion of drivers who stop work: with and without C\&NSs}
+		\label{fg:quitbyhour}
+%	}
+%	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
+\end{figure}
 
 
-% \begin{figure}
-% %	{\centering
-% 		\includegraphics[width=0.8\linewidth]{./fg/modelfree_earnings.pdf}
-% 		\caption{Average hourly earnings: with and without C\&NSs in the previous hour}
-% 		\label{fg:earningsbyhour}
-% %	}
-% %	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earning in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
-% \end{figure}
+\begin{figure}
+%	{\centering
+		\includegraphics[width=0.8\textwidth]{./fg/modelfree_earnings_vert.pdf}
+		\caption{Average hourly earnings in next: with and without C\&NSs}
+		\label{fg:earningsbyhour}
+%	}
+%	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earning in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
+\end{figure}
 
 
 \end{document}
