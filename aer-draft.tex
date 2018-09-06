@@ -28,6 +28,10 @@
 \usepackage{lscape}
 \usepackage{graphicx}
 \usepackage{placeins}
+\usepackage{setspace}
+
+
+
 
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
@@ -55,18 +59,18 @@
 }
 
 
-\begin{document}
 
+\begin{document}
 \title{Making lemonade from lemons: Taxi drivers' response to cancellations and no-shows}
 \shortTitle{Making lemonade from lemons}
 \author{Hai Long Duong, Junhong Chu and Dai Yao\thanks{Duong: NUS Business School, Business Link 1, Singapore, bizdhl@nus.edu.sg. Chu: NUS Business School, 15 Kent Ridge Drive, Singapore, bizcj@nus.edu.sg. Yao: NUS Business School, 15 Kent Ridge Drive, Singapore, dai.yao@nus.edu.sg. We gratefully acknowledge funding from Singapore Ministry of Education Social Science Research Thematic Grant, MOE2016-SSRTG-059, SPIRE. We are very grateful to one of the leading taxi companies in Singapore for providing us with the data for this research, and deeply indebted to its management team for sharing with us their insights on the taxi industry.}}
 \date{\today}
-\pubMonth{}
-\pubYear{}
-\pubVolume{}
-\pubIssue{}
+%\pubMonth{}
+%\pubYear{}
+%\pubVolume{}
+%\pubIssue{}
 \JEL{J22, J24, D91}
-\Keywords{}
+\Keywords{labor supply, productivity, cancellation, no-show, taxi driver, sharing economy, big data}
 
 \begin{abstract}
 	%We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity in Singapore's taxi industry. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one of the leading taxi operators in Singapore. Our analysis shows that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Interestingly, working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers, with better job search skills than less experienced drivers, tend to work more diligently to increase productivity; solo drivers, with more flexible schedule than sharing drivers, tend to work more hours. Furthermore, these effects are strong in the immediate following hour and afterward fade away. Our results demonstrate the resiliency of platform markets and shed new light on how service providers react to negative shocks due to changes in customers' needs.
@@ -172,10 +176,10 @@ Our paper draws on this literature in two ways. First, the data we use are simil
 
 \subsection{Two-sided markets}
 
-\citet{armstrong2006competition,caillaud2001competing, caillaud2003chicken,rochet2003platform, rochet2006two} provide theoretical frameworks for two-sided markets. A common feature of these studies is the presence of cross-network effects, by which the benefit of participating in the platform depends on the number of agents on the other side of the platform. More recent empirical literature has focused on identifying the presence and magnitude of cross-network effects, investigating platform behavior---such as pricing structure, openness, competition, and innovation, among others---and examining policy implications \citep{rysman2009economics, sriram2015platforms}.
+\citet{armstrong2006competition}, \citet{caillaud2001competing,caillaud2003chicken}, and \citet{rochet2003platform,rochet2006two} provide theoretical frameworks for two-sided markets. A common feature of these studies is the presence of cross-network effects, by which the benefit of participating in the platform depends on the number of agents on the other side of the platform. More recent empirical literature has focused on identifying the presence and magnitude of cross-network effects, investigating platform behavior---such as pricing structure, openness, competition, and innovation, among others---and examining policy implications \citep{rysman2009economics, sriram2015platforms}.
 
 Our paper contributes to this literature in the following ways.  First, this is one of the few papers that examine the behavior of market participants, in contrast to the usual focus on the intermediary's behaviors. 
-Second, our paper is also one of the first to study the effects of individual interactions---particularly adverse interactions---in two-sided markets at a micro level. Previous literature has largely focused on aggregate cross-network effects by investigating how the size of one side of the market influences the behavior of agents on the other side. Our paper takes a micro-oriented approach to examine the individual interactions that comprise the network effects. Different from the literature that often  examines successful transactions \citep{zhang2017meet,lin2015home,chintagunta2017quantifying,dai2018multistep} or the literature on the impacts of platform failures (e.g., mobile app failures; \citep{narang2018impact}), we instead study failed transactions between the two sides. Surprisingly, we find that failed transactions are not always bad news for all parties involved; they can sometimes induce behavioral changes that improve efficiency and benefit the market.
+Second, our paper is also one of the first to study the effects of individual interactions---particularly adverse interactions---in two-sided markets at a micro level. Previous literature has largely focused on aggregate cross-network effects by investigating how the size of one side of the market influences the behavior of agents on the other side. Our paper takes a micro-oriented approach to examine the individual interactions that comprise the network effects. Different from the literature that often  examines successful transactions \citep{zhang2017meet,lin2015home,chintagunta2017quantifying,dai2018multistep} or the literature on the impacts of platform failures (e.g., mobile app failures \citep{narang2018impact}), we instead study failed transactions between the two sides. Surprisingly, we find that failed transactions are not always bad news for all parties involved; they can sometimes induce behavioral changes that improve efficiency and benefit the market.
 
 
 \section{Industry Background and Data Description}
