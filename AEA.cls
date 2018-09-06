@@ -857,8 +857,8 @@
 
 
 % AER section skips
-\def\abovesectionskip{11pt \@plus 2pt \@minus 2pt}
-\def\belowsectionskip{11pt \@plus 2pt \@minus 2pt}
+\def\abovesectionskip{7pt \@plus 2pt \@minus 2pt}
+\def\belowsectionskip{7pt \@plus 2pt \@minus 2pt}
 \def\abovesubsectionskip{\abovesectionskip}
 \def\belowsubsectionskip{\belowsectionskip}
 \def\abovesubsubsectionskip{\abovesectionskip}
