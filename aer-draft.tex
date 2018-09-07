@@ -28,10 +28,9 @@
 \usepackage{lscape}
 \usepackage{graphicx}
 \usepackage{placeins}
-\usepackage{setspace}
 
 
-
+\renewcommand{\floatpagefraction}{1}
 
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
@@ -63,14 +62,15 @@
 \begin{document}
 \title{Making lemonade from lemons: Taxi drivers' response to cancellations and no-shows}
 \shortTitle{Making lemonade from lemons}
-\author{Hai Long Duong, Junhong Chu and Dai Yao\thanks{Duong: NUS Business School, Business Link 1, Singapore, bizdhl@nus.edu.sg. Chu: NUS Business School, 15 Kent Ridge Drive, Singapore, bizcj@nus.edu.sg. Yao: NUS Business School, 15 Kent Ridge Drive, Singapore, dai.yao@nus.edu.sg. We gratefully acknowledge funding from Singapore Ministry of Education Social Science Research Thematic Grant, MOE2016-SSRTG-059, SPIRE. We are very grateful to one of the leading taxi companies in Singapore for providing us with the data for this research, and deeply indebted to its management team for sharing with us their insights on the taxi industry.}}
-\date{\today}
+%\author{Hai Long Duong, Junhong Chu and Dai Yao\thanks{Duong: NUS Business School, Business Link 1, Singapore, bizdhl@nus.edu.sg. Chu: NUS Business School, 15 Kent Ridge Drive, Singapore, bizcj@nus.edu.sg. Yao: NUS Business School, 15 Kent Ridge Drive, Singapore, dai.yao@nus.edu.sg. We gratefully acknowledge funding from Singapore Ministry of Education Social Science Research Thematic Grant, MOE2016-SSRTG-059, SPIRE. We are very grateful to one of the leading taxi companies in Singapore for providing us with the data for this research, and deeply indebted to its management team for sharing with us their insights on the taxi industry.}}
+%\date{\today}
+\author{}
 %\pubMonth{}
 %\pubYear{}
 %\pubVolume{}
 %\pubIssue{}
 \JEL{J22, J24, D91}
-\Keywords{labor supply, productivity, cancellation, no-show, taxi driver, sharing economy, big data}
+%\Keywords{labor supply, productivity, cancellation, no-show, taxi driver, sharing economy, big data}
 
 \begin{abstract}
 	%We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity in Singapore's taxi industry. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one of the leading taxi operators in Singapore. Our analysis shows that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Interestingly, working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers, with better job search skills than less experienced drivers, tend to work more diligently to increase productivity; solo drivers, with more flexible schedule than sharing drivers, tend to work more hours. Furthermore, these effects are strong in the immediate following hour and afterward fade away. Our results demonstrate the resiliency of platform markets and shed new light on how service providers react to negative shocks due to changes in customers' needs.
@@ -124,10 +124,10 @@ the estimated time of arrival and the vehicle's plate number to the customer, an
 Second,  C\&NSs are a relatively common phenomenon in many, if not all, services. While a large literature is devoted to them,  most studies \citep{moore2001time,liu2010dynamic,feldman2014appointment,zacharias2014appointment} have focused only on operational aspects and have largely ignored the behavioral effects of these actions, such as how they would impact workers' morale and motivation.
 From an operational perspective, it is straightforward to see that C\&NSs generate lost sales, and the uncertainty associated with them entails the use of additional resources such as buffer time, stand-by personnel, rescheduling capacity, etc. which can be costly to service providers.
 In this paper, we show that C\&NSs can also induce behavioral changes from agents on the supply side, and these changes may not always go in the same direction as the operational effects.
-The  drivers in our study tend to make up for the negative operational effects caused by C\&NSs, and sometimes even reverse the sign of the effects.
-These responses are likely even more profound on platforms that connect multiple small agents with each other.
-Organizations that serve a large number of customers, such as airlines and hotel chains, may employ overbooking or other risk management tools to minimize the effects of such adverse actions.
-In contrast, taxi drivers and other small independent service providers typically serve one customer at a time, and hence must absorb all of the risks and costs associated with the customer's actions.
+%The  drivers in our study tend to make up for the negative operational effects caused by C\&NSs, and sometimes even reverse the sign of the effects.
+%These responses are likely even more profound on platforms that connect multiple small agents with each other.
+%Organizations that serve a large number of customers, such as airlines and hotel chains, may employ overbooking or other risk management tools to minimize the effects of such adverse actions.
+%In contrast, taxi drivers and other small independent service providers typically serve one customer at a time, and hence must absorb all of the risks and costs associated with the customer's actions.
 
 %The third reason is that C\&NSs may generate externalities and have implications for cross-network effects. In most cases, as it is the case for the subjects of our study, customers are not penalized for their C\&NSs. They, however, generate real cost to the service providers -- taxi drivers in our case. Thus, the customers who cancel bookings or do not show up do not pay the full cost  of their actions, and hence they will tend to overdo it. Moreover, due to reallocation of the vehicles when the drivers try to reach the cancelled demand, these actions may distort the spatial distribution of taxicab supply over time, increasing search friction, which in turn can lead to longer waiting time for other customers in the market. In other words, the adverse actions from one side of the platform done to the agents on the other side may even generate indirect negative externalities on other agents from the same side. This can even create an additional layer of network effect on the platforms, since the more cancellations the customers make, the more mis-allocations the drivers have, the larger the search friction, the longer the expected waiting time, which leads to even more C\&NSs. Interestingly, our results suggest that the drivers actually respond in a way that offsets the negative impacts of C\&NSs, and hence keep these effects from spilling over the network. Within the scope of this paper, we do not analyse this aspect of C\&NSs, but hope that this brief discussion can motivate further research on the topic.
 
@@ -187,10 +187,15 @@ Second, our paper is also one of the first to study the effects of individual in
 
 \subsection{Industry background}
 
-Singapore is a city-state with 721 sq km in land area and 5.6 million residents as of 2017. As a popular tourist destination, the city receives more than 15 million visitors each year\footnote{\url{https://www.stb.gov.sg/statistics-and-market-insights/Pages/statistics-Visitor-Arrivals.aspx}}.
-Singapore has one of the world's most extensive transportation networks, with 200 km of rail network\footnote{\url{https://data.gov.sg/dataset/rail-length}},
-357 bus routes in operation\footnote{\url{https://data.gov.sg/dataset/public-transport-capacity-average-daily-km-travelled-and-bus-routes-in-operation?resource_id=77fb71a7-4e7b-4a2b-9b99-83a5770b3e8b}},
-and total bus and rail ridership of 7.2 million per day\footnote{\url{https://www.gov.sg/news/content/the-straits-times---bus-rail-ridership-soars-to-new-high}}.
+Singapore is a city-state with 721 sq km in land area and 5.6 million residents as of 2017. As a popular tourist destination, the city receives more than 15 million visitors each year
+%\footnote{\url{https://www.stb.gov.sg/statistics-and-market-insights/Pages/statistics-Visitor-Arrivals.aspx}}.
+Singapore has one of the world's most extensive transportation networks, with 200 km of rail network
+%\footnote{\url{https://data.gov.sg/dataset/rail-length}},
+357 bus routes in operation
+%\footnote{\url{https://data.gov.sg/dataset/public-transport-capacity-average-daily-km-travelled-and-bus-routes-in-operation?resource_id=77fb71a7-4e7b-4a2b-9b99-83a5770b3e8b}},
+and total bus and rail ridership of 7.2 million per day%
+%\footnote{\url{https://www.gov.sg/news/content/the-straits-times---bus-rail-ridership-soars-to-new-high}}
+.
 The total number of taxicabs at the end of February 2017 is 26,986, amounting to around 4,820 cabs per million residents. In contrast, New York City, with 783 sq km in land area and a population of 8.6 million, has 13,237 yellow taxicabs in operation\footnote{NYC added street hail livery service (Boros Taxi) in 2013, with 7,676 vehicles in operation at the end of 2015, but these taxis can only pick up passengers in the outer boroughs.}, for an average of about 1,540 cabs per million residents.
 
 The taxi market in Singapore was liberalized in 2003, and new operators are allowed to enter the market. Currently, there are seven taxi operators 
@@ -219,15 +224,15 @@ The data include 24,828,442 street hail trips and 9,114,421 bookings made betwee
 
 Following the literature \citep{farber2015you,agarwal2015singaporean,martin2017quit,chen2015dynamic}, we cluster trips and bookings into shifts. A shift is defined as a series of trips and bookings less than 6 hours apart by the same driver. In other words, any gap between two consecutive trips or bookings of more than 6 hours marks the end of one shift and the beginning of the next. We conduct several data-cleaning steps to remove irrelevant or erroneous observations and outliers, including:
 \begin{itemize}[noitemsep,nolistsep]
-	\item failed bookings (bookings for which the system failed to assign a taxicab; 2.65\% of total observations)
+	\item failed bookings (bookings for which the system failed to assign a taxi; 2.65\% of total observations)
 	\item cancellations before confirmation (bookings that were cancelled before the system could assign a taxi; 2.00\%)
 	\item observations with missing vehicle information (30 observations)
-	\item observations with a start date before December 1, 2016 or end time preceding the start time (0.01\%)
+	\item observations with start date before December 1, 2016 or end time before start time (0.01\%)
 	\item observations with zero trip duration or trip duration longer than 2 hours (0.17\%)
 	\item observations with zero trip fare or trip fare of value more than 100 SGD (0.07\%)%\footnote{100 SGD is the 99.9725 percentile of the original trip fare distribution.}
-	\item observations in a shift with a shift duration shorter than 1 hour or longer than 24 hours (1.82\%)
-	\item observations in a shift with the shift's total earnings less than 10 SGD or more than 1,000 SGD (0.01\%)%\footnote{1000 SGD is the 99.9725 percentile of the original shift income distribution.}
-	\item duplicate trips/bookings, i.e., trips or bookings with the same start time by the same driver (0.3\%)
+	\item observations in a shift with shift duration less than 1 hour or more than 24 hours (1.82\%)
+	\item observations in a shift with shift earnings less than 10 SGD or more than 1,000 SGD (0.01\%)%\footnote{1000 SGD is the 99.9725 percentile of the original shift income distribution.}
+	\item duplicate trips/bookings, i.e., trips/bookings with the same start time and driver (0.3\%)
 \end{itemize}
 
 %The number of observations that are removed in each step is reported in Table \ref{tb:dropcount}. 
@@ -264,13 +269,11 @@ Table \ref{tb:evidencefree} shows the relationship between C\&NSs and drivers' s
 %\footnote{The inverse of this number, $\frac{1}{0.15}=6.67$ is approximately the average number of full hours in a shift, which is less than the average shift duration since the first and last hours of the shifts are excluded due to censoring.}. 
 If any C\&NS occurs in the hour, the percentage of drivers who stop work after the hour decreases by 3.3 percentage points (ppts) to 11.7\%. The difference is significant at the 1\% level. If they continue to work in the hour after a C\&NS, average earnings in the next hour are 26.35 SGD, which is 2.14 SGD (s.e 0.017) more than the average earnings of 24.21 SGD in hours when they do not encounter any C\&NSs. 
 \begin{center}
-	[Insert Figure \ref{fg:quitbyhour} here]
-\end{center}
-\begin{center}
-	[Insert Figure \ref{fg:earningsbyhour} here]
+	[Insert Figure \ref{fg:quitbyhour} and Figure \ref{fg:earningsbyhour} here]
 \end{center}
 
-Figures \ref{fg:quitbyhour} and \ref{fg:earningsbyhour} break down the above  statistics by clock hour of the day (the top panel in both figures) and by hour into the shift (the bottom panel). The left panel of Figure \ref{fg:quitbyhour} shows the proportion of drivers who stop work after each of the 24 hours in the day, separately for hours with C\&NSs (dashed line) and without C\&NSs (solid line). Both plots follow a similar pattern: There is a peak in the early morning around 2:00 a.m.-4:00 a.m., probably due to night-shift drivers ending work, and another peak in the afternoon around 3:00 p.m.-5:00 p.m. when the day-shift drivers end work. Throughout the morning, from 7:00 a.m. to 12:00 p.m., the lines stay relatively flat and low, since most day-shift drivers have just started their shifts and are unlikely to quit so early. What is interesting is that apart from the morning period---when very few drivers quit---the dashed line stays consistently below the solid line, which means that throughout  the day, the proportion of drivers who stop work is lower after the hours with C\&NSs. The right panel of Figure \ref{fg:quitbyhour} shows the proportion of drivers who stop work after each hour since the start of a shift, separately for hours with C\&NSs (dashed line) and without C\&NSs (solid line). Similarly as in the top panel, the dashed line stays consistently below the solid line, which means that throughout the shift, drivers are less likely to stop work after they encounter C\&NSs.
+
+Figures \ref{fg:quitbyhour} and \ref{fg:earningsbyhour} break down the above  statistics by clock hour of the day (the left panel in both figures) and by hour into the shift (the right panel). The left panel of Figure \ref{fg:quitbyhour} shows the proportion of drivers who stop work after each of the 24 hours in the day, separately for hours with C\&NSs (dashed line) and without C\&NSs (solid line). Both plots follow a similar pattern: There is a peak in the early morning around 2:00 a.m.-4:00 a.m., probably due to night-shift drivers ending work, and another peak in the afternoon around 3:00 p.m.-5:00 p.m. when the day-shift drivers end work. Throughout the morning, from 7:00 a.m. to 12:00 p.m., the lines stay relatively flat and low, since most day-shift drivers have just started their shifts and are unlikely to quit so early. What is interesting is that apart from the morning period---when very few drivers quit---the dashed line stays consistently below the solid line, which means that throughout  the day, the proportion of drivers who stop work is lower after the hours with C\&NSs. The right panel of Figure \ref{fg:quitbyhour} shows the proportion of drivers who stop work after each hour since the start of a shift, separately for hours with C\&NSs (dashed line) and without C\&NSs (solid line). Similarly as in the left panel, the dashed line stays consistently below the solid line, which means that throughout the shift, drivers are less likely to stop work after they encounter C\&NSs.
 
 Figure \ref{fg:earningsbyhour} shows average hourly earnings in each hour of the day (the left panel) and each hour into the shift (the right panel), separately for hours with C\&NSs in the previous hour (dashed line) and without any C\&NSs (solid line). Earnings are high before 10:00 a.m. and from 6:00 p.m. onward, which are also the periods with taxi surcharges. In both panels, the dashed line stays consistently above the solid line, which means that throughout the day, average earnings in the hours following a C\&NS are higher than  average earnings in the hours without a prior C\&NS.
 
@@ -281,7 +284,7 @@ In this section, we outline our regression models and discuss the implications o
 
 To identify the effects of C\&NSs, we exploit the fact that C\&NSs are passengers' decisions and unlikely to be affected by driver behavior. However, there may still be endogeneity issues if passengers base their decisions on driver characteristics, or if unobserved confounding factors are present, such as market conditions, that affect both the occurrence of C\&NSs and drivers' labor supply and productivity decisions. We argue that the first scenario is unlikely due to institutional settings. Specifically, passengers have access to very little information about the driver during the booking process: After the booking is made, they are informed of only the vehicle's plate number and the estimated time of arrival. Since the great majority of the drivers stick with one vehicle, we include driver fixed effects in all regressions to control for driver-related and vehicle-related factors such as perceived unlucky plate numbers. Longer estimated time of arrival may lead to more C\&NSs, and we use distance and time to pickup point to control for this factor. 
 %Even in the rare event in which the passenger can infer additional clues about the driver from these limited pieces of data (i.e., the passenger recognizes the vehicle's plate number), since the information does not change over time, it will be captured by the driver fixed effects we use in all regressions. 
-Furthermore, as previously discussed, booking fees are nontrivial, and many C\&NSs are due to passengers who hail a \emph{random} empty taxi that happens to pass by while waiting for the booking. 
+Furthermore, as previously discussed, booking fees are nontrivial, and many C\&NSs are due to passengers who hail a random empty taxi that happens to pass by while waiting for the booking. 
 
 To address the second problem---i.e., the existence of confounding factors---we employ fixed effects and a set of controls to absorb the impacts of those factors. The main concern is  demand and supply conditions. In addition to adding demand density and vehicle density into the regression, we control for these factors by a rich set of time and location fixed effects: (1) We include date fixed effects to control for daily variation in demand and supply and absorb factors such as public holidays, school holidays, tourist season, etc. (2) We add hour of day fixed effects to control for within-day variation in market conditions, especially the difference between peak and non-peak hours. In addition, we use different sets of hour fixed effects for different days of the week, for weekday holidays, and for weekend holidays to capture distinct patterns of the taxi market on workdays, off days, and holidays. (3)  We also include postal code fixed effects or hour $\times$ day of week $\times$ zone fixed effects to control for spatial differences in taxi demand and supply across the city. There are 312 zones, for an average area of 2.3 sq km for a zone. This is a relatively fine spatial division, and we expect little within-zone variation in unobserved confounding factors that may bias our estimation. The  hour $\times$ day of week $\times$ zone fixed effects also control for weather and air quality conditions. The 120,000 postal code fixed effects provide even finer control for spatial heterogeneity, since in Singapore each postal code is associated with a unique building, and each building usually has a designated pickup point for taxis. As a result, our estimates of C\&NS effects are identified out of the within-zone driver-specific portion of C\&NS variation that is uncorrelated with date and hour. %Interestingly, the inclusion of zone fixed effects in all of our regressions do not change the magnitudes of the estimated C\&NS effects in any meaningful ways, and we use this fact as an evidence to support the argument that there is little residual variation in unobserved factors that is correlated with the occurrences of C\&NSs. 
 
@@ -298,9 +301,9 @@ formulate the decision as a  binary probability model
 and assume a linear form for this function, as follows:
 \begin{equation}
 \label{eq:quit}
-{Quit}_{it} = \beta_{c}I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} + \gamma X_{it} + \alpha_i  + u_{it}
+{Quit}_{it} = \beta_{c}I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} +  \mathbf{X_{it}}'\mathbf{\gamma} + \alpha_i  + u_{it}
 \end{equation}
-where $i$ denotes a driver and $t$ denotes a taxi trip or booking. ${Quit}_{it}$ is a binary variable: ${Quit}_{it} = 1$ if trip or booking $t$ is the last trip/booking in a shift by driver $i$, and $Quit_{it} = 0$ otherwise. $I^{cancel}_{it}$ and $I^{noshow}_{it}$ are indicator variables for the cancellation and no-show status of the current booking, i.e., $I^{cancel}_{it}=1$ if trip $t$ by driver $i$ is cancelled, and $0$ otherwise; and $I^{noshow}_{it}=1$ if trip $t$ by driver $i$ is a no-show, and $0$ otherwise. $X_{it}$ is the set of observable factors that affect stopping decisions.  It includes a set of time and location fixed effects to account for future earnings opportunities; these variables capture drivers' current states and are used by drivers to form their expectations about future working conditions. It also includes the cumulative number of work hours from the beginning of the shift to account for the increasing marginal disutility of work, and cumulative earnings to account for possible income targeting behavior, as documented in other studies \citep{camerer1997labor,crawford2011new}.
+where $i$ denotes a driver and $t$ denotes a taxi trip or booking. ${Quit}_{it}$ is a binary variable: ${Quit}_{it} = 1$ if trip or booking $t$ is the last trip/booking in a shift by driver $i$, and $Quit_{it} = 0$ otherwise. $I^{cancel}_{it}$ and $I^{noshow}_{it}$ are indicator variables for the cancellation and no-show status of the current booking, i.e., $I^{cancel}_{it}=1$ if trip $t$ by driver $i$ is cancelled, and $0$ otherwise; and $I^{noshow}_{it}=1$ if trip $t$ by driver $i$ is a no-show, and $0$ otherwise. $\mathbf{X_{it}}$ is the set of observable factors that affect stopping decisions.  It includes a set of time and location fixed effects to account for future earnings opportunities; these variables capture drivers' current states and are used by drivers to form their expectations about future working conditions. It also includes the cumulative number of work hours from the beginning of the shift to account for the increasing marginal disutility of work, and cumulative earnings to account for possible income targeting behavior, as documented in other studies \citep{camerer1997labor,crawford2011new}.
 %Controlling for these two effects is particularly important because of the potential endogeneity due to the passage of time. As random events throughout time, C\&NSs would be more likely to occur the longer a driver stays on the shift. As mentioned above, the stopping decision may be also correlated with time due to either increasing marginal disutility of work or income targeting behavior. Without controlling for cumulative hours and income, we may observe spurious correlation between number of bookings and ${Quit}_{it}$.
 $\alpha_i$ is the driver fixed effect, which accounts for not only drivers' preferences with respect to work and non-work activities, but also their individual propensity to receive and accept a booking. %The taxi operator informed us that the driver profile was taken into consideration when assigning bookings to drivers, potentially creating a selection bias between the driver characteristics and the number of bookings received. Including the driver fixed effects helps alleviate the concern about this selection bias.
 We follow \citet{farber2015you} in using a linear probability model instead of a logistic model to estimate this discrete choice equation for a similar reason: Inclusion of driver and time fixed effects renders logistic estimation computationally costly. We also conduct a robustness check from a logistic regression on a subsample of drivers and obtain robust results (available from the authors).
@@ -339,7 +342,7 @@ from 1.8 ppts to 2.5 ppts. This negative relationship between C\&NSs and the dec
 Another measure of labor supply is the duration a driver continues working on the shift after each trip or booking. 
 \begin{equation}
 \label{eq:rmins}
-{Remaining\_time}_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it}  + \gamma X_{it} + \alpha_i + u_{it}
+{Remaining\_time}_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it}  + \mathbf{X_{it}}'\mathbf{\gamma} + \alpha_i + u_{it}
 \end{equation}
 ${Remaining\_time}_{it}$ is the duration driver $i$ continues working after trip/booking $t$, i.e., the duration from the end of the trip or booking to the end of the corresponding shift. %$I^{cancel}_{it}$ and $I^{noshow}_{it}$ are two dummy variables and equal to 1 if trip/booking $t$ is a cancellation or a no-show, respectively. $\alpha_i$ and $X_{it}$ are the driver fixed effects and the set of observable factors that may affect the driver $i$'s labor supply.
 Other variables are defined the same as in Equation \eqref{eq:quit}.
@@ -363,13 +366,12 @@ Similarly to the analyses conducted in Table \ref{tb:robustquit}, Specifications
 In this section, we present estimates of the effects of C\&NSs on drivers' subsequent productivity. Two measures of productivity are considered: idle percentage and hourly earnings. We first look at the effects on average productivity for the remainder of the shift after a trip/booking, and later at the dynamic effects over subsequent individual hours. The regression equation is as follows:
 \begin{equation}
 \label{eq:outcomes}
-Y_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it}+ \gamma X_{it} + \alpha_i  + u_{it}
+Y_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} + \mathbf{X_{it}}'\mathbf{\gamma} + \alpha_i  + u_{it}
 \end{equation}
 $Y_{it}$ is driver $i$'s average productivity from the end of trip/booking $t$ to the end of the shift. Results with $Y_{it}$ being the idle percentage are reported in Table \ref{tb:robustidle}, and results for hourly earnings are in Table \ref{tb:robustwage}.
 
 \begin{center}
-	[Insert Table \ref{tb:robustidle} here]
-	[Insert Table \ref{tb:robustwage} here]
+	[Insert Table \ref{tb:robustidle} and Table \ref{tb:robustwage} here]
 \end{center}
 
 Table \ref{tb:robustidle} shows that the idle percentage following a cancellation is 0.7--1.5 ppts lower than that following a completed trip or booking. The reduction in idle time can be due to the discovery of more earnings opportunities, but it can also be due to the driver taking longer to complete the same number of earnings opportunities. As we show in Table \ref{tb:robustwage}, hourly earnings following a cancellation is on average 38 to 77 cents higher than that following a completed trip or completed booking. These results together favor the former rather than the latter explanation. After a cancellation, the driver is not only busier, but also earns better wages, suggesting that the driver is becoming more productive in his job search. 
@@ -383,9 +385,9 @@ The above results suggest that C\&NSs can have two opposite effects on productiv
 \subsection{Dynamic effects of cancellations and no-shows}
 To examine the dynamic effects of C\&NSs, we aggregate trip-level data to construct a panel of driver-hours. First, each trip or booking is assigned to a clock hour according to its start and end time. Trips that span multiple clock hours are divided into segments that fit into the respective clock hours, and their fares are prorated to the duration. We next aggregate the data by summing up the fare and trip duration assigned to each clock hour, driver by driver. We then regress the outcome variables---hourly earnings and idle minutes---on the number of C\&NSs in the current hour as well as in the previous hours. We expect that the effect of C\&NSs in the same hour partially captures the negative effect on productivity due to lost time, whereas the effects of C\&NSs in previous hours capture the positive effect of these adverse events on the driver's productivity.
 \begin{equation}
-Y_{ih} = \sum_{s=0}^p \beta_{c,s} N^{cancel}_{i,h-s} + \sum_{s=0}^p \beta_{ns,s} N^{noshow}_{i,h-s} + \gamma X_{ih} + \alpha_i + u_{ih}
+Y_{ih} = \sum_{s=0}^p \beta_{c,s} N^{cancel}_{i,h-s} + \sum_{s=0}^p \beta_{ns,s} N^{noshow}_{i,h-s} +  \mathbf{X_{ih}}'\mathbf{\gamma} + \alpha_i + u_{ih}
 \end{equation}
-$Y_{ih}$ is the outcome variable for driver $i$ in clock hour $h$, $N^{cancel}_{i, h-s}$ and $N^{noshow}_{i, h-s}$ are the number of C\&NSs that driver $i$ encounters in clock hour $h-s$ (i.e., $s$ hours before $h$), and $\alpha_i$ and $X_{ih}$ are defined as before.
+$Y_{ih}$ is the outcome variable for driver $i$ in clock hour $h$, $N^{cancel}_{i, h-s}$ and $N^{noshow}_{i, h-s}$ are the number of C\&NSs that driver $i$ encounters in clock hour $h-s$ (i.e., $s$ hours before $h$), and $\alpha_i$ and $\mathbf{X_{ih}}$ are defined as before.
 
 \begin{center}
 	[Insert Table \ref{tb:hourlyreg} here]
@@ -626,7 +628,8 @@ The substitutability between working longer and increasing productivity suggests
 			Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
 			\addlinespace
 			Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-			\midrule
+			%\midrule
+			\addlinespace
 			Observations        &\num{31563560}         &\num{31563560}         &\num{28528407}         &\num{28510154}         &\num{28510154}         &\num{28192061}         &\num{28118335}         &\num{27805742}         \\
 			$R^2$             &     {0.110}         &     {0.128}         &     {0.143}         &     {0.144}         &     {0.145}         &     {0.144}         &     {0.144}         &     {0.145}         \\
 			\bottomrule
@@ -692,7 +695,8 @@ The substitutability between working longer and increasing productivity suggests
 					Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
 					\addlinespace
 					Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-					\midrule
+					%\midrule
+					\addlinespace
 					Observations        &\num{31563560}         &\num{31563560}         &\num{28528407}         &\num{28510154}         &\num{28510154}         &\num{28192061}         &\num{28118335}         &\num{27805742}         \\
 					$R^2$             &     {0.596}         &     {0.634}         &     {0.636}         &     {0.636}         &     {0.636}         &     {0.635}         &     {0.637}         &     {0.637}         \\
 					\bottomrule
@@ -760,7 +764,8 @@ The substitutability between working longer and increasing productivity suggests
 				Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
 				\addlinespace
 				Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-				\midrule
+				%\midrule
+				\addlinespace
 				Observations        &\num{26511775}         &\num{26511775}         &\num{23821515}         &\num{23808266}         &\num{23808266}         &\num{23543680}         &\num{23469766}         &\num{23209593}         \\
 				$R^2$             &     {0.320}         &     {0.365}         &     {0.372}         &     {0.373}         &     {0.373}         &     {0.373}         &     {0.374}         &     {0.374}         \\
 				\bottomrule
@@ -828,7 +833,8 @@ The substitutability between working longer and increasing productivity suggests
 				Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
 				\addlinespace
 				Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-				\midrule
+				%\midrule
+				\addlinespace
 				Observations        &\num{26511775}         &\num{26511775}         &\num{23821515}         &\num{23808266}         &\num{23808266}         &\num{23543680}         &\num{23469766}         &\num{23209593}         \\
 				$R^2$             &     {0.361}         &     {0.416}         &     {0.422}         &     {0.424}         &     {0.425}         &     {0.425}         &     {0.425}         &     {0.426}         \\
 				\bottomrule
@@ -846,7 +852,6 @@ The substitutability between working longer and increasing productivity suggests
 
 % \begin{landscape}
 	\begin{table}
-		\centering
 		\caption{Dynamic effects of cancellations and no-shows}
 		\label{tb:hourlyreg}
 		% \begin{threeparttable}
@@ -854,8 +859,8 @@ The substitutability between working longer and increasing productivity suggests
 			\setlength{\tabcolsep}{0pt}
 			% \input{tb/hourlyreg.tex}
 			{
-			\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-			\begin{tabular}{l*{6}{S}}
+%			\def\arraystretch{0.5}%  1 is the default, change whatever you need
+			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}}
 			\toprule
 			\toprule
 			                    &\multicolumn{3}{c}{Hourly earnings (SGD)}                        &\multicolumn{3}{c}{Hourly idle time (mins)}                      \\
@@ -885,28 +890,31 @@ The substitutability between working longer and increasing productivity suggests
 			% Hour FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
 			% \addlinespace
 			% Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-			\midrule
+%			\midrule
+			\addlinespace
 			Observations        &\num{13954248}         &\num{10838888}         &\num{8209562}         &\num{13954248}         &\num{10838888}         &\num{8209562}         \\
 			$R^2$             &     {0.188}         &     {0.185}         &     {0.185}         &     {0.160}         &     {0.161}         &     {0.162}         \\
 			\bottomrule
-			\end{tabular}
+			\end{tabularx}
 			}
-
 			\begin{tablenotes}
-				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixxed effects and date fixed effects. The dependent variable in Columns (1), (2), and (3) is the earnings received in the respective hour. The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses. $^* p<0.1, ^{**} p<0.05, ^{***} p<0.01$.
+				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixed effects and date fixed effects. The dependent variable in Columns (1), (2), and (3) is the earnings received in the respective hour. The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses.
 			\end{tablenotes}
 		% \end{threeparttable}
-	\end{table}
-% \end{landscape}
+%	\end{table}
+%% \end{landscape}
+%
+%\begin{table}
 
+	\vspace{1cm}
 
-\begin{table}
 	\centering
 	\caption{Heterogeneity}
 	\label{tb:heterogeneity}	
 		%	\begin{threeparttable}
 		% \input{tb/heterogeneity.tex}
 		{
+%			\def\arraystretch{0.5}%  1 is the default, change whatever you need
 		\footnotesize
 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}}
 		\toprule
@@ -940,7 +948,8 @@ The substitutability between working longer and increasing productivity suggests
 		% Hour FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
 		%\addlinespace
 		%cum\_hours\_bins      &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-		\midrule
+%		\midrule
+		\addlinespace
 		Observations        &\num{31563556}         &\num{31563556}         &\num{26511772}         &\num{26511772}         \\
 		$R^2$             &     {0.633}         &     {0.633}         &     {0.423}         &     {0.423}         \\
 		\bottomrule
@@ -960,8 +969,6 @@ The substitutability between working longer and increasing productivity suggests
 	\caption{Net effects of C\&NSs on total shift income}
 	\label{tb:overcompensate}
 %	\begin{threeparttable}
-		
-		
 			{
 			\footnotesize
 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}}
@@ -977,7 +984,8 @@ The substitutability between working longer and increasing productivity suggests
 			\addlinespace
 			No-shows in first 2 hours (count)&      -4.066&       2.482&      -1.583\\
 			                    &     (0.068)         &     (0.256)         &     (0.267)         \\
-			\midrule
+			%\midrule
+			\addlinespace
 			Observations        &\num{2024814}         &\num{2024814}         &\num{2024814}         \\
 			$R^2$             &     {0.365}         &     {0.497}         &     {0.522}         \\
 			\bottomrule
@@ -1001,7 +1009,8 @@ The substitutability between working longer and increasing productivity suggests
 			\addlinespace
 			No-shows in first 6 hours (count)&      -1.290&       1.293&       0.003         \\
 			                    &     (0.101)         &     (0.140)         &     (0.171)         \\
-			\midrule
+			%\midrule
+			\addlinespace
 			Observations        &\num{1618166}         &\num{1618166}         &\num{1618166}         \\
 			$R^2$             &     {0.564}         &     {0.516}         &     {0.574}         \\
 			\bottomrule
@@ -1031,7 +1040,8 @@ The substitutability between working longer and increasing productivity suggests
 			\addlinespace
 			Shift duration (hours)&                     &      18.933\\
 			                    &                     &     (0.042)         \\
-			\midrule
+			%\midrule
+			\addlinespace
 			Observations        &\num{2073595}         &\num{2073595}         \\
 			\(R^2\)             &     {0.517}         &     {0.800}         \\
 			\bottomrule
@@ -1075,7 +1085,8 @@ The substitutability between working longer and increasing productivity suggests
 		% Hour\(\times\)day of week FE&       {Yes}         &       {Yes}         &       {Yes}         &         {Yes}         &         {Yes}         \\
 		% \addlinespace
 		% Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &         {Yes}         &         {Yes}         \\
-		\midrule
+		%\midrule
+		\addlinespace
 		Observations        &\num{13038157}         &\num{13038157}         &\num{13038157}         &\num{13038157}         &\num{13038157}         \\
 		\(R^2\)             &     {0.178}         &     {0.145}         &     {0.111}         &     {0.196}         &     {0.138}         \\
 		\bottomrule
@@ -1127,7 +1138,8 @@ The substitutability between working longer and increasing productivity suggests
 		% Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
 		% \addlinespace
 		% Hour\(\times\)day of week\(\times\)zone FE&       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-		\midrule
+		%\midrule
+		\addlinespace
 		Observations        &\num{27769530}         &\num{27459427}         &\num{27769530}         &\num{27459427}         &\num{27769257}         &\num{27459154}         \\
 		\(R^2\)             &     {0.198}         &     {0.200}         &     {0.048}         &     {0.048}         &     {0.014}         &     {0.014}         \\
 		\bottomrule

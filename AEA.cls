@@ -85,10 +85,10 @@
 }
 \AtBeginDocument{\setDocumentSpacing
   \if@draftmode\overfullrule=3pt\else\overfullrule=0pt\fi
-%  As of July 2011 the authors are no longer concealed in the review copy
-%  \if@reviewmode
-%    \def\author#1{\gdef\@author{Author Undisclosed}}
-%  \fi
+% As of July 2011 the authors are no longer concealed in the review copy
+  \if@reviewmode
+    \def\author#1{\gdef\@author{Author Undisclosed}}
+  \fi
   \@ifundefined{harvardand}{}{\renewcommand{\harvardand}{and}}
 } 
 
@@ -194,10 +194,14 @@
 \newcommand\TenPtPlusType{\@setfontsize\TenPtPlusType{10.7}{12.5}}
 \newcommand\TenPtLoose{\@setfontsize\TenPtLooseType\@xpt{13}}
 \newcommand\ElevenPtClose{\@setfontsize\ElevenPtClose\@xipt{12}}
-\newcommand\ElevenPtType{\@setfontsize\ElevenPtType\@xipt{13}}
-\newcommand\ElevenPtLoose{\@setfontsize\ElevenPtLoose\@xipt{14}}
-\newcommand\TwelvePtClose{\@setfontsize\TwelvePtClose\@xiipt{13}}
-\newcommand\TwelvePtType{\@setfontsize\TwelvePtType\@xiipt{14.4}}
+%\newcommand\ElevenPtType{\@setfontsize\ElevenPtType\@xipt{13}}
+\newcommand\ElevenPtType{\@setfontsize\ElevenPtType\@xipt{12.5}}
+%\newcommand\ElevenPtLoose{\@setfontsize\ElevenPtLoose\@xipt{14}}
+\newcommand\ElevenPtLoose{\@setfontsize\ElevenPtLoose\@xipt{13}}
+%\newcommand\TwelvePtClose{\@setfontsize\TwelvePtClose\@xiipt{13}}
+\newcommand\TwelvePtClose{\@setfontsize\TwelvePtClose\@xiipt{12.5}}
+%\newcommand\TwelvePtType{\@setfontsize\TwelvePtType\@xiipt{14.4}}
+\newcommand\TwelvePtType{\@setfontsize\TwelvePtType\@xiipt{13}}
 \newcommand\FourteenPtType{\@setfontsize\FourteenPtType{14}{16.8}}
 \newcommand\FourteenPtLoose{\@setfontsize\FourteenPtLoose{14}{18}}
 \newcommand\FifteenPtType{\@setfontsize\FifteenPtType{15}{18}}
@@ -460,11 +464,11 @@
 % AER is default
 % margins 
 %\setlength\textwidth{135.5mm}
-\setlength\textwidth{154mm}
+\setlength\textwidth{160mm}
 %\setlength\textheight{200mm}
-\setlength\textheight{216mm}
-\setlength\topmargin{-10pt}
-\setlength\oddsidemargin{7mm}
+\setlength\textheight{225mm}
+\setlength\topmargin{-30pt}
+\setlength\oddsidemargin{3mm}
 \setlength\evensidemargin{\oddsidemargin}
 \setlength\headheight{24pt}
 \setlength\headsep   {14pt}
@@ -707,10 +711,10 @@
     \begin{center}%
       \null\vskip\abovetitleskip
       {\titlesize\sffamily\textbf{\@title} \par}%
-      \vskip 16pt%
-      {\authorsize\textit{By \ }\textsc{\@author}\par}
-      \draftDate
-      \vskip 24pt%
+	      \vskip 16pt%
+	      {\authorsize\textit{By \ }\textsc{\@author}\par}
+%      \draftDate
+%      \vskip 24pt%
     \end{center}%
   \gdef\@JELKey{
     \ifx\@JEL\@blank\else \par JEL: \@JEL\par \fi
