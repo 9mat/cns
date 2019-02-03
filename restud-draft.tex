@@ -30,7 +30,7 @@
 \usepackage{placeins}
 \usepackage{setspace}
 \usepackage{amsmath}
-
+\usepackage[title]{appendix}
 
 \usepackage{fullpage}
 
@@ -168,7 +168,7 @@ This paper also addresses a growing question in the reference dependence literat
 %In this paper, we ask how an individual's adverse action, particularly failed transaction, from one side affects the behaviors of individuals on the other side in a two-sided market.
 
 %The market that we examine is Singapore's taxi industry and the interactions that we focus on are booking cancellations and passenger no-shows. 
-The taxi industry has been a subject of great interest to economists due to its special work arrangement, which enables empirical tests of various competing economic theories. In particular, Singapore taxi market has attracted considerable attention \citet{agarwal2015singaporean,agarwal2017anticipated,agarwal2018fickle} The typical arrangement in Singapore is for the taxi operator to lease cabs to drivers using specific rate schemes, and drivers freely choose how long to work each day. Put another way, the taxi operator has ``sold the firm" to drivers, and each driver plays the role of a self-employed entrepreneur, internalizing into his own venture all of the costs and benefits of supplying labor. One feature of Singapore's taxi industry that differentiates it from the extensively studied NYC yellow cab market is that it is very common for customers to book taxi services via telephone, SMS, the internet, and mobile apps, whereas in NYC cabs are mostly hailed on the street.\footnote{A number of for-hire vehicle companies in NYC provide prearranged transport service, but the number of trips completed by these companies is relatively small compared to yellow cab trips (Taxi and Limousine Commission Factbook, 2016). Recently, several mobile apps such as Curb have been developed to allow yellow and green cabs in the city to accept bookings (see \url{https://www.theverge.com/2016/3/23/11294758/curb-app-taxi-hail-uber-nyc-verifone}).} With the arrival of ride-hailing services such as Uber and Grab, customers in Singapore are becoming more accustomed to booking their rides, and taxi operators are increasingly promoting their own booking systems in order to remain competitive\footnote{See \citet{agarwal2018fickle} for a discussion of the interaction between taxi bookings and ride-hailing platforms in Singapore.}. In essence, Singapore's taxi industry is a combination of traditional taxi services and a modern ride hailing platform business.
+The taxi industry has been a subject of great interest to economists due to its special work arrangement, which enables empirical tests of various competing economic theories. In particular, Singapore taxi market has attracted considerable attention from researchers \citep{Ho3074,chou2002testing,agarwal2015singaporean,agarwal2017anticipated,agarwal2018fickle} thanks to not only data availability but also unique features of the market. The typical arrangement in Singapore is for the taxi operator to lease cabs to drivers using specific rate schemes, and drivers freely choose how long to work each day. Put another way, the taxi operator has ``sold the firm" to drivers, and each driver plays the role of a self-employed entrepreneur, internalizing into his own venture all of the costs and benefits of supplying labor. One feature of Singapore's taxi industry that differentiates it from the extensively studied NYC yellow cab market is that it is very common for customers to book taxi services via telephone, SMS, the internet, and mobile apps, whereas in NYC cabs are mostly hailed on the street.\footnote{A number of for-hire vehicle companies in NYC provide prearranged transport service, but the number of trips completed by these companies is relatively small compared to yellow cab trips (Taxi and Limousine Commission Factbook, 2016). Recently, several mobile apps such as Curb have been developed to allow yellow and green cabs in the city to accept bookings (see \url{https://www.theverge.com/2016/3/23/11294758/curb-app-taxi-hail-uber-nyc-verifone}).} With the arrival of ride-hailing services such as Uber and Grab, customers in Singapore are becoming more accustomed to booking their rides, and taxi operators are increasingly promoting their own booking systems in order to remain competitive\footnote{See \citet{agarwal2018fickle} for a discussion of the interaction between taxi bookings and ride-hailing platforms in Singapore.}. In essence, Singapore's taxi industry is a combination of traditional taxi services and a modern ride hailing platform business.
 %For this reason, Singapore's taxi industry lends itself nicely to the scope of multi-sided market research, since taxi operators here also play the role of a platform, connecting drivers and riders through their booking systems. 
 
 
@@ -1376,22 +1376,22 @@ The substitutability between working longer and increasing productivity suggests
 % \end{figure}
 
 \begin{figure}
-%	{\centering
+	{\centering
 		\includegraphics[width=0.8\textwidth]{./fg/modelfree_quit_vert.pdf}
 		\caption{Proportion of drivers who stop work: with and without C\&NSs}
 		\label{fg:quitbyhour}
-%	}
+	}
 %	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
 \end{figure}
 
 
 
 \begin{figure}
-%	{\centering
+	{\centering
 		\includegraphics[width=0.8\textwidth]{./fg/modelfree_earnings_vert.pdf}
 		\caption{Average hourly earnings in next: with and without C\&NSs}
 		\label{fg:earningsbyhour}
-%	}
+	}
 %	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earning in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NSs. The dashed lines are for driver-hours in which there are some C\&NSs.}
 \end{figure}
 
@@ -1399,8 +1399,8 @@ The substitutability between working longer and increasing productivity suggests
 \FloatBarrier
 
 
-\appendix
-\subsection{Data cleaning}
+\begin{appendices}
+\section{Data cleaning}
 The data cleaning process includes the following steps
 \begin{itemize}[noitemsep,nolistsep]
 	\item failed bookings (bookings for which the system failed to assign a taxi; 2.65\% of total observations)
@@ -1414,6 +1414,7 @@ The data cleaning process includes the following steps
 	\item observations in a shift with shift earnings less than 10 SGD or more than 1,000 SGD (0.01\%)%\footnote{1000 SGD is the 99.9725 percentile of the original shift income distribution.}
 	\item duplicate trips/bookings, i.e., trips/bookings with the same start time and driver (0.3\%)
 \end{itemize}
+\end{appendices}
 
 \end{document}
 
