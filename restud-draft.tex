@@ -1,6 +1,5 @@
 % AER-Article.tex for AEA last revised 22 June 2011
-\documentclass[draftmode]{AEA}
-% \documentclass[11pt]{article}
+\documentclass[11pt]{article}
 
 % The mathtime package uses a Times font instead of Computer Modern.
 % Uncomment the line below if you wish to use the mathtime package:
@@ -29,15 +28,17 @@
 \usepackage{lscape}
 \usepackage{graphicx}
 \usepackage{placeins}
+\usepackage{setspace}
+\usepackage{amsmath}
 
 
-% \usepackage{fullpage}
+\usepackage{fullpage}
 
 \renewcommand{\floatpagefraction}{1}
 
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
-\draftSpacing{1.5}
+% \draftSpacing{1.5}
 
 % break up long URL at hyphens
 \def\UrlBreaks{\do\/\do-}
@@ -60,11 +61,20 @@
 	retain-explicit-plus
 }
 
+% borrow from AEA.cls
+% \newcommand\EightPtClose{\@setfontsize\EightPtClose\@viiipt{9}}
+\def\notesize{\EightPtClose}
+\newenvironment{tablenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\footnotesize{\itshape#1: }}{\end{minipage}}
+\newenvironment{figurenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\footnotesize{\itshape#1: }}{\end{minipage}}
+
+
 
 
 \begin{document}
+\onehalfspacing
+
 \title{Making lemonade from lemons: Taxi drivers' response to cancellations and no-shows}
-\shortTitle{Making lemonade from lemons}
+% \shortTitle{Making lemonade from lemons}
 \author{Hai Long Duong, Junhong Chu and Dai Yao\thanks{Duong: NUS Business School, Business Link 1, Singapore, bizdhl@nus.edu.sg. Chu: NUS Business School, 15 Kent Ridge Drive, Singapore, bizcj@nus.edu.sg. Yao: NUS Business School, 15 Kent Ridge Drive, Singapore, dai.yao@nus.edu.sg. We gratefully acknowledge funding from Singapore Ministry of Education Social Science Research Thematic Grant, MOE2016-SSRTG-059, SPIRE. We are very grateful to one of the leading taxi companies in Singapore for providing us with the data for this research, and deeply indebted to its management team for sharing with us their insights on the taxi industry.}}
 %\date{\today}
 %\author{}
@@ -72,16 +82,16 @@
 %\pubYear{}
 %\pubVolume{}
 %\pubIssue{}
-\JEL{J22, J24, D91}
+% \JEL{J22, J24, D91}
 %\Keywords{labor supply, productivity, cancellation, no-show, taxi driver, sharing economy, big data}
 
+\maketitle
 
 \begin{abstract}
 	%We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity in Singapore's taxi industry. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one of the leading taxi operators in Singapore. Our analysis shows that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Interestingly, working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers, with better job search skills than less experienced drivers, tend to work more diligently to increase productivity; solo drivers, with more flexible schedule than sharing drivers, tend to work more hours. Furthermore, these effects are strong in the immediate following hour and afterward fade away. Our results demonstrate the resiliency of platform markets and shed new light on how service providers react to negative shocks due to changes in customers' needs.
 	We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one major taxi operator in Singapore. We find that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers tend to increase productivity, and solo drivers tend to work more hours. 
 \end{abstract}
 
-\maketitle
 
 % \section{Introduction}
 
@@ -101,6 +111,7 @@
 
 %More importantly, our approach sheds new lights on the dynamics and determinants of the reference points in reference-dependent preference model. 
 
+\section{Introduction}
 Despite being a building block for many economic models and playing an imperative role in the design of numerous public policies and industrial practices, labor supply is still a controversial topic in economics. The two competing theories are the neoclassical labor supply model, which predicts temporal substitution of leisure for labor when wage rises, and the income target model, which predicts that workers have a target level of income, which, together with loss aversion, motivates them to work harder when wage is low. Empirical studies have shown mixed results not just in different settings, but sometimes even in the same settings using different methodologies. The prominent example is taxi  industry, where the seminal work by \citet{camerer1997labor} and later papers such as \citet{crawford2011new,martin2017quit,thakral2018daily} find evidences for daily income target among the drivers, while other studies such as \citet{farber2005tomorrow,farber2015you} find stronger support for neoclassical model.
 
 %\citet{camerer1997labor} find negative correlation between hours of work and daily wages among taxi drivers in New York city (NYC), a result that sharply contradicts neoclassical model of labor supply which predicts substitution of leisure for labor income when wage rises. 
@@ -717,7 +728,7 @@ The substitutability between working longer and increasing productivity suggests
 			}
 
 			\begin{tablenotes}
-            Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. 
+                Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. 
 			\end{tablenotes}
 %		\end{threeparttable}
 	\end{table}
