@@ -259,7 +259,7 @@
 \def\headsize{\TenPtType}
 \def\sectionsize{\TwelvePtType}
 \def\subsectionsize{\sectionsize}
-\def\abstractbodysize{\TwelvePtType}
+\def\abstractbodysize{\TenPtType}
 \def\notesize{\TenPtType}
 \else  
 \renewcommand\normalsize{%
@@ -518,11 +518,11 @@
 %      \vskip 24pt%
     \end{center}%
   \gdef\@JELKey{
-    \ifx\@JEL\@blank\else \par JEL: \@JEL\par \fi
-    \ifx\@Keywords\@blank\else Keywords: \@Keywords\par \fi}
+    \ifx\@Keywords\@blank\else \textit{Keywords}: \@Keywords\par \fi
+    \ifx\@JEL\@blank\else \par \textit{JEL Codes}: \@JEL\par \fi}
 % these lines not indented to prevent unwanted space	  
-\noindent{\abstractbodysize\itshape\hspace{\abstractIndent}
-\parbox{\abstractWidth}{\noindent\@abstract\@JELKey\par}}
+\noindent{\abstractbodysize\hspace{\abstractIndent}
+\parbox{\abstractWidth}{\inte\@abstract\@JELKey\par}}
     \vskip 24pt%
   \end{@twocolumnfalse}
   \par
