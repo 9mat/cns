@@ -522,7 +522,7 @@
     \ifx\@JEL\@blank\else \par \textit{JEL Codes}: \@JEL\par \fi}
 % these lines not indented to prevent unwanted space	  
 \noindent{\abstractbodysize\hspace{\abstractIndent}
-\parbox{\abstractWidth}{\inte\@abstract\@JELKey\par}}
+\parbox{\abstractWidth}{\indent\@abstract\@JELKey\par}}
     \vskip 24pt%
   \end{@twocolumnfalse}
   \par
