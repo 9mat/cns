@@ -24,7 +24,7 @@
 \RequirePackage[leqno]{amsmath}
 
 % default settings
-\@twosidefalse  
+\@twosidefalse 
 \@twocolumnfalse
 \newif\if@restonecol
 \newif\if@PP \@PPfalse
@@ -290,156 +290,6 @@
 \def\notesize{\EightPtClose}
 \fi  
 
-\if@PP
-  \renewcommand\normalsize{%
-    \TenPtPlusType
-    \abovedisplayskip 11\p@ \@plus1\p@ \@minus4\p@
-    \abovedisplayshortskip \z@ \@plus2\p@
-    \belowdisplayshortskip 5\p@ \@plus2\p@ \@minus2\p@
-    \belowdisplayskip \abovedisplayskip
-    \let\@listi\@listI}
-  \normalsize
-  \renewcommand\footnotesize{%
-    \EightPtType%
-    \abovedisplayskip 7\p@ \@plus2\p@ \@minus3\p@
-    \abovedisplayshortskip \z@ \@plus1\p@
-    \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
-    \def\@listi{\leftmargin\leftmargini
-      \topsep 3\p@ \@plus1\p@ \@minus1\p@
-      \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
-      \itemsep \parsep}%
-    \belowdisplayskip \abovedisplayskip
-  }
-  \renewcommand\small{\EightPtType}
-  \renewcommand\scriptsize{\NinePtType}
-  \renewcommand\tiny{\FivePtType}
-  \renewcommand\large{\TenPtType}
-  \renewcommand\Large{\ElevenPtType}
-  \renewcommand\LARGE{\TwelvePtType}
-  \renewcommand\huge{\FourteenPtType}
-  \renewcommand\Huge{\SixteenPtType}
-  \def\titlesize{\FifteenPtType} 
-  \def\authorsize{\TenPtType} 
-  \def\headsize{\EightPtType}
-  \def\sectionsize{\TenPtType}
-  \def\abstractbodysize{\TenPtClose}
-  \def\notesize{\EightPtClose}
-\fi
-
-\if@JEL
-  \renewcommand\normalsize{%
-    \TenPtJEL
-    \abovedisplayskip 12\p@ \@plus1\p@ \@minus4\p@
-    \abovedisplayshortskip \z@ \@plus2\p@
-    \belowdisplayshortskip 5\p@ \@plus2\p@ \@minus2\p@
-    \belowdisplayskip \abovedisplayskip
-    \let\@listi\@listI}
-  \normalsize
-  \renewcommand\footnotesize{%
-    \EightPtClose%
-    \abovedisplayskip 7\p@ \@plus2\p@ \@minus3\p@
-    \abovedisplayshortskip \z@ \@plus1\p@
-    \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
-    \def\@listi{\leftmargin\leftmargini
-      \topsep 3\p@ \@plus1\p@ \@minus1\p@
-      \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
-      \itemsep \parsep}%
-    \belowdisplayskip \abovedisplayskip
-  }
-  \renewcommand\small{\EightPtType}
-  \renewcommand\scriptsize{\NinePtType}
-  \renewcommand\tiny{\FivePtType}
-  \renewcommand\large{\TenPtType}
-  \renewcommand\Large{\ElevenPtType}
-  \renewcommand\LARGE{\TwelvePtType}
-  \renewcommand\huge{\FourteenPtType}
-  \renewcommand\Huge{\SixteenPtType}
-  \def\titlesize{\TwentyFourPtTight} 
-  \def\authorsize{\ElevenPtLoose} 
-  \def\headsize{\EightPtType}
-  \def\captionsize{\NinePtClose}
-  \def\sectionsize{\TenPtJEL}
-  \def\subsectionsize{\TenPtJEL}
-  \def\abstractbodysize{\TenPtJEL}
-  \def\notesize{\EightPtClose} % no table notes in this style, officially
-\fi
-
-\if@JEP
-  \renewcommand\normalsize{%
-    \TenPtLoose
-    \abovedisplayskip 13\p@ \@plus1\p@ \@minus4\p@
-    \abovedisplayshortskip \z@ \@plus2\p@
-    \belowdisplayshortskip 5\p@ \@plus2\p@ \@minus2\p@
-    \belowdisplayskip \abovedisplayskip
-    \let\@listi\@listI}
-  \normalsize
-  \renewcommand\footnotesize{%
-    \EightPtType%
-    \abovedisplayskip 7\p@ \@plus2\p@ \@minus3\p@
-    \abovedisplayshortskip \z@ \@plus1\p@
-    \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
-    \def\@listi{\leftmargin\leftmargini
-      \topsep 3\p@ \@plus1\p@ \@minus1\p@
-      \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
-      \itemsep \parsep}%
-    \belowdisplayskip \abovedisplayskip
-  }
-  \renewcommand\small{\EightPtType}
-  \renewcommand\scriptsize{\NinePtType}
-  \renewcommand\tiny{\FivePtType}
-  \renewcommand\large{\TenPtType}
-  \renewcommand\Large{\ElevenPtType}
-  \renewcommand\LARGE{\TwelvePtType}
-  \renewcommand\huge{\FourteenPtType}
-  \renewcommand\Huge{\SixteenPtType}
-  \def\titlesize{\TwentyPtType} 
-  \def\authorsize{\SixteenPtClose} 
-  \def\headsize{\EightPtType}
-  \def\captionsize{\TenPtLoose}
-  \def\sectionsize{\TwelvePtClose}
-  \def\subsectionsize{\TenPtLoose}
-  \def\abstractbodysize{\TenPtClose} % no abstract for this journal
-  \def\notesize{\EightPtType}
-\fi
-
-\if@AEJ
-  \renewcommand\normalsize{%
-    \ElevenPtType
-    \abovedisplayskip 13\p@ \@plus1\p@ \@minus4\p@
-    \abovedisplayshortskip \z@ \@plus2\p@
-    \belowdisplayshortskip 5\p@ \@plus2\p@ \@minus2\p@
-    \belowdisplayskip \abovedisplayskip
-    \let\@listi\@listI}
-  \normalsize
-  \renewcommand\footnotesize{%
-    \EightPtClose%
-    \abovedisplayskip 7\p@ \@plus2\p@ \@minus3\p@
-    \abovedisplayshortskip \z@ \@plus1\p@
-    \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
-    \def\@listi{\leftmargin\leftmargini
-      \topsep 3\p@ \@plus1\p@ \@minus1\p@
-      \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
-      \itemsep \parsep}%
-    \belowdisplayskip \abovedisplayskip
-  }
-  \renewcommand\small{\EightPtType}
-  \renewcommand\scriptsize{\NinePtType}
-  \renewcommand\tiny{\FivePtType}
-  \renewcommand\large{\TenPtType}
-  \renewcommand\Large{\ElevenPtType}
-  \renewcommand\LARGE{\TwelvePtType}
-  \renewcommand\huge{\FourteenPtType}
-  \renewcommand\Huge{\SixteenPtType}
-  \def\titlesize{\FourteenPtLoose} 
-  \def\authorsize{\ElevenPtType} 
-  \def\headsize{\EightPtType}
-  \def\captionsize{\EightPtClose}
-  \def\sectionsize{\TenPtLoose}
-  \def\subsectionsize{\ElevenPtType}
-  \def\abstractbodysize{\ElevenPtClose}
-  \def\notesize{\EightPtClose}
-\fi
-
 \normalsize
 
 % obsolete markup
@@ -487,55 +337,6 @@
 % skips
 \def\abovetitleskip{-26pt}
 
-
-\if@PP
-  % margins
-  \setlength\textwidth{151mm}
-  \setlength\textheight{229mm}
-  \setlength\topmargin{-14mm}
-  \setlength\oddsidemargin{7mm}
-  \setlength\evensidemargin{\oddsidemargin}
-  \setlength\headheight{24pt}
-  \setlength\headsep   {14pt}
-  \setlength\topskip   {11.74pt}
-  \setlength\maxdepth{.5\topskip}
-  \setlength\footskip{15pt}
-  % two column settings
-  \setlength\columnsep{6.5mm}
-  \setlength\columnseprule{\z@}
-\fi
-
-\if@JEL
-  % margins
-  \setlength\textwidth{141.8mm}
-  \setlength\textheight{200mm}
-  \setlength\topmargin{-10pt}
-  \setlength\oddsidemargin{12mm}
-  \setlength\evensidemargin{\oddsidemargin}
-  \setlength\headheight{24pt}
-  \setlength\headsep   {14pt}
-  \setlength\topskip   {11.74pt}
-  \setlength\maxdepth{.5\topskip}
-  \setlength\footskip{15pt}
-  % two column settings
-  \setlength\columnsep{18\p@}
-  \setlength\columnseprule{\z@}
-\fi
-
-\if@JEP
-  % margins
-  \setlength\textwidth{127mm}
-  \setlength\textheight{202mm}
-  \setlength\topmargin{-10pt}
-  \setlength\oddsidemargin{18.6mm}
-  \setlength\evensidemargin{\oddsidemargin}
-  \setlength\headheight{24pt}
-  \setlength\headsep   {14pt}
-  \setlength\topskip   {11.74pt}
-  \setlength\maxdepth{.5\topskip}
-  \setlength\footskip{15pt}
-  \setlength\parindent{2em}
-\fi
 
 % skips
 \def\abovetitleskip{-26pt}
@@ -746,50 +547,6 @@
   }
 \fi
 
-\if@JEL
-  \setlength{\abstractIndent}{36pt}
-  \setlength{\abstractWidth}{\textwidth}
-  \addtolength{\abstractWidth}{-2\abstractIndent}
-  \renewcommand\@maketitle{%
-    \pagestyle{headings}
-    \thispagestyle{titlepage}
-    \begin{@twocolumnfalse}
-      \begin{center}%
-        \null\vskip\abovetitleskip
-        {\titlesize\sffamily\textbf{\@title} \par}%
-        \vskip 16pt%
-        {\authorsize\textsc{\@author}\par}
-        \draftDate
-        \vskip 24pt%
-      \end{center}%
-  \gdef\@JELKey{
-    \ifx\@JEL\@blank\else \par JEL: \@JEL\par \fi
-    \ifx\@Keywords\@blank\else Keywords: \@Keywords\par \fi}	  
-% these two lines not indented to prevent unwanted space	  
-\noindent{\abstractbodysize\itshape\hspace{\abstractIndent}
-\parbox{\abstractWidth}{\noindent\@abstract\@JELKey\par}}
-      \vskip 24pt%
-    \end{@twocolumnfalse}
-    \par
-  }
-\fi
-
-\if@JEP
-  \renewcommand\@maketitle{%
-    \pagestyle{headings}
-    \thispagestyle{titlepage}
-    \begin{@twocolumnfalse}
-      \null\vskip\abovetitleskip
-      {\noindent\titlesize\sffamily\textbf{\@title} \par}%
-      \vskip 16pt%
-      {\noindent\authorsize \@author\par}
-      \draftDate
-      \vskip 24pt%
-    \end{@twocolumnfalse}
-    \par
-  }
-\fi
-
 
 
 % ==============================================================================
@@ -817,50 +574,6 @@
 \renewcommand\p@subparagraph{\theparagraph.}
 \def\@seccntformat#1{\csname the#1\endcsname.\quad}
 
-\if@PP
-  \setcounter{secnumdepth}{2}
-  \renewcommand\thepart{\@Roman\c@part}
-  \renewcommand\thesection{\@Roman\c@section}
-  \renewcommand\thesubsection{\@Alph\c@subsection}
-  \renewcommand\thesubsubsection{\@arabic\c@subsubsection}
-  \renewcommand\theparagraph{\thesubsubsection}
-  \renewcommand\thesubparagraph{\thesubsubsection}
-  \def\@seccntformat#1{\csname the#1\endcsname.\quad}
-\fi
-
-\if@JEL
-  \setcounter{secnumdepth}{2}
-  \renewcommand\thepart{\@Roman\c@part}
-  \renewcommand\thesection{\@arabic\c@section}
-  \renewcommand\thesubsection{\@arabic\c@subsection}
-  \renewcommand\thesubsubsection{\@arabic\c@subsubsection}
-  \renewcommand\theparagraph{\thesubsubsection}
-  \renewcommand\thesubparagraph{\thesubsubsection}
-  \def\@seccntformat#1{\csname the#1\endcsname.\quad}
-\fi
-
-\if@JEP
-  \setcounter{secnumdepth}{-2}
-  \renewcommand\thepart{\@Roman\c@part}
-  \renewcommand\thesection{\@Roman\c@section}
-  \renewcommand\thesubsection{\@Alph\c@subsection}
-  \renewcommand\thesubsubsection{\@arabic\c@subsubsection}
-  \renewcommand\theparagraph{\thesubsubsection}
-  \renewcommand\thesubparagraph{\thesubsubsection}
-  \def\@seccntformat#1{\csname the#1\endcsname.\quad}
-\fi
-
-\if@AEJ
-  \setcounter{secnumdepth}{2}
-  \renewcommand\thepart{\@Roman\c@part}
-  \renewcommand\thesection{\@Roman\c@section}
-  \renewcommand\thesubsection{\@Alph\c@subsection}
-  \renewcommand\thesubsubsection{\@arabic\c@subsubsection}
-  \renewcommand\theparagraph{\thesubsubsection}
-  \renewcommand\thesubparagraph{\thesubsubsection}
-  \def\@seccntformat#1{\csname the#1\endcsname.\quad}
-\fi
-
 
 % AER section skips
 \def\abovesectionskip{5pt \@plus 2pt \@minus 2pt}
@@ -871,35 +584,6 @@
 \def\belowsubsubsectionskip{\belowsectionskip}
 \def\subsubsectionindent{\z@}
 \def\headingsuffix{}
-
-\if@PP
-  \def\abovesectionskip{11pt \@plus 2pt \@minus 2pt}
-  \def\belowsectionskip{11pt \@plus 2pt \@minus 2pt}
-  \def\subsubsectionindent{\z@}
-\fi
-
-\if@JEL
-  \def\abovesectionskip{6pt \@plus 2pt \@minus 2pt}
-  \def\belowsectionskip{6pt \@plus 2pt \@minus 2pt}
-  \def\subsubsectionindent{\z@}
-\fi
-
-\if@JEP
-  \def\abovesectionskip{26pt \@plus 4pt \@minus 4pt}
-  \def\belowsectionskip{13pt \@plus 2pt \@minus 2pt}
-  \def\abovesubsectionskip{13pt \@plus 2pt \@minus 2pt}
-  \def\belowsubsectionskip{0pt \@plus 1pt \@minus 1pt}
-  \def\abovesubsubsectionskip{13pt \@plus 2pt \@minus 2pt}
-  \def\belowsubsubsectionskip{-0.01pt \@plus -0.1pt \@minus -0.1pt}
-  \def\subsubsectionindent{\parindent}
-\fi
-
-\if@AEJ
-  \def\abovesectionskip{13pt \@plus 2pt \@minus 2pt}
-  \def\belowsectionskip{13pt \@plus 2pt \@minus 2pt}
-  \def\belowsubsubsectionskip{-0.01pt \@plus -0.1pt \@minus -0.1pt}
-  \def\subsubsectionindent{\z@}
-\fi
 
 
 \newcommand\part{%
@@ -1011,34 +695,6 @@
 \def\appendixsectionstyle{\scshape\sectionsize\center}
 \def\appendixsubsectionstyle{\itshape\sectionsize\center}
 \def\captionstyle{\scshape}
-
-\if@JEL
-\renewcommand\section{%
-\@startsection{section}{1}{\z@}%
-{\abovesectionskip}%
-{\belowsectionskip}%
-{\itshape\sectionsize\center}}
-\renewcommand\subsection{%
-\@startsection{subsection}{2}{\z@}%
-{\abovesectionskip}%
-{\belowsectionskip}%
-{\itshape}}
-\def\captionstyle{\scshape}
-\fi
-
-\if@JEP
-\renewcommand\section{%
-\@startsection{section}{1}{\z@}%
-{\abovesectionskip}%
-{\belowsectionskip}%
-{\bfseries\sectionsize}}
-\renewcommand\subsection{%
-\@startsection{subsection}{2}{\z@}%
-{\abovesectionskip}%
-{\belowsectionskip}%
-{\bfseries\subsectionsize}}
-\def\captionstyle{\bfseries\subsectionsize}
-\fi
 
 % ==============================================================================
 %                                                          Package Compatibility
@@ -1213,11 +869,7 @@
 \newenvironment{figure*}[1][h]
                {\@dblfloat{figure}[#1]\begin{center}}
                {\end{center}\end@dblfloat}
-\if@PP % mlr 2010.04.27 P&P authors making figures/tables too small so force to full column
-  \renewenvironment{figure}[1][tp]
-    {\@dblfloat{figure}[#1]\begin{center}}
-    {\end{center}\end@dblfloat}
-\fi
+
 \newcounter{table}
 \renewcommand\thetable{\@arabic\c@table}
 \def\fps@table{tbp}
@@ -1230,11 +882,6 @@
 \newenvironment{table*}[1][h]
                {\@dblfloat{table}[#1]\begin{center}}
                {\end{center}\end@dblfloat}
-\if@PP % mlr 2010.04.27 P&P authors making figures/tables too small so force to full column
-  \renewenvironment{table}[1][tp]
-    {\@dblfloat{table}[#1]\begin{center}}
-    {\end{center}\end@dblfloat}
-\fi
 \newlength\abovecaptionskip
 \newlength\belowcaptionskip
 \setlength\abovecaptionskip{7\p@}

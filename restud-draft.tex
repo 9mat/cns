@@ -1,5 +1,5 @@
 % AER-Article.tex for AEA last revised 22 June 2011
-\documentclass[11pt]{article}
+\documentclass[reviewmode]{restud}
 
 % The mathtime package uses a Times font instead of Computer Modern.
 % Uncomment the line below if you wish to use the mathtime package:
@@ -63,15 +63,15 @@
 
 % borrow from AEA.cls
 % \newcommand\EightPtClose{\@setfontsize\EightPtClose\@viiipt{9}}
-\def\notesize{\EightPtClose}
-\newenvironment{tablenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\footnotesize{\itshape#1: }}{\end{minipage}}
-\newenvironment{figurenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\footnotesize{\itshape#1: }}{\end{minipage}}
+% \def\notesize{\EightPtClose}
+% \newenvironment{tablenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\footnotesize{\itshape#1: }}{\end{minipage}}
+% \newenvironment{figurenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\footnotesize{\itshape#1: }}{\end{minipage}}
 
 
 
 
 \begin{document}
-\onehalfspacing
+% \onehalfspacing
 
 \title{Making lemonade from lemons: Taxi drivers' response to cancellations and no-shows}
 % \shortTitle{Making lemonade from lemons}
@@ -82,15 +82,16 @@
 %\pubYear{}
 %\pubVolume{}
 %\pubIssue{}
-% \JEL{J22, J24, D91}
+\JEL{J22, J24, D91}
 %\Keywords{labor supply, productivity, cancellation, no-show, taxi driver, sharing economy, big data}
 
-\maketitle
 
 \begin{abstract}
 	%We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity in Singapore's taxi industry. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one of the leading taxi operators in Singapore. Our analysis shows that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Interestingly, working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers, with better job search skills than less experienced drivers, tend to work more diligently to increase productivity; solo drivers, with more flexible schedule than sharing drivers, tend to work more hours. Furthermore, these effects are strong in the immediate following hour and afterward fade away. Our results demonstrate the resiliency of platform markets and shed new light on how service providers react to negative shocks due to changes in customers' needs.
 	We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one major taxi operator in Singapore. We find that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers tend to increase productivity, and solo drivers tend to work more hours. 
 \end{abstract}
+
+\maketitle
 
 
 % \section{Introduction}
