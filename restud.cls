@@ -535,7 +535,7 @@
 \setcounter{secnumdepth}{2}
 \renewcommand\thepart{\@Roman\c@part}
 \renewcommand\thesection{\@arabic\c@section}
-\renewcommand\thesubsection{\@Alph\c@subsection}
+\renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
 \renewcommand\thesubsubsection{\@arabic\c@subsubsection}
 \renewcommand\theparagraph{\thesubsubsection}
 \renewcommand\thesubparagraph{\thesubsubsection}
@@ -637,7 +637,7 @@
 \@startsection{subsection}{2}{\z@}%
 {\abovesubsectionskip}%
 {\belowsubsectionskip}%
-{\itshape\sectionsize\center}}
+{\itshape\sectionsize}}
 
 \newcommand\subsubsection{%
 \def\headingsuffix{. ---\ }
