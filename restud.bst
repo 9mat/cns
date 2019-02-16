@@ -99,7 +99,7 @@ FUNCTION {emphasize}
 FUNCTION {embolden}
 { duplicate$ empty$
     { pop$ "" }
-    { "\MakeUppercase{ " swap$ * "}" * }
+    { "\uppercase{ " swap$ * "}" * }
   if$
 }
 
@@ -243,15 +243,14 @@ FUNCTION {output} % writ
 FUNCTION {output.year} % writ
 { list.year empty$
   { skip$ }
-  { list.year "(" swap$ * "), " * write$ }
+  { list.year "(" swap$ * "), " * write$}
   if$
 }
-
 
 FUNCTION {output.title.quoted}
 { title empty$
     { skip$ }
-	{ title doublequote ", " * write$ }
+	{ title  doublequote " " * write$ }
 	if$
 }
 
@@ -353,7 +352,6 @@ FUNCTION {format.title.bold}
 	if$
 }
 
-
 FUNCTION {format.month}
 { month empty$
     { "" }
@@ -369,8 +367,8 @@ FUNCTION {format.vol.num.pages} % writ
 	  if$
     }
     { number empty$
-      { "{\bf " * volume * "}" * }
-      { "{\bf " * volume * "}" * }
+      { volume }
+      { volume "(" * number * ")" *}
       if$
     }
     if$
@@ -378,7 +376,7 @@ FUNCTION {format.vol.num.pages} % writ
     { skip$ }
     { duplicate$ "" =
 	  { pages n.dashify * }
-	  { ",~" * pages n.dashify * }
+	  { ":~" * pages n.dashify * }
 	  if$
 	}
     if$
