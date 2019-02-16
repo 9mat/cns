@@ -99,7 +99,7 @@ FUNCTION {emphasize}
 FUNCTION {embolden}
 { duplicate$ empty$
     { pop$ "" }
-    { "{\MakeUppercase " swap$ * "}" * }
+    { "\MakeUppercase{ " swap$ * "}" * }
   if$
 }
 
@@ -243,9 +243,10 @@ FUNCTION {output} % writ
 FUNCTION {output.year} % writ
 { list.year empty$
   { skip$ }
-  { list.year ". " * write$}
+  { list.year ". " * write$ }
   if$
 }
+
 
 FUNCTION {output.title.quoted}
 { title empty$
@@ -351,6 +352,7 @@ FUNCTION {format.title.bold}
     { title add.period$ embolden }
 	if$
 }
+
 
 FUNCTION {format.month}
 { month empty$
