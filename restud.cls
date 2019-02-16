@@ -631,7 +631,7 @@
 \@startsection{section}{1}{\z@}%
 {\abovesectionskip}%
 {\belowsectionskip}%
-{\uppercase\sectionsize\center}}
+{\sectionsize\center\MakeUppercase}}
 
 \newcommand\subsection{%
 \@startsection{subsection}{2}{\z@}%
