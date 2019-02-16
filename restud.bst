@@ -243,7 +243,7 @@ FUNCTION {output} % writ
 FUNCTION {output.year} % writ
 { list.year empty$
   { skip$ }
-  { list.year ". " * write$ }
+  { list.year "(" swap$ * "), " * write$ }
   if$
 }
 
@@ -251,7 +251,7 @@ FUNCTION {output.year} % writ
 FUNCTION {output.title.quoted}
 { title empty$
     { skip$ }
-	{ title add.period$ doublequote " " * write$ }
+	{ title doublequote ", " * write$ }
 	if$
 }
 
