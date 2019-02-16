@@ -826,7 +826,7 @@
 \skip\@mpfootins = \skip\footins
 \setlength\fboxsep{3\p@}
 \setlength\fboxrule{.4\p@}
-\renewcommand \theequation {\@arabic\c@equation}
+\renewcommand \theequation {\thes\@arabic\c@equation}
 \newcounter{figure}
 \renewcommand \thefigure {\@arabic\c@figure}
 \def\fps@figure{tbp}
@@ -888,7 +888,7 @@
 \newcommand\@makefntext[1]{%
     \parindent 1em%
     \noindent
-    \hb@xt@2.0em{\hss\@makefnmark}#1\hskip 1em}
+    \hb@xt@2.0em{\hss\thefootnote. }#1\hskip 1em}
 
 
 
