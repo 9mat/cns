@@ -375,8 +375,8 @@ FUNCTION {format.vol.num.pages} % writ
 	  if$
     }
     { number empty$
-      { volume }
-      { volume embolden }
+      { "{\textbf{" volume "}}" * * field.or.null }
+      { "{\textbf{" volume "}}" * * field.or.null }
       if$
     }
     if$
@@ -384,7 +384,7 @@ FUNCTION {format.vol.num.pages} % writ
     { skip$ }
     { duplicate$ "" =
 	  { pages n.dashify * }
-	  { ":~" * pages n.dashify * }
+	  { ",~" * pages n.dashify * }
 	  if$
 	}
     if$
