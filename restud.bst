@@ -106,7 +106,7 @@ FUNCTION {embolden}
 FUNCTION {bf}
 { duplicate$ empty$
     { pop$ "" }
-    { "\uppercase{ " swap$ * "}" * }
+    { "\bf{ " swap$ * "}" * }
   if$
 }
 
