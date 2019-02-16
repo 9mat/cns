@@ -532,11 +532,11 @@
 \newcounter{subparagraph}[paragraph]
 
 % AER section numbering
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 \renewcommand\thepart{\@Roman\c@part}
 \renewcommand\thesection{\@arabic\c@section}
 \renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
-\renewcommand\thesubsubsection{\@arabic\c@subsubsection}
+\renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
 \renewcommand\theparagraph{\thesubsubsection}
 \renewcommand\thesubparagraph{\thesubsubsection}
 \renewcommand\p@subsection{\thesection.}
@@ -640,11 +640,10 @@
 {\itshape\sectionsize}}
 
 \newcommand\subsubsection{%
-\def\headingsuffix{. ---\ }
-\@startsection{subsubsection}{3}{\subsubsectionindent}%
+\@startsection{subsubsection}{3}{\z@}%
 {\abovesubsubsectionskip}%
 {\belowsubsubsectionskip}%
-{\scshape\sectionsize\center}}
+{\bfseries}}
 
 
 % paragraph and subparagraph are not used - they are included for compatibility with hyperref.
@@ -948,7 +947,7 @@
 \newcommand\appendixname{APPENDIX}
 
 \def\appendix{\if@twocolumn\@restonecoltrue\onecolumn\fi
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 \setcounter{section}{0}
 \setcounter{figure}{0}
 \numberwithin{figure}{section}
