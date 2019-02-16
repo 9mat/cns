@@ -21,7 +21,7 @@
 \ProvidesClass{restud}[\lastrev \space American Economic Association Article Classes]
 \RequirePackage{multicol}
 \RequirePackage{setspace}
-\RequirePackage[leqno]{amsmath}
+\RequirePackage[reqno]{amsmath}
 
 % default settings
 \@twosidefalse 
