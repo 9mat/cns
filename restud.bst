@@ -103,6 +103,14 @@ FUNCTION {embolden}
   if$
 }
 
+FUNCTION {bf}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "\uppercase{ " swap$ * "}" * }
+  if$
+}
+
+
 FUNCTION {quote}
 { duplicate$ empty$
     { pop$ "" }
@@ -250,7 +258,7 @@ FUNCTION {output.year} % writ
 FUNCTION {output.title.quoted}
 { title empty$
     { skip$ }
-	{ title  doublequote " " * write$ }
+	{ title  doublequote ", " * write$ }
 	if$
 }
 
@@ -368,7 +376,7 @@ FUNCTION {format.vol.num.pages} % writ
     }
     { number empty$
       { volume }
-      { volume "(" * number * ")" *}
+      { volume embolden }
       if$
     }
     if$
