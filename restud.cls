@@ -368,16 +368,6 @@
   \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName}}}}
 }
 
-\if@JEP
-\def\ps@headings{
-  \leftskip=0pt\rightskip=0pt
-  \let\@oddfoot\@empty
-  \let\@evenfoot\@empty
-  \def\@oddhead{{\small\textit{\MakeUppercase{\hfil\@shortTitle\hfil\thepage}}}}
-  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil}}}}
-}
-\fi
-
 \pagestyle{headings}
 \thispagestyle{titlepage}
 \pagenumbering{arabic}
