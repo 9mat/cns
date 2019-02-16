@@ -640,9 +640,9 @@
 {\itshape\sectionsize}}
 
 \newcommand\subsubsection{%
-\@startsection{subsubsection}{3}{\z@}%
-{\abovesubsubsectionskip}%
-{\belowsubsubsectionskip}%
+\@startsection{subsubsection}{3}{3.25ex}%
+{-3.25ex\@plus -1ex \@minus -.2ex}%
+{-1.5ex \@plus -.2ex}%
 {\bfseries}}
 
 
