@@ -1,1269 +1,1039 @@
-% BibTeX standard bibliography style `aea' (one of the harvard family)
-	% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
-	% Copyright (C) 2008, all rights reserved.
-    % Melissa Rice (melissa@fmtek.net), Full Moon Technical Solutions, LLC (dba FMTek)
-    % last revised: 20 May 2009 
+%% AEA.cls: American Economic Association Article Document Class
+%% ===========================================================================
+\def\lastrev{2011/07/24}
+%% Author: 
+%%    Dr. Melissa Rice, Ph.D.
+%%    Full Moon Technical Solutions, LLC
+%%    14202 60th Ave NW
+%%    Stanwood, WA 98292-4808,  USA
+%%    melissa@fmtek.net
+%%    voice: +1 (360) 654-0709 Pacific Time Zone (GMT-7 or -8)
+%%    cell:  +1 (425) 923-7713
+%%
+%% Copyright 2007-2011 Melissa Rice, Full Moon Technical Solutions, LLC (dba FMTek, LLC)
+%% 
 
-ENTRY
-  { address
-    author
-    booktitle
-    chapter
-    edition
-    editor
-    howpublished
-    institution
-    journal
-    key
-    month
-    note
-    number
-    organization
-    pages
-	presented
-    publisher
-    school
-    series
-    title
-    type
-    URL
-    volume
-    year
+% ==============================================================================
+%                                                           Class ID and Options
+% ==============================================================================
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesClass{restud}[\lastrev \space American Economic Association Article Classes]
+\RequirePackage{multicol}
+\RequirePackage{setspace}
+\RequirePackage[leqno]{amsmath}
+
+% default settings
+\@twosidefalse 
+\@twocolumnfalse
+\newif\if@restonecol
+\newif\if@PP \@PPfalse
+\newif\if@JEL \@JELfalse
+\newif\if@JEP \@JEPfalse
+\newif\if@AEJ \@AEJfalse
+\newif\if@draftmode \@draftmodefalse
+\newif\if@reviewmode \@reviewmodefalse
+\def\droparg#1{} 
+
+
+% Journal Options
+\def\@issueName{No Journal Selected}
+
+\DeclareOption{AER}{
+  % AER is the default if no journal is specified
+  \def\@issueName{THE AMERICAN ECONOMIC REVIEW}
+  \@twosidetrue  
+  \@twocolumnfalse
+}
+
+\DeclareOption{PP}{
+  \def\@issueName{PAPERS AND PROCEEDINGS}
+  \@twosidetrue  
+  \@twocolumntrue
+  \@PPtrue
+}
+
+\DeclareOption{JEL}{
+  \def\@issueName{JOURNAL OF ECONOMIC LITERATURE}
+  \@twosidetrue  
+  \@twocolumntrue
+  \@JELtrue
+}
+
+\DeclareOption{JEP}{
+  \def\@issueName{JOURNAL OF ECONOMIC PERSPECTIVES}
+  \@twosidetrue  
+  \@twocolumnfalse
+  \@JEPtrue
+}
+
+\DeclareOption{AEJ}{
+  \def\@issueName{AMERICAN ECONOMIC JOURNAL}
+  \@twosidetrue  
+  \@twocolumnfalse
+  \@AEJtrue
+}
+
+% double spacing and other options
+\def\@spacingStretch{1}
+\def\spacingStretch#1{\gdef\@spacingStretch{#1}}
+\def\@draftSpacing{1}
+\def\draftSpacing#1{\gdef\@draftSpacing{#1}}
+\def\setDocumentSpacing{\let\@currsize\normalsize
+  \if@draftmode\spacingStretch{\@draftSpacing}\fi
+  \setstretch{\@spacingStretch}
+}
+\AtBeginDocument{\setDocumentSpacing
+  \if@draftmode\overfullrule=3pt\else\overfullrule=0pt\fi
+% As of July 2011 the authors are no longer concealed in the review copy
+  \if@reviewmode
+    \def\author#1{\gdef\@author{Author Undisclosed}}
+  \fi
+  \@ifundefined{harvardand}{}{\renewcommand{\harvardand}{and}}
+} 
+
+% Draft options 
+\DeclareOption{draftmode}{
+  \def\mode{draft}
+  \@draftmodetrue
+}
+\DeclareOption{reviewmode}{
+  \def\mode{review}
+  \@twocolumnfalse
+  \spacingStretch{1.5}
+  \@reviewmodetrue
+}
+\DeclareOption{finalmode}{
+  \def\mode{final}
+  \spacingStretch{1}
+}
+
+% Default Options
+\ExecuteOptions{AER,finalmode}
+\ProcessOptions
+
+\typeout{Journal Selected: \@issueName}
+\typeout{Mode Selected: \mode}
+
+\long\def\acknowledgement#1\end{\endgroup\xacknowledgement{#1}\droparg}
+\long\def\xacknowledgement#1{\if@reviewmode\else\if@JEP\par\noindent\rule{4pt}{4pt}\ 
+  #1\par\vskip\baselineskip\else\par \textbf{Please put acknowledgements in the author footnote in this style.}\par\fi\fi}
+ 
+% ==============================================================================
+%                                                                          Fonts
+% ==============================================================================
+\DeclareFontFamily{T1}{cmr}{}
+\DeclareFontShape{T1}{cmr}{m}{n}{%
+      <5><6><7><8><9>gen*dcr%
+      <10><10.7><11>dcr10%
+      <12><14><15><16>dcr12%
+      <20>dcr17}{}
+\DeclareFontShape{T1}{cmr}{m}{sl}{%
+      <5><6><7><8>dcsl8%
+      <9>dcsl9%
+      <10><10.7><11>dcsl10%
+      <12><144><15><16>dcsl12%
+      <20>dcsl17%
+      }{}
+\DeclareFontShape{T1}{cmr}{m}{it}{%
+      <5><6>dcti7%
+      <7><8><9>gen*dcti%
+      <10><10.7><11>dcti10%
+      <12><14><15><16>dcti12%
+      <20>dcti17%
+      }{}
+\DeclareFontShape{T1}{cmr}{m}{sc}{%
+      <5><6><7><8><9><10><10.7><11>dccsc10%
+      <12><14><15><16>dccsc12%
+      <20>dccsc17%
+      }{}
+\DeclareFontShape{T1}{cmr}{m}{ui}{%
+      <5><6>dcu7%
+      <7><8><9>gen*dcu%
+      <10><10.7><11>dcu10%
+      <12><14><15><16>dcu12%
+      <20>dcu17%
+      }{}
+\DeclareFontShape{T1}{cmr}{b}{n}{%
+      <5><6><7><8><9>gen*dcb%
+      <10><10.7><11>dcb10%
+      <12><14><15><16>dcb12%
+      <20>dcb17%
+      }{}
+\DeclareFontFamily{T1}{cmss}{}
+\DeclareFontShape{T1}{cmss}{m}{n}{%
+      <5><6><7><8>dcss8%
+      <9>dcss9%
+      <10><10.7><11>dcss10%
+      <12><14><15><16>dcss12%
+      <20>dcss17%
+      }{}
+\DeclareFontShape{T1}{cmss}{m}{it}%
+      {<->sub*cmss/m/sl}{}
+\DeclareFontShape{T1}{cmss}{m}{sl}{%
+      <5><6><7><8>dcssi8%
+      <9>dcssi9%
+      <10><10.7><11>dcssi10%
+      <12><14><15><16>dcssi12%
+      <20>dcssi17%
+      }{}
+\DeclareFontShape{T1}{cmss}{bx}{n}{%
+      <5><6><7><8><9><10><10.7><11><12><14><15><16><20>dcssbx10%
+      }{}
+
+
+\newcommand\FivePtType{\@setfontsize\FivePtType\@vpt\@vipt}
+\newcommand\SixPtType{\@setfontsize\SixPtType\@vipt\@viipt}
+\newcommand\EightPtClose{\@setfontsize\EightPtClose\@viiipt{9}}
+\newcommand\EightPtType{\@setfontsize\EightPtType\@viiipt{10}}
+\newcommand\NinePtClose{\@setfontsize\NinePtClose\@ixpt{10}}
+\newcommand\NinePtType{\@setfontsize\NinePtType\@ixpt{11}}
+\newcommand\TenPtClose{\@setfontsize\TenPtClose\@xpt\@xipt}
+\newcommand\TenPtType{\@setfontsize\TenPtType\@xpt\@xiipt}
+\newcommand\TenPtJEL{\@setfontsize\TenPtJEL{10.5}{12}}
+\newcommand\TenPtPlusType{\@setfontsize\TenPtPlusType{10.7}{12.5}}
+\newcommand\TenPtLoose{\@setfontsize\TenPtLooseType\@xpt{13}}
+\newcommand\ElevenPtClose{\@setfontsize\ElevenPtClose\@xipt{12}}
+%\newcommand\ElevenPtType{\@setfontsize\ElevenPtType\@xipt{13}}
+\newcommand\ElevenPtType{\@setfontsize\ElevenPtType\@xipt{12.5}}
+%\newcommand\ElevenPtLoose{\@setfontsize\ElevenPtLoose\@xipt{14}}
+\newcommand\ElevenPtLoose{\@setfontsize\ElevenPtLoose\@xipt{13}}
+%\newcommand\TwelvePtClose{\@setfontsize\TwelvePtClose\@xiipt{13}}
+\newcommand\TwelvePtClose{\@setfontsize\TwelvePtClose\@xiipt{12.5}}
+%\newcommand\TwelvePtType{\@setfontsize\TwelvePtType\@xiipt{14.4}}
+\newcommand\TwelvePtType{\@setfontsize\TwelvePtType\@xiipt{13}}
+\newcommand\FourteenPtType{\@setfontsize\FourteenPtType{14}{16.8}}
+\newcommand\FourteenPtLoose{\@setfontsize\FourteenPtLoose{14}{18}}
+\newcommand\FifteenPtType{\@setfontsize\FifteenPtType{15}{18}}
+\newcommand\SixteenPtType{\@setfontsize\SixteenPtType{16}{19.2}}
+\newcommand\SixteenPtClose{\@setfontsize\SixteenPtCLose{16}{18}}
+\newcommand\TwentyPtType{\@setfontsize\TwentyPtType{20}{24}}
+\newcommand\TwentyFourPtTight{\@setfontsize\TwentyFourPtTight{24}{24}}
+
+
+\newcommand\small{\EightPtType}
+\newcommand\scriptsize{\NinePtType}
+\newcommand\tiny{\FivePtType}
+\newcommand\large{\TenPtType}
+\newcommand\Large{\ElevenPtType}
+\newcommand\LARGE{\TwelvePtType}
+\newcommand\huge{\FourteenPtType}
+\newcommand\Huge{\SixteenPtType}
+
+% default footnotesize
+\newcommand\footnotesize{%
+  \TenPtClose%
+  \abovedisplayskip 8\p@ \@plus2\p@ \@minus3\p@
+  \abovedisplayshortskip \z@ \@plus1\p@
+  \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
+  \def\@listi{\leftmargin\leftmargini
+    \topsep 3\p@ \@plus1\p@ \@minus1\p@
+    \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
+    \itemsep \parsep}%
+  \belowdisplayskip \abovedisplayskip
+}
+
+% AER fonts and default settings
+\if@reviewmode
+\renewcommand\normalsize{%
+  \TwelvePtType
+  \abovedisplayskip 12\p@ \@plus1\p@ \@minus4\p@
+  \abovedisplayshortskip \z@ \@plus2\p@
+  \belowdisplayshortskip 6\p@ \@plus2\p@ \@minus2\p@
+  \belowdisplayskip \abovedisplayskip
+  \let\@listi\@listI}
+\renewcommand\footnotesize{%
+  \TenPtClose%
+  \abovedisplayskip 8\p@ \@plus2\p@ \@minus3\p@
+  \abovedisplayshortskip \z@ \@plus1\p@
+  \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
+  \def\@listi{\leftmargin\leftmargini
+    \topsep 3\p@ \@plus1\p@ \@minus1\p@
+    \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
+    \itemsep \parsep}%
+  \belowdisplayskip \abovedisplayskip
+}
+\def\titlesize{\FourteenPtType} 
+\def\authorsize{\TwelvePtType} 
+\def\captionsize{\TenPtType}
+\def\headsize{\TenPtType}
+\def\sectionsize{\TwelvePtType}
+\def\subsectionsize{\sectionsize}
+\def\abstractbodysize{\TenPtType}
+\def\notesize{\TenPtType}
+\else  
+\renewcommand\normalsize{%
+  \ElevenPtType
+  \abovedisplayskip 11\p@ \@plus1\p@ \@minus4\p@
+  \abovedisplayshortskip \z@ \@plus2\p@
+  \belowdisplayshortskip 5\p@ \@plus2\p@ \@minus2\p@
+  \belowdisplayskip \abovedisplayskip
+  \let\@listi\@listI}
+\renewcommand\footnotesize{%
+  \EightPtClose%
+  \abovedisplayskip 7\p@ \@plus2\p@ \@minus3\p@
+  \abovedisplayshortskip \z@ \@plus1\p@
+  \belowdisplayshortskip 3\p@ \@plus1\p@ \@minus1\p@
+  \def\@listi{\leftmargin\leftmargini
+    \topsep 3\p@ \@plus1\p@ \@minus1\p@
+    \parsep 1\p@ \@plus0.5\p@ \@minus0.5\p@
+    \itemsep \parsep}%
+  \belowdisplayskip \abovedisplayskip
+}
+\def\titlesize{\FourteenPtLoose} 
+\def\authorsize{\ElevenPtType} 
+\def\captionsize{\EightPtClose}
+\def\headsize{\EightPtType}
+\def\sectionsize{\TenPtLoose}
+\def\subsectionsize{\ElevenPtType}
+\def\abstractbodysize{\ElevenPtClose}
+\def\notesize{\EightPtClose}
+\fi  
+
+\normalsize
+
+% obsolete markup
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
+\DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
+
+% ==============================================================================
+%                                                                         Layout
+% ==============================================================================
+
+% paper size
+\setlength\paperheight{11in}
+\setlength\paperwidth{8.5in}
+
+% AER is default
+% margins 
+%\setlength\textwidth{135.5mm}
+\setlength\textwidth{160mm}
+%\setlength\textheight{200mm}
+\setlength\textheight{225mm}
+\setlength\topmargin{-30pt}
+\setlength\oddsidemargin{3mm}
+\setlength\evensidemargin{\oddsidemargin}
+\setlength\headheight{24pt}
+\setlength\headsep   {14pt}
+\setlength\topskip   {11.74pt}
+\setlength\maxdepth{.5\topskip}
+\setlength\footskip{15pt}
+% two column settings
+\setlength\columnsep{\z@}
+\setlength\columnseprule{\z@}
+% line and paragraph stuff
+\setlength\parskip{0\p@ \@plus1\p@}
+\setlength\parindent{10pt}
+\setlength\lineskip{1\p@}
+\setlength\normallineskip{1\p@}
+\renewcommand\baselinestretch{}
+% skips
+\def\abovetitleskip{-26pt}
+
+
+% skips
+\def\abovetitleskip{-26pt}
+
+% penalties
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+
+\if@draftmode
+   \def\@issueName{}
+\fi
+
+% head and foot
+\def\ps@titlepage{
+  \leftskip=6pt\rightskip=\leftskip
+  \def\@oddfoot{\hfil{\small\textit{\thepage}}\hfil}
+  \let\@evenfoot\@oddfoot
+  \let\@oddhead\@empty
+  \let\@evenhead\@empty
+}
+\def\ps@headings{
+  \leftskip=0pt\rightskip=0pt
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty
+  %\def\@oddhead{{\small\textit{\MakeUppercase{VOL. \@pubVolume\ \ NO. \@pubIssue\hfil\@shortTitle\hfil\thepage}}}}
+  \def\@oddhead{{\small\textit{\MakeUppercase{\hfil\@shortTitle\hfil\thepage}}}}
+%  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
+  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName}}}}
+}
+
+\pagestyle{headings}
+\thispagestyle{titlepage}
+\pagenumbering{arabic}
+
+% justification
+\if@twoside
+  \flushbottom
+\else
+  \raggedbottom
+\fi
+\if@twocolumn
+  \twocolumn
+  \sloppy
+  \flushbottom
+\else
+  \onecolumn
+\fi
+
+% margin notes ??? do we want these at all?
+\setlength\marginparsep {0\p@}
+\setlength\marginparpush{0\p@}
+\setlength\marginparwidth {0\p@}
+\if@twoside
+  \@mparswitchfalse 
+\else
+  \@mparswitchtrue % margin notes to the outside 
+\fi
+
+
+
+% ==============================================================================
+%                                                      PDF Document Info Section
+% ==============================================================================
+
+% Note: file location is produced in review mode anyway, despite code below.
+
+\def\extendedVersion{TeX: AEA.cls \lastrev \ (\mode mode) \ \@issueName}
+
+\@ifundefined{pdfinfo}{}{\pdfinfo{ /Creator (\extendedVersion)}}
+
+% As of July 2011 the authors are no longer concealed in the review copy
+%\@ifundefined{pdfinfo}{}{
+%\if@reviewmode
+%\pdfinfo
+%{ /Title ()
+%/Location ()
+%/Creator (\extendedVersion)}
+%\else
+%\pdfinfo
+%{ /Creator (\extendedVersion)}
+%\fi}
+
+% ==============================================================================
+%                                                                    Frontmatter
+% ==============================================================================
+
+% document variables
+\def\issueName#1{\gdef\@issueName{#1}}
+
+% blank
+\long\gdef\@blank{}
+
+% JEL Classifications
+\long\gdef\@JEL{}
+\long\def\JEL#1{\long\gdef\@JEL{#1}}
+
+% Keywords
+\long\gdef\@Keywords{}
+\long\def\Keywords#1{\long\gdef\@Keywords{#1}}
+
+% Publication Data
+\long\gdef\@pubYear{Year}
+\long\def\pubYear#1{\long\gdef\@pubYear{#1}}
+
+\long\gdef\@pubMonth{Month}
+\long\def\pubMonth#1{\long\gdef\@pubMonth{#1}}
+
+\long\gdef\@pubVolume{Volume}
+\long\def\pubVolume#1{\long\gdef\@pubVolume{#1}}
+
+\long\gdef\@pubIssue{Issue}
+\long\def\pubIssue#1{\long\gdef\@pubIssue{#1}}
+
+% draft date (revision date in draft mode)
+\def\draftDate{\if@draftmode\vspace{12pt}\begin{center}Draft: \@date\end{center}\par
+\else\relax\fi}
+
+% abstract
+\def\droparg#1{} 
+\long\def\abstract#1\end{\endgroup\xabstract{#1}\droparg}
+\long\gdef\@abstract{Your abstract here, please.}
+\long\def\xabstract#1{\long\gdef\@abstract{#1}}
+
+\def\@shortTitle{\@title}
+\def\shortTitle#1{\gdef\@shortTitle{#1}}
+
+% frontmatter
+
+\newcommand\maketitle{
+  {\renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+    \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
+    \long\def\@makefntext##1{\parindent 1em\noindent
+            \hb@xt@2.0em{%
+                \hss\@textsuperscript{\normalfont\@thefnmark\rule{0.5em}{0pt}}}##1}%
+    \if@twocolumn
+      \ifnum \col@number=\@ne
+        \@maketitle
+      \else
+        \twocolumn[\@maketitle]%
+      \fi
+    \else
+      \newpage
+      \global\@topnum\z@   % Prevents figures from going at top of page.
+      \@maketitle
+    \fi
+    \@thanks
   }
-  { field.used etal.allowed etal.required}
-  { extra.label sort.label list.year }
-
-STRINGS { s t f }
-
-% BOOLEAN OPERATORS
-
-FUNCTION {not}
-{   { #0 }
-    { #1 }
-  if$
-}
-
-FUNCTION {and}
-{   'skip$
-    { pop$ #0 }
-  if$
-}
-
-FUNCTION {or}
-{   { pop$ #1 }
-    'skip$
-  if$
-}
-
-% CHECKS 
-
-FUNCTION {author.or.editor.check}
-{ author empty$ editor empty$ and
-    { "empty author and editor in " cite$ * warning$ }
-    { skip$ }
-	if$
-}
-
-FUNCTION {chapter.or.pages.check}
-{ chapter empty$ pages empty$ and
-    { "empty chapter and pages in " cite$ * warning$  }
-    { skip$ }
-	if$
-}
-
-
-FUNCTION {required}
-{ 't := % name of variable
-  empty$ % value of variable on stack
-    { "empty " t * " in " * cite$ * warning$ }
-    { skip$ }
-	if$
-}
-
-FUNCTION {field.or.null}
-{ duplicate$ empty$
-    { pop$ "" }
-    'skip$
-  if$
-}
-
-% GENERAL FORMATTING
-
-FUNCTION {emphasize}
-{ duplicate$ empty$
-    { pop$ "" }
-    { "{\em " swap$ * "}" * }
-  if$
-}
-
-FUNCTION {embolden}
-{ duplicate$ empty$
-    { pop$ "" }
-    { "{\bf " swap$ * "}" * }
-  if$
-}
-
-FUNCTION {quote}
-{ duplicate$ empty$
-    { pop$ "" }
-    { "`" swap$ * "'" * }
-  if$
-}
-
-FUNCTION {doublequote}
-{ duplicate$ empty$ 
-    { pop$ "" }
-    { "``" swap$ * "''" * }
-  if$
-}
-
-FUNCTION {join}
-{  't := % second string
-   'f := % join character
-   's := % first string
-   s empty$
-	 { t empty$ 
-	   { "" }
-       { t }	   
-	   if$
-	 } 
-     { t empty$
-	   { s }
-	   { f ". " =
-	     { s add.period$ " " * t * }
-	     { s f * t * }
-		 if$
-		} 
-	   if$
-	 }  
-	 if$
-}
-
-FUNCTION {tie.or.space.connect}
-{ duplicate$ text.length$ #3 <
-    { "~" }
-    { " " }
-  if$
-  swap$ * *
-}
-
-INTEGERS { len }
-
-FUNCTION {chop.word}
-{ 's :=
-  'len :=
-  s #1 len substring$ =
-    { s len #1 + global.max$ substring$ }
-    's
-    if$
-}
-
-INTEGERS { ind tsslen }
-
-STRINGS { tss ret rss istr }
-
-FUNCTION {replace.substring}{
-  'rss :=
-  'tss :=
-  'istr :=
-  "" 'ret :=
-  tss text.length$ 'tsslen :=
-  #1 'ind :=
-    { istr ind tsslen substring$ "" = not }
-    { istr ind tsslen substring$ tss =
-        { ret rss * 'ret :=
-          ind tsslen + 'ind :=
-        }
-        { ret istr ind #1 substring$ * 'ret :=
-          ind #1 + 'ind :=
-        }
-      if$
-    }
-  while$
-  ret
-}
-
-FUNCTION {n.dashify}
-{ 't :=
-  ""
-  { t empty$ not }
-    { t #1 #1 substring$ "-" =
-	  { t #1 #2 substring$ "--" = not
-	    { "--" *
-	      t #2 global.max$ substring$ 't :=
-	    }
-	    { { t #1 #1 substring$ "-" = }
-	        { "-" *
-	        t #2 global.max$ substring$ 't :=
-		    }
-	        while$
-	    }
-	    if$
-	  }
-	  { t #1 #1 substring$ *
-	    t #2 global.max$ substring$ 't :=
-	  }
-      if$
-    }
-    while$
-}
-
-INTEGERS { multiresult }
-
-FUNCTION {multi.page.check}
-{ 't :=
-  #0 'multiresult :=
-    { multiresult not
-      t empty$ not
-      and
-    }
-    { t #1 #1 substring$
-      duplicate$ "-" =
-      swap$ duplicate$ "," =
-      swap$ "+" =
-      or or
-	{ #1 'multiresult := }
-	{ t #2 global.max$ substring$ 't := }
-      if$
-    }
-  while$
-  multiresult
-}
-
-
-% OUTPUT FUNCTIONS
-
-FUNCTION {output} % writ
-{ duplicate$ empty$
-  { pop$ }
-  { write$}
-  if$
-}
-
-FUNCTION {output.year} % writ
-{ list.year empty$
-  { skip$ }
-  { list.year ". " * write$}
-  if$
-}
-
-FUNCTION {output.title.quoted}
-{ title empty$
-    { skip$ }
-	{ title add.period$ doublequote " " * write$ }
-	if$
-}
-
-FUNCTION {output.title.italic}
-{ title empty$
-    { skip$ }
-	{ title add.period$ emphasize " " * write$ }
-	if$
-}
-
-FUNCTION {output.entry}
-{ duplicate$ "" = 
-    { pop$ }
-    { add.period$
-      write$
-    }
-    if$
-  newline$ 
-}
-
-% FIELD FORMATTING
-
-FUNCTION {format.address.only}
-{ address empty$
-    { "" }
-	{ address }
-	if$
-}
-
-FUNCTION {format.journal}
-{ journal empty$
-    { "" }
-	{ journal emphasize }
-    if$
-}
-
-FUNCTION {format.type}
-{ type empty$
-    { "" }
-	{ type }
-    if$
-}
-
-FUNCTION {format.number}
-{ number empty$
-    { "" }
-	{ number }
-    if$
-}
-
-
-FUNCTION {format.school}
-{ school empty$
-    { "" }
-	{ school }
-    if$
-}
-
-FUNCTION {format.institution}
-{ institution empty$
-    { "" }
-	{ institution }
-    if$
-}
-
-FUNCTION {format.masters}
-{ "Master's diss."
-}
-
-FUNCTION {format.phd}
-{ "PhD diss."
-}
-
-FUNCTION {format.note}
-{ note empty$
-    { "" }
-	{ note }
-	if$
-}
-
-FUNCTION {format.booktitle}
-{ booktitle empty$
-    { "" }
-	{ booktitle emphasize }
-    if$
-}
-
-FUNCTION {format.booktitle.label}
-{ booktitle empty$
-    { "" }
-	{ booktitle embolden }
-    if$
-}
-
-FUNCTION {format.title.bold}
-{ title empty$
-    { "" }
-    { title add.period$ embolden }
-	if$
-}
-
-FUNCTION {format.month}
-{ month empty$
-    { "" }
-	{ month }
-	if$
-}
-
-FUNCTION {format.vol.num.pages} % writ
-{ volume empty$
-    { number empty$
-      {""}
-      { "there's a number but no volume in " cite$ * warning$ ", (" number * ")" *}
-	  if$
-    }
-    { number empty$
-      { volume }
-      { volume "(" * number * ")" *}
-      if$
-    }
-    if$
-  pages empty$
-    { skip$ }
-    { duplicate$ "" =
-	  { pages n.dashify * }
-	  { ":~" * pages n.dashify * }
-	  if$
-	}
-    if$
-}
-
-FUNCTION {format.edition} % writ
-{ edition empty$
-    { "" }
-	{ edition " ed." * }
-    if$
-}
-
-FUNCTION {format.book.vol.series.ed} % writ
-{ volume empty$
-    { series empty$
-	  { "" }
-	  { series emphasize }
-	  if$
-	}  
-    { "Vol." volume tie.or.space.connect
-      series empty$
-	    'skip$
-	    { " of " * series emphasize * }
-        if$
-    }
-    if$
-  edition empty$
-    { skip$ }
-    { ". " * edition * " ed." *}
-    if$	
-}
-
-FUNCTION {format.address.publisher} % writ
-{ address empty$
-    { publisher empty$
-	  { "" }
-	  { publisher }
-	  if$
-    }
-	{ publisher empty$
-	  { address }
-	  { address ":" * publisher *}
-	  if$
-	}
-	if$
-}
-
-FUNCTION {format.howpublished}
-{ howpublished empty$
-    { "" }
-	{ howpublished emphasize }
-    if$
-}
-
-FUNCTION {format.organization}
-{ organization empty$
-    { "" }
-	{ organization }
-    if$
-}
-
-FUNCTION {format.organization.presented}
-{ organization empty$
-    { "" }
-	{ presented empty$
-	  { organization }
-	  { presented " " * organization * }
-	  if$
-	} 
-    if$
-}
-
-FUNCTION {format.pages}
-{ pages empty$
-    { "" }
-    { pages multi.page.check
-	  { pages n.dashify }
-	  { pages }
-      if$
-    }
-    if$
-}
-
-FUNCTION {format.chapter.pages}
-{ chapter empty$
-    { pages empty$ 
-	    { "" }
-	    { format.pages  }
-	    if$
-	}	
-	{ pages empty$ 
-	    { "Chapter " chapter * }
-	    { "Chapter " chapter * ", " * format.pages * }
-	    if$
-	}	
-	if$
-}
-
-INTEGERS { nameptr namesleft numnames }
-
-% Format names so that first author is "last, first" and subsequent authors are "first last" with commas 
-% separating authors whenever there are two or more and "and" precedes last author if 2 or more.
-FUNCTION {format.names}
-{ 's :=
-  #1 'nameptr :=
-  s num.names$ 'numnames :=
-  numnames 'namesleft :=
-  { namesleft #0 > }
-    { nameptr #1 = 
-	    {	s nameptr "{vv~}{ll}{, jj}{, ff}" format.name$ 't := }
-	    {	s nameptr "{ff }{vv~}{ll}{, jj}" format.name$ 't := }
-	    if$
-      nameptr #1 >
-	    { namesleft #1 >
-	      { ", " * t * }
-	      { t "others" =
-		    { ", et~al." * }
-		    { ", and " * t * }
-	        if$
-	      }
-	      if$
-	    }
-	    't
-        if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
-    }
-    while$
-}
-
-FUNCTION {format.names.forward}
-{ 's :=
-  #1 'nameptr :=
-  s num.names$ 'numnames :=
-  numnames 'namesleft :=
-  { namesleft #0 > }
-    { s nameptr "{ff }{vv~}{ll}{, jj}"  format.name$ 't := 
-      nameptr #1 >
-	    { namesleft #1 >
-	        { ", " * t * }
-	        { t "others" =
-		      { " et~al." * }
-		      { " and " * t * }
-	          if$
-	        }
-	        if$
-	    }
-	    't
-        if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
-    }
-    while$
-}
-
-INTEGERS { author.field editor.field organization.field title.field key.field }
-
-FUNCTION {init.field.constants}
-{ #0 'author.field :=
-  #1 'editor.field :=
-  #2 'organization.field :=
-  #3 'title.field :=
-  #4 'key.field :=
-}
-
-
-
-FUNCTION {format.names.label}
-{ 's :=
-  #1 'nameptr :=
-  s num.names$ 'numnames :=
-  numnames 'namesleft :=
-  { namesleft #0 > }
-    { s nameptr "{ff }{vv~}{ll}{, jj}"  format.name$ 't := 
-      nameptr #1 >
-	    { namesleft #1 >
-	        { ", " * t * }
-	        { t "others" =
-		      { " et~al." * }
-		      { " \harvardand\ " * t * }
-	          if$
-	        }
-	        if$
-	    }
-	    't
-        if$
-      nameptr #1 + 'nameptr :=
-      namesleft #1 - 'namesleft :=
-    }
-    while$
-}
-
-FUNCTION {format.names.label.short}
-{ 's :=
-  #1 'nameptr :=
-  s num.names$ 'numnames :=
-  numnames #3 >
-    { s #1 "{vv~}{ll}" format.name$ " et~al." *}
-	{ numnames 'namesleft :=
-      { namesleft #0 > }
-        { s nameptr "{vv~}{ll}"  format.name$ 't := 
-          nameptr #1 >
-	        { namesleft #1 >
-    	        { ", " * t * }
-	            { t "others" =
-		          { " et~al." * }
-		          { " \harvardand\ " * t * }
-    	          if$
-	            }
-	            if$
-    	    }
-	        't
-            if$
-          nameptr #1 + 'nameptr :=
-          namesleft #1 - 'namesleft :=
-        }
-      while$
-	}
-	if$
-}
-
-FUNCTION {format.authors}
-{ author empty$
-    { "" }
-    { author format.names add.period$ embolden}
-    if$
-}
-
-FUNCTION {format.editors}
-{ editor empty$
-    { "" }
-    { editor format.names add.period$ embolden}
-    if$
-}
-
-FUNCTION {format.editors.primary}
-{ editor empty$
-    { "" }
-    { editor format.names ", " * embolden " ed" *}
-    if$
-}
-
-FUNCTION {format.editors.secondary}
-{ editor empty$
-    { "" }
-    { ", ed. " editor format.names.forward *}
-    if$
-}
-
-FUNCTION {make.list.label} % writ
-{ author.field field.used =
-    { format.authors }
-    { editor.field field.used =
-        { format.editors.primary }
-        { organization.field field.used =
-            { "The " #4 organization chop.word embolden }
-            { title.field field.used =
-                { format.title.bold }
-                { key.field field.used =
-                    { key }
-                    { "Internal error :001 on " cite$ * " label" * warning$ }
-                    if$
-                }
-                if$
-            }
-            if$
-        }
-        if$
-    }
-    if$
-}
-
-FUNCTION {output.list.label} % writ
-{ make.list.label add.period$ " " * write$
-}
-
-FUNCTION {make.label.short}  % writ
-{ author.field field.used =
-    { author format.names.label.short }
-    { editor.field field.used =
-        { editor format.names.label.short }
-        { organization.field field.used =
-            { "The " #4 organization chop.word}
-            { title.field field.used =
-                { format.booktitle.label }
-                { key.field field.used =
-                    { key }
-                    {"Internal error :001 on " cite$ * " label" * warning$ }
-                    if$
-                }
-                if$
-            }
-            if$
-        }
-        if$
-    }
-    if$
-}
-
-FUNCTION {make.label.full} % writ 
-{ author.field field.used =
-    { author format.names.label }
-    { editor.field field.used =
-        { editor format.names.label }
-        { organization.field field.used =
-            { "The " #4 organization chop.word}
-            { title.field field.used =
-                { format.booktitle.label }
-                { key.field field.used =
-                    { key }
-                    {"Internal error :001 on " cite$ * " label" * warning$ }
-                    if$
-                }
-                if$
-            }
-            if$
-        }
-        if$
-    }
-    if$
-}
-
-% bibitem syntax:
-% \harvarditem[abbr-citation]{full-citation}{citation-year}{cite-key}
-% abbr-citation: names for 2nd and subsequent citations
-% full-citation: names for 1st citation
-
-% Give full name (first name, middle initial, and last name) of author(s) and year of publication in the first citation.
-% Give the last name of author and year of publication in parentheses for each subsequent citation. 
-% If there are four or more authors, refer to the first author, followed by et al. and the year. 
-
-FUNCTION {output.bibitem} % writ
-{ newline$
-  "\harvarditem[" make.label.short * "]" * 
-  "{" make.label.full * "}" * *
-  "{" list.year * "}" * *
-  "{" cite$ * "}" * * write$
-  newline$
-}
-
-FUNCTION {stack.show}
-{ duplicate$ "stack top: " swap$ * " in " * cite$ * warning$ 
-  duplicate$ "" =
-    { "stack top is blank" warning$ }  
-    { "stack top is non-blank" warning$ }  
-	if$
-}
-FUNCTION {article} % writ
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  author "author" required
-  title "title" required
-  journal "journal" required
-  year "year" required
-  format.journal ", " 
-%  format.month join ", " 
-  format.vol.num.pages join ". "
-  format.note join 
-  output.entry
-}
-
-FUNCTION {book}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.italic
-  author.or.editor.check
-  title "title" required
-  publisher "publisher" required
-  year "year" required
-%  format.month ", "
-%  format.book.vol.series.ed join ", "
-  format.book.vol.series.ed ", "
-  format.address.publisher join ". "
-  format.note join
-  output.entry
-}
-
-
-FUNCTION {booklet}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  year empty$
-    { skip$ }
-    { output.year }
-	if$
-  author empty$
-	{ skip$ }
-    { output.title.quoted }
-	if$
-  title "title" required
-  format.howpublished ", "
-%  format.month join ", "
-  format.address.only join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {inbook}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  author.or.editor.check
-  chapter.or.pages.check
-  title "title" required
-  publisher "publisher" required
-  year "year" required
-  format.booktitle ", "
-  format.editors.secondary join " "
-  format.book.vol.series.ed join ", "
-  format.chapter.pages join ". "
-  format.address.publisher join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {incollection}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  "In " format.booktitle * ". " * output
-  author "author" required
-  title "title" required
-  booktitle "booktitle" required
-  publisher "publisher" required
-  year "year" required
-  format.book.vol.series.ed ", " 
-  format.editors.secondary join ", "
-  format.chapter.pages join ". " 
-  format.address.publisher join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {inproceedings}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  author "author" required
-  title "title" required
-  booktitle "booktitle" required
-  year "year" required
-  format.book.vol.series.ed ", "
-  format.pages join ", "
-  format.organization.presented join ". "
-  format.address.publisher join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {conference} { inproceedings }
-
-FUNCTION {manual}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  title "title" required
-  year empty$
-    { skip$ }
-    { output.year }
-	if$
-  author empty$
-	{ skip$ }
-    { output.title.quoted }
-	if$
-  format.edition ", "
-  format.address.only join ", "
-  format.organization join ", "
-%  format.month join ", "
-  format.note join
-  output.entry
-}
-
-FUNCTION {mastersthesis}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  author "author" required
-  title "title" required
-  school "school" required
-  year "year" required
-  format.masters " "
-  format.school join ", "
-  format.address.only join ", "
-%  format.month join ", "
-  format.note join
-  output.entry
-}
-
-FUNCTION {misc}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  author empty$
-	{ skip$ }
-    { output.title.quoted }
-	if$
-  format.howpublished ", "
-%  format.month join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {phdthesis}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  author "author" required
-  title "title" required
-  school "school" required
-  year "year" required
-  format.phd " "
-  format.school join ", "
-  format.address.only  join ", "
-%  format.month join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {proceedings}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  title "title" required
-  year "year" required
-  editor empty$ organization empty$ and
-	{ skip$ }
-    { output.title.quoted }
-	if$
-  editor empty$ 
-	{ "" "" }
-    { format.organization  ", " }
-	if$
-  format.address.publisher join ", "
-  format.note join
-  output.entry
-}
-
-FUNCTION {techreport}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  output.year
-  output.title.quoted
-  author "author" required
-  title "title" required
-  institution "institution" required
-  year "year" required
-  format.institution  " "
-  format.type join " "
-  format.number join ", "
-%  format.month join ", "
-  format.address.publisher join ". "
-  format.note join
-  output.entry
-}
-
-FUNCTION {unpublished}
-{ output.bibitem
-  output.list.label % write author or surrogate label
-  year empty$
-    { skip$ }
-    { output.year }
-	if$
-  output.title.quoted
-  author "author" required
-  title "title" required
-  note "note" required
-  format.note
-  output.entry
-}
-
-
-FUNCTION {default.type} { misc }
-
-MACRO {jan} {"January"}
-
-MACRO {feb} {"February"}
-
-MACRO {mar} {"March"}
-
-MACRO {apr} {"April"}
-
-MACRO {may} {"May"}
-
-MACRO {jun} {"June"}
-
-MACRO {jul} {"July"}
-
-MACRO {aug} {"August"}
-
-MACRO {sep} {"September"}
-
-MACRO {oct} {"October"}
-
-MACRO {nov} {"November"}
-
-MACRO {dec} {"December"}
-
-READ
-
-EXECUTE {init.field.constants}
-
-FUNCTION {sortify}
-{ purify$
-  "l" change.case$
-}
-
-FUNCTION {sortify.names}
-{ " \harvardand\ " " " replace.substring
-  " et~al." " zzz" replace.substring
-  sortify
-}
-
-FUNCTION {author.key.label}
-{ author empty$
-    { key empty$
-	{ title.field 'field.used := }
-	{ key.field 'field.used := }
-      if$
-    }
-    { author.field 'field.used := }
-  if$
-}
-
-FUNCTION {author.editor.key.label}
-{ author empty$
-    { editor empty$
-	{ key empty$
-	    { title.field 'field.used := }
-	    { key.field 'field.used := }
-	  if$
-  	}
-	{ editor.field 'field.used := }
-      if$
-    }
-    { author.field 'field.used := }
-  if$
-}
-
-FUNCTION {author.key.organization.label}
-{ author empty$
-    { key empty$
-	{ organization empty$
-	    { title.field 'field.used := }
-	    { organization.field 'field.used := }
-	  if$
-	}
-	{ key.field 'field.used := }
-      if$
-    }
-    { author.field 'field.used := }
-  if$
-}
-
-FUNCTION {editor.key.organization.label}
-{ editor empty$
-    { key empty$
-	{ organization empty$
-	    { title.field 'field.used := }
-	    { organization.field 'field.used := }
-	  if$
-	}
-	{ key.field 'field.used := }
-      if$
-    }
-    { editor.field 'field.used := }
-  if$
-}
-
-FUNCTION {sort.format.title}
-{ 't :=
-  "A " #2
-    "An " #3
-      "The " #4 t chop.word
-    chop.word
-  chop.word
-  sortify
-  #1 global.max$ substring$
-}
-
-FUNCTION {calc.label} 
-{ make.label.short
-  title.field field.used =
-    { sort.format.title }
-    { sortify.names }
-  if$
-  year field.or.null purify$ #-1 #4 substring$ sortify
-  *
-  'sort.label :=
-}
-
-FUNCTION {preliminaries} 
-{ type$ "book" =
-  type$ "inbook" =
-  or
-    'author.editor.key.label
-    { type$ "proceedings" =
-	'editor.key.organization.label
-	{ type$ "manual" =
-	    'author.key.organization.label
-	    'author.key.label
-	  if$
-	}
-      if$
-    }
-  if$
-  author.field field.used = 
-    {
-      author num.names$ #2 >
-        { #1 }
-        { #0 }
-      if$
-      'etal.required :=
-    }
-    {
-      editor.field field.used = 
-        {
-          editor num.names$ #2 >
-            { #1 }
-            { #0 }
-          if$
-        }
-        { #0 }
-      if$
-      'etal.required :=
-    }
-  if$
-  #1 'etal.allowed :=
-}
-
-FUNCTION {first.presort}
-{ calc.label
-  sort.label
-  title.field field.used =
-    { skip$ }
-    { "    "
-      *
-      make.list.label sortify.names
-      *
-      "    "
-      *
-      title field.or.null
-      sort.format.title
-      *
-    }
-  if$
-  #1 entry.max$ substring$
-  'sort.key$ :=
-}
-
-ITERATE {preliminaries}
-
-ITERATE {first.presort}
-
-SORT
-
-STRINGS { last.sort.label next.extra last.full.label}
-
-INTEGERS { last.extra.num last.etal.allowed}
-
-FUNCTION {initialize.confusion}
-{ #0 int.to.chr$ 'last.sort.label :=
-  #0 int.to.chr$ 'last.full.label :=
-  #1 'last.etal.allowed :=
-}
-
-FUNCTION {confusion.pass}
-{ last.sort.label sort.label =
-    { last.etal.allowed 
-        { last.full.label make.label.full sortify.names =
-            { skip$ }
-            { #0 'etal.allowed :=
-              #0 'last.etal.allowed :=
-            }
-          if$
-        }
-        { #0 'etal.allowed := }
-      if$
-    }
-    { sort.label 'last.sort.label :=
-      make.label.full sortify.names 'last.full.label :=
-      #1 'last.etal.allowed :=
-    }
-  if$
-}
-
-EXECUTE {initialize.confusion}
-
-ITERATE {confusion.pass}
-
-EXECUTE {initialize.confusion}
-
-REVERSE {confusion.pass}
-
-FUNCTION {initialize.last.extra.num}
-{ #0 int.to.chr$ 'last.sort.label :=
-  "" 'next.extra :=
-  #0 'last.extra.num :=
-}
-
-FUNCTION {forward.pass}
-{ last.sort.label sort.label =
-    { last.extra.num #1 + 'last.extra.num :=
-      last.extra.num int.to.chr$ 'extra.label :=
-    }
-    { "a" chr.to.int$ 'last.extra.num :=
-      "" 'extra.label :=
-      sort.label 'last.sort.label :=
-    }
-  if$
-}
-
-FUNCTION {reverse.pass}
-{ next.extra "b" =
-    { "a" 'extra.label := }
-    'skip$
-  if$
-  year empty$
-    { "n.d." extra.label emphasize * 'list.year := }
-    { year extra.label emphasize * 'list.year := }
-  if$
-  extra.label 'next.extra :=
-}
-
-ITERATE {first.presort}
-
-SORT
-
-EXECUTE {initialize.last.extra.num}
-
-ITERATE {forward.pass}
-
-REVERSE {reverse.pass}
-
-FUNCTION {second.presort}
-{ make.list.label
-  title.field field.used =
-    { sort.format.title }
-    { sortify.names }
-  if$
-  "    "
-  *
-  list.year field.or.null sortify
-  *
-  "    "
-  *
-  title.field field.used =
-    { skip$ }
-    { title field.or.null
-      sort.format.title
-      *
-    }
-  if$
-  #1 entry.max$ substring$
-  'sort.key$ :=
-}
-
-ITERATE {second.presort}
-
-SORT
-
-FUNCTION {begin.bib}
-{ newline$ newline$ "% Bibstyle aea.bst version 2009.05.20" write$ newline$ newline$
-  preamble$ empty$
-    'skip$
-    { "\harvardpreambledefs{%" write$ newline$
-      preamble$ write$ "}" write$ newline$
-      "\harvardpreambletext{%" write$ newline$
-      preamble$ write$ "}" write$ newline$ }
-  if$
-  "\begin{thebibliography}{xx}" write$ newline$
-}
-
-EXECUTE {begin.bib}
-
-ITERATE {call.type$}
-
-FUNCTION {end.bib}
-{ newline$
-  "\end{thebibliography}" write$ newline$
-}
-
-EXECUTE {end.bib}
-
+  \setcounter{footnote}{0}%
+  \renewcommand\thefootnote{\@arabic\c@footnote}%
+}
+
+% Frontmatter for AER (default) 
+\newlength\abstractIndent
+\newlength\abstractWidth
+\setlength{\abstractIndent}{36pt}
+\setlength{\abstractWidth}{\textwidth}
+\addtolength{\abstractWidth}{-2\abstractIndent}
+\newcommand\@maketitle{%
+  \pagestyle{headings}
+  \thispagestyle{titlepage}
+  \begin{@twocolumnfalse}
+    \begin{center}%
+      \null\vskip\abovetitleskip
+      {\titlesize\sffamily\textbf{\@title} \par}%
+	      \vskip 16pt%
+	      {\authorsize\textit{By \ }\textsc{\@author}\par}
+%      \draftDate
+%      \vskip 24pt%
+    \end{center}%
+  \gdef\@JELKey{
+    \ifx\@Keywords\@blank\else \textit{Keywords}: \@Keywords\par \fi
+    \ifx\@JEL\@blank\else \par \textit{JEL Codes}: \@JEL\par \fi}
+% these lines not indented to prevent unwanted space	  
+% \noindent{
+\abstractbodysize\hspace{\abstractIndent}
+\parbox{\abstractWidth}{\@abstract\@JELKey\par}
+% }
+    \vskip 24pt%
+  \end{@twocolumnfalse}
+  \par
+}
+
+% ==============================================================================
+%                                                                     Sectioning
+% ==============================================================================
+
+\newcounter{part}
+\newcounter{section}
+\newcounter{subsection}[section]
+\newcounter{subsubsection}[subsection]
+\newcounter{paragraph}[subsubsection]
+\newcounter{subparagraph}[paragraph]
+
+% AER section numbering
+\setcounter{secnumdepth}{3}
+\renewcommand\thepart{\@Roman\c@part}
+\renewcommand\thesection{\@arabic\c@section}
+\renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
+\renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
+\renewcommand\theparagraph{\thesubsubsection}
+\renewcommand\thesubparagraph{\thesubsubsection}
+\renewcommand\p@subsection{\thesection.}
+\renewcommand\p@subsubsection{\thesubsection.}
+\renewcommand\p@paragraph{\thesubsubsection.}
+\renewcommand\p@subparagraph{\theparagraph.}
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+
+
+% AER section skips
+\def\abovesectionskip{5pt \@plus 2pt \@minus 2pt}
+\def\belowsectionskip{5pt \@plus 2pt \@minus 2pt}
+\def\abovesubsectionskip{\abovesectionskip}
+\def\belowsubsectionskip{\belowsectionskip}
+\def\abovesubsubsectionskip{\abovesectionskip}
+\def\belowsubsubsectionskip{\belowsectionskip}
+\def\subsubsectionindent{\z@}
+\def\headingsuffix{}
+
+
+\newcommand\part{%
+   \if@noskipsec \leavevmode \fi
+   \par
+   \addvspace{4ex}%
+   \@afterindentfalse
+   \secdef\@part\@spart}
+
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >\m@ne
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+    {\parindent \z@ \raggedright
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >\m@ne
+       \Large\bfseries \partname\nobreakspace\thepart
+       \par\nobreak
+     \fi
+     \huge \bfseries #2%
+     \markboth{}{}\par}%
+    \nobreak
+    \vskip 3ex
+    \@afterheading}
+\def\@spart#1{%
+    {\parindent \z@ \raggedright
+     \interlinepenalty \@M
+     \normalfont
+     \huge \bfseries #1\par}%
+     \nobreak
+     \vskip 3ex
+     \@afterheading}
+
+\def\@sect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #6{%
+        \@hangfrom{\hskip #3\relax\@svsec}%
+          \interlinepenalty \@M #8\@@par}%
+    \endgroup
+    \csname #1mark\endcsname{#7}%
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec #8\headingsuffix}%
+      \csname #1mark\endcsname{#7}%
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}%
+}
+	 
+	 
+\newcommand\section{%
+\@startsection{section}{1}{\z@}%
+{\abovesectionskip}%
+{\belowsectionskip}%
+{\sectionsize\center\MakeUppercase}}
+
+\newcommand\subsection{%
+\@startsection{subsection}{2}{\z@}%
+{\abovesubsectionskip}%
+{\belowsubsectionskip}%
+{\itshape\sectionsize}}
+
+\newcommand\subsubsection{%
+\@startsection{subsubsection}{3}{3.25ex}%
+{-3.25ex\@plus -1ex \@minus -.2ex}%
+{-1.5ex \@plus -.2ex}%
+{\bfseries}}
+
+
+% paragraph and subparagraph are not used - they are included for compatibility with hyperref.
+%\newcommand\paragraph{%
+%\@startsection{paragraph}{4}{\z@}%
+%{\abovesectionskip}%
+%{\belowsectionskip}%
+%{\sectionsize\itshape\center}}
+
+%\newcommand\subparagraph{%
+%\@startsection{subparagraph}{4}{\z@}%
+%{\abovesectionskip}%
+%{\belowsectionskip}%
+%{\sectionsize\upshape\center}}
+
+\newcommand\paragraph{\subsubsection}
+\newcommand\subparagraph{\subsubsection}
+
+\def\appendixsectionstyle{\scshape\sectionsize\center}
+\def\appendixsubsectionstyle{\itshape\sectionsize\center}
+\def\captionstyle{\scshape}
+
+% ==============================================================================
+%                                                          Package Compatibility
+% ==============================================================================
+
+\newcommand\tableofcontents{} 
+% for compatibility with packages that overload this command
+
+% ==============================================================================
+%                                                                   Environments
+% ==============================================================================
+
+\newenvironment{verse}
+  {\let\\\@centercr
+   \list{}{\itemsep      \z@
+           \itemindent   -1.5em%
+           \listparindent\itemindent
+           \rightmargin  \leftmargin
+           \advance\leftmargin 1.5em}%
+   \item\relax}
+  {\endlist}
+  
+\newenvironment{quotation}
+  {\list{}{\listparindent 1.5em%
+           \itemindent    \listparindent
+           \rightmargin   \leftmargin
+           \parsep        \z@ \@plus\p@}%
+   \item\relax}
+  {\endlist}
+
+\newenvironment{quote}
+  {\list{}{\rightmargin\leftmargin}%
+   \item\relax}
+  {\endlist}
+
+
+
+% ==============================================================================
+%                                                                          Lists
+% ==============================================================================
+
+\setlength\partopsep{2\p@ \@plus1\p@ \@minus 1\p@}
+\def\@listi{\leftmargin\leftmargini
+            \parsep 4\p@ \@plus2\p@ \@minus\p@
+            \topsep 8\p@ \@plus2\p@ \@minus4\p@
+            \itemsep4\p@ \@plus2\p@ \@minus\p@}
+\let\@listI\@listi
+\@listi
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep    4\p@ \@plus2\p@ \@minus\p@
+              \parsep    2\p@ \@plus\p@  \@minus\p@
+              \itemsep   \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep    2\p@ \@plus\p@\@minus\p@
+              \parsep    \z@
+              \partopsep \p@ \@plus\z@ \@minus\p@
+              \itemsep   \topsep}
+\def\@listiv {\leftmargin\leftmarginiv
+              \labelwidth\leftmarginiv
+              \advance\labelwidth-\labelsep}
+\def\@listv  {\leftmargin\leftmarginv
+              \labelwidth\leftmarginv
+              \advance\labelwidth-\labelsep}
+\def\@listvi {\leftmargin\leftmarginvi
+              \labelwidth\leftmarginvi
+              \advance\labelwidth-\labelsep}
+
+\if@twocolumn
+  \setlength\leftmargini  {2em}
+\else
+  \setlength\leftmargini  {2.5em}
+\fi
+\leftmargin  \leftmargini
+\setlength\leftmarginii  {2.2em}
+\setlength\leftmarginiii {1.87em}
+\setlength\leftmarginiv  {1.7em}
+\if@twocolumn
+  \setlength\leftmarginv  {.5em}
+  \setlength\leftmarginvi {.5em}
+\else
+  \setlength\leftmarginv  {1em}
+  \setlength\leftmarginvi {1em}
+\fi
+\setlength  \labelsep  {.5em}
+\setlength  \labelwidth{\leftmargini}
+\addtolength\labelwidth{-\labelsep}
+\@beginparpenalty -\@lowpenalty
+\@endparpenalty   -\@lowpenalty
+\@itempenalty     -\@lowpenalty
+\renewcommand\theenumi{\@arabic\c@enumi}
+\renewcommand\theenumii{\@alph\c@enumii}
+\renewcommand\theenumiii{\@roman\c@enumiii}
+\renewcommand\theenumiv{\@Alph\c@enumiv}
+\newcommand\labelenumi{\theenumi)}
+\newcommand\labelenumii{\theenumii)}
+\newcommand\labelenumiii{\theenumiii)}
+\newcommand\labelenumiv{\theenumiv)}
+\renewcommand\p@enumii{\theenumi}
+\renewcommand\p@enumiii{\theenumi(\theenumii)}
+\renewcommand\p@enumiv{\p@enumiii\theenumiii}
+\newcommand\labelitemi{\textbullet}
+\newcommand\labelitemii{\normalfont\bfseries \textendash}
+\newcommand\labelitemiii{\textasteriskcentered}
+\newcommand\labelitemiv{\textperiodcentered}
+\newenvironment{description}
+               {\list{}{\labelwidth\z@ \itemindent-\leftmargin
+                        \let\makelabel\descriptionlabel}}
+               {\endlist}
+\newcommand*\descriptionlabel[1]{\hspace\labelsep
+                                \normalfont\bfseries #1}
+
+
+% ==============================================================================
+%                                                                      Equations
+% ==============================================================================
+
+\def\@eqnnum{\typeout{Equation: \theequation}\hb@xt@.01\p@{}%
+                      \rlap{\normalfont\normalcolor
+                        \hskip -\displaywidth(\theequation)}}
+
+% ==============================================================================
+%                                                            Minipage and Floats
+% ==============================================================================
+
+
+\setlength\floatsep{15\p@ \@plus 2\p@ \@minus 3\p@}
+\setlength\textfloatsep{15\p@ \@plus 2\p@ \@minus 3\p@}
+\setlength\intextsep{15\p@ \@plus 2\p@ \@minus 3\p@}
+\setlength\dblfloatsep{15\p@ \@plus 2\p@ \@minus 3\p@}
+\setlength\dbltextfloatsep{15\p@ \@plus 2\p@ \@minus 3\p@}
+\setlength\@fptop{0\p@ \@plus 1fil}
+\setlength\@fpsep{8\p@ \@plus 2fil}
+\setlength\@fpbot{0\p@ \@plus 1fil}
+\setlength\@dblfptop{0\p@ \@plus 1fil}
+\setlength\@dblfpsep{8\p@ \@plus 2fil}
+\setlength\@dblfpbot{0\p@ \@plus 1fil}
+\setcounter{topnumber}{2}
+\renewcommand\topfraction{.7}
+\setcounter{bottomnumber}{1}
+\renewcommand\bottomfraction{.3}
+\setcounter{totalnumber}{3}
+\renewcommand\textfraction{.2}
+\renewcommand\floatpagefraction{.5}
+\setcounter{dbltopnumber}{2}
+\renewcommand\dbltopfraction{.7}
+\renewcommand\dblfloatpagefraction{.5}
+
+\newcommand\figurename{Figure}
+\newcommand\tablename{Table}
+\setlength\arraycolsep{5\p@}
+\setlength\tabcolsep{6\p@}
+\setlength\arrayrulewidth{.4\p@}
+\setlength\doublerulesep{2\p@}
+\setlength\tabbingsep{\labelsep}
+\skip\@mpfootins = \skip\footins
+\setlength\fboxsep{3\p@}
+\setlength\fboxrule{.4\p@}
+\renewcommand \theequation {\@arabic\c@equation}
+\newcounter{figure}
+\renewcommand \thefigure {\@arabic\c@figure}
+\def\fps@figure{tbp}
+\def\ftype@figure{1}
+\def\ext@figure{lof}
+\def\fnum@figure{\figurename\nobreakspace\thefigure.\nobreakspace}
+\newenvironment{figure}[1][h]
+               {\@float{figure}[#1]\begin{center}}
+               {\end{center}\end@float}
+\newenvironment{figure*}[1][h]
+               {\@dblfloat{figure}[#1]\begin{center}}
+               {\end{center}\end@dblfloat}
+
+\newcounter{table}
+\renewcommand\thetable{\@arabic\c@table}
+\def\fps@table{tbp}
+\def\ftype@table{2}
+\def\ext@table{lot}
+\def\fnum@table{\tablename\nobreakspace\thetable---}
+\newenvironment{table}[1][h]
+               {\@float{table}[#1]\begin{center}}
+               {\end{center}\end@float}
+\newenvironment{table*}[1][h]
+               {\@dblfloat{table}[#1]\begin{center}}
+               {\end{center}\end@dblfloat}
+\newlength\abovecaptionskip
+\newlength\belowcaptionskip
+\setlength\abovecaptionskip{7\p@}
+\setlength\belowcaptionskip{7\p@}
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{\captionstyle\captionsize #1#2}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionstyle\captionsize #1#2}\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+\newenvironment{widefigure}{\begin{figure*}}{\end{figure*}}
+\newenvironment{widetable}{\begin{table*}}{\end{table*}}
+
+\newenvironment{tablenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\notesize{\itshape#1: }}{\end{minipage}}
+\newenvironment{figurenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\notesize{\itshape#1: }}{\end{minipage}}
+
+% ==============================================================================
+%                                                                      Footnotes
+% ==============================================================================
+
+%\def\thanks#1{\footnote{#1}}
+%\setlength\footnotesep{1\p@ \@plus\p@} % ??? Missing Begin Document Error. Why?
+\setlength{\skip\footins}{15\p@ \@plus 2\p@ \@minus 2\p@}
+
+\renewcommand\footnoterule{%
+  \kern-3\p@
+  \hrule\@width\z@
+  \kern2.6\p@}
+\newcommand\@makefntext[1]{%
+    \parindent 1em%
+    \noindent
+    \hb@xt@2.0em{\hss\@makefnmark}#1\hskip 1em}
+
+
+
+% ==============================================================================
+%                                                                     Backmatter
+% ==============================================================================
+
+% Appendix
+\def\@startappsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@dblarg{\@appsect{#1}{#2}{#3}{#4}{#5}{#6}}}
+\def\@appsect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #6{%
+        \@hangfrom{\hskip #3\relax}%
+          \interlinepenalty \@M #8\@@par}%
+    \endgroup
+    \csname #1mark\endcsname{#7}%
+    \addcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec #8}%
+      \csname #1mark\endcsname{#7}%
+      \addcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+
+\newcommand\appendixname{APPENDIX}
+
+\def\appendix{\if@twocolumn\@restonecoltrue\onecolumn\fi
+\setcounter{secnumdepth}{3}
+\setcounter{section}{0}
+\setcounter{figure}{0}
+\numberwithin{figure}{section}
+\setcounter{table}{0}
+\numberwithin{table}{section}
+\setcounter{equation}{0}
+\numberwithin{equation}{section}
+\renewcommand\thesection{\@Alph\c@section}
+\renewcommand\thesubsection{\thesection\@arabic\c@subsection}
+\renewcommand\theequation {\thesection\@arabic\c@equation}
+\renewcommand\thefigure{\thesection\@arabic\c@figure}
+\renewcommand\thetable{\thesection\@arabic\c@table}
+\renewcommand\section{%
+\@startappsection{section}{1}{\z@}%
+{\abovesectionskip}%
+{\belowsectionskip}%
+{\appendixsectionstyle}}
+\renewcommand\subsection{%
+\@startsection{subsection}{2}{\z@}%
+{\abovesectionskip}%
+{\belowsectionskip}%
+{\appendixsubsectionstyle}}
+}
+
+
+% references
+\newcommand\refname{REFERENCES}
+\newdimen\bibindent
+\setlength\bibindent{1.5em}
+\newenvironment{thebibliography}[1]
+  {\if@JEP\subsection*{\MakeUppercase{\refname}}\else\section*{\MakeUppercase{\refname}}\fi%
+    \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+    \list{}%
+      {\settowidth\labelwidth{}%
+       \leftmargin\labelwidth
+	   \itemsep 1pt
+	   \parsep 1pt
+       \advance\leftmargin\labelsep
+       \@openbib@code
+       \usecounter{enumiv}%
+       \let\p@enumiv\@empty
+       \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty \clubpenalty
+    \widowpenalty8000%
+    \sfcode`\.\@m}
+  {\def\@noitemerr
+    {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist}
+\newcommand\newblock{\hskip .11em\@plus0.33em\@minus.07em}
+\let\@openbib@code\@empty
+
+% ==============================================================================
+%                                                                  Theorem-Likes
+% ==============================================================================
+
+\def\@begintheorem#1#2{\trivlist
+   \item[\hskip \labelsep{\MakeUppercase{#1}\ #2: }]\itshape}
+\def\@opargbegintheorem#1#2#3{\trivlist
+      \item[\hskip \labelsep{\MakeUppercase{#1}\ #2\ (#3): }]\itshape}
+
+\newenvironment{proof}[1][PROOF]{\noindent\MakeUppercase{#1:}\par }{\par\par}
+
+% ==============================================================================
+%                                                                 SW Adjustments
+% ==============================================================================
+
+\AtBeginDocument{
+  \def\QTR#1{\csname #1\endcsname}
+}
+
+
+% ==============================================================================
+%                                                                  Miscellaneous
+% ==============================================================================
+
+\setlength\overfullrule{0pt}
+\setlength\overfullrule{5pt}
+
+\def\today{\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\day, \number\year}
+
+% ==============================================================================
+% ==============================================================================
+\endinput
+% End of file AEA.cls
