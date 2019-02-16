@@ -511,33 +511,14 @@
     \ifx\@Keywords\@blank\else \textit{Keywords}: \@Keywords\par \fi
     \ifx\@JEL\@blank\else \par \textit{JEL Codes}: \@JEL\par \fi}
 % these lines not indented to prevent unwanted space	  
-\noindent{\abstractbodysize\hspace{\abstractIndent}
-\parbox{\abstractWidth}{\indent \@abstract\@JELKey\par}}
+% \noindent{
+\abstractbodysize\hspace{\abstractIndent}
+\parbox{\abstractWidth}{\@abstract\@JELKey\par}
+% }
     \vskip 24pt%
   \end{@twocolumnfalse}
   \par
 }
-
-\if@PP
-  \renewcommand\@maketitle{%
-    \pagestyle{headings}
-    \thispagestyle{titlepage}
-    \begin{@twocolumnfalse}
-      \begin{center}%
-        \null\vskip\abovetitleskip
-        {\titlesize\sffamily\textbf{\@title} \par}%
-        \vskip 16pt%
-        {\authorsize\textit{By \ }\textsc{\@author}\par}
-        \draftDate
-        \vskip 24pt%
-      \end{center}%
-      \vskip 24pt%
-    \end{@twocolumnfalse}
-    \par
-  }
-\fi
-
-
 
 % ==============================================================================
 %                                                                     Sectioning
@@ -553,7 +534,7 @@
 % AER section numbering
 \setcounter{secnumdepth}{2}
 \renewcommand\thepart{\@Roman\c@part}
-\renewcommand\thesection{\@Roman\c@section}
+\renewcommand\thesection{\@arabic\c@section}
 \renewcommand\thesubsection{\@Alph\c@subsection}
 \renewcommand\thesubsubsection{\@arabic\c@subsubsection}
 \renewcommand\theparagraph{\thesubsubsection}
@@ -650,7 +631,7 @@
 \@startsection{section}{1}{\z@}%
 {\abovesectionskip}%
 {\belowsectionskip}%
-{\bfseries\sectionsize\center}}
+{\uppercase\sectionsize\center}}
 
 \newcommand\subsection{%
 \@startsection{subsection}{2}{\z@}%
