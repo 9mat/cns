@@ -353,7 +353,7 @@
 % head and foot
 \def\ps@titlepage{
   \leftskip=6pt\rightskip=\leftskip
-  \def\@oddfoot{\hfil{\small\textit{\thepage}}\hfil}
+  \def\@oddfoot{\hfil{\small{\thepage}}\hfil}
   \let\@evenfoot\@oddfoot
   \let\@oddhead\@empty
   \let\@evenhead\@empty
