@@ -826,7 +826,7 @@
 \skip\@mpfootins = \skip\footins
 \setlength\fboxsep{3\p@}
 \setlength\fboxrule{.4\p@}
-\renewcommand \theequation {\thes\@arabic\c@equation}
+\renewcommand \theequation {\thesection.\@arabic\c@equation}
 \newcounter{figure}
 \renewcommand \thefigure {\@arabic\c@figure}
 \def\fps@figure{tbp}
