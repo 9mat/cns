@@ -46,6 +46,13 @@
   \@twocolumnfalse
 }
 
+\DeclareOption{Restud}{
+  % AER is the default if no journal is specified
+  \def\@issueName{REVIEW OF ECONOMIC STUDIES}
+  \@twosidetrue  
+  \@twocolumnfalse
+}
+
 \DeclareOption{PP}{
   \def\@issueName{PAPERS AND PROCEEDINGS}
   \@twosidetrue  
@@ -109,7 +116,7 @@
 }
 
 % Default Options
-\ExecuteOptions{AER,finalmode}
+\ExecuteOptions{Restud,finalmode}
 \ProcessOptions
 
 \typeout{Journal Selected: \@issueName}
@@ -363,11 +370,11 @@
   \let\@oddfoot\@empty
   \let\@evenfoot\@empty
   %\def\@oddhead{{\small\textit{\MakeUppercase{VOL. \@pubVolume\ \ NO. \@pubIssue\hfil\@shortTitle\hfil\thepage}}}}
-%   \def\@oddhead{{\small\textit{\MakeUppercase{\hfil\@shortTitle\hfil\thepage}}}}
+  \def\@oddhead{{{\MakeUppercase{\hfil\hfil\thepage}}}}
 %  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
-%   \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName}}}}
-  \def\@oddhead{\hfil{\small{\thepage}}\hfil}
-  \let\@evenhead\@oddhead
+  \def\@evenhead{{{\MakeUppercase{\thepage\hfil\hfil}}}}
+%   \def\@oddhead{\hfil{\small{\thepage}}\hfil}
+%   \let\@evenhead\@oddhead
 }
 
 \pagestyle{headings}
