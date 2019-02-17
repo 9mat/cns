@@ -313,10 +313,10 @@
 
 % AER is default
 % margins 
-\setlength\textwidth{135.5mm}
-% \setlength\textwidth{160mm}
-\setlength\textheight{200mm}
-% \setlength\textheight{225mm}
+% \setlength\textwidth{135.5mm}
+\setlength\textwidth{160mm}
+% \setlength\textheight{200mm}
+\setlength\textheight{225mm}
 \setlength\topmargin{-30pt}
 \setlength\oddsidemargin{3mm}
 \setlength\evensidemargin{\oddsidemargin}
