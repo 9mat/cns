@@ -313,10 +313,10 @@
 
 % AER is default
 % margins 
-%\setlength\textwidth{135.5mm}
-\setlength\textwidth{160mm}
-%\setlength\textheight{200mm}
-\setlength\textheight{225mm}
+\setlength\textwidth{135.5mm}
+% \setlength\textwidth{160mm}
+\setlength\textheight{200mm}
+% \setlength\textheight{225mm}
 \setlength\topmargin{-30pt}
 \setlength\oddsidemargin{3mm}
 \setlength\evensidemargin{\oddsidemargin}
@@ -363,9 +363,11 @@
   \let\@oddfoot\@empty
   \let\@evenfoot\@empty
   %\def\@oddhead{{\small\textit{\MakeUppercase{VOL. \@pubVolume\ \ NO. \@pubIssue\hfil\@shortTitle\hfil\thepage}}}}
-  \def\@oddhead{{\small\textit{\MakeUppercase{\hfil\@shortTitle\hfil\thepage}}}}
+%   \def\@oddhead{{\small\textit{\MakeUppercase{\hfil\@shortTitle\hfil\thepage}}}}
 %  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
-  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName}}}}
+%   \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName}}}}
+  \def\@oddhead{\hfil{\small{\thepage}}\hfil}
+  \let\@evenhead\@oddhead
 }
 
 \pagestyle{headings}
