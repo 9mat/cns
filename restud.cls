@@ -260,7 +260,7 @@
     \itemsep \parsep}%
   \belowdisplayskip \abovedisplayskip
 }
-\def\titlesize{\FourteenPtType} 
+\def\titlesize{\SixteenPtType} 
 \def\authorsize{\TwelvePtType} 
 \def\captionsize{\TenPtType}
 \def\headsize{\TenPtType}
@@ -510,11 +510,11 @@
   \begin{@twocolumnfalse}
     \begin{center}%
       \null\vskip\abovetitleskip
-      {\titlesize\sffamily\textbf{\@title} \par}%
+      {\titlesize\textbf{\@title} \par}%
 	      \vskip 16pt%
 	      {\authorsize\textit{By \ }\textsc{\@author}\par}
 %      \draftDate
-%      \vskip 24pt%
+      \vskip 24pt%
     \end{center}%
   \gdef\@JELKey{
     \ifx\@Keywords\@blank\else \textit{Keywords}: \@Keywords\par \fi
