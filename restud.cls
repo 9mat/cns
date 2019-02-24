@@ -512,7 +512,7 @@
       \null\vskip\abovetitleskip
       {\titlesize\textbf{\@title} \par}%
 	      \vskip 16pt%
-	      {\authorsize\textit{By \ }\textsc{\@author}\par}
+	      {\authorsize\textsc{\@author}\par}
 %      \draftDate
       \vskip 24pt%
     \end{center}%
