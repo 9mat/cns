@@ -1390,30 +1390,30 @@ This paper utilizes a novel source of unanticipated frequent shocks to identify 
     \centering
     \footnotesize
     \caption{Robustness check: Placebo test}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{1}{S}} 
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}} 
         \toprule
         \toprule
-        &\multicolumn{1}{c}{(1)}\\
-        &\multicolumn{1}{c}{Stop working (dummy)}\\
-        \midrule
-        Cancellation in last hour (dummy)&     -0.0128\\
-                    &  (0.0004)\\
-        \addlinespace
-        No-show in last hour (dummy)&     -0.0121\\
-                    &  (0.0008)\\
-        \addlinespace
-        Placebo cancellation in last hour (dummy)&   -0.0010\\
-                    &  (0.0009)\\
-        \addlinespace
-        Placebo no-show in last hour (dummy)&    -0.0019\\
-                    &   (0.0016)\\
-        \midrule
-        Observations&\num{11779392}\\
-        \(R^2\)     &     {0.150}\\
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+\midrule
+Cancellation in last hour (indicator)&     -0.0119&            &     -0.0119\\
+            &  (0.0004)&            &  (0.0004)\\
+\addlinespace
+No-show in last hour (indicator)&     -0.0103&            &     -0.0103\\
+            &  (0.0008)&            &  (0.0008)\\
+\addlinespace
+Placebo cancellation in last hour (indicator)&            &    0.0004&    0.0005\\
+            &            &  (0.0009)&  (0.0009)\\
+\addlinespace
+Placebo no-show in last hour (indicator)&            &   -0.0003&   -0.0003\\
+            &            &   (0.0016)&   (0.0016)\\
+\midrule
+Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
+\(R^2\)     &     {0.151}&     {0.151}&     {0.151}\\
+
         \bottomrule
     \end{tabularx}
     \begin{tablenotes}
-        An observation is a trip or a booking. Data is sampled from a randomly selected set of 16,853 drivers. Estimated by OLS with driver fixed effects, date fixed effects hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, weather conditions, number of previous bookings, on-call duration and distance.  Dependent variable: a dummy indicating the last trip/booking of the shift. Main regressors: dummies that indicate whether there is any cancellation/no-show/placebo cancellation/placebo no-show occurs within one hour prior to the end of the trip/booking. Standard errors clustered by drivers in parentheses.
+        An observation is a trip or a booking. Data is sampled from a randomly selected set of 16,853 drivers. Estimated by OLS with driver fixed effects, date fixed effects hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, a cubic function of cumulative hours, weather conditions, number of previous bookings, on-call duration and distance.  Dependent variable: a dummy indicating the last trip/booking of the shift. Main regressors: dummies that indicate whether there is any cancellation/no-show/placebo cancellation/placebo no-show occurs within one hour prior to the end of the trip/booking. Standard errors clustered by drivers in parentheses.
     \end{tablenotes}
     \label{tb:placebo}
 \end{table}
