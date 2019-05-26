@@ -87,7 +87,7 @@
   \if@draftmode\overfullrule=3pt\else\overfullrule=0pt\fi
 % As of July 2011 the authors are no longer concealed in the review copy
   \if@reviewmode
-    \def\author#1{\gdef\@author{Author Undisclosed}}
+    %\def\author#1{\gdef\@author{Author Undisclosed}}
   \fi
   \@ifundefined{harvardand}{}{\renewcommand{\harvardand}{and}}
 } 
