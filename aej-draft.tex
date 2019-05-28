@@ -733,6 +733,40 @@ This paper utilizes a novel source of unanticipated frequent shocks to identify 
 \end{landscape}
 
 
+\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
+%\begin{tabular}{l*{4}{S}} 
+\toprule
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+            &\multicolumn{1}{c}{quit}&\multicolumn{1}{c}{quit}&\multicolumn{1}{c}{quit}&\multicolumn{1}{c}{quit}\\
+\midrule
+Cancellation (dummy)&     -0.0187&     -0.0199&     -0.0212&     -0.0211\\
+            &    (0.0003)&    (0.0003)&    (0.0004)&    (0.0004)\\
+\addlinespace
+No-show (dummy)&     -0.0185&     -0.0201&     -0.0225&     -0.0224\\
+            &    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)\\
+\addlinespace
+Control for cumulative hours &         {linear}&       {cubic}&       {cubic}&       {cubic}\\
+\addlinespace
+Additional controls &         {-}&         {-}&       {Yes}&       {Yes}\\
+\addlinespace
+Control for cumulative income &         {-}&         {-}&         {-}&       {cubic}\\
+\midrule
+Cumulative hour effect&      0.0236&      0.0302&      0.0305&      0.0230\\
+            &    (0.0001)&    (0.0002)&    (0.0002)&    (0.0002)\\
+Cumulative income effect&           &           &           &      0.0441\\
+            &         &         &         &    (0.0008)\\
+Mean hazard rate&      0.0687&      0.0687&      0.0677&      0.0677\\
+Obs         &    \num{28069852}&    \num{28069852}&    \num{23413398}&    \num{23413398}\\
+Clusters    &       \num{33667}&       \num{33667}&       \num{33650}&       \num{33650}\\
+R-squared   &      0.1426&      0.1451&      0.1468&      0.1487\\
+\bottomrule
+\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
+%\end{tabular}
+\end{tabularx}
+
+
+
+
 
 %  \begin{landscape}
 %  	\begin{table}
