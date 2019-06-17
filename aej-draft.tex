@@ -292,6 +292,9 @@ with $l(\cdot)$ is the loss-gain utility, $l(i) = \eta i$ if $i\geq0$ and $l(i) 
 \label{prop:unanticipated}
 The probability of stopping work is weakly increasing with the unanticipated earnings $u$.
 \end{proposition}
+\begin{proof}
+See Appendix \ref{apx:proofs}.
+\end{proof}
 
 The intuition for the results in Proposition \ref{prop:unanticipated} is as folows: When the earnings of the first period are at a level such that the driver will be below target if he stops, but above target if he continues, an additional unit of unanticipated earnings would increase the stopping utility more than it increases the continuing utility, reduce the net mean utility of continuing work and increase the probability of stopping. Proposition \ref{prop:unanticipated} is the main testable implication of the model.
 
@@ -300,6 +303,9 @@ The intuition for the results in Proposition \ref{prop:unanticipated} is as folo
 \label{prop:anticipated}
 If $(t^*, d^*)$ is an RTE under the set of parameters $(a_1, a_2, c_1, c_2)$, then $(t^*+\delta, d^*)$ is an RTE under the set of parameters  $(a_1+\delta, a_2, c_1, c_2)$.
 \end{proposition}
+\begin{proof}
+See Appendix \ref{apx:proofs}.
+\end{proof}
 
 
 In other words, in response to an anticipated increase in earnings, a driver can increase the target by the same amount, leaving him equally far from the target as before, and hence keeping the optimal labor supply decision rule unchanged. As a result, variation in anticipated earnings has no effects on the stopping decision at the end of the first period. This is in stark contrast with the effect of unanticipated earnings, as shown in Proposition \ref{prop:unanticipated}.
@@ -317,6 +323,9 @@ V^{work} &= e_1 + e_2 + u + l(e_1+e_2+u-t) - c(e_1,e_2) + \epsilon_1 + \epsilon_
 \label{prop:effort}
 The optimal effort in the second period, if the driver chooses to continue working, is decreasing with the unanticipated earnings $u$.
 \end{proposition}
+\begin{proof}
+See Appendix \ref{apx:proofs}.
+\end{proof}
 
 The intuition for the results in Proposition \ref{prop:effort} is as folows: Due to loss-aversion, the marginal utility of earnings is higher when the income is below the target, while effort cost does not depend on income level. Hence, the driver will exert more effort if falling short of the target. A big enough unanticipated earnings shock may push the driver from the loss domain to the gain domain, and as a result, reduce the effort. A smaller unanticipated earnings shock may also push the driver to the point where the marginal effort cost is in-between the two marginal utilities of earnings, and the driver will choose the effort just enough to hit the target, making effort and unanticipated earnings perfectly substitutable to each other.
 
@@ -334,6 +343,9 @@ Let $y$ denote the labor decision, $u$ and $a$ unanticipated and anticipated ear
 \item[(c)] The OLS estimates of $y$ on $i$ and $x$ converge to $\beta\frac{V(\omega)}{V(\omega) + V(a)}$ and $\beta\gamma\frac{V(a)}{V(a)+V(\omega)}$
 \end{enumerate}
 \end{proposition}
+\begin{proof}
+See Appendix \ref{apx:proofs}.
+\end{proof}
 
 Proposition \ref{prop:ols1} implies that the OLS estimate of realized earnings effect on labor supply is likely to underestimate the causal effects of unanticipated earnings because it is pulled down by the variation of anticipated earnings which may not have a causal relationship with labor supply. Moreover, when realized earnings are included together with a random earnings shock in a regression, the realized earnings effect may not fully absorb the effects of the earnings shock, even though the earnings shock is part of the realized earnings. As a result, it is difficult to interpret the coefficient of the realized earnings: It does not capture the effects of unanticipated shocks, nor reflect the influence of anticipated earnings on labor supply. On the other hand, the coefficient of the random earnings shock is straightforward to interpret: It is a product of the effect of unanticipated earnings on labor supply and the effect of the shock on earnings.
 
@@ -1630,8 +1642,8 @@ The data cleaning process includes the following steps
 \end{itemize}
 
 \section{Proofs}
-
-\begin{proof}[Proof of Proposition \ref{prop:unanticipated}] The net utility of continuing work
+\label{apx:proofs}
+\paragraph{Proof of Proposition~\ref{prop:unanticipated}} The net utility of continuing work
 \[\Delta = V^{work} - V^{stop} = \begin{cases} 
 (1+\lambda\eta)a_2 - c_2 + \epsilon_2 & \hbox{ if } u < t - a_1 - a_2 \\
 (1+\eta)a_2 - (\lambda-1)\eta(a_1 + u - t) - c_2 + \epsilon_2 & \hbox{ if } t-a_1 \leq u < t - a_1 \\ 
@@ -1644,11 +1656,8 @@ c_2 - (1+\eta)a_2 & \hbox{ if } u \geq t - a_1\\
 \end{cases}\right) 
 \]
 which is increasing in $u$. QED.
-\end{proof}
 
-
-\begin{proof}[Proof of Proposition \ref{prop:anticipated}]
-Let $d^*(u) = 0$ if the driver stops when unanticipated earnings is $u$ and  $d^*(u) = 1$ when he continues.
+\paragraph{Proof of Proposition~\ref{prop:unanticipated}} Let $d^*(u) = 0$ if the driver stop when unanticipated earnings is $u$ and  $d^*(u) = 1$ when he/she continues.
 
 The expected earnings under $d^*$ and parameter sets $(a_1, a_2, c_1, c_2)$ are 
 \[t^* = E[a_1 + a_2d^*(u) + u]\]
@@ -1666,8 +1675,32 @@ Under the target $t^*+\delta$ and parameter set $(a_1+\delta, a_2, c_1, c_2)$, i
 \[\Delta(u|a_1+\delta, a_2, c_1, c_2, t^*+\delta) = a_2  - c_2 + l(a_1 \delta + a_2 + u - (t^*+\delta)) -  l(a_1 + \delta + u - (t^*+\delta)) + \epsilon_2 \]
 
 It is easy to see that \(\Delta(u|a_1, a_2, c_1, c_2, t^*)  = \Delta(u|a_1+\delta, a_2, c_1, c_2, t^*+\delta)\). Thus, if $d^*$ is optimal for \(\Delta(u|a_1, a_2, c_1, c_2, t^*) \), it must also be optimal for \(\Delta(u|a_1+\delta, a_2, c_1, c_2, t^*+\delta) \).
-\end{proof}
 
+
+\paragraph{Proof of Proposition \ref{prop:effort}} The marginal cost of spending effort in the second period is 
+\[MC = \frac{\partial c(e_1, e_2)}{\partial e_2} = c_2(e_1, e_2)\]
+The marginal benefit of spending effort in the second period 
+\[MB = \begin{cases}\eta &\hbox{ if } e_1+e_2+u > t\\\lambda\eta &\hbox{ if } e_1+e_2+u < t\end{cases}\]
+Let $e_2^l$ and $e_2^h$ be the effort level such that $c_2(e_1, e_2^l) = \eta$ and $c_2(e_1, e_2^h) = \lambda\eta$. Since $c(e_1, e_2)$ is convex in $e_2$, $c_2(e_1, e_2)$ is increasing in $e_2$ and $e_2^h > e_2^l$.  The optimal level of effort in the second period is :
+\[e_2^* = \begin{cases} e_1^l &\hbox{ if } t-e_1-u < e_2^l \\ t-e_1-u &\hbox{ if } e_2^l \leq t-e_1-u < e_2^h \\ e_2^h &\hbox{ if } t-e_1-u \geq e_2^h \end{cases}\]
+which is decreasing in $u$
+
+
+\paragraph{Proof of Proposition \ref{prop:ols1}}
+OLS of $y$ on $i$ is
+\[(i'i)^{-1}(i'y) = \frac{i'y/N}{i'i/N} \to \frac{Cov(i,y)}{V(i)} = \frac{Cov(u+a,\beta u + \epsilon)}{V(u+a)} = \beta\frac{V(u)}{V(u) + V(a)}\]
+
+OLS of $y$ on $x$ is
+\[(x'x)^{-1}(x'y) = \frac{x'y/N}{x'x/N} \to \frac{Cov(x,y)}{V(x)} = \frac{Cov(x,\beta (\gamma x + \omega) + \epsilon)}{V(x)} = \beta\gamma\]
+
+OLS of $y$ on $x$ and $i$ is
+\[\left(\begin{bmatrix}x\\i\end{bmatrix}'\begin{bmatrix}x\\i\end{bmatrix}\right)^{-1}\begin{bmatrix}x\\i\end{bmatrix}'y = \left(\begin{bmatrix}x'x & x'i \\ i'x & i'i\end{bmatrix}\right)^{-1}\begin{bmatrix} x'y\\i'y\end{bmatrix}=\frac{1}{(x'x)(i'i) - (x'i)^2)}\begin{bmatrix} (i'i)(x'y) - (x'i)(i'y)\\(x'x)(i'y)-(i'x)(x'y)\end{bmatrix}\] 
+
+The first element converges to 
+\[\frac{V(i)Cov(x,y) - Cov(x,i)Cov(i,y)}{V(x)V(i) - Cov(x,i)^2} = \beta\gamma\frac{V(a)}{V(a)+V(\omega)}\]
+
+The second element converges to 
+\[\frac{V(x)Cov(i,y) - Cov(x,i)Cov(x,y)}{V(x)V(i) - Cov(x,i)^2} = \beta\frac{V(\omega)}{V(a)+V(\omega)}\]
 
 %\begin{center}
 %	[Insert Table \ref{tb:robustmins} here]
