@@ -1393,7 +1393,8 @@
 \def\@opargbegintheorem#1#2#3{\trivlist
       \item[\hskip \labelsep{\MakeUppercase{#1}\ #2\ (#3): }]\itshape}
 
-\newenvironment{proof}[1][PROOF]{\noindent\MakeUppercase{#1:}\par }{\par\par}
+%\newenvironment{proof}[1][PROOF]{\noindent\MakeUppercase{#1:}\par }{\par\par}
+\newenvironment{proof}[1][PROOF]{\noindent\MakeUppercase{#1:} }{\par\par}
 
 % ==============================================================================
 %                                                                 SW Adjustments
