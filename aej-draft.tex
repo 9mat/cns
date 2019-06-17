@@ -30,7 +30,6 @@
 \usepackage{placeins}
 \usepackage{setspace}
 \usepackage{amsmath}
-\usepackage[amsmath,thmmarks]{ntheorem}
 
 \usepackage[title]{appendix}
 
@@ -280,7 +279,7 @@ The above statistics and figures demonstrate a significant negative correlation 
 \section{Theory}
 \label{sec:theory}
 
-This section presents a simple discrete-time model of daily labor supply with income targeting behavior, and discusses testable implications of the model. The proofs of the propositions are in Appendix B.
+This section presents a simple discrete-time model of daily labor supply with income targeting behavior, and discusses testable implications of the model. The proofs of the propositions are in Appendix \ref{apx:proofs}.
 
 \paragraph{Discrete-time model of labor supply} Suppose that a driver's day of work is divided into two periods. At the end of the first period, the driver can choose to stop working. If working in period $j$, the driver receives an anticipated earnings of $a_j$ and experiences a disutility of $c_j$ due to work as well as a random utility shock $\epsilon_j$. There is also an unanticipated earnings shock of $u$, which is realized at the end of the first period. The driver has an income target of $t$ for the day, and exhibits loss aversion with respect to this target: Each unit of earnings above the target brings an additional utility of $\eta$, while each unit of earnings below the target generates a disutility of $\lambda\eta$, with $\lambda > 1$. The driver's utility if he stops at the end of the first period and if he continues is as follows:
 \begin{align*}
@@ -292,9 +291,7 @@ with $l(\cdot)$ is the loss-gain utility, $l(i) = \eta i$ if $i\geq0$ and $l(i) 
 \label{prop:unanticipated}
 The probability of stopping work is weakly increasing with the unanticipated earnings $u$.
 \end{proposition}
-\begin{proof}
-See Appendix \ref{apx:proofs}.
-\end{proof}
+
 
 The intuition for the results in Proposition \ref{prop:unanticipated} is as folows: When the earnings of the first period are at a level such that the driver will be below target if he stops, but above target if he continues, an additional unit of unanticipated earnings would increase the stopping utility more than it increases the continuing utility, reduce the net mean utility of continuing work and increase the probability of stopping. Proposition \ref{prop:unanticipated} is the main testable implication of the model.
 
@@ -303,9 +300,7 @@ The intuition for the results in Proposition \ref{prop:unanticipated} is as folo
 \label{prop:anticipated}
 If $(t^*, d^*)$ is an RTE under the set of parameters $(a_1, a_2, c_1, c_2)$, then $(t^*+\delta, d^*)$ is an RTE under the set of parameters  $(a_1+\delta, a_2, c_1, c_2)$.
 \end{proposition}
-\begin{proof}
-See Appendix \ref{apx:proofs}.
-\end{proof}
+
 
 
 In other words, in response to an anticipated increase in earnings, a driver can increase the target by the same amount, leaving him equally far from the target as before, and hence keeping the optimal labor supply decision rule unchanged. As a result, variation in anticipated earnings has no effects on the stopping decision at the end of the first period. This is in stark contrast with the effect of unanticipated earnings, as shown in Proposition \ref{prop:unanticipated}.
@@ -323,9 +318,7 @@ V^{work} &= e_1 + e_2 + u + l(e_1+e_2+u-t) - c(e_1,e_2) + \epsilon_1 + \epsilon_
 \label{prop:effort}
 The optimal effort in the second period, if the driver chooses to continue working, is decreasing with the unanticipated earnings $u$.
 \end{proposition}
-\begin{proof}
-See Appendix \ref{apx:proofs}.
-\end{proof}
+
 
 The intuition for the results in Proposition \ref{prop:effort} is as folows: Due to loss-aversion, the marginal utility of earnings is higher when the income is below the target, while effort cost does not depend on income level. Hence, the driver will exert more effort if falling short of the target. A big enough unanticipated earnings shock may push the driver from the loss domain to the gain domain, and as a result, reduce the effort. A smaller unanticipated earnings shock may also push the driver to the point where the marginal effort cost is in-between the two marginal utilities of earnings, and the driver will choose the effort just enough to hit the target, making effort and unanticipated earnings perfectly substitutable to each other.
 
@@ -343,9 +336,7 @@ Let $y$ denote the labor decision, $u$ and $a$ unanticipated and anticipated ear
 \item[(c)] The OLS estimates of $y$ on $i$ and $x$ converge to $\beta\frac{V(\omega)}{V(\omega) + V(a)}$ and $\beta\gamma\frac{V(a)}{V(a)+V(\omega)}$
 \end{enumerate}
 \end{proposition}
-\begin{proof}
-See Appendix \ref{apx:proofs}.
-\end{proof}
+
 
 Proposition \ref{prop:ols1} implies that the OLS estimate of realized earnings effect on labor supply is likely to underestimate the causal effects of unanticipated earnings because it is pulled down by the variation of anticipated earnings which may not have a causal relationship with labor supply. Moreover, when realized earnings are included together with a random earnings shock in a regression, the realized earnings effect may not fully absorb the effects of the earnings shock, even though the earnings shock is part of the realized earnings. As a result, it is difficult to interpret the coefficient of the realized earnings: It does not capture the effects of unanticipated shocks, nor reflect the influence of anticipated earnings on labor supply. On the other hand, the coefficient of the random earnings shock is straightforward to interpret: It is a product of the effect of unanticipated earnings on labor supply and the effect of the shock on earnings.
 
@@ -1705,8 +1696,8 @@ The second element converges to
 %\begin{center}
 %	[Insert Table \ref{tb:robustmins} here]
 %\end{center}
- \begin{landscape}
 \section{Effects of  C\&NS on the remaining working time}
+\begin{landscape}
  	\begin{table}
  		\centering
  		\caption{Remaining work time (mins)}
@@ -1773,9 +1764,10 @@ The second element converges to
 %\begin{center}
 %	[Insert Table \ref{tb:robustidle} here]
 %\end{center}
+\section{Effects of C\&NS on the remaining idle percentage}
 
  \begin{landscape}
- \section{Effects of C\&NS on the remaining idle percentage}
+
 	\begin{table}
  		\centering
  		\caption{Idle percentage after a trip/booking (\%)}
