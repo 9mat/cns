@@ -30,6 +30,7 @@
 \usepackage{placeins}
 \usepackage{setspace}
 \usepackage{amsmath}
+\usepackage{float}
 
 \usepackage[title]{appendix}
 
@@ -1571,12 +1572,6 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
 
 \FloatBarrier
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.8\textwidth]{./fg/dowplot.pdf}
-	\caption{Average number of completed trips and rate of C\&NS by day of week and hour of day}
-	\label{fg:trips}
-\end{figure}
 
 % \begin{figure}
 % 	\centering
@@ -1588,34 +1583,34 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
 
 \begin{figure}
 	{\centering
-		\includegraphics[width=0.8\textwidth]{./fg/modelfree_quit_vert.pdf}
+		\includegraphics[width=0.75\textwidth]{./fg/modelfree_quit_vert.pdf}
 		\caption{Proportion of drivers who stop work: with and without C\&NS}
 		\label{fg:quitbyhour}
 	}
 %	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NS. The dashed lines are for driver-hours in which there are some C\&NS.}
 \end{figure}
 
-
-
 \begin{figure}
 	{\centering
-		\includegraphics[width=0.8\textwidth]{./fg/modelfree_earnings_vert.pdf}
+		\includegraphics[width=0.75\textwidth]{./fg/modelfree_earnings_vert.pdf}
 		\caption{Average hourly earnings in next: with and without C\&NS}
 		\label{fg:earningsbyhour}
 	}
 %	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earning in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NS. The dashed lines are for driver-hours in which there are some C\&NS.}
 \end{figure}
 
-
 \FloatBarrier
-
 
 \begin{appendices}
 	
 \setcounter{figure}{0}
-\renewcommand\thefigure{A\@arabic\c@figure}
+\renewcommand\thefigure{A\arabic{figure}}
 \setcounter{table}{0}
 \renewcommand\thetable{A\arabic{table}}
+
+\FloatBarrier
+
+\newpage
 
 \section{Data cleaning}
 The data cleaning process includes the following steps
@@ -1631,6 +1626,20 @@ The data cleaning process includes the following steps
 	\item observations in a shift with shift earnings less than 10 SGD or more than 1,000 SGD (0.01\%)%\footnote{1000 SGD is the 99.9725 percentile of the original shift income distribution.}
 	\item duplicate trips/bookings, i.e., trips/bookings with the same start time and driver (0.3\%)
 \end{itemize}
+
+\newpage
+
+\section{Number of taxi trips and C\&NS rate by day of week and hour of day}
+\FloatBarrier
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./fg/dowplot.pdf}
+	\caption{Average number of completed trips and rate of C\&NS by day of week and hour of day}
+	\label{fg:trips}
+\end{figure}
+
+
+\FloatBarrier
 
 \section{Proofs}
 \label{apx:proofs}
@@ -1697,7 +1706,8 @@ The second element converges to
 %	[Insert Table \ref{tb:robustmins} here]
 %\end{center}
 
-\section{Effects of  C\&NS on the remaining working time}
+\newpage
+\section{Effects of C\&NS on the remaining working time and the remaining idle percentage}
  	\begin{table}
  		\centering
  		\caption{Remaining work time (mins)}
@@ -1767,7 +1777,6 @@ The second element converges to
 \FloatBarrier
 
 %\begin{landscape}
-\section{Effects of C\&NS on the remaining idle percentage}
 	\begin{table}[h]
  		\centering
  		\caption{Idle percentage after a trip/booking (\%)}
