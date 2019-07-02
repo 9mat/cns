@@ -2143,6 +2143,13 @@ unanticipated shocks, and with potential and realized earnings.
 			                    &     (0.068)         &     (0.256)         &     (0.267)         \\
 			%\midrule
 			\addlinespace
+			Cancellations in first 6 hours (count)&       1.846&       0.687&       2.533\\
+			                    &     (0.052)         &     (0.072)         &     (0.088)         \\
+			\addlinespace
+			No-shows in first 6 hours (count)&      -1.290&       1.293&       0.003         \\
+			                    &     (0.101)         &     (0.140)         &     (0.171)         \\
+
+
 			Observations        &\num{2024814}         &\num{2024814}         &\num{2024814}         \\
 			$R^2$             &     {0.365}         &     {0.497}         &     {0.522}         \\
 			\bottomrule
@@ -2161,11 +2168,6 @@ unanticipated shocks, and with potential and realized earnings.
 			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
 			                    &\multicolumn{1}{m{2.2cm}}{\centering Income in first 6 hours (SGD)}         &\multicolumn{1}{m{2.2cm}}{\centering Income after 6 hours (SGD)}         &\multicolumn{1}{m{2.2cm}}{\centering Shift income (SGD)}         \\
 			\midrule
-			Cancellations in first 6 hours (count)&       1.846&       0.687&       2.533\\
-			                    &     (0.052)         &     (0.072)         &     (0.088)         \\
-			\addlinespace
-			No-shows in first 6 hours (count)&      -1.290&       1.293&       0.003         \\
-			                    &     (0.101)         &     (0.140)         &     (0.171)         \\
 			%\midrule
 			\addlinespace
 			Observations        &\num{1618166}         &\num{1618166}         &\num{1618166}         \\
@@ -2175,35 +2177,35 @@ unanticipated shocks, and with potential and realized earnings.
 			}
 
 
-			% \subcaption{Net effects of C\&NS}	
-			% \input{tb/shift2/shift_income.tex}	
-			{
-			\footnotesize
-			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{2}{S}}
-			\addlinespace
-			\addlinespace
-			\addlinespace
-			\multicolumn{3}{l}{Panel C: Effects of C\&NS on shift income}\\			
-			\toprule
-			                    &\multicolumn{2}{c}{Shift income (SGD)}     \\
-			                    \cmidrule{2-3}
-			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         \\
-			\midrule
-			Cancellations (count)&      12.273&       3.445\\
-			                    &     (0.114)         &     (0.070)         \\
-			\addlinespace
-			No-shows (count)    &       9.341&       0.680\\
-			                    &     (0.180)         &     (0.112)         \\
-			\addlinespace
-			Shift duration (hours)&                     &      18.933\\
-			                    &                     &     (0.042)         \\
-			%\midrule
-			\addlinespace
-			Observations        &\num{2073595}         &\num{2073595}         \\
-			\(R^2\)             &     {0.517}         &     {0.800}         \\
-			\bottomrule
-			\end{tabularx}
-			}
+% 			% \subcaption{Net effects of C\&NS}	
+% 			% \input{tb/shift2/shift_income.tex}	
+% 			{
+% 			\footnotesize
+% 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{2}{S}}
+% 			\addlinespace
+% 			\addlinespace
+% 			\addlinespace
+% 			\multicolumn{3}{l}{Panel C: Effects of C\&NS on shift income}\\			
+% 			\toprule
+% 			                    &\multicolumn{2}{c}{Shift income (SGD)}     \\
+% 			                    \cmidrule{2-3}
+% 			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         \\
+% 			\midrule
+% 			Cancellations (count)&      12.273&       3.445\\
+% 			                    &     (0.114)         &     (0.070)         \\
+% 			\addlinespace
+% 			No-shows (count)    &       9.341&       0.680\\
+% 			                    &     (0.180)         &     (0.112)         \\
+% 			\addlinespace
+% 			Shift duration (hours)&                     &      18.933\\
+% 			                    &                     &     (0.042)         \\
+% 			%\midrule
+% 			\addlinespace
+% 			Observations        &\num{2073595}         &\num{2073595}         \\
+% 			\(R^2\)             &     {0.517}         &     {0.800}         \\
+% 			\bottomrule
+% 			\end{tabularx}
+% 			}
 				
 		\begin{tablenotes}
 			Each column is a separate regression. An observation is a shift. The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. All regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. 
