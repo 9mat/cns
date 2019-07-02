@@ -2085,35 +2085,35 @@ unanticipated shocks, and with potential and realized earnings.
 			Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes. The dependent variable in Column (3) and (4) is the remaining average wage in SGD/h.
 		\end{tablenotes}
 %	\end{threeparttable}
-% \end{table}
+\end{table}
 
 
-% \begin{table}
-% 	\centering
-% 	\caption{C\&NS effects in the 9th hour, at different cumulative income intervals}
-% 	\label{tb:quitincome}
-% %	\begin{threeparttable}
-%     {
-%     \footnotesize
-% 	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
-%         \toprule
-%         \toprule
-%                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
-%                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{50-100 SGD}&\multicolumn{1}{c}{100-150 SGD}&\multicolumn{1}{c}{150-200 SGD}&\multicolumn{1}{c}{250-300 SGD}&\multicolumn{1}{c}{300-350 SGD}\\
-%         \midrule
-%         Cancellation (dummy)&      0.0015&     -0.0219&     -0.0288&     -0.0166&     -0.0068\\
-%                     &    (0.0188)&    (0.0074)&    (0.0051)&    (0.0086)&    (0.0187)\\
-%         \addlinespace
-%         No-show (dummy)&     -0.0132&     -0.0166&     -0.0264&     -0.0070&      0.0542\\
-%                     &    (0.0293)&    (0.0114)&    (0.0081)&    (0.0148)&    (0.0330)\\
-%         \midrule
-%         Mean hazard rate&      0.1070&      0.1310&      0.1469&      0.1397&      0.1291\\
-%         Observations& \num{34403}&\num{206394}&\num{466796}&\num{186600}& \num{46491}\\
-%         Clusters    &            &            &            &            &            \\
-%         \(R^2\)     &       0.557&       0.391&       0.348&       0.415&       0.487\\
-%         \bottomrule
-%     \end{tabularx}
-%     }
+\begin{table}
+	\centering
+	\caption{C\&NS effects in the 9th hour, at different cumulative income intervals}
+	\label{tb:quitincome}
+%	\begin{threeparttable}
+    {
+    \footnotesize
+	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
+        \toprule
+        \toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+                    \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{50-100 SGD}&\multicolumn{1}{c}{100-150 SGD}&\multicolumn{1}{c}{150-200 SGD}&\multicolumn{1}{c}{250-300 SGD}&\multicolumn{1}{c}{300-350 SGD}\\
+        \midrule
+        Cancellation (dummy)&      0.0015&     -0.0219&     -0.0288&     -0.0166&     -0.0068\\
+                    &    (0.0188)&    (0.0074)&    (0.0051)&    (0.0086)&    (0.0187)\\
+        \addlinespace
+        No-show (dummy)&     -0.0132&     -0.0166&     -0.0264&     -0.0070&      0.0542\\
+                    &    (0.0293)&    (0.0114)&    (0.0081)&    (0.0148)&    (0.0330)\\
+        \midrule
+        Mean hazard rate&      0.1070&      0.1310&      0.1469&      0.1397&      0.1291\\
+        Observations& \num{34403}&\num{206394}&\num{466796}&\num{186600}& \num{46491}\\
+        Clusters    &            &            &            &            &            \\
+        \(R^2\)     &       0.557&       0.391&       0.348&       0.415&       0.487\\
+        \bottomrule
+    \end{tabularx}
+    }
     \begin{tablenotes}
 		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
     \end{tablenotes}
