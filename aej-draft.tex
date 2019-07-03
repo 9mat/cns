@@ -224,6 +224,12 @@ test to further confirm that our results are not driven by unobserved market fac
 although our main specification is linear, we have conducted extensive specification checks that allow for
 various forms of non-linearity to confirm that our results are not driven by functional assumptions.
 
+As a robustness check, we also employ instrumental variable approach, using the free taxicab count nearby 
+the pickup location and around the booking time as exogenous source of variation to vary C\&NS rate.
+The rationale and the results of this approach are discussed in Appendix \ref{apx:iv}. 
+Since the exogeneity test fails to reject the exogeneity of C\&NS, 
+we choose to use fixed-effect linear regression as our main approach.
+
 
 \paragraph{Main results} Our analysis shows that drivers work longer and earn more per hour following 
 C\&NS, apparently seeking to compensate for the loss and to reach the income target. Longer work hours 
@@ -2674,6 +2680,88 @@ The second element converges to
  		% \end{threeparttable}
  	\end{table}
 % \end{landscape}
+\FloatBarrier
+
+\section{Instrumental-variable regression}
+\label{apx:iv}
+Due to the fact that customers pay no penalties for C\&NS, one of the common reasons for C\&NS 
+is passengers hailing a random taxicab that just happens to pass by while waiting for the booked driver to arrive. 
+Since the drivers do not coordinate with each other, the chance of a passenger seeing a random
+free taxicab can be considered as exogenous to the the booked driver' labor decisions.
+As a result, we can use the number of nearby free taxi vehicles around the time of 
+booking as a valid instrumental variable for the occurrence of C\&NS.
+Specifically, we will use the number of free taxi vehicles within 3 minutes after booking, 
+within 100-m radius and within 200-m radius from the pickup location as the instrumental
+variables. We control for postal code by hour-of-day by day-of-week fixed effects as
+well as the number of vehicles within 500 m and 1 km to absorb the spatiotemporal distribution
+taxi supply over the city. Thus, the variation of C\&NS that we use here is the change in C\&NS
+due to free taxicabs moving around locally, keeping the broader market supply at 500 m and 1 km 
+radius constant. 
+
+Table \ref{tb:iv} reports the results. Since the difference in magnitude of the cancellation effect
+and the no-show effect on the hazard rate of stopping is small, 
+and to increase the power of the IV estimates, we create
+a common dummy variable for C\&NS. We also limit our sample to bookings, the the construction
+of free vehicle count at booking time is not well defined for street hail trips.
+Column (1) report the OLS estimates using this new
+independent variable, and the estimated effect, at $-0.199$ (s.e. $0.0003$) is similar 
+to previous results.
+Column (2) and (3) reports the first-stage and second-stage estimates of the IV regression.
+Column (2) shows that the number of free vehicles within 100-m and 200-m radius from 
+the pickup location increase the change of C\&NS, consistent with the story of
+passengers cancelling and not showing up because of random free taxicab passing by.
+The estimates are significant at 1\% level, indicating strong relationship between
+the instrumental variables and the independent variable.
+Column (3) shows that these C\&NS that are due to free taxicabs nearby the pickup location
+tend to decreases the hazard of stopping work for the booked driver by 3.8 ppts (s.e. 1.8).
+The IV estimates is larger in magnitude than the OLS estimates, but also less precise.
+The exogeneity test, with p-value of 0.24, fails to reject the hypothesis that
+the independent variables is exogenous.
+The F-statistics of weak-identification test is 888, strongly rejecting the hypothesis
+the the instrumental variables are weak.
+
+
+\FloatBarrier
+\begin{table}
+    \centering
+    \footnotesize
+    \caption{Hazard rate of stopping work: IV regression}
+    \label{tb:iv}
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}} 
+%\begin{tabular}{l*{3}{c}}
+\toprule
+\toprule
+            &\multicolumn{1}{c}{OLS} &\multicolumn{2}{c}{2SLS}\\
+            \cmidrule(lr){2-2} \cmidrule(lr){3-4}
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+\textit{Dependent variable} &\multicolumn{1}{c}{Quit}&\multicolumn{1}{c}{C\&NS}&\multicolumn{1}{c}{Quit}\\
+\midrule
+C\&NS (dummy)&     -0.0199\sym{***}&                     &     -0.0389\sym{**} \\
+            &    (0.0003)         &                     &    (0.0176)         \\
+\addlinespace
+Free vehicle within 100 m (count)&                     &      0.0028\sym{***}&                     \\
+            &                     &    (0.0001)         &                     \\
+\addlinespace
+Free vehicle within 200 m (count)&                     &      0.0004\sym{***}&                     \\
+            &                     &    (0.0001)         &                     \\
+\midrule
+Observations&\num{6103669}         &\num{6103669}         &\num{6103669}         \\
+\(R^2\)     &       0.283         &       0.277         &       0.050         \\
+Weak-identification F-statistic&                     &                     &         888         \\
+Exogeneity test \(\chi^2\)-statistic&                     &                     &       1.377         \\
+            &                     &                     &     [0.241]         \\
+\bottomrule
+\end{tabularx}
+}
+
+ 			\begin{tablenotes}
+ 			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of tests in bracket.
+ 			\end{tablenotes}
+
+\end{table}
+
 \end{appendices}
 
 
