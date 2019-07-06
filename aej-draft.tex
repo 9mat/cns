@@ -91,7 +91,8 @@
 	behaviors that contradict the neoclassical model of labor supply. In this paper, we study the
 	impact of booking cancellations and passenger no-shows---a source of unanticipated negative 
 	income shocks---on Singaporean taxi drivers' labor supply and productivity. We find that 
-	drivers work longer and earn more per hour following cancellations or no-shows, and the effects are strongest when cumulative income is close to the average shift income and insignificant when the income is too low or too high. This provides 
+	drivers work longer and earn more per hour following cancellations or no-shows, and the 
+      effects are strongest when cumulative income is close to the average shift income and become insignificant when the income is too low or too high. This provides 
 	compelling evidence for income targeting labor supply, even in the presence of endogenous 
 	reference point. In addition, we find that drivers respond more strongly to more recent 
 	cancellations and no-shows, suggesting a dynamic nature of the reference point. Moreover, 
@@ -216,7 +217,7 @@ million observations for the period December 1, 2016--February 28, 2017. To the 
 this is the first taxi dataset of this size used in a research study that contains detailed information 
 about not only street hail trips and taxi bookings, but also C\&NS. 
 
-We employ fixed-effect regression as our main methodology, utilizing multiple sets of fixed effects 
+We employ fixed effects regression as our main methodology, utilizing multiple sets of fixed effects 
 to absorb unobserved market conditions and driver characteristics. We also leverage the rich set of 
 features present in our dataset to address various endogeneity concerns. Our estimates are robust, 
 in terms of both direction and magnitude, across a wide range of specifications. We conduct a placebo 
@@ -228,7 +229,7 @@ As a robustness check, we also employ an instrumental variables approach, using 
 the pickup location and around the booking time as exogenous source of variation to vary C\&NS rate.
 The rationale and the results of this approach are discussed in Appendix \ref{apx:iv}. 
 Since the exogeneity test fails to reject the exogeneity of C\&NS, 
-we choose to use fixed-effect linear regression as our main approach.
+we choose to use fixed effects regression as our main approach.
 
 
 \paragraph{Main results} Our analysis shows that drivers work longer and earn more per hour following 
@@ -640,14 +641,14 @@ to pickups for all bookings, and the duration and timing of all the breaks drive
 
 \subsubsection{Model-free evidence}
 Table \ref{tb:evidencefree} shows the relationship between C\&NS and drivers' subsequent labor supply 
-decisions and earnings. The first two columns report summary statistics for the hour-level data for hours 
-with and without any C\&NS. Without any C\&NS, on average, 15.0\% of drivers will stop work after each hour.
+decisions and earnings. %The first two columns report summary statistics for the hour-level data for hours with and without any C\&NS. 
+Without any C\&NS, on average, 15.0\% of drivers will stop work after each hour.
 %\footnote{The inverse of this number, $\frac{1}{0.15}=6.67$ is approximately the average number of full hours
 %in a shift, which is less than the average shift duration since the first and last hours of the shifts are 
 %excluded due to censoring.}. 
 If any C\&NS occurs in the hour, the percentage of drivers stopping work after the hour decreases by 3.3
 percentage points (ppts) to 11.7\%. The difference is significant at the 1\% level. If they continue to 
-work in the hour after a C\&NS, average earnings in the next hour are 26.35 SGD, which are 2.14 SGD
+work after a C\&NS, average earnings in the next hour are 26.35 SGD, which are 2.14 SGD
 (s.e. 0.017) more than the average earnings of 24.21 SGD in hours when they do not encounter any C\&NS. 
 
 \begin{center}
@@ -928,7 +929,7 @@ The first specification, in Column (1), controls for cumulative working hours an
 %According to this specification, C\&NS status is associated with 1.8 and 2.0 ppts decrease in the hazard rate of stopping work. The pure OLS estimates (without any controls, not shown for brevity) are 4.2-ppts for cancellations and 4.1 ppts for no-shows, so the set of controls in Column (1) account for a substantial portion of correlation between C\&NS and drivers' labor supply decisions.%\footnote{To be specific, including cumulative hours to the pure OLS regression reduces the magnitude of estimates from 4.1 and 4.2 ppts down to 2.9 and 2.7 ppts; further including driver fixed effects reduces them to 2.2 and 2.4 ppts; including cumulative income does not change the estimates much, while the demand density helps lower them to 1.8 and 1.9 ppts as in Column (1). These specifications are omitted for brevity.}. 
 %This is expected and reasonable. 
 Cumulative hours are positively correlated with the decision to stop work, since the marginal disutility 
-of work increases with time. Regarding driver's characteristics, it is likely that hard-working, motivated
+of work increases with time. Regarding driver's characteristics, it is likely that hard working, motivated
 drivers bid more and receive more bookings than others, and hence are subject to more C\&NS. After 
 controlling for these factors, regression results estimate that a cancellation is associated with an
 average decrease of 2.2 ppts in the hazard rate of stopping work, and a no-show with an average decrease
@@ -995,7 +996,7 @@ target is fixed, we would expect the realized earnings to soak up all the effect
 On the other hand, if the target is endogenous or adaptive, we would not expect the realized earnings to
 fully capture the effects of unanticipated shocks, since its effect is pulled down by the lower, 
 even non-existent, effects of anticipated earnings. The estimated C\&NS effects are almost identical to
-those in Specification (6), suggesting the fixed-target theory does not explain our results. Consequently, 
+those in Specification (6), suggesting the fixed target theory does not explain our results. Consequently, 
 our results can be taken as an evidence in favor of an endogenous and/or adaptive reference point over a 
 fixed reference point. 
 
@@ -1014,6 +1015,11 @@ shocks---over the usual approach of using cumulative income, since cumulative in
 with working hours, making it difficult to disentangle the two effects.  Table \ref{tb:robustquitbyhour}, 
 Specification (6) controls for earnings in each of the hour prior to the trip and booking, to account for \cite{thakral2018daily}'s within-day adaptive reference point. The magnitude of the C\&NS effects is nearly 
 the same as those in Specification (5) of the same table.
+
+
+\begin{center}
+	[Insert Table \ref{tb:robustquitbyhour} here]
+\end{center}
 
 %Notably, in all 8 specifications these effects persist even after we control for possible income and time targeting behavior with the cumulative hours and income variables. Thus, the hypothesis that C\&NS decrease income and motivate drivers to work more to hit target does not adequately explain these effects. The magnitudes are economically meaningful: According to Specification (8), the impacts of a C\&NS on probability of stopping work are equivalent to the impacts of working 1.17 hours less or earning 65 SGD less.
 
@@ -1168,7 +1174,8 @@ negative emotional reactions and increased cautiousness. In contrast, drivers in
 to work more diligently after a C\&NS. This difference may be due to the nature of the work---e.g., the 
 driver's work is flexible and independent---or the severity of the adverse events, since a C\&NS only costs
 drivers several minutes of work, while machine breakdowns can put workers out of work for an entire day.
-Our results show that the dynamic effects of adverse conditions on productivity can be context dependent,
+Our results show that the %dynamic 
+effects of adverse conditions on productivity can be context dependent,
 and are not always negative.
 
 \subsection{Effect heterogeneity}
@@ -1179,7 +1186,8 @@ by looking at different groups of drivers.
 
 \subsubsection{Solo drivers versus sharing drivers}
 
-A vehicle may be shared by multiple drivers; the typical work arrangement is for two drivers to share one 
+A vehicle may be shared by multiple drivers; the typical %work 
+arrangement is for two drivers to share one 
 vehicle and work different shifts in the day. With shared vehicles, drivers face time constraints, 
 since they must transfer the vehicle to the other driver at a predetermined time% (usually in the late afternoon or early morning)
 . However, there are also drivers who do not share their vehicle with any 
@@ -1262,10 +1270,10 @@ C\&NS and total shift income.
 % as well as with increased total shift income. The effects of no-shows in the first part of the shift on 
 % earnings in the second part are also positive, but their effects on total shift income are not always 
 % positive, due to the large negative effects of no-shows on earnings in the first part of the shift. 
-The estimates suggest that taxi drivers tend to overcompensate for C\&NS,
+The estimates suggest that taxi drivers tend to overcompensate for cancellations %C\&NS,
 and total income tends to be 3.4 SGD higher in shifts with some cancellations.
 Taxi drivers can also fully compensate for no-shows, but the total impact on shift income is much muted:
-the shift income is 70 cents higher on average in shifts with some no-shows.
+The shift income is 70 cents higher on average in shifts with some no-shows.
 %The degree of overcompensation for cancellations is also smaller if the cancellations occur earlier in the shift, which can be explained by the fact that the positive effects of C\&NS are weaker in the beginning, and only become stronger toward the end of the shift. 
 
 \begin{center}
@@ -1539,7 +1547,7 @@ unanticipated shocks, and with potential and realized earnings.
         \end{tabularx}
 
 		\begin{tablenotes}
-        Panel A reports the summary statistics of the trip-level data. Trip fare for booking trips includes booking fees; trip duration for booking trips excludes on-call time. Completed trips include both street hail trips and completed bookings. Panel B reports summary statistics of shift-level data. Each observation is a shift---a shift is defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
+        Panel A reports the summary statistics of the trip-level data. Trip fare for booking trips includes booking fees; trip duration for booking trips excludes on-call time. Completed trips include both street hail trips and completed bookings. Panel B reports summary statistics of shift-level data. Each observation is a shift, defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
 		\end{tablenotes}	
 % 	\end{threeparttable}
 	
@@ -1751,7 +1759,7 @@ unanticipated shocks, and with potential and realized earnings.
     \end{tabularx}
 
 	\begin{tablenotes}
-        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects is calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
+        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
 	\end{tablenotes}
 % 	\end{threeparttable}
 \end{table}
@@ -1851,7 +1859,7 @@ unanticipated shocks, and with potential and realized earnings.
     \end{tabularx}
 
 	\begin{tablenotes}
-    Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration and distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects is calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
+    Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration and distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
 	\end{tablenotes}
 % 	\end{threeparttable}
 \end{table}
@@ -2037,7 +2045,8 @@ unanticipated shocks, and with potential and realized earnings.
 			\end{tabularx}
 			}
 			\begin{tablenotes}
-				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixed effects and date fixed effects. The dependent variable in Columns (1), (2), and (3) is the earnings received in the respective hour.
+				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixed effects and date fixed effects. The dependent variable %in Columns (1), (2), and (3) 
+is the earnings received in the respective hour.
 %The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses.
 			\end{tablenotes}
 		% \end{threeparttable}
@@ -2097,7 +2106,7 @@ unanticipated shocks, and with potential and realized earnings.
 		}
 
 		\begin{tablenotes}
-			Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes. The dependent variable in Column (3) and (4) is the remaining average wage in SGD/h.
+			Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes; the dependent variable in Columns (3) and (4) is the remaining average wage in SGD/h.
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
@@ -2129,7 +2138,7 @@ unanticipated shocks, and with potential and realized earnings.
     \end{tabularx}
     }
     \begin{tablenotes}
-		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
+		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
     \end{tablenotes}
 
 \end{table}
@@ -2198,7 +2207,8 @@ unanticipated shocks, and with potential and realized earnings.
 			\end{tabularx}
 			}
 		\begin{tablenotes}
-			Each column is a separate regression. An observation is a shift. The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. All regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. 
+			Each column is a separate regression. An observation is a shift. %The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. 
+Both regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. 
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
