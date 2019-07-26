@@ -48,7 +48,7 @@
 
 \DeclareOption{Restat}{
   % AER is the default if no journal is specified
-  \def\@issueName{REVIEW OF ECONOMIC STUDIES}
+  \def\@issueName{THE REVIEW OF ECONOMICS AND STATISTICS}
   \@twosidetrue  
   \@twocolumnfalse
 }
