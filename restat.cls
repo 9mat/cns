@@ -46,7 +46,7 @@
   \@twocolumnfalse
 }
 
-\DeclareOption{Restud}{
+\DeclareOption{Restat}{
   % AER is the default if no journal is specified
   \def\@issueName{REVIEW OF ECONOMIC STUDIES}
   \@twosidetrue  
@@ -116,7 +116,7 @@
 }
 
 % Default Options
-\ExecuteOptions{Restud,finalmode}
+\ExecuteOptions{Restat,finalmode}
 \ProcessOptions
 
 \typeout{Journal Selected: \@issueName}
