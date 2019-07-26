@@ -31,7 +31,6 @@
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{float}
-
 \usepackage[title]{appendix}
 
 % \usepackage{fullpage}
@@ -73,11 +72,18 @@
 %    and make one change at a time, compile to see if it works, change again. The naming of variables
 %    in this file is usually self-explanatory and easy to understand, but occasionally, you may 
 %    need to google to know what each line does. If stuck, let me know
-% - For reference style, you will mostly work with restat.bst. This file is even more compliated,
-%   Or you can file 
+%  - For reference style, you will mostly work with restat.bst. This file is even more compliated,
+%    so it may be easier for you to file an off-the-shell style that matches restat style. Try natbib
+%    or biblatex to see if you can match restat reference style without customizing the restat.bst file.
+%  - Best way to work with latex is by changing one thing at a time, compile to see it works or not, and
+%    then proceed, or redo. Don't make too many changes without compiling, it will be difficult to debug
+
 \renewcommand{\floatpagefraction}{1}
+
+% font size for reference section
 \renewcommand*{\bibfont}{\footnotesize}
 
+% prevent white space between paragraphs (all the vertical white space will go to the bottom)
 \raggedbottom
 
 % This command determines the leading (vertical space between lines) in draft mode
@@ -87,6 +93,7 @@
 % break up long URL at hyphens
 \def\UrlBreaks{\do\/\do-}
 
+% number format for tables (using siunitx package)
 \sisetup{
 	detect-all,
 	round-integer-to-decimal = true,
@@ -131,7 +138,8 @@
 	impact of booking cancellations and passenger no-shows---a source of unanticipated negative 
 	income shocks---on Singaporean taxi drivers' labor supply and productivity. We find that 
 	drivers work longer and earn more per hour following cancellations or no-shows, and the 
-      effects are strongest when cumulative income is close to the average shift income and become insignificant when the income is too low or too high. This provides 
+    effects are strongest when cumulative income is close to the average shift income and become 
+    insignificant when the income is too low or too high. This provides 
 	compelling evidence for income targeting labor supply, even in the presence of endogenous 
 	reference point. In addition, we find that drivers respond more strongly to more recent 
 	cancellations and no-shows, suggesting a dynamic nature of the reference point. Moreover, 
