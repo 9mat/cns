@@ -32,7 +32,8 @@
 \usepackage{amsmath}
 \usepackage{float}
 \usepackage[title]{appendix}
-
+\makeatletter\renewcommand\@biblabel[1]{}\makeatother
+\usepackage{etoolbox}
 % \usepackage{fullpage}
 
 % To Chao Qin:
@@ -135,7 +136,7 @@
 
 \begin{abstract}
 	%We study the impact of booking cancellations and passenger no-shows on taxi drivers' labor supply and productivity. We employ a novel large dataset that covers three months of taxi bookings and street hail trips for one major taxi operator in Singapore. We find that drivers work longer and earn more per hour following cancellations or no-shows, as if they strive to make up for the loss from such adverse actions. Working longer and increasing productivity are substitutable rather than complementary devices, and are chosen by taxi drivers in their own favor: More experienced drivers tend to increase productivity, and solo drivers tend to work more hours. 
-	\citet{kHoszegi2006model} show that workers with endogenous income targets respond differently
+	\textit{Abstract}---\cite{kHoszegi2006model} show that workers with endogenous income targets respond differently
 	to anticipated changes and unanticipated shocks in their earnings, and only the latter generates
 	behaviors that contradict the neoclassical model of labor supply. In this paper, we study the
 	impact of booking cancellations and passenger no-shows---a source of unanticipated negative 
@@ -1545,7 +1546,7 @@ unanticipated shocks, and with potential and realized earnings.
 %The substitutability between working longer and increasing productivity suggests that drivers' responses are likely to be related to income targeting behaviors. However, in all of our analyses, controlling for income does not make the effects go away. Therefore, it is not the actual income loss that drives these effects; perhaps these adverse actions raise the salience of ``loss" and increase the drivers' degree of loss aversion, which magnifies their income targeting behavior. Also possible is that drivers weigh lost opportunities more than actual earnings, and therefore their perceived loss-gain comparison is not captured by the income we observe. Also, psychological factors may motivate the drivers to strive to exceed their usual income target after C\&NS. Further analysis is needed to uncover the underlying mechanisms that drive these intriguing behaviors.
 
 % Remove or comment out the next two lines if you are not using bibtex.
-\bibliographystyle{plain}
+\bibliographystyle{restattest4}
 \bibliography{cdg}
 
 

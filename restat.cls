@@ -1,21 +1,7 @@
-%% AEA.cls: American Economic Association Article Document Class
+%% restat.cls: The Review of Economics and Statistics
 %% ===========================================================================
-\def\lastrev{2011/07/24}
-%% Author: 
-%%    Dr. Melissa Rice, Ph.D.
-%%    Full Moon Technical Solutions, LLC
-%%    14202 60th Ave NW
-%%    Stanwood, WA 98292-4808,  USA
-%%    melissa@fmtek.net
-%%    voice: +1 (360) 654-0709 Pacific Time Zone (GMT-7 or -8)
-%%    cell:  +1 (425) 923-7713
-%%
-%% Copyright 2007-2011 Melissa Rice, Full Moon Technical Solutions, LLC (dba FMTek, LLC)
-%% 
+\def\lastrev{2019/07/29}
 
-% ==============================================================================
-%                                                           Class ID and Options
-% ==============================================================================
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{restud}[\lastrev \space American Economic Association Article Classes]
@@ -510,9 +496,9 @@
   \begin{@twocolumnfalse}
     \begin{center}%
       \null\vskip\abovetitleskip
-      {\titlesize\textbf{\@title} \par}%
+      {\titlesize\bfseries\MakeUppercase{\@title} \par}%
 	      \vskip 16pt%
-	      {\authorsize\textsc{\@author}\par}
+	      {\authorsize{\@author}\par}
 %      \draftDate
       \vskip 24pt%
     \end{center}%
@@ -540,10 +526,12 @@
 \newcounter{paragraph}[subsubsection]
 \newcounter{subparagraph}[paragraph]
 
-% AER section numbering
+% AER section numberingc@
 \setcounter{secnumdepth}{3}
 \renewcommand\thepart{\@Roman\c@part}
-\renewcommand\thesection{\@arabic\c@section}
+%\renewcommand\thesection{\@Roman\c@section}
+\renewcommand \thesection{\roman{section}}
+\renewcommand \thesection{\MakeSencase{section}}
 \renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
 \renewcommand\theparagraph{\thesubsubsection}
