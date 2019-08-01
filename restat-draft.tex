@@ -70,7 +70,7 @@
 %
 
 
-% Guidlines:
+% Guidelines:
 %  - For style, you will mostly work with restat.cls. This file can be quite complicated
 %    at first sight, but you can just focus on changing one thing at a time and it will
 %    be quite straight forward. Find the relevant section of the file (heading, footnotes, etc.)
@@ -1637,7 +1637,7 @@ unanticipated shocks, and with potential and realized earnings.
 		\begin{tablenotes}
 		\parindent 1em%  %ChaoQin
 		\small
-        The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.
+        The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.
 		\end{tablenotes}
 % 	\end{threeparttable}
 \end{table}
@@ -1782,8 +1782,9 @@ unanticipated shocks, and with potential and realized earnings.
 	\caption{Hazard Rate of Stopping Work}
 	\label{tb:robustquit}    
     \footnotesize	   
+	\setlength{\tabcolsep}{0pt}
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{S[round-mode=places,round-precision=3]}} %ChaoQin
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}} %ChaoQin
         \toprule
         \toprule
                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
@@ -1812,8 +1813,7 @@ unanticipated shocks, and with potential and realized earnings.
                     &         &         &         &         &         &         &    (0.0008)\\
         \midrule
         Mean hazard rate&      0.0663&      0.0663&      0.0687&      0.0687&      0.0677&      0.0677&      0.0677\\
-        %Observations&\num{31108566}&\num{31108566}&\num{28087962}&\num{28069852}&\num{23413398}&\num{23413398}&\num{23413398}\\
-        Observations&\num{31}&\num{31}&\num{28}&\num{28}&\num{23}&\num{23}&\num{23}\\
+        Observations&\num{31108566}&\num{31108566}&\num{28087962}&\num{28069852}&\num{23413398}&\num{23413398}&\num{23413398}\\
                 Clusters    & \num{33667}& \num{33667}& \num{33667}& \num{33667}& \num{33650}& \num{33650}& \num{33650}\\
         \(R^2\)     &       0.102&       0.124&       0.140&       0.143&       0.144&       0.147&       0.149\\
         \bottomrule
@@ -1822,7 +1822,7 @@ unanticipated shocks, and with potential and realized earnings.
 	\begin{tablenotes}
 		\parindent 1em%  %ChaoQin
 		\small
-        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
+        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
     \end{minipage}%	
     }  %ChaoQin
@@ -1836,7 +1836,7 @@ unanticipated shocks, and with potential and realized earnings.
     \footnotesize
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 	\setlength{\tabcolsep}{0pt}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}}
         \toprule
         \toprule
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
@@ -1878,7 +1878,7 @@ unanticipated shocks, and with potential and realized earnings.
 	\begin{tablenotes}
 		\parindent 1em%  %ChaoQin
 		\small
-        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
+        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 % 	\end{threeparttable}
 \end{table}
@@ -1893,14 +1893,14 @@ unanticipated shocks, and with potential and realized earnings.
     \footnotesize
 	\setlength{\tabcolsep}{0pt}
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{S}}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
         \toprule
             \multicolumn{1}{c}{\textit{DV: Subsequent earnings rate (SGD/h)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
         \midrule
         Cancellation (dummy)&       0.884\sym{***}&       0.581\sym{***}&       0.657\sym{***}&       0.359\sym{***}&       0.209\sym{***}&       0.190\sym{***}&       0.159\sym{***}\\
                     &     (0.012)&     (0.011)&     (0.011)&     (0.011)&     (0.012)&     (0.012)&     (0.012)\\
         \addlinespace
-        No-show (dummy)&       0.404\sym{***}&       0.042\sym{*}&       0.135\sym{***}&      -0.169\sym{***}&      -0.242\sym{***}&      -0.268\sym{***}&      -0.300\sym{***}\\
+        No-show (dummy)&       0.404\sym{***}&       0.042\sym{**}&       0.135\sym{***}&      -0.169\sym{***}&      -0.242\sym{***}&      -0.268\sym{***}&      -0.300\sym{***}\\
                     &     (0.018)&     (0.017)&     (0.017)&     (0.017)&     (0.018)&     (0.018)&     (0.018)\\
         \addlinespace
         Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
@@ -1929,7 +1929,7 @@ unanticipated shocks, and with potential and realized earnings.
 	\begin{tablenotes}
 	\parindent 1em%  %ChaoQin
 	\small
-    Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration and distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
+    Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration and distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 	    \end{minipage}%	
     }  %ChaoQin
@@ -2081,12 +2081,12 @@ unanticipated shocks, and with potential and realized earnings.
 			{
 %			\def\arraystretch{0.5}%  1 is the default, change whatever you need
             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}}
+			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}}
 			\toprule
 			\toprule
 			 \multicolumn{1}{l}{\textit{DV: Hourly earnings (SGD)}}&\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}                  \\
 			\midrule
-			Cancellations in current hour (count)&     -0.0324\sym{*} &     -0.0804\sym{***}&     -0.0426\sym{*}\\
+			Cancellations in current hour (count)&     -0.0324\sym{**} &     -0.0804\sym{***}&     -0.0426\sym{**}\\
 			                    &    (0.0156)         &    (0.0173)         &    (0.0200)        \\
 			\addlinespace
 			No-shows in current hour (count)&     -2.7567\sym{***}&     -2.7824\sym{***}&     -2.6767\sym{***} \\
@@ -2098,10 +2098,10 @@ unanticipated shocks, and with potential and realized earnings.
 			No-shows in last hour (count)&                     &      0.5661\sym{***}&      0.58526\sym{***} \\
 			                    &                     &    (0.0302)         &    (0.0353) \\
 			\addlinespace
-			Cancellations 2 hours ago (count)&                     &                     &     -0.0349 \\
+			Cancellations 2 hours ago (count)&                     &                     &     -0.0349\sym{*} \\
 			                    &                     &                     &    (0.0185) \\
 			\addlinespace
-			No-shows 2 hours ago (count)&                     &                     &     -0.0585 \\
+			No-shows 2 hours ago (count)&                     &                     &     -0.0585\sym{*} \\
 			                    &                     &                     &    (0.0363) \\
 			% \addlinespace
 			% Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
@@ -2120,7 +2120,7 @@ unanticipated shocks, and with potential and realized earnings.
 				\parindent 1em%  %ChaoQin
 		        \small
 				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixed effects and date fixed effects. The dependent variable %in Columns (1), (2), and (3) 
-is the earnings received in the respective hour.
+is the earnings received in the respective hour. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 %The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses.
 			\end{tablenotes}
 		% \end{threeparttable}
@@ -2140,7 +2140,7 @@ is the earnings received in the respective hour.
 %			\def\arraystretch{0.5}%  1 is the default, change whatever you need
 		\footnotesize
         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}}
+		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{c}}
 		\toprule
 		\toprule
 		                    &\multicolumn{2}{c}{Remaining time (mins)}  &\multicolumn{2}{c}{Remaining wage (SGD/h)} \\
@@ -2153,7 +2153,7 @@ is the earnings received in the respective hour.
 		No-show           &       7.663\sym{***}&      10.896\sym{***}&       0.079\sym{***}&       0.017         \\
 		                    &     (0.393)         &     (1.029)         &     (0.019)         &     (0.049)         \\
 		\addlinespace
-		Cancellation\(\times\)Solo driver&       3.378\sym{***}&                     &      -0.062\sym{*   } &                     \\
+		Cancellation\(\times\)Solo driver&       3.378\sym{***}&                     &      -0.062\sym{**   } &                     \\
 		                    &     (0.506)         &                     &     (0.024)         &                     \\
 		\addlinespace
 		No-show\(\times\)Solo driver&       1.233         &                     &      -0.023        &                     \\
@@ -2173,7 +2173,7 @@ is the earnings received in the respective hour.
 		%\addlinespace
 		%cum\_hours\_bins      &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
 %		\midrule
-		\addlinespace
+		\midrule
 		Observations        &\num{31108572}         &\num{31108572}         &\num{26511772}         &\num{26511772}         \\
 		$R^2$             &     {0.633}         &     {0.633}         &     {0.423}         &     {0.423}         \\
 		\bottomrule
@@ -2183,7 +2183,7 @@ is the earnings received in the respective hour.
 		\begin{tablenotes}
 	     	\parindent 1em%  %ChaoQin
 	    	\small
-			Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes; the dependent variable in Columns (3) and (4) is the remaining average wage in SGD/h.
+			Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes; the dependent variable in Columns (3) and (4) is the remaining average wage in SGD/h. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
@@ -2197,16 +2197,16 @@ is the earnings received in the respective hour.
     {
     \footnotesize
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
+	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
         \toprule
         \toprule
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{50-100 SGD}&\multicolumn{1}{c}{100-150 SGD}&\multicolumn{1}{c}{150-200 SGD}&\multicolumn{1}{c}{250-300 SGD}&\multicolumn{1}{c}{300-350 SGD}\\
         \midrule
-        Cancellation (dummy)&      0.0015&     -0.0219\sym{***}&     -0.0288\sym{***}&     -0.0166&     -0.0068\\
+        Cancellation (dummy)&      0.0015&     -0.0219\sym{***}&     -0.0288\sym{***}&     -0.0166\sym{*}&     -0.0068\\
                     &    (0.0188)&    (0.0074)&    (0.0051)&    (0.0086)&    (0.0187)\\
         \addlinespace
-        No-show (dummy)&     -0.0132&     -0.0166&     -0.0264\sym{**}&     -0.0070&      0.0542\\
+        No-show (dummy)&     -0.0132&     -0.0166\sym{*}&     -0.0264\sym{***}&     -0.0070&      0.0542\sym{*}\\
                     &    (0.0293)&    (0.0114)&    (0.0081)&    (0.0148)&    (0.0330)\\
         \midrule
         Mean hazard rate&      0.1070&      0.1310&      0.1469&      0.1397&      0.1291\\
@@ -2218,7 +2218,7 @@ is the earnings received in the respective hour.
     \begin{tablenotes}
     	\parindent 1em%  %ChaoQin
 		\small
-		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
+		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
     \end{tablenotes}
 
 \end{table}
@@ -2262,7 +2262,7 @@ is the earnings received in the respective hour.
 			{
 			\footnotesize
             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{2}{S}}
+			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{2}{c}}
 			\addlinespace
 			\addlinespace
 			\addlinespace
@@ -2282,6 +2282,7 @@ is the earnings received in the respective hour.
 			                    &                     &     (0.042)         \\
 			%\midrule
 			\addlinespace
+			\midrule
 			Observations        &\num{2073595}         &\num{2073595}         \\
 			\(R^2\)             &     {0.517}         &     {0.800}         \\
 			\bottomrule
@@ -2291,7 +2292,7 @@ is the earnings received in the respective hour.
 		    \parindent 1em%  %ChaoQin
 		    \small
 			Each column is a separate regression. An observation is a shift. %The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. 
-Both regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. 
+Both regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
@@ -2309,7 +2310,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		{
 		\footnotesize
         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
+		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
 		\toprule
 		\toprule
 		                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
@@ -2336,7 +2337,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		\begin{tablenotes}
 			\parindent 1em%  %ChaoQin
 	    	\small
-			Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses. 
+			Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
@@ -2356,7 +2357,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		{
         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 		\footnotesize
-		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}}
+		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}}
 		\toprule
 		\toprule
 	                    &\multicolumn{2}{c}{Distance to next job}&\multicolumn{2}{c}{Time to next job}&\multicolumn{2}{c}{Speed to next job}
@@ -2385,7 +2386,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		% \addlinespace
 		% Hour\(\times\)day of week\(\times\)zone FE&       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
 		%\midrule
-		\addlinespace
+		\midrule
 		Observations        &\num{27769530}         &\num{27459427}         &\num{27769530}         &\num{27459427}         &\num{27769257}         &\num{27459154}         \\
 		\(R^2\)             &     {0.198}         &     {0.200}         &     {0.048}         &     {0.048}         &     {0.014}         &     {0.014}         \\
 		\bottomrule
@@ -2394,7 +2395,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		\begin{tablenotes}
 			\parindent 1em%  %ChaoQin
 		    \small
-			Each column is a separate regression. An observation is a trip or booking. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week\(\times\)zone fixed effects. Standard errors clustered by drivers in parentheses. 
+			Each column is a separate regression. An observation is a trip or booking. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week\(\times\)zone fixed effects. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 		\end{tablenotes}
 	% \end{threeparttable}
 	    \end{minipage}%	
@@ -2406,7 +2407,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \footnotesize
     \caption{Robustness Check: No Immediate Pickups}
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{c}}
         \toprule
         \toprule
         &\multicolumn{2}{c}{Search \textgreater 3 mins}&\multicolumn{2}{c}{Search \textgreater 1 km}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
@@ -2414,10 +2415,10 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
         &\multicolumn{1}{p{2cm}}{\centering Stop working (dummy)}&\multicolumn{1}{p{2cm}}{\centering Remaining wage (SGD/h)}&\multicolumn{1}{p{2cm}}{\centering Stop working (dummy)}&\multicolumn{1}{p{2cm}}{\centering Remaining wage (SGD/h)}\\
         \midrule
         Cancellation (dummy)&     -0.0210\sym{***}&       0.637\sym{***}&     -0.0237\sym{***}&       0.708\sym{***}\\
-                            &  (0.000582)&    (0.0189)&  (0.000633)&    (0.0202)\\
+                            &  (0.0006)&    (0.0189)&  (0.0006)&    (0.0202)\\
         \addlinespace
         No show (dummy) &     -0.0177\sym{***}&       0.558\sym{***}&     -0.0200\sym{***}&       0.649\sym{***}\\
-                            &   (0.00105)&    (0.0324)&   (0.00113)&    (0.0340)\\
+                            &   (0.0011)&    (0.0324)&   (0.0011)&    (0.0340)\\
         \midrule
         Observations        &\num{13061593}&\num{12011136}&\num{11941228}&\num{10894349}\\
         \(R^2\)           &     {0.154}&     {0.396}&     {0.161}&     {0.394}\\
@@ -2427,7 +2428,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 	\begin{tablenotes}
 		\parindent 1em%  %ChaoQin
 		\small
-	    Each column is a separate regression. An observation is a trip or a booking. All regressions include driver fixed effects, date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, cumulative hours, demand and supply density, weather conditions, number of cumulative bookings, on-call duration and distance. Dependent variable for Columns (1) and (3): dummy indicating the last trip/booking of the shift, for Columns (2) and (4): Average SGD earned per hour for the rest of the shift. Columns (1) and (2) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 3 mins. Columns (3) and (4) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 1 km. Standard errors clustered by drivers in parentheses. 
+	    Each column is a separate regression. An observation is a trip or a booking. All regressions include driver fixed effects, date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, cumulative hours, demand and supply density, weather conditions, number of cumulative bookings, on-call duration and distance. Dependent variable for Columns (1) and (3): dummy indicating the last trip/booking of the shift, for Columns (2) and (4): Average SGD earned per hour for the rest of the shift. Columns (1) and (2) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 3 mins. Columns (3) and (4) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 1 km. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 	\end{tablenotes}
 \end{table}
 
@@ -2460,7 +2461,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \begin{tablenotes}
     	\parindent 1em%  %ChaoQin
 		\small
-        Each column is a separate regression. An observation is a trip or a booking. Dependent variable: Stop working, i.e. the indicator for the last trip/booking of the shift. All regressions include date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, weather conditions, number of previous bookings, on-call duration, and distance. Columns (4) and (5) include driver fixed effects. Column (1) includes driver\(\times\)month fixed effects, Column (2) includes driver\(\times\)day-of-week fixed effects, and Column (3) includes driver\(\times\)region fixed effects. Columns (1), (2) and (3) use the full sample of trips and bookings. Column (4) uses only the subset of trips and bookings from the CBD. Column (5) uses the subset outside the CBD. Column (6) uses only bookings without destination information at the time of booking. Standard errors clustered by drivers in parentheses.
+        Each column is a separate regression. An observation is a trip or a booking. Dependent variable: Stop working, i.e. the indicator for the last trip/booking of the shift. All regressions include date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, weather conditions, number of previous bookings, on-call duration, and distance. Columns (4) and (5) include driver fixed effects. Column (1) includes driver\(\times\)month fixed effects, Column (2) includes driver\(\times\)day-of-week fixed effects, and Column (3) includes driver\(\times\)region fixed effects. Columns (1), (2) and (3) use the full sample of trips and bookings. Column (4) uses only the subset of trips and bookings from the CBD. Column (5) uses the subset outside the CBD. Column (6) uses only bookings without destination information at the time of booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
     \end{tablenotes}
     \label{tb:drfe}
         \end{minipage}%	
@@ -2490,7 +2491,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \begin{tablenotes}
     	\parindent 1em%  %ChaoQin
 		\small
-        Each column is a separate regression. Data: time series of hourly nation-wide C\&NS rate (number of C\&NS divided by number of bookings in each hour). Dependent variable: hourly nation-wide C\&NS rate. The top one percentile C\&NS rates are dropped from all regressions. Estimated by OLS with date fixed effects and hour-of-day\(\times\)day-of-week fixed effects. Column (1) uses the full sample. Column (2) uses only observations from hours from 5 am to 2 pm each day, Column (3) uses 2 pm to 10 pm, and Column (4) uses 10 pm to 5 am, respectively. Standard errors in parentheses.
+        Each column is a separate regression. Data: time series of hourly nation-wide C\&NS rate (number of C\&NS divided by number of bookings in each hour). Dependent variable: hourly nation-wide C\&NS rate. The top one percentile C\&NS rates are dropped from all regressions. Estimated by OLS with date fixed effects and hour-of-day\(\times\)day-of-week fixed effects. Column (1) uses the full sample. Column (2) uses only observations from hours from 5 am to 2 pm each day, Column (3) uses 2 pm to 10 pm, and Column (4) uses 10 pm to 5 am, respectively. Standard errors in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
     \end{tablenotes}
     \label{tb:ccar}
 \end{table}
@@ -2501,7 +2502,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \footnotesize
     \caption{Robustness Check: Placebo Test}
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}} 
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}} 
         \toprule
         \toprule
             &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
@@ -2526,7 +2527,7 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
     \begin{tablenotes}
     	\parindent 1em%  %ChaoQin
 		\small
-        An observation is a trip or a booking. Data is sampled from a randomly selected set of 16,853 drivers. Estimated by OLS with driver fixed effects, date fixed effects hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, a cubic function of cumulative hours, weather conditions, number of previous bookings, on-call duration, and distance.  Dependent variable: a dummy indicating the last trip/booking of the shift. Main regressors: dummies that indicate whether there is any cancellation/no-show/placebo cancellation/placebo no-show occurs within one hour prior to the end of the trip/booking. Standard errors clustered by drivers in parentheses.
+        An observation is a trip or a booking. Data is sampled from a randomly selected set of 16,853 drivers. Estimated by OLS with driver fixed effects, date fixed effects hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, a cubic function of cumulative hours, weather conditions, number of previous bookings, on-call duration, and distance.  Dependent variable: a dummy indicating the last trip/booking of the shift. Main regressors: dummies that indicate whether there is any cancellation/no-show/placebo cancellation/placebo no-show occurs within one hour prior to the end of the trip/booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
     \end{tablenotes}
     \label{tb:placebo}
 \end{table}
@@ -2733,7 +2734,7 @@ The second element converges to
  			\begin{tablenotes}
  				\parindent 1em%  %ChaoQin
 	        	\small
- 				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. 
+ 				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
  			\end{tablenotes}
  			    \end{minipage}%	
     }  %ChaoQin
@@ -2768,7 +2769,7 @@ The second element converges to
 				Cancellation (dummy)&      -1.515\sym{***}&      -1.161\sym{***}&      -1.218\sym{***}&      -0.894\sym{***}&      -0.897\sym{***}&      -0.746\sym{***}&      -0.772\sym{***}&      -0.724\sym{***}\\
 				                    &     (0.023)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.023)         &     (0.023)         \\
 				\addlinespace
-				No-show (dummy)     &      -0.704\sym{***}&      -0.225\sym{***}&      -0.313\sym{***}&       0.052         &       0.049         &       0.200\sym{***}&       0.312\sym{***}&       0.334\sym{***}\\
+				No-show (dummy)     &      -0.704\sym{***}&      -0.225\sym{***}&      -0.313\sym{***}&       0.052\sym{*}         &       0.049\sym{*}         &       0.200\sym{***}&       0.312\sym{***}&       0.334\sym{***}\\
 				                    &     (0.036)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.036)         &     (0.036)         \\
 				\addlinespace
 				Cumulative hours    &      -1.616\sym{***}&      -1.209\sym{***}&      -1.185\sym{***}&      -1.177\sym{***}&      -1.176\sym{***}&      -1.182\sym{***}&      -1.156\sym{***}&      -1.158\sym{***}\\
@@ -2780,7 +2781,7 @@ The second element converges to
 				Demand density      &      -2.315\sym{***}&      -1.677\sym{***}&      -3.760\sym{***}&      -1.537\sym{***}&      -1.540\sym{***}&      -1.569\sym{***}&      -1.545\sym{***}&      -1.591\sym{***}\\
 				                    &     (0.016)         &     (0.012)         &     (0.029)         &     (0.018)         &     (0.018)         &     (0.019)         &     (0.018)         &     (0.019)         \\
 				\addlinespace
-				Previous bookings (count)&                     &                     &                     &                     &       0.018\sym{*} &                     &                     &       0.018\sym{*} \\
+				Previous bookings (count)&                     &                     &                     &                     &       0.018\sym{**} &                     &                     &       0.018\sym{**} \\
 				                    &                     &                     &                     &                     &     (0.008)         &                     &                     &     (0.008)         \\
 				\addlinespace
 				Vehicles within 500m ('000)&                     &                     &                     &                     &                     &       9.606\sym{***}&                     &       9.337\sym{***}\\
@@ -2811,7 +2812,7 @@ The second element converges to
  			\begin{tablenotes}
  				\parindent 1em%  %ChaoQin
 	        	\small
- 				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. 
+ 				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
  			\end{tablenotes}
  		% \end{threeparttable}
  		   \end{minipage}%	
@@ -2866,7 +2867,7 @@ the the instrumental variables are weak.
     \label{tb:iv}
 {
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}} 
+\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}} 
 %\begin{tabular}{l*{3}{c}}
 \toprule
 \toprule
@@ -2875,7 +2876,7 @@ the the instrumental variables are weak.
             &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
 \textit{Dependent variable} &\multicolumn{1}{c}{Quit}&\multicolumn{1}{c}{C\&NS}&\multicolumn{1}{c}{Quit}\\
 \midrule
-C\&NS (dummy)&     -0.0199\sym{***}&                     &     -0.0389\sym{**} \\
+C\&NS (dummy)&     -0.0199\sym{***}&                     &     -0.0389\sym{***} \\
             &    (0.0003)         &                     &    (0.0176)         \\
 \addlinespace
 Free vehicle within 100 m (count)&                     &      0.0028\sym{***}&                     \\
@@ -2895,7 +2896,7 @@ Exogeneity test \(\chi^2\)-statistic&                     &                     
  			\begin{tablenotes}
  			\parindent 1em%  %ChaoQin
 		     \small
- 			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of exogeneity tests in square bracket.
+ 			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of exogeneity tests in square bracket. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
  			\end{tablenotes}
 
 \end{table}
