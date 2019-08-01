@@ -34,7 +34,11 @@
 \usepackage[title]{appendix}
 \makeatletter\renewcommand\@biblabel[1]{}\makeatother
 \usepackage{etoolbox}
+\usepackage{changepage}% ChaoQin
 % \usepackage{fullpage}
+\usepackage{url}% ChaoQin
+\urlstyle{same}% ChaoQin
+
 
 % To Chao Qin:
 % Files:
@@ -1546,13 +1550,14 @@ unanticipated shocks, and with potential and realized earnings.
 %The substitutability between working longer and increasing productivity suggests that drivers' responses are likely to be related to income targeting behaviors. However, in all of our analyses, controlling for income does not make the effects go away. Therefore, it is not the actual income loss that drives these effects; perhaps these adverse actions raise the salience of ``loss" and increase the drivers' degree of loss aversion, which magnifies their income targeting behavior. Also possible is that drivers weigh lost opportunities more than actual earnings, and therefore their perceived loss-gain comparison is not captured by the income we observe. Also, psychological factors may motivate the drivers to strive to exceed their usual income target after C\&NS. Further analysis is needed to uncover the underlying mechanisms that drive these intriguing behaviors.
 
 % Remove or comment out the next two lines if you are not using bibtex.
+\newpage
 \bibliographystyle{restattest4}
 \bibliography{cdg}
 
-
+\newpage
 \begin{table}
 	\centering
-	\caption{Summary statistics}
+	\caption{\scshape{Summary Statistics}} %ChaoQin: I cap all the words, not artical/conjunctions, and prepositions
 	\label{tb:sumstat1}
 % 	\begin{threeparttable}
 % 		\input{tb/sumstats1.tex}
@@ -1598,6 +1603,8 @@ unanticipated shocks, and with potential and realized earnings.
         \end{tabularx}
 
 		\begin{tablenotes}
+		\parindent 1em%  %ChaoQin
+		\small
         Panel A reports the summary statistics of the trip-level data. Trip fare for booking trips includes booking fees; trip duration for booking trips excludes on-call time. Completed trips include both street hail trips and completed bookings. Panel B reports summary statistics of shift-level data. Each observation is a shift, defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
 		\end{tablenotes}	
 % 	\end{threeparttable}
@@ -1607,27 +1614,29 @@ unanticipated shocks, and with potential and realized earnings.
 
 \begin{table}
 	\centering
-	\caption{Model-free evidence}
+	\caption{Model-Free Evidence}
 	\label{tb:evidencefree}
 % 	\begin{threeparttable}
 		% \input{tb/evidencefree.tex}
 		{
 		\footnotesize
 		\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}}
+		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}}
 		\toprule
     \toprule
 		                    &\multicolumn{1}{c}{\centering Hours with no C\&NS}&\multicolumn{1}{c}{\centering Hours with C\&NS}&\multicolumn{1}{c}{\centering {Diff (s.e.)}}         \\
 		\midrule
-		Proportion stopping work&       0.150&       0.117&     -0.0330\\
+		Proportion stopping work&     0.150&       0.117&     -0.0330\sym{***}\\
 %		                    &            &            &  (0.000533)         \\
 		                    &            &            &  (0.0005)         \\
-		Average earnings in next hour (SGD)&       24.21&       26.35&       2.140\\
+		Average earnings in next hour (SGD)&      24.21&       26.35&       2.140\sym{***}\\
 		                    &            &            &    (0.0169)         \\
 		\bottomrule
 		\end{tabularx}
 		}
 		\begin{tablenotes}
+		\parindent 1em%  %ChaoQin
+		\small
         The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.
 		\end{tablenotes}
 % 	\end{threeparttable}
@@ -1767,23 +1776,24 @@ unanticipated shocks, and with potential and realized earnings.
 % 	\end{table}
 % \end{landscape}
 
-
-
-\begin{table}
-	\centering
-	\caption{Hazard rate of stopping work}
-	\label{tb:robustquit}
-    \footnotesize
+\begin{table}		        \hspace*{-2pt}\makebox[\linewidth][c]{%      
+    \begin{minipage}{18cm} %ChaoQin	
+    \centering
+	\caption{Hazard Rate of Stopping Work}
+	\label{tb:robustquit}    
+    \footnotesize	   
 	\setlength{\tabcolsep}{0pt}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{S}}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{S}} %ChaoQin
         \toprule
         \toprule
                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
         \midrule
-        Cancellation (dummy)&     -0.0224&     -0.0234&     -0.0260&     -0.0187&     -0.0201&     -0.0212&     -0.0211\\
+        Cancellation (dummy)&     -0.0224\sym{***}&     -0.0234\sym{***}&  -0.0260\sym{***}&     -0.0187\sym{***}&     -0.0201\sym{***}&
+        -0.0212\sym{***}&     -0.0211\sym{***}\\
                     &    (0.0003)&    (0.0003)&    (0.0003)&    (0.0003)&    (0.0004)&    (0.0004)&    (0.0004)\\
         \addlinespace
-        No-show (dummy)&     -0.0232&     -0.0225&     -0.0258&     -0.0185&     -0.0209&     -0.0225&     -0.0224\\
+        No-show (dummy)&     -0.0232\sym{***}&     -0.0225\sym{***}&     -0.0258\sym{***}&     -0.0185\sym{***}&     -0.0209\sym{***}&     -0.0225\sym{***}&     -0.0224\sym{***}\\
                     &    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)\\
         \addlinespace
         Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
@@ -1796,10 +1806,10 @@ unanticipated shocks, and with potential and realized earnings.
         Controls for cumulative income &         &         &         &         &       &           &{cubic}\\
         \midrule
         Marginal effects & & & & & &\\
-        \quad Cumulative hour (at 8 hours)&      0.0228&      0.0234&      0.0236&      0.0236&      0.0241&      0.0305&      0.0230\\
+        \quad Cumulative hour (at 8 hours)&      0.0228\sym{***}&      0.0234\sym{***}&      0.0236\sym{***}&      0.0236\sym{***}&      0.0241\sym{***}&      0.0305\sym{***}&      0.0230\sym{***}\\
                     &    (0.0001)&    (0.0001)&    (0.0001)&    (0.0001)&    (0.0001)&    (0.0002)&    (0.0002)\\
         \addlinespace
-        \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &      0.0441\\
+        \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &      0.0441\sym{***}\\
                     &         &         &         &         &         &         &    (0.0008)\\
         \midrule
         Mean hazard rate&      0.0663&      0.0663&      0.0687&      0.0687&      0.0677&      0.0677&      0.0677\\
@@ -1810,18 +1820,21 @@ unanticipated shocks, and with potential and realized earnings.
     \end{tabularx}
 
 	\begin{tablenotes}
+		\parindent 1em%  %ChaoQin
+		\small
         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
 	\end{tablenotes}
-% 	\end{threeparttable}
+    \end{minipage}%	
+    }  %ChaoQin
 \end{table}
-
 
 
 \begin{table}
 	\centering
-	\caption{Hazard rate of stopping work, by hour into shift}
+	\caption{Hazard Rate of Stopping Work, by Hour into Shift}
 	\label{tb:robustquitbyhour}
     \footnotesize
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 	\setlength{\tabcolsep}{0pt}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}}
         \toprule
@@ -1829,30 +1842,30 @@ unanticipated shocks, and with potential and realized earnings.
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
         \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{6th hour}&\multicolumn{1}{c}{7th hour}&\multicolumn{1}{c}{8th hour}&\multicolumn{1}{c}{9th hour}&\multicolumn{1}{c}{10th  hour}&\multicolumn{1}{c}{10th hour}\\
         \midrule
-        Cancellation (dummy)&     -0.0124&     -0.0158&     -0.0212&     -0.0285&     -0.0423&     -0.0419\\
+        Cancellation (dummy)&     -0.0124\sym{***}&     -0.0158\sym{***}&     -0.0212\sym{***}&     -0.0285\sym{***}&     -0.0423\sym{***}&     -0.0419\sym{***}\\
                     &    (0.0011)&    (0.0013)&    (0.0017)&    (0.0021)&    (0.0027)&    (0.0027)\\
         \addlinespace
-        No-show (dummy)&     -0.0112&     -0.0139&     -0.0202&     -0.0262&     -0.0366&     -0.0361\\
+        No-show (dummy)&     -0.0112\sym{***}&     -0.0139\sym{***}&     -0.0202\sym{***}&     -0.0262\sym{***}&     -0.0366\sym{***}&     -0.0361\sym{***}\\
                     &    (0.0018)&    (0.0024)&    (0.0028)&    (0.0035)&    (0.0044)&    (0.0044)\\
         \addlinespace
         Earnings ('00 SGD):&            &            &            &            &            &            \\
         \addlinespace
-        \quad first 5 hours&            &            &            &            &            &      0.0169\\
+        \quad first 5 hours&            &            &            &            &            &      0.0169\sym{***}\\
                     &            &            &            &            &            &    (0.0017)\\
         \addlinespace
-        \quad 6th hour&            &            &            &            &            &      0.0344\\
+        \quad 6th hour&            &            &            &            &            &      0.0344\sym{***}\\
                     &            &            &            &            &            &    (0.0030)\\
         \addlinespace
-        \quad 7th hour&            &            &            &            &            &      0.0601\\
+        \quad 7th hour&            &            &            &            &            &      0.0601\sym{***}\\
                     &            &            &            &            &            &    (0.0030)\\
         \addlinespace
-        \quad 8th hour&            &            &            &            &            &      0.0803\\
+        \quad 8th hour&            &            &            &            &            &      0.0803\sym{***}\\
                     &            &            &            &            &            &    (0.0030)\\
         \addlinespace
-        \quad 9th hour&            &            &            &            &            &      0.0521\\
+        \quad 9th hour&            &            &            &            &            &      0.0521\sym{***}\\
                     &            &            &            &            &            &    (0.0032)\\
         \addlinespace
-        \quad 10th hour&            &            &            &            &            &      0.0287\\
+        \quad 10th hour&            &            &            &            &            &      0.0287\sym{***}\\
                     &            &            &            &            &            &    (0.0037)\\
         \midrule
         Mean hazard rate&      0.0517&      0.0722&      0.1011&      0.1451&      0.1925&      0.1925\\
@@ -1863,6 +1876,8 @@ unanticipated shocks, and with potential and realized earnings.
     \end{tabularx}
 
 	\begin{tablenotes}
+		\parindent 1em%  %ChaoQin
+		\small
         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
 	\end{tablenotes}
 % 	\end{threeparttable}
@@ -1870,20 +1885,22 @@ unanticipated shocks, and with potential and realized earnings.
 
 
 \begin{table}
+\hspace*{-2pt}\makebox[\linewidth][c]{%      
+    \begin{minipage}{18cm} %ChaoQin	
 	\centering
-	\caption{Earnings rate after a trip/booking (SGD/h)}
+	\caption{Earnings Rate after a Trip/Booking (SGD/h)}
 	\label{tb:robustwage}
     \footnotesize
-% 	\begin{threeparttable}
 	\setlength{\tabcolsep}{0pt}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{S}}
         \toprule
             \multicolumn{1}{c}{\textit{DV: Subsequent earnings rate (SGD/h)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
         \midrule
-        Cancellation (dummy)&       0.884&       0.581&       0.657&       0.359&       0.209&       0.190&       0.159\\
+        Cancellation (dummy)&       0.884\sym{***}&       0.581\sym{***}&       0.657\sym{***}&       0.359\sym{***}&       0.209\sym{***}&       0.190\sym{***}&       0.159\sym{***}\\
                     &     (0.012)&     (0.011)&     (0.011)&     (0.011)&     (0.012)&     (0.012)&     (0.012)\\
         \addlinespace
-        No-show (dummy)&       0.404&       0.042&       0.135&      -0.169&      -0.242&      -0.268&      -0.300\\
+        No-show (dummy)&       0.404\sym{***}&       0.042\sym{*}&       0.135\sym{***}&      -0.169\sym{***}&      -0.242\sym{***}&      -0.268\sym{***}&      -0.300\sym{***}\\
                     &     (0.018)&     (0.017)&     (0.017)&     (0.017)&     (0.018)&     (0.018)&     (0.018)\\
         \addlinespace
         Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
@@ -1896,10 +1913,10 @@ unanticipated shocks, and with potential and realized earnings.
         Controls for cumulative income &         &         &         &         &       &           &{cubic}\\
         \midrule
         Marginal effects & & & & & &\\
-        \quad Cumulative hour (at 8 hours)&      0.3957&      0.1511&      0.1512&      0.1487&      0.1677&      0.2899&      0.4919\\
+        \quad Cumulative hour (at 8 hours)&      0.3957\sym{***}&      0.1511\sym{***}&      0.1512\sym{***}&      0.1487\sym{***}&      0.1677\sym{***}&      0.2899\sym{***}&      0.4919\sym{***}\\
                     &    (0.0027)&    (0.0032)&    (0.0032)&    (0.0032)&    (0.0034)&    (0.0049)&    (0.0068)\\
         \addlinespace
-        \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &     -1.2623\\
+        \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &     -1.2623\sym{***}\\
                     &            &            &            &            &            &            &    (0.0258)\\
         \addlinespace
         Mean earnings rate&        24.0&        24.0&        23.9&        23.9&        23.9&        23.9&        23.9\\
@@ -1910,9 +1927,12 @@ unanticipated shocks, and with potential and realized earnings.
     \end{tabularx}
 
 	\begin{tablenotes}
+	\parindent 1em%  %ChaoQin
+	\small
     Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of: demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration and distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. 
 	\end{tablenotes}
-% 	\end{threeparttable}
+	    \end{minipage}%	
+    }  %ChaoQin
 \end{table}
 
 
@@ -2052,7 +2072,7 @@ unanticipated shocks, and with potential and realized earnings.
 
 % \begin{landscape}
 	\begin{table}
-		\caption{Dynamic effects of cancellations and no-shows}
+		\caption{Dynamic Effects of Cancellations and No-shows}
 		\label{tb:hourlyreg}
 		% \begin{threeparttable}
 			\footnotesize
@@ -2060,21 +2080,22 @@ unanticipated shocks, and with potential and realized earnings.
 			% \input{tb/hourlyreg.tex}
 			{
 %			\def\arraystretch{0.5}%  1 is the default, change whatever you need
+            \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}}
 			\toprule
 			\toprule
 			 \multicolumn{1}{l}{\textit{DV: Hourly earnings (SGD)}}&\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}                  \\
 			\midrule
-			Cancellations in current hour (count)&     -0.0324 &     -0.0804&     -0.0426\\
+			Cancellations in current hour (count)&     -0.0324\sym{*} &     -0.0804\sym{***}&     -0.0426\sym{*}\\
 			                    &    (0.0156)         &    (0.0173)         &    (0.0200)        \\
 			\addlinespace
-			No-shows in current hour (count)&     -2.7567&     -2.7824&     -2.6767 \\
+			No-shows in current hour (count)&     -2.7567\sym{***}&     -2.7824\sym{***}&     -2.6767\sym{***} \\
 			                    &    (0.0267)         &    (0.0297)         &    (0.0346) \\
 			\addlinespace
-			Cancellations in last hour (count)&                     &      0.8043&      0.8008 \\
+			Cancellations in last hour (count)&                     &      0.8043\sym{***}&      0.8008\sym{***} \\
 			                    &                     &    (0.0161)         &    (0.0185) \\
 			\addlinespace
-			No-shows in last hour (count)&                     &      0.5661&      0.58526 \\
+			No-shows in last hour (count)&                     &      0.5661\sym{***}&      0.58526\sym{***} \\
 			                    &                     &    (0.0302)         &    (0.0353) \\
 			\addlinespace
 			Cancellations 2 hours ago (count)&                     &                     &     -0.0349 \\
@@ -2096,6 +2117,8 @@ unanticipated shocks, and with potential and realized earnings.
 			\end{tabularx}
 			}
 			\begin{tablenotes}
+				\parindent 1em%  %ChaoQin
+		        \small
 				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixed effects and date fixed effects. The dependent variable %in Columns (1), (2), and (3) 
 is the earnings received in the respective hour.
 %The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses.
@@ -2116,6 +2139,7 @@ is the earnings received in the respective hour.
 		{
 %			\def\arraystretch{0.5}%  1 is the default, change whatever you need
 		\footnotesize
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}}
 		\toprule
 		\toprule
@@ -2123,22 +2147,22 @@ is the earnings received in the respective hour.
 		                    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
 		                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
 		\midrule
-		Cancellation     &       7.540&      10.161&       0.632&       0.434\\
+		Cancellation     &       7.540\sym{***}&      10.161\sym{***}&       0.632\sym{***}&       0.434\sym{***}\\
 		                    &     (0.206)         &     (0.409)         &     (0.010)         &     (0.020)         \\
 		\addlinespace
-		No-show           &       7.663&      10.896&       0.079&       0.017         \\
+		No-show           &       7.663\sym{***}&      10.896\sym{***}&       0.079\sym{***}&       0.017         \\
 		                    &     (0.393)         &     (1.029)         &     (0.019)         &     (0.049)         \\
 		\addlinespace
-		Cancellation\(\times\)Solo driver&       3.378&                     &      -0.062 &                     \\
+		Cancellation\(\times\)Solo driver&       3.378\sym{***}&                     &      -0.062\sym{*   } &                     \\
 		                    &     (0.506)         &                     &     (0.024)         &                     \\
 		\addlinespace
-		No-show\(\times\)Solo driver&       1.233         &                     &      -0.023         &                     \\
+		No-show\(\times\)Solo driver&       1.233         &                     &      -0.023        &                     \\
 		                    &     (0.981)         &                     &     (0.047)         &                     \\
 		\addlinespace
-		Cancellation\(\times\)Join before 2014&                     &      -2.613&                     &       0.238\\
+		Cancellation\(\times\)Join before 2014&                     &      -2.613\sym{***}&                     &       0.238\sym{***}\\
 		                    &                     &     (0.460)         &                     &     (0.022)         \\
 		\addlinespace
-		No-show\(\times\)Join before 2014&                     &      -3.461&                     &       0.066         \\
+		No-show\(\times\)Join before 2014&                     &      -3.461\sym{**}&                     &       0.066         \\
 		                    &                     &     (1.098)         &                     &     (0.053)         \\
 		% \addlinespace
 		% Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
@@ -2157,6 +2181,8 @@ is the earnings received in the respective hour.
 		}
 
 		\begin{tablenotes}
+	     	\parindent 1em%  %ChaoQin
+	    	\small
 			Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes; the dependent variable in Columns (3) and (4) is the remaining average wage in SGD/h.
 		\end{tablenotes}
 %	\end{threeparttable}
@@ -2165,21 +2191,22 @@ is the earnings received in the respective hour.
 
 \begin{table}
 	\centering
-	\caption{C\&NS effects in the 9th hour, at different cumulative income intervals}
+	\caption{C\&NS Effects in the 9th Hour, at Different Cumulative Income Intervals}
 	\label{tb:quitincome}
 %	\begin{threeparttable}
     {
     \footnotesize
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
         \toprule
         \toprule
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{50-100 SGD}&\multicolumn{1}{c}{100-150 SGD}&\multicolumn{1}{c}{150-200 SGD}&\multicolumn{1}{c}{250-300 SGD}&\multicolumn{1}{c}{300-350 SGD}\\
         \midrule
-        Cancellation (dummy)&      0.0015&     -0.0219&     -0.0288&     -0.0166&     -0.0068\\
+        Cancellation (dummy)&      0.0015&     -0.0219\sym{***}&     -0.0288\sym{***}&     -0.0166&     -0.0068\\
                     &    (0.0188)&    (0.0074)&    (0.0051)&    (0.0086)&    (0.0187)\\
         \addlinespace
-        No-show (dummy)&     -0.0132&     -0.0166&     -0.0264&     -0.0070&      0.0542\\
+        No-show (dummy)&     -0.0132&     -0.0166&     -0.0264\sym{**}&     -0.0070&      0.0542\\
                     &    (0.0293)&    (0.0114)&    (0.0081)&    (0.0148)&    (0.0330)\\
         \midrule
         Mean hazard rate&      0.1070&      0.1310&      0.1469&      0.1397&      0.1291\\
@@ -2189,6 +2216,8 @@ is the earnings received in the respective hour.
     \end{tabularx}
     }
     \begin{tablenotes}
+    	\parindent 1em%  %ChaoQin
+		\small
 		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. 
     \end{tablenotes}
 
@@ -2197,7 +2226,7 @@ is the earnings received in the respective hour.
 
 \begin{table}
 	\centering
-	\caption{Net effects of C\&NS on total shift income}
+	\caption{Net Effects of C\&NS on Total Shift Income}
 	\label{tb:overcompensate}
 %	\begin{threeparttable}
 % 			{
@@ -2232,6 +2261,7 @@ is the earnings received in the respective hour.
 			% \input{tb/shift2/shift_income.tex}	
 			{
 			\footnotesize
+            \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{2}{S}}
 			\addlinespace
 			\addlinespace
@@ -2242,13 +2272,13 @@ is the earnings received in the respective hour.
 			                    \cmidrule{2-3}
 			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         \\
 			\midrule
-			Cancellations (count)&      12.273&       3.445\\
+			Cancellations (count)&      12.273\sym{***}&       3.445\sym{***}\\
 			                    &     (0.114)         &     (0.070)         \\
 			\addlinespace
-			No-shows (count)    &       9.341&       0.680\\
+			No-shows (count)    &       9.341\sym{***}&       0.680\sym{***}\\
 			                    &     (0.180)         &     (0.112)         \\
 			\addlinespace
-			Shift duration (hours)&                     &      18.933\\
+			Shift duration (hours)&                     &      18.933\sym{***}\\
 			                    &                     &     (0.042)         \\
 			%\midrule
 			\addlinespace
@@ -2258,6 +2288,8 @@ is the earnings received in the respective hour.
 			\end{tabularx}
 			}
 		\begin{tablenotes}
+		    \parindent 1em%  %ChaoQin
+		    \small
 			Each column is a separate regression. An observation is a shift. %The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. 
 Both regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. 
 		\end{tablenotes}
@@ -2268,7 +2300,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 \begin{table}
 %	\addtocounter{table}{-1}
 	\centering
-	\caption{How drivers improve earnings after C\&NS}
+	\caption{How Drivers Improve Earnings after C\&NS}
 	\label{tb:earningsbreakdown}
 %	\begin{threeparttable}
 %		\small
@@ -2276,6 +2308,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		% \input{tb/earningsbreakdown.tex}		
 		{
 		\footnotesize
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S}}
 		\toprule
 		\toprule
@@ -2283,10 +2316,10 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		                    &\multicolumn{1}{p{2cm}}{\centering Duration with passenger}&\multicolumn{1}{p{2cm}}{\centering Break duration}&\multicolumn{1}{p{2cm}}{\centering Completed trips}&\multicolumn{1}{p{2cm}}{\centering Completed bookings}&\multicolumn{1}{p{2cm}}{\centering Street hail trips}\\
 		                    &\multicolumn{1}{p{2cm}}{\centering(mins)}&\multicolumn{1}{p{2cm}}{\centering (mins)}&\multicolumn{1}{p{2cm}}{\centering (count)}&\multicolumn{1}{p{2cm}}{\centering (count)}&\multicolumn{1}{p{2cm}}{\centering(count)}\\
 		\midrule
-		Cancellations in last hour (count)&      0.7041&     -0.5102&      0.0409&      0.0902&     -0.0392\\
+		Cancellations in last hour (count)&      0.7041\sym{***}&     -0.5102\sym{***}&      0.0409\sym{***}&      0.0902\sym{***}&     -0.0392\sym{***}\\
 		                    &    (0.0179)         &    (0.0161)         &    (0.0014)         &    (0.0009)         &    (0.0015)         \\
 		\addlinespace
-		No-shows in last hour (count)&      0.5740&     -0.7992&      0.0610&      0.1011&     -0.0303\\
+		No-shows in last hour (count)&      0.5740\sym{***}&     -0.7992\sym{***}&      0.0610\sym{***}&      0.1011\sym{***}&     -0.0303\sym{***}\\
 		                    &    (0.0355)         &    (0.0319)         &    (0.0028)         &    (0.0018)         &    (0.0029)         \\
 		% \addlinespace
 		% Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &         {Yes}         &         {Yes}         \\
@@ -2301,6 +2334,8 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		\end{tabularx}
 		}
 		\begin{tablenotes}
+			\parindent 1em%  %ChaoQin
+	    	\small
 			Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses. 
 		\end{tablenotes}
 %	\end{threeparttable}
@@ -2309,14 +2344,17 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 
 
 \begin{table}
+\hspace*{-2pt}\makebox[\linewidth][c]{%      
+    \begin{minipage}{18cm} %ChaoQin	
 	\centering
-	\caption{Distance, time and speed to the next job}
+	\caption{Distance, Time and Speed to the Next Job}
 	\label{tb:nexttrip}
 	% \begin{threeparttable}
 %		\small
 		\setlength{\tabcolsep}{0pt}
 		% \input{tb/nexttrip2.tex}
 		{
+        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 		\footnotesize
 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}}
 		\toprule
@@ -2329,16 +2367,16 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
 
 		\midrule
-		Cancellation        &     -0.9560&     -0.8704&     -4.7513&     -4.5632&      3.6285&      3.7225\\
+		Cancellation        &     -0.9560\sym{***}&     -0.8704\sym{***}&     -4.7513\sym{***}&     -4.5632\sym{***}&      3.6285\sym{***}&      3.7225\sym{***}\\
 		                    &    (0.0151)         &    (0.0152)         &    (0.0624)         &    (0.0627)         &    (0.0965)         &    (0.0979)         \\
 		\addlinespace
-		No-show             &     -1.0752&     -0.9916&     -4.9562&     -4.7723&      0.7910&      0.8913\\
+		No-show             &     -1.0752\sym{***}&     -0.9916\sym{***}&     -4.9562\sym{***}&     -4.7723\sym{***}&      0.7910\sym{***}&      0.8913\sym{***}\\
 		                    &    (0.0188)         &    (0.0189)         &    (0.0801)         &    (0.0807)         &    (0.0754)         &    (0.0762)         \\
 		\addlinespace
-		Demand density      &                     &     -1.6811&                     &     -5.1314&                     &     -3.4812\\
+		Demand density      &                     &     -1.6811\sym{***}&                     &     -5.1314\sym{***}&                     &     -3.4812\sym{***}\\
 		                    &                     &    (0.0095)         &                     &    (0.0453)         &                     &    (0.0817)         \\
 		\addlinespace
-		Vehicles within 500 m ('000)&                     &      3.9700&                     &      7.1141&                     &      2.9125\\
+		Vehicles within 500 m ('000)&                     &      3.9700\sym{***}&                     &      7.1141\sym{***}&                     &      2.9125\sym{***}\\
 		                    &                     &    (0.0653)         &                     &    (0.2729)         &                     &    (0.4189)         \\
 		% \addlinespace
 		% Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
@@ -2353,17 +2391,21 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		\bottomrule
 		\end{tabularx}
 		}
-		
 		\begin{tablenotes}
+			\parindent 1em%  %ChaoQin
+		    \small
 			Each column is a separate regression. An observation is a trip or booking. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week\(\times\)zone fixed effects. Standard errors clustered by drivers in parentheses. 
 		\end{tablenotes}
 	% \end{threeparttable}
+	    \end{minipage}%	
+    }  %ChaoQin
 \end{table}
 
 \begin{table}
     \centering
     \footnotesize
-    \caption{Robustness check: No immediate pickups}
+    \caption{Robustness Check: No Immediate Pickups}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}}
         \toprule
         \toprule
@@ -2371,10 +2413,10 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
         &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
         &\multicolumn{1}{p{2cm}}{\centering Stop working (dummy)}&\multicolumn{1}{p{2cm}}{\centering Remaining wage (SGD/h)}&\multicolumn{1}{p{2cm}}{\centering Stop working (dummy)}&\multicolumn{1}{p{2cm}}{\centering Remaining wage (SGD/h)}\\
         \midrule
-        Cancellation (dummy)&     -0.0210&       0.637&     -0.0237&       0.708\\
+        Cancellation (dummy)&     -0.0210\sym{***}&       0.637\sym{***}&     -0.0237\sym{***}&       0.708\sym{***}\\
                             &  (0.000582)&    (0.0189)&  (0.000633)&    (0.0202)\\
         \addlinespace
-        No show (dummy) &     -0.0177&       0.558&     -0.0200&       0.649\\
+        No show (dummy) &     -0.0177\sym{***}&       0.558\sym{***}&     -0.0200\sym{***}&       0.649\sym{***}\\
                             &   (0.00105)&    (0.0324)&   (0.00113)&    (0.0340)\\
         \midrule
         Observations        &\num{13061593}&\num{12011136}&\num{11941228}&\num{10894349}\\
@@ -2383,6 +2425,8 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \end{tabularx}
     \label{tb:immepickup}
 	\begin{tablenotes}
+		\parindent 1em%  %ChaoQin
+		\small
 	    Each column is a separate regression. An observation is a trip or a booking. All regressions include driver fixed effects, date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, cumulative hours, demand and supply density, weather conditions, number of cumulative bookings, on-call duration and distance. Dependent variable for Columns (1) and (3): dummy indicating the last trip/booking of the shift, for Columns (2) and (4): Average SGD earned per hour for the rest of the shift. Columns (1) and (2) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 3 mins. Columns (3) and (4) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 1 km. Standard errors clustered by drivers in parentheses. 
 	\end{tablenotes}
 \end{table}
@@ -2390,19 +2434,22 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 
 
 \begin{table}[]
+\hspace*{-2pt}\makebox[\linewidth][c]{%      
+    \begin{minipage}{18cm} %ChaoQin	
     \centering
     \footnotesize
-    \caption{Robustness check: Variation in drivers' ability over time and location}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}} 
+    \caption{Robustness Check: Variation in Drivers' Ability over Time and Location}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}} 
         \toprule
         \toprule
         &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
         &\multicolumn{1}{p{1.5cm}}{\centering Includes driver \(\times\) month FE}&\multicolumn{1}{p{1.5cm}}{\centering Includes driver \(\times\) day-of-week FE}&\multicolumn{1}{p{1.5cm}}{\centering Includes driver \(\times\) region FE}&\multicolumn{1}{p{1.5cm}}{\centering CBD trips/bookings}&\multicolumn{1}{p{1.5cm}}{\centering Non-CBD trips/bookings}&\multicolumn{1}{p{1.5cm}}{\centering Bookings without destination}\\
         \midrule
-        Cancellation (dummy)&     -0.0220&     -0.0217&     -0.0232&     -0.0178&     -0.0278&   -0.0151\\
+        Cancellation (dummy)&     -0.0220\sym{***}&     -0.0217\sym{***}&     -0.0232\sym{***}&     -0.0178\sym{***}&     -0.0278\sym{***}&   -0.0151\sym{***}\\
                     &  (0.0004)&  (0.0004)&  (0.0004)&  (0.0004)&  (0.0006)&  (0.0007)\\
         \addlinespace
-        No show (dummy)&     -0.0199&     -0.0194&     -0.0220&     -0.0176&     -0.0228&  -0.0138\\
+        No show (dummy)&     -0.0199\sym{***}&     -0.0194\sym{***}&     -0.0220\sym{***}&     -0.0176\sym{***}&     -0.0228\sym{***}&  -0.0138\sym{***}\\
                     &  (0.0007)&  (0.0007)&  (0.0007)&  (0.0008)&   (0.0011)&  (0.0008)\\
         \midrule
         Mean hazard rate&    {0.0682}&    {0.0682}&    {0.0682}&    {0.0471}&    {0.0921}& {0.0403}\\
@@ -2411,9 +2458,13 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
         \bottomrule
     \end{tabularx}
     \begin{tablenotes}
+    	\parindent 1em%  %ChaoQin
+		\small
         Each column is a separate regression. An observation is a trip or a booking. Dependent variable: Stop working, i.e. the indicator for the last trip/booking of the shift. All regressions include date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, weather conditions, number of previous bookings, on-call duration, and distance. Columns (4) and (5) include driver fixed effects. Column (1) includes driver\(\times\)month fixed effects, Column (2) includes driver\(\times\)day-of-week fixed effects, and Column (3) includes driver\(\times\)region fixed effects. Columns (1), (2) and (3) use the full sample of trips and bookings. Column (4) uses only the subset of trips and bookings from the CBD. Column (5) uses the subset outside the CBD. Column (6) uses only bookings without destination information at the time of booking. Standard errors clustered by drivers in parentheses.
     \end{tablenotes}
     \label{tb:drfe}
+        \end{minipage}%	
+    }  %ChaoQin
 \end{table}
 
 
@@ -2421,14 +2472,15 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 \begin{table}
     \centering
     \footnotesize
-    \caption{Robustness check: C\&NS rate serial correlation}
+    \caption{Robustness Check: C\&NS Rate Serial Correlation}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}} 
         \toprule
         \toprule
                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
                     &\multicolumn{1}{c}{All}&\multicolumn{1}{c}{5 am - 2 pm}&\multicolumn{1}{c}{2 pm - 10 pm}&\multicolumn{1}{c}{10 pm - 5 am}\\
         \midrule
-        C\&NS rate in previous hour&       0.225&       0.221&      0.0533&     -0.0194\\
+        C\&NS rate in previous hour&       0.225\sym{***}&       0.221\sym{***}&      0.0533&     -0.0194\\
                     &    (0.0226)&    (0.0334)&    (0.0426)&    (0.0489)\\
         \midrule
         Observations&  \num{2137}&   \num{801}&   \num{720}&   \num{616}\\
@@ -2436,6 +2488,8 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
         \bottomrule
     \end{tabularx}
     \begin{tablenotes}
+    	\parindent 1em%  %ChaoQin
+		\small
         Each column is a separate regression. Data: time series of hourly nation-wide C\&NS rate (number of C\&NS divided by number of bookings in each hour). Dependent variable: hourly nation-wide C\&NS rate. The top one percentile C\&NS rates are dropped from all regressions. Estimated by OLS with date fixed effects and hour-of-day\(\times\)day-of-week fixed effects. Column (1) uses the full sample. Column (2) uses only observations from hours from 5 am to 2 pm each day, Column (3) uses 2 pm to 10 pm, and Column (4) uses 10 pm to 5 am, respectively. Standard errors in parentheses.
     \end{tablenotes}
     \label{tb:ccar}
@@ -2445,16 +2499,17 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 \begin{table}
     \centering
     \footnotesize
-    \caption{Robustness check: Placebo test}
+    \caption{Robustness Check: Placebo Test}
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{S}} 
         \toprule
         \toprule
             &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
 \midrule
-Cancellation in last hour (indicator)&     -0.0119&            &     -0.0119\\
+Cancellation in last hour (indicator)&     -0.0119\sym{***}&            &     -0.0119\sym{***}\\
             &  (0.0004)&            &  (0.0004)\\
 \addlinespace
-No-show in last hour (indicator)&     -0.0103&            &     -0.0103\\
+No-show in last hour (indicator)&     -0.0103\sym{***}&            &     -0.0103\sym{***}\\
             &  (0.0008)&            &  (0.0008)\\
 \addlinespace
 Placebo cancellation in last hour (indicator)&            &    0.0004&    0.0005\\
@@ -2469,6 +2524,8 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
         \bottomrule
     \end{tabularx}
     \begin{tablenotes}
+    	\parindent 1em%  %ChaoQin
+		\small
         An observation is a trip or a booking. Data is sampled from a randomly selected set of 16,853 drivers. Estimated by OLS with driver fixed effects, date fixed effects hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, a cubic function of cumulative hours, weather conditions, number of previous bookings, on-call duration, and distance.  Dependent variable: a dummy indicating the last trip/booking of the shift. Main regressors: dummies that indicate whether there is any cancellation/no-show/placebo cancellation/placebo no-show occurs within one hour prior to the end of the trip/booking. Standard errors clustered by drivers in parentheses.
     \end{tablenotes}
     \label{tb:placebo}
@@ -2488,8 +2545,8 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
 
 \begin{figure}
 	{\centering
+		\caption{Proportion of drivers who stop work: with and without C\&NS} %ChaoQin
 		\includegraphics[width=0.75\textwidth]{./fg/modelfree_quit_vert.pdf}
-		\caption{Proportion of drivers who stop work: with and without C\&NS}
 		\label{fg:quitbyhour}
 	}
 %	{\justifying\footnotesize\emph{Notes:} The top panel shows the proportion of drivers who stop work after each hour of the day over the total number of drivers who work in that hour. The bottom panel shows the proportion of drivers who stop work after a certain number of hours into the shift over the total number of drivers who for at least that number of hours into the shift. The solid lines are for driver-hours in which there are no C\&NS. The dashed lines are for driver-hours in which there are some C\&NS.}
@@ -2497,8 +2554,9 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
 
 % \begin{figure}
 	{\centering
+		\caption{Average hourly earnings in next: with and without C\&NS} %ChaoQin
 		\includegraphics[width=0.75\textwidth]{./fg/modelfree_earnings_vert.pdf}
-		\caption{Average hourly earnings in next: with and without C\&NS}
+
 		\label{fg:earningsbyhour}
 	}
 %	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earnings in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NS. The dashed lines are for driver-hours in which there are some C\&NS.}
@@ -2534,13 +2592,13 @@ The data cleaning process includes the following steps
 	\item observations in a shift with shift earnings less than 10 SGD or more than 1,000 SGD (0.01\%)%\footnote{1000 SGD is the 99.9725 percentile of the original shift income distribution.}
 	\item duplicate trips/bookings, i.e., trips/bookings with the same start time and driver (0.3\%)
 \end{itemize}
-
+\newpage %ChaoQin
 \section{Number of taxi trips and C\&NS rate by day of week and hour of day}
 \FloatBarrier
 \begin{figure}[!ht]
 	\centering
+	\caption{Average number of completed trips and rate of C\&NS by day of week and hour of day}%ChaoQin
 	\includegraphics[width=0.8\textwidth]{./fg/dowplot.pdf}
-	\caption{Average number of completed trips and rate of C\&NS by day of week and hour of day}
 	\label{fg:trips}
 \end{figure}
 
@@ -2615,44 +2673,46 @@ The second element converges to
 \newpage
 \section{Effects of C\&NS on the remaining working time and the remaining idle percentage}
  	\begin{table}
+ 	\hspace*{-2pt}\makebox[\linewidth][c]{%      
+    \begin{minipage}{20cm} %ChaoQin	
  		\centering
- 		\caption{Remaining work time (mins)}
+ 		\caption{Remaining Work Time (mins)}
  		\label{tb:robustmins}
             \setlength{\tabcolsep}{5pt}
  			\footnotesize
 % 			\input{tb/eq2mins.tex}
             {
             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-            \begin{tabular}{l*{8}{S}}
+            \begin{tabular}{l*{8}{c}}
             \toprule
             \toprule
                                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
             \midrule
-            Cancellation (dummy)&      11.66&       4.04&       4.40&       4.70&       4.21&       4.61&       3.62&       4.24\\
+            Cancellation (dummy)&      11.66\sym{***}&       4.04\sym{***}&       4.40\sym{***}&       4.70\sym{***}&       4.21\sym{***}&       4.61\sym{***}&       3.62\sym{***}&       4.24\sym{***}\\
                                 &     (0.26)         &     (0.26)         &     (0.26)         &     (0.27)         &     (0.27)         &     (0.27)         &     (0.27)         &     (0.27)         \\
             \addlinespace
-            No-show (dummy)     &       9.17&       3.93&       4.26&       4.70&       4.18&       4.63&       4.13&       5.93\\
+            No-show (dummy)     &       9.17\sym{***}&       3.93\sym{***}&       4.26\sym{***}&       4.70\sym{***}&       4.18\sym{***}&       4.63\sym{***}&       4.13\sym{***}&       5.93\sym{***}\\
                                 &     (0.42)         &     (0.39)         &     (0.40)         &     (0.40)         &     (0.40)         &     (0.40)         &     (0.41)         &     (0.42)         \\
             \addlinespace
-            Cumulative hours    &     -36.96&     -26.33&     -26.33&     -26.28&     -25.91&     -26.24&     -26.16&     -25.77\\
+            Cumulative hours    &     -36.96\sym{***}&     -26.33\sym{***}&     -26.33\sym{***}&     -26.28\sym{***}&     -25.91\sym{***}&     -26.24\sym{***}&     -26.16\sym{***}&     -25.77\sym{***}\\
                                 &     (0.17)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.21)         &     (0.21)         \\
             \addlinespace
-            Cumulative income ('00 SGD)&     -37.79&     -44.88&     -44.78&     -44.70&     -53.54&     -44.68&     -44.66&     -53.61\\
+            Cumulative income ('00 SGD)&     -37.79\sym{***}&     -44.88\sym{***}&     -44.78\sym{***}&     -44.70\sym{***}&     -53.54\sym{***}&     -44.68\sym{***}&     -44.66\sym{***}&     -53.61\sym{***}\\
                                 &     (0.60)         &     (0.58)         &     (0.58)         &     (0.58)         &     (0.63)         &     (0.58)         &     (0.58)         &     (0.63)         \\
             \addlinespace
-            Demand density      &       4.59&       3.12&       6.12&       3.60&       3.11&       3.65&       3.63&       3.34\\
+            Demand density      &       4.59\sym{***}&       3.12\sym{***}&       6.12\sym{***}&       3.60\sym{***}&       3.11\sym{***}&       3.65\sym{***}&       3.63\sym{***}&       3.34\sym{***}\\
                                 &     (0.18)         &     (0.11)         &     (0.35)         &     (0.16)         &     (0.16)         &     (0.16)         &     (0.16)         &     (0.16)         \\
             \addlinespace
-            Previous bookings (count)&                     &                     &                     &                     &       4.29&                     &                     &       4.39\\
+            Previous bookings (count)&                     &                     &                     &                     &       4.29\sym{***}&                     &                     &       4.39\sym{***}\\
                                 &                     &                     &                     &                     &     (0.09)         &                     &                     &     (0.09)         \\
             \addlinespace
-            Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -8.89&                     &      -4.40\\
+            Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -8.89\sym{***}&                     &      -4.40\sym{***}\\
                                 &                     &                     &                     &                     &                     &     (1.18)         &                     &     (1.19)         \\
             \addlinespace
-            Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.14         &      -0.80\\
+            Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.14         &      -0.80\sym{***}\\
                                 &                     &                     &                     &                     &                     &                     &     (0.17)         &     (0.18)         \\
             \addlinespace
-            Oncall duration (mins)&                     &                     &                     &                     &                     &                     &       0.21&      -0.37\\
+            Oncall duration (mins)&                     &                     &                     &                     &                     &                     &       0.21\sym{***}&      -0.37\sym{***}\\
                                 &                     &                     &                     &                     &                     &                     &     (0.03)         &     (0.03)         \\
             \addlinespace
             Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
@@ -2671,8 +2731,12 @@ The second element converges to
             \end{tabular}
             }
  			\begin{tablenotes}
+ 				\parindent 1em%  %ChaoQin
+	        	\small
  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. 
  			\end{tablenotes}
+ 			    \end{minipage}%	
+    }  %ChaoQin
  	\end{table}
 
 
@@ -2684,8 +2748,10 @@ The second element converges to
 
 %\begin{landscape}
 	\begin{table}[h]
+	\hspace*{-2pt}\makebox[\linewidth][c]{%      
+    \begin{minipage}{18cm} %ChaoQin	
  		\centering
- 		\caption{Idle percentage after a trip/booking (\%)}
+ 		\caption{Idle Percentage after a Trip/Booking (\%)}
  		\label{tb:robustidle}
 		
  		% \begin{threeparttable}
@@ -2694,36 +2760,36 @@ The second element converges to
  			% \input{tb/eq4idle.tex}
 				{
 				\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-				\begin{tabular}{l*{8}{S}}
+				\begin{tabular}{l*{8}{c}}
 				\toprule
 				\toprule
 				                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
 				\midrule
-				Cancellation (dummy)&      -1.515&      -1.161&      -1.218&      -0.894&      -0.897&      -0.746&      -0.772&      -0.724\\
+				Cancellation (dummy)&      -1.515\sym{***}&      -1.161\sym{***}&      -1.218\sym{***}&      -0.894\sym{***}&      -0.897\sym{***}&      -0.746\sym{***}&      -0.772\sym{***}&      -0.724\sym{***}\\
 				                    &     (0.023)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.023)         &     (0.023)         \\
 				\addlinespace
-				No-show (dummy)     &      -0.704&      -0.225&      -0.313&       0.052         &       0.049         &       0.200&       0.312&       0.334\\
+				No-show (dummy)     &      -0.704\sym{***}&      -0.225\sym{***}&      -0.313\sym{***}&       0.052         &       0.049         &       0.200\sym{***}&       0.312\sym{***}&       0.334\sym{***}\\
 				                    &     (0.036)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.036)         &     (0.036)         \\
 				\addlinespace
-				Cumulative hours    &      -1.616&      -1.209&      -1.185&      -1.177&      -1.176&      -1.182&      -1.156&      -1.158\\
+				Cumulative hours    &      -1.616\sym{***}&      -1.209\sym{***}&      -1.185\sym{***}&      -1.177\sym{***}&      -1.176\sym{***}&      -1.182\sym{***}&      -1.156\sym{***}&      -1.158\sym{***}\\
 				                    &     (0.012)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         \\
 				\addlinespace
-				Cumulative income ('00 SGD)&       5.812&       4.329&       4.234&       4.208&       4.168&       4.215&       4.091&       4.054\\
+				Cumulative income ('00 SGD)&       5.812\sym{***}&       4.329\sym{***}&       4.234\sym{***}&       4.208\sym{***}&       4.168\sym{***}&       4.215\sym{***}&       4.091\sym{***}&       4.054\sym{***}\\
 				                    &     (0.049)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.045)         &     (0.045)         \\
 				\addlinespace
-				Demand density      &      -2.315&      -1.677&      -3.760&      -1.537&      -1.540&      -1.569&      -1.545&      -1.591\\
+				Demand density      &      -2.315\sym{***}&      -1.677\sym{***}&      -3.760\sym{***}&      -1.537\sym{***}&      -1.540\sym{***}&      -1.569\sym{***}&      -1.545\sym{***}&      -1.591\sym{***}\\
 				                    &     (0.016)         &     (0.012)         &     (0.029)         &     (0.018)         &     (0.018)         &     (0.019)         &     (0.018)         &     (0.019)         \\
 				\addlinespace
-				Previous bookings (count)&                     &                     &                     &                     &       0.018 &                     &                     &       0.018 \\
+				Previous bookings (count)&                     &                     &                     &                     &       0.018\sym{*} &                     &                     &       0.018\sym{*} \\
 				                    &                     &                     &                     &                     &     (0.008)         &                     &                     &     (0.008)         \\
 				\addlinespace
-				Vehicles within 500m ('000)&                     &                     &                     &                     &                     &       9.606&                     &       9.337\\
+				Vehicles within 500m ('000)&                     &                     &                     &                     &                     &       9.606\sym{***}&                     &       9.337\sym{***}\\
 				                    &                     &                     &                     &                     &                     &     (0.098)         &                     &     (0.099)         \\
 				\addlinespace
-				Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.328&      -0.225\\
+				Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.328\sym{***}&      -0.225\sym{***}\\
 				                    &                     &                     &                     &                     &                     &                     &     (0.015)         &     (0.014)         \\
 				\addlinespace
-				On-call duration (mins)&                     &                     &                     &                     &                     &                     &      -0.051&      -0.030\\
+				On-call duration (mins)&                     &                     &                     &                     &                     &                     &      -0.051\sym{***}&      -0.030\sym{***}\\
 				                    &                     &                     &                     &                     &                     &                     &     (0.003)         &     (0.003)         \\
 				\addlinespace
 				Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
@@ -2743,9 +2809,13 @@ The second element converges to
 				\end{tabular}
 				}
  			\begin{tablenotes}
+ 				\parindent 1em%  %ChaoQin
+	        	\small
  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. 
  			\end{tablenotes}
  		% \end{threeparttable}
+ 		   \end{minipage}%	
+    }  %ChaoQin
  	\end{table}
 % \end{landscape}
 \FloatBarrier
@@ -2792,7 +2862,7 @@ the the instrumental variables are weak.
 \begin{table}
     \centering
     \footnotesize
-    \caption{Hazard rate of stopping work: IV regression}
+    \caption{Hazard Rate of Stopping Work: IV Regression}
     \label{tb:iv}
 {
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
@@ -2822,8 +2892,9 @@ Exogeneity test \(\chi^2\)-statistic&                     &                     
 \bottomrule
 \end{tabularx}
 }
-
  			\begin{tablenotes}
+ 			\parindent 1em%  %ChaoQin
+		     \small
  			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of exogeneity tests in square bracket.
  			\end{tablenotes}
 

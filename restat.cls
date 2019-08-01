@@ -353,12 +353,14 @@
 }
 \def\ps@headings{
   \leftskip=0pt\rightskip=0pt
-  \let\@oddfoot\@empty
+  \let\@oddfoot\@empty  %ChaoQin
   \let\@evenfoot\@empty
-  %\def\@oddhead{{\small\textit{\MakeUppercase{VOL. \@pubVolume\ \ NO. \@pubIssue\hfil\@shortTitle\hfil\thepage}}}}
-  \def\@oddhead{{{\MakeUppercase{\hfil\hfil\thepage}}}}
-%  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
-  \def\@evenhead{{{\MakeUppercase{\thepage\hfil\hfil}}}}
+  \def\@oddhead{{\hfil\MakeUppercase{\@shortTitle} \hfil\thepage}}%ChaoQin
+  %\def\@oddhead{{{\MakeUppercase{\hfil\hfil\thepage}}}} %ChaoQin
+  %\def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
+  \def\@evenhead{{\thepage\hfil
+      \MakeUppercase{The Review of Economics and Statistics} \hfil}}%ChaoQin
+  %\def\@evenhead{{{\MakeUppercase{\thepage\hfil\hfil}}}}%ChaoQin
 %   \def\@oddhead{\hfil{\small{\thepage}}\hfil}
 %   \let\@evenhead\@oddhead
 }
@@ -496,9 +498,9 @@
   \begin{@twocolumnfalse}
     \begin{center}%
       \null\vskip\abovetitleskip
-      {\titlesize\bfseries\MakeUppercase{\@title} \par}%
+      {\titlesize\bfseries\MakeUppercase{\@title} \par}% %ChaoQin
 	      \vskip 16pt%
-	      {\authorsize{\@author}\par}
+	      {\authorsize{\@author}\par}  %ChaoQin
 %      \draftDate
       \vskip 24pt%
     \end{center}%
@@ -528,18 +530,18 @@
 
 % AER section numberingc@
 \setcounter{secnumdepth}{3}
-\renewcommand\thepart{\@Roman\c@part}
-%\renewcommand\thesection{\@Roman\c@section}
-\renewcommand \thesection{\roman{section}}
-\renewcommand \thesection{\MakeSencase{section}}
-\renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
+\renewcommand\thepart{\@Roman\c@part} %ChaoQin
+\renewcommand\thesection{\Roman{section}} %ChaoQin
+\renewcommand\thesubsection{\@Alph\c@subsection} %ChaoQin
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
-\renewcommand\theparagraph{\thesubsubsection}
-\renewcommand\thesubparagraph{\thesubsubsection}
+\renewcommand\theparagraph{\@arabic{paragraph}}
+%\renewcommand\theparagraph{\thesubsubsection} %ChaoQin
+\renewcommand\thesubparagraph{\theparagraph}
+%\renewcommand\thesubparagraph{\thesubsubsection} %ChaoQin
 \renewcommand\p@subsection{\thesection.}
 \renewcommand\p@subsubsection{\thesubsection.}
-\renewcommand\p@paragraph{\thesubsubsection.}
-\renewcommand\p@subparagraph{\theparagraph.}
+%\renewcommand\p@paragraph{\thesubsubsection.} %ChaoQin
+%\renewcommand\p@subparagraph{\theparagraph.} %ChaoQin
 \def\@seccntformat#1{\csname the#1\endcsname.\quad}
 
 
@@ -628,7 +630,7 @@
 \@startsection{section}{1}{\z@}%
 {\abovesectionskip}%
 {\belowsectionskip}%
-{\sectionsize\center\MakeUppercase}}
+{\sectionsize\center\bfseries}} %ChaoQin
 
 \newcommand\subsection{%
 \@startsection{subsection}{2}{\z@}%
@@ -643,21 +645,21 @@
 {\bfseries}}
 
 
-% paragraph and subparagraph are not used - they are included for compatibility with hyperref.
-%\newcommand\paragraph{%
-%\@startsection{paragraph}{4}{\z@}%
-%{\abovesectionskip}%
-%{\belowsectionskip}%
-%{\sectionsize\itshape\center}}
+% paragraph and subparagraph are not used - they are included for compatibility with hyperref. %ChaoQin
+\newcommand\paragraph{%
+\@startsection{paragraph}{4}{\z@}%
+{\abovesectionskip}%
+{\belowsectionskip}%
+{\sectionsize\itshape\center}}
 
-%\newcommand\subparagraph{%
-%\@startsection{subparagraph}{4}{\z@}%
-%{\abovesectionskip}%
-%{\belowsectionskip}%
-%{\sectionsize\upshape\center}}
+\newcommand\subparagraph{%
+\@startsection{subparagraph}{4}{\z@}%
+{\abovesectionskip}%
+{\belowsectionskip}%
+{\sectionsize\upshape\center}}
 
-\newcommand\paragraph{\subsubsection}
-\newcommand\subparagraph{\subsubsection}
+%\newcommand\paragraph{\subsubsection} %ChaoQin
+%\newcommand\subparagraph{\subsubsection} %ChaoQin
 
 \def\appendixsectionstyle{\scshape\sectionsize\center}
 \def\appendixsubsectionstyle{\itshape\sectionsize\center}
@@ -842,7 +844,7 @@
 \def\fps@table{tbp}
 \def\ftype@table{2}
 \def\ext@table{lot}
-\def\fnum@table{\tablename\nobreakspace\thetable---}
+\def\fnum@table{\textsc{\tablename}\nobreakspace\thetable.---} %ChaoQin
 \newenvironment{table}[1][h]
                {\@float{table}[#1]\begin{center}}
                {\end{center}\end@float}
@@ -867,7 +869,11 @@
 \newenvironment{widefigure}{\begin{figure*}}{\end{figure*}}
 \newenvironment{widetable}{\begin{table*}}{\end{table*}}
 
-\newenvironment{tablenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\notesize{\itshape#1: }}{\end{minipage}}
+\newenvironment{tablenotes}
+{\begin{minipage}[t]
+{\linewidth}
+}
+{\end{minipage}} %ChaoQin
 \newenvironment{figurenotes}[1][Note]{\begin{minipage}[t]{\linewidth}\notesize{\itshape#1: }}{\end{minipage}}
 
 % ==============================================================================
@@ -879,14 +885,17 @@
 \setlength{\skip\footins}{15\p@ \@plus 2\p@ \@minus 2\p@}
 
 \renewcommand\footnoterule{%
-  \kern-3\p@
+ \kern-3\p@
   \hrule\@width\z@
-  \kern2.6\p@}
+ \kern2.6\p@}
+%\newcommand\@makefntext[1]{%
+  % \parindent 1em%
+  % \noindent
+   %\hb@xt@2.0em{\hss\thefootnote}#1\hskip 1em}% ChaoQin
 \newcommand\@makefntext[1]{%
     \parindent 1em%
     \noindent
-    \hb@xt@2.0em{\hss\thefootnote. }#1\hskip 1em}
-
+    \hb@xt@2.0em{\hss\@makefnmark}#1\hskip 1em}% ChaoQin
 
 
 % ==============================================================================
@@ -956,7 +965,7 @@
 \renewcommand\thesubsection{\thesection\@arabic\c@subsection}
 \renewcommand\theequation {\thesection\@arabic\c@equation}
 \renewcommand\thefigure{\thesection\@arabic\c@figure}
-\renewcommand\thetable{\thesection\@arabic\c@table}
+\renewcommand\thetable{\thesection\@arabic\c@table}%ChaoQin
 \renewcommand\section{%
 \@startappsection{section}{1}{\z@}%
 {\abovesectionskip}%
@@ -971,7 +980,7 @@
 
 
 % references
-\newcommand\refname{REFERENCES}
+\newcommand\refname{\normalfont REFERENCES} %ChaoQin
 \newdimen\bibindent
 \setlength\bibindent{1.5em}
 \newenvironment{thebibliography}[1]
