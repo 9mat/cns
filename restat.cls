@@ -360,7 +360,7 @@
   %\def\@oddhead{{{\MakeUppercase{\hfil\hfil\thepage}}}} %ChaoQin
   %\def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
   \def\@evenhead{{\thepage\hfil
-      \MakeUppercase{The Review of Economics and Statistics} \hfil}}%ChaoQin
+      \MakeUppercase{} \hfil}}%ChaoQin
   %\def\@evenhead{{{\MakeUppercase{\thepage\hfil\hfil}}}}%ChaoQin
 %   \def\@oddhead{\hfil{\small{\thepage}}\hfil}
 %   \let\@evenhead\@oddhead
