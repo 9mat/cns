@@ -309,7 +309,7 @@
 % margins 
 % \setlength\textwidth{135.5mm}
 % \setlength\textwidth{160mm}
-\setlength\textwidth{175mm}
+\setlength\textwidth{170mm}
 
 % \setlength\textheight{200mm}
 % \setlength\textheight{225mm}
@@ -317,7 +317,7 @@
 
 % \setlength\topmargin{-30pt}
 \setlength\topmargin{-30pt}
-\setlength\oddsidemargin{-5mm}
+\setlength\oddsidemargin{-2mm}
 \setlength\evensidemargin{\oddsidemargin}
 \setlength\headheight{24pt}
 \setlength\headsep   {14pt}
