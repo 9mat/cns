@@ -317,7 +317,7 @@
 
 % \setlength\topmargin{-30pt}
 \setlength\topmargin{-30pt}
-\setlength\oddsidemargin{0mm}
+\setlength\oddsidemargin{-2mm}
 \setlength\evensidemargin{\oddsidemargin}
 \setlength\headheight{24pt}
 \setlength\headsep   {14pt}
