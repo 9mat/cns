@@ -652,17 +652,17 @@
 
 
 % paragraph and subparagraph are not used - they are included for compatibility with hyperref. %ChaoQin
-% \newcommand\paragraph{%
-% \@startsection{paragraph}{4}{\z@}%
-% {\abovesectionskip}%
-% {\belowsectionskip}%
-% {\sectionsize\itshape\center}}
-
 \newcommand\paragraph{%
-\@startsection{paragraph}{4}{3.2ex}%
-{-3.25ex\@plus -1ex \@minus -.2ex}%
-{-1.5ex \@plus -.2ex}%
-{\itshape}}
+\@startsection{paragraph}{4}{\z@}%
+{\abovesectionskip}%
+{\belowsectionskip}%
+{\sectionsize\itshape\center}}
+
+% \newcommand\paragraph{%
+% \@startsection{paragraph}{4}{3.2ex}%
+% {-3.25ex\@plus -1ex \@minus -.2ex}%
+% {-1.5ex \@plus -.2ex}%
+% {\itshape}}
 
 \newcommand\subparagraph{%
 \@startsection{subparagraph}{4}{\z@}%
