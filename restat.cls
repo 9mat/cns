@@ -361,8 +361,9 @@
   \leftskip=0pt\rightskip=0pt
   \let\@oddfoot\@empty  %ChaoQin
   \let\@evenfoot\@empty
-  \def\@oddhead{{\hfil\MakeUppercase{\@shortTitle} \hfil\thepage}}%ChaoQin
+%   \def\@oddhead{{\hfil\MakeUppercase{\@shortTitle} \hfil\thepage}}%ChaoQin
   %\def\@oddhead{{{\MakeUppercase{\hfil\hfil\thepage}}}} %ChaoQin
+  \def\@oddhead{{\hfil\hfil\thepage}} %ChaoQin
   %\def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
   \def\@evenhead{{\thepage\hfil
       \MakeUppercase{} \hfil}}%ChaoQin
