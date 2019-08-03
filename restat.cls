@@ -652,6 +652,12 @@
 
 
 % paragraph and subparagraph are not used - they are included for compatibility with hyperref. %ChaoQin
+% \newcommand\paragraph{%
+% \@startsection{paragraph}{4}{\z@}%
+% {\abovesectionskip}%
+% {\belowsectionskip}%
+% {\sectionsize\itshape\center}}
+
 \newcommand\paragraph{%
 \@startsection{paragraph}{4}{\z@}%
 {\abovesectionskip}%
