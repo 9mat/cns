@@ -316,7 +316,7 @@
 \setlength\textheight{235mm}
 
 % \setlength\topmargin{-30pt}
-\setlength\topmargin{-50pt}
+\setlength\topmargin{-48pt}
 \setlength\oddsidemargin{-2mm}
 \setlength\evensidemargin{\oddsidemargin}
 \setlength\headheight{24pt}
