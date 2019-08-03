@@ -309,7 +309,7 @@
 % margins 
 % \setlength\textwidth{135.5mm}
 % \setlength\textwidth{160mm}
-\setlength\textwidth{170mm}
+\setlength\textwidth{10mm}
 
 % \setlength\textheight{200mm}
 % \setlength\textheight{225mm}
