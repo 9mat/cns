@@ -313,10 +313,10 @@
 
 % \setlength\textheight{200mm}
 % \setlength\textheight{225mm}
-\setlength\textheight{227mm}
+\setlength\textheight{230mm}
 
 % \setlength\topmargin{-30pt}
-\setlength\topmargin{-30pt}
+\setlength\topmargin{-40pt}
 \setlength\oddsidemargin{-2mm}
 \setlength\evensidemargin{\oddsidemargin}
 \setlength\headheight{24pt}
