@@ -1694,7 +1694,8 @@ unanticipated shocks, and with potential and realized earnings.
     {
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \footnotesize
-    \begin{tabular}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
+    \begin{tabularx}{\textwidth}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
     \toprule
     \toprule
     			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stop working (dummy)}         \\
