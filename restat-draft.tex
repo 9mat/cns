@@ -1520,193 +1520,59 @@ unanticipated shocks, and with potential and realized earnings.
 % 	\end{threeparttable}
 \end{table}
 
-
-% \begin{landscape}
-% 	\begin{table}
-% 		\centering
-% 		\caption{Hazard rate of stopping work}
-% 		\label{tb:robustquit}
-% %		\begin{threeparttable}
-% 			\footnotesize
-% % 		\input{tb/eq1quit.tex}
-% 			{
-% 			\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-% 			\begin{tabular}{l*{8}{S}}
-% 			\toprule
-%       \toprule
-% 			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
-% 			\midrule
-% 			Cancellation (dummy)&      -0.018&      -0.021&      -0.024&      -0.018&      -0.018&      -0.020&      -0.021&      -0.024\\
-% 			                    &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
-% 			\addlinespace
-% 			No-show (dummy)     &      -0.020&      -0.021&      -0.025&      -0.018&      -0.018&      -0.020&      -0.020&      -0.025\\
-% 			                    &     (0.000)         &     (0.000)         &     (0.001)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.001)         &     (0.001)         \\
-% 			\addlinespace
-% 			Cumulative hours    &       0.019&       0.020&       0.020&       0.020&       0.020&       0.020&       0.020&       0.019\\
-% 			                    &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
-% 			\addlinespace
-% 			Cumulative income ('00 SGD)&       0.020&       0.019&       0.020&       0.019&       0.028&       0.019&       0.019&       0.029\\
-% 			                    &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         \\
-% 			\addlinespace
-% 			Demand density      &      -0.061&      -0.041&      -0.028&      -0.025&      -0.024&      -0.024&      -0.025&      -0.024\\
-% 			                    &     (0.000)         &     (0.000)         &     (0.001)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
-% 			\addlinespace
-% 			Previous bookings (count)&                     &                     &                     &                     &      -0.004&                     &                     &      -0.004\\
-% 			                    &                     &                     &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
-% 			\addlinespace
-% 			Vehicles within 500 m ('000)&                     &                     &                     &                     &                     &      -0.101&                     &      -0.110\\
-% 			                    &                     &                     &                     &                     &                     &     (0.002)         &                     &     (0.002)         \\
-% 			\addlinespace
-% 			Distance to pickup (km)&                     &                     &                     &                     &                     &                     &       0.000         &       0.000         \\
-% 			                    &                     &                     &                     &                     &                     &                     &     (0.000)         &     (0.000)         \\
-% 			\addlinespace
-% 			On-call duration (mins)&                     &                     &                     &                     &                     &                     &       0.000&       0.001\\
-% 			                    &                     &                     &                     &                     &                     &                     &     (0.000)         &     (0.000)         \\
-% 			\addlinespace
-% 			Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-% 			\addlinespace
-% 			Date FE           &       {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-% 			\addlinespace
-% 			Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-% 			\addlinespace
-% 			Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-% 			\addlinespace
-% 			Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-% 			%\midrule
-% 			\addlinespace
-% 			Observations        &\num{31563560}         &\num{31563560}         &\num{28528407}         &\num{28510154}         &\num{28510154}         &\num{28192061}         &\num{28118335}         &\num{27805742}         \\
-% 			$R^2$             &     {0.110}         &     {0.128}         &     {0.143}         &     {0.144}         &     {0.145}         &     {0.144}         &     {0.144}         &     {0.145}         \\
-% 			\bottomrule
-% 			\end{tabular}
-% 			}
-
-% 			\begin{tablenotes}
-%             Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. 
-% 			\end{tablenotes}
-% %		\end{threeparttable}
-% 	\end{table}
-% \end{landscape}
-
-
-% \begin{landscape}
-% 	\begin{table}
-% 		\centering
-% 		\caption{Hazard rate of stopping work}
-% 		\label{tb:robustquit}
-% %		\begin{threeparttable}
-%             \setlength{\tabcolsep}{5pt}
-% 			\footnotesize
-% % 		\input{tb/eq1quit.tex}
-%             {
-%             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-%             \begin{tabular}{l*{8}{S}}
-%             \toprule
-%             \toprule
-%                                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
-%             \midrule
-%             Cancellation (dummy)&      -0.017&      -0.019&      -0.023&      -0.017&      -0.016&      -0.018&      -0.020&      -0.021\\
-%                                 &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         \\
-%             \addlinespace
-%             No-show (dummy)     &      -0.019&      -0.019&      -0.023&      -0.017&      -0.016&      -0.018&      -0.020&      -0.021\\
-%                                 &     (<0.001)         &     (<0.001)         &     (0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (0.001)         &     (0.001)         \\
-%             \addlinespace
-%             Cumulative hours    &       0.018&       0.018&       0.019&       0.019&       0.019&       0.019&       0.019&       0.018\\
-%                                 &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         \\
-%             \addlinespace
-%             Cumulative income ('00 SGD)&       0.022&       0.023&       0.023&       0.023&       0.031&       0.023&       0.023&       0.032\\
-%                                 &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         \\
-%             \addlinespace
-%             Demand density      &      -0.060&      -0.039&      -0.024&      -0.022&      -0.022&      -0.022&      -0.022&      -0.022\\
-%                                 &     (<0.001)         &     (<0.001)         &     (0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         \\
-%             \addlinespace
-%             Previous bookings (count)&                     &                     &                     &                     &      -0.004&                     &                     &      -0.004\\
-%                                 &                     &                     &                     &                     &     (<0.001)         &                     &                     &     (<0.001)         \\
-%             \addlinespace
-%             Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -0.102&                     &      -0.104\\
-%                                 &                     &                     &                     &                     &                     &     (0.002)         &                     &     (0.002)         \\
-%             \addlinespace
-%             Distance to pickup (km)&                     &                     &                     &                     &                     &                     &       0.001&       <0.001         \\
-%                                 &                     &                     &                     &                     &                     &                     &     (<0.001)         &     (<0.001)         \\
-%             \addlinespace
-%             Oncall duration (mins)&                     &                     &                     &                     &                     &                     &       0.001&       0.001\\
-%                                 &                     &                     &                     &                     &                     &                     &     (<0.001)         &     (<0.001)         \\
-%             \addlinespace
-%             Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-%             \addlinespace
-%             Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-%             \addlinespace
-%             Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-%             \addlinespace
-%             Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-%             \addlinespace
-%             date                &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-%             \midrule
-%             Observations        &\num{31108572}         &\num{31108572}         &\num{28087962}         &\num{28069984}         &\num{28069984}         &\num{27757937}         &\num{27683044}         &\num{27375698}         \\
-%             \(R^2\)             &     {0.108}         &     {0.127}         &     {0.140}         &     {0.143}         &     {0.143}         &     {0.143}         &     {0.143}         &     {0.144}         \\
-%             \bottomrule
-%             \end{tabular}
-%             }
-
-% 			\begin{tablenotes}
-%             Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. 
-% 			\end{tablenotes}
-% %		\end{threeparttable}
-% 	\end{table}
-% \end{landscape}
-
 \clearpage
 
-\begin{table}[]		        \hspace*{-2pt}\makebox[\linewidth][c]{%      
-    \begin{minipage}{18cm} %ChaoQin	
-    \centering
-	\caption{Hazard Rate of Stopping Work}
-	\label{tb:robustquit}    
-    \footnotesize	   
-	\setlength{\tabcolsep}{0pt}
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}} %ChaoQin
-        \toprule
-        \toprule
-                    \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
-        \midrule
-        Cancellation (dummy)&     -0.0224\sym{***}&     -0.0234\sym{***}&  -0.0260\sym{***}&     -0.0187\sym{***}&     -0.0201\sym{***}&
-        -0.0212\sym{***}&     -0.0211\sym{***}\\
-                    &    (0.0003)&    (0.0003)&    (0.0003)&    (0.0003)&    (0.0004)&    (0.0004)&    (0.0004)\\
-        \addlinespace
-        No-show (dummy)&     -0.0232\sym{***}&     -0.0225\sym{***}&     -0.0258\sym{***}&     -0.0185\sym{***}&     -0.0209\sym{***}&     -0.0225\sym{***}&     -0.0224\sym{***}\\
-                    &    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)\\
-        \addlinespace
-        Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
-        Date FE     &            &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
-        Hour\(\times\)day-of-week FE&            &         {Y}&         {Y}&            &            &            &            \\
-        Postal code FE&            &            &         {Y}&            &            &            &            \\
-        Hour\(\times\)day-of-week\(\times\)zone FE&            &            &            &         {Y}&         {Y}&         {Y}&         {Y}\\
-        Additional Controls &            &            &            &            &         {Y}&         {Y}&         {Y}\\
-        Controls for cumulative hours &         {linear}&         {linear}&         {linear}&         {linear}&       {linear}&       {cubic}&       {cubic}\\
-        Controls for cumulative income &         &         &         &         &       &           &{cubic}\\
-        \midrule
-        Marginal effects & & & & & &\\
-        \quad Cumulative hour (at 8 hours)&      0.0228\sym{***}&      0.0234\sym{***}&      0.0236\sym{***}&      0.0236\sym{***}&      0.0241\sym{***}&      0.0305\sym{***}&      0.0230\sym{***}\\
-                    &    (0.0001)&    (0.0001)&    (0.0001)&    (0.0001)&    (0.0001)&    (0.0002)&    (0.0002)\\
-        \addlinespace
-        \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &      0.0441\sym{***}\\
-                    &         &         &         &         &         &         &    (0.0008)\\
-        \midrule
-        Mean hazard rate&      0.0663&      0.0663&      0.0687&      0.0687&      0.0677&      0.0677&      0.0677\\
-        Observations&\num{31108566}&\num{31108566}&\num{28087962}&\num{28069852}&\num{23413398}&\num{23413398}&\num{23413398}\\
-                Clusters    & \num{33667}& \num{33667}& \num{33667}& \num{33667}& \num{33650}& \num{33650}& \num{33650}\\
-        \(R^2\)     &       0.102&       0.124&       0.140&       0.143&       0.144&       0.147&       0.149\\
-        \bottomrule
-    \end{tabularx}
+% \begin{table}[]		        \hspace*{-2pt}\makebox[\linewidth][c]{%      
+%     \begin{minipage}{18cm} %ChaoQin	
+%     \centering
+% 	\caption{Hazard Rate of Stopping Work}
+% 	\label{tb:robustquit}    
+%     \footnotesize	   
+% 	\setlength{\tabcolsep}{0pt}
+%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}} %ChaoQin
+%         \toprule
+%         \toprule
+%                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
+%         \midrule
+%         Cancellation (dummy)&     -0.0224\sym{***}&     -0.0234\sym{***}&  -0.0260\sym{***}&     -0.0187\sym{***}&     -0.0201\sym{***}&
+%         -0.0212\sym{***}&     -0.0211\sym{***}\\
+%                     &    (0.0003)&    (0.0003)&    (0.0003)&    (0.0003)&    (0.0004)&    (0.0004)&    (0.0004)\\
+%         \addlinespace
+%         No-show (dummy)&     -0.0232\sym{***}&     -0.0225\sym{***}&     -0.0258\sym{***}&     -0.0185\sym{***}&     -0.0209\sym{***}&     -0.0225\sym{***}&     -0.0224\sym{***}\\
+%                     &    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)&    (0.0005)\\
+%         \addlinespace
+%         Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
+%         Date FE     &            &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
+%         Hour\(\times\)day-of-week FE&            &         {Y}&         {Y}&            &            &            &            \\
+%         Postal code FE&            &            &         {Y}&            &            &            &            \\
+%         Hour\(\times\)day-of-week\(\times\)zone FE&            &            &            &         {Y}&         {Y}&         {Y}&         {Y}\\
+%         Additional Controls &            &            &            &            &         {Y}&         {Y}&         {Y}\\
+%         Controls for cumulative hours &         {linear}&         {linear}&         {linear}&         {linear}&       {linear}&       {cubic}&       {cubic}\\
+%         Controls for cumulative income &         &         &         &         &       &           &{cubic}\\
+%         \midrule
+%         Marginal effects & & & & & &\\
+%         \quad Cumulative hour (at 8 hours)&      0.0228\sym{***}&      0.0234\sym{***}&      0.0236\sym{***}&      0.0236\sym{***}&      0.0241\sym{***}&      0.0305\sym{***}&      0.0230\sym{***}\\
+%                     &    (0.0001)&    (0.0001)&    (0.0001)&    (0.0001)&    (0.0001)&    (0.0002)&    (0.0002)\\
+%         \addlinespace
+%         \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &      0.0441\sym{***}\\
+%                     &         &         &         &         &         &         &    (0.0008)\\
+%         \midrule
+%         Mean hazard rate&      0.0663&      0.0663&      0.0687&      0.0687&      0.0677&      0.0677&      0.0677\\
+%         Observations&\num{31108566}&\num{31108566}&\num{28087962}&\num{28069852}&\num{23413398}&\num{23413398}&\num{23413398}\\
+%                 Clusters    & \num{33667}& \num{33667}& \num{33667}& \num{33667}& \num{33650}& \num{33650}& \num{33650}\\
+%         \(R^2\)     &       0.102&       0.124&       0.140&       0.143&       0.144&       0.147&       0.149\\
+%         \bottomrule
+%     \end{tabularx}
 
-	\begin{tablenotes}
-		\parindent 1em%  %ChaoQin
-		\small
-        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
-	\end{tablenotes}
-    \end{minipage}%	
-    }  %ChaoQin
-\end{table}
+% 	\begin{tablenotes}
+% 		\parindent 1em%  %ChaoQin
+% 		\small
+%         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+% 	\end{tablenotes}
+%     \end{minipage}%	
+%     }  %ChaoQin
+% \end{table}
 
 
 
@@ -2936,6 +2802,143 @@ capture the effect of unanticipated shocks, nor reflect the influence of anticip
 On the other hand, the coefficient of the random earnings shock is straightforward to interpret: It is a
 product of the effect of unanticipated earnings on labor supply and the effect of the shock on earnings.
 
+
+
+
+
+% Table from first draft
+% \begin{landscape}
+% 	\begin{table}
+% 		\centering
+% 		\caption{Hazard rate of stopping work}
+% 		\label{tb:robustquit}
+% %		\begin{threeparttable}
+% 			\footnotesize
+% % 		\input{tb/eq1quit.tex}
+% 			{
+% 			\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 			\begin{tabular}{l*{8}{S}}
+% 			\toprule
+%       \toprule
+% 			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+% 			\midrule
+% 			Cancellation (dummy)&      -0.018&      -0.021&      -0.024&      -0.018&      -0.018&      -0.020&      -0.021&      -0.024\\
+% 			                    &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
+% 			\addlinespace
+% 			No-show (dummy)     &      -0.020&      -0.021&      -0.025&      -0.018&      -0.018&      -0.020&      -0.020&      -0.025\\
+% 			                    &     (0.000)         &     (0.000)         &     (0.001)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.001)         &     (0.001)         \\
+% 			\addlinespace
+% 			Cumulative hours    &       0.019&       0.020&       0.020&       0.020&       0.020&       0.020&       0.020&       0.019\\
+% 			                    &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
+% 			\addlinespace
+% 			Cumulative income ('00 SGD)&       0.020&       0.019&       0.020&       0.019&       0.028&       0.019&       0.019&       0.029\\
+% 			                    &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         \\
+% 			\addlinespace
+% 			Demand density      &      -0.061&      -0.041&      -0.028&      -0.025&      -0.024&      -0.024&      -0.025&      -0.024\\
+% 			                    &     (0.000)         &     (0.000)         &     (0.001)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         &     (0.000)         \\
+% 			\addlinespace
+% 			Previous bookings (count)&                     &                     &                     &                     &      -0.004&                     &                     &      -0.004\\
+% 			                    &                     &                     &                     &                     &     (0.000)         &                     &                     &     (0.000)         \\
+% 			\addlinespace
+% 			Vehicles within 500 m ('000)&                     &                     &                     &                     &                     &      -0.101&                     &      -0.110\\
+% 			                    &                     &                     &                     &                     &                     &     (0.002)         &                     &     (0.002)         \\
+% 			\addlinespace
+% 			Distance to pickup (km)&                     &                     &                     &                     &                     &                     &       0.000         &       0.000         \\
+% 			                    &                     &                     &                     &                     &                     &                     &     (0.000)         &     (0.000)         \\
+% 			\addlinespace
+% 			On-call duration (mins)&                     &                     &                     &                     &                     &                     &       0.000&       0.001\\
+% 			                    &                     &                     &                     &                     &                     &                     &     (0.000)         &     (0.000)         \\
+% 			\addlinespace
+% 			Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+% 			\addlinespace
+% 			Date FE           &       {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+% 			\addlinespace
+% 			Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+% 			\addlinespace
+% 			Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+% 			\addlinespace
+% 			Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+% 			%\midrule
+% 			\addlinespace
+% 			Observations        &\num{31563560}         &\num{31563560}         &\num{28528407}         &\num{28510154}         &\num{28510154}         &\num{28192061}         &\num{28118335}         &\num{27805742}         \\
+% 			$R^2$             &     {0.110}         &     {0.128}         &     {0.143}         &     {0.144}         &     {0.145}         &     {0.144}         &     {0.144}         &     {0.145}         \\
+% 			\bottomrule
+% 			\end{tabular}
+% 			}
+
+% 			\begin{tablenotes}
+%             Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. 
+% 			\end{tablenotes}
+% %		\end{threeparttable}
+% 	\end{table}
+% \end{landscape}
+
+
+% \begin{landscape}
+% 	\begin{table}
+% 		\centering
+% 		\caption{Hazard rate of stopping work}
+% 		\label{tb:robustquit}
+% %		\begin{threeparttable}
+%             \setlength{\tabcolsep}{5pt}
+% 			\footnotesize
+% % 		\input{tb/eq1quit.tex}
+%             {
+%             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%             \begin{tabular}{l*{8}{S}}
+%             \toprule
+%             \toprule
+%                                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+%             \midrule
+%             Cancellation (dummy)&      -0.017&      -0.019&      -0.023&      -0.017&      -0.016&      -0.018&      -0.020&      -0.021\\
+%                                 &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         \\
+%             \addlinespace
+%             No-show (dummy)     &      -0.019&      -0.019&      -0.023&      -0.017&      -0.016&      -0.018&      -0.020&      -0.021\\
+%                                 &     (<0.001)         &     (<0.001)         &     (0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (0.001)         &     (0.001)         \\
+%             \addlinespace
+%             Cumulative hours    &       0.018&       0.018&       0.019&       0.019&       0.019&       0.019&       0.019&       0.018\\
+%                                 &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         \\
+%             \addlinespace
+%             Cumulative income ('00 SGD)&       0.022&       0.023&       0.023&       0.023&       0.031&       0.023&       0.023&       0.032\\
+%                                 &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         &     (0.001)         \\
+%             \addlinespace
+%             Demand density      &      -0.060&      -0.039&      -0.024&      -0.022&      -0.022&      -0.022&      -0.022&      -0.022\\
+%                                 &     (<0.001)         &     (<0.001)         &     (0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         &     (<0.001)         \\
+%             \addlinespace
+%             Previous bookings (count)&                     &                     &                     &                     &      -0.004&                     &                     &      -0.004\\
+%                                 &                     &                     &                     &                     &     (<0.001)         &                     &                     &     (<0.001)         \\
+%             \addlinespace
+%             Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -0.102&                     &      -0.104\\
+%                                 &                     &                     &                     &                     &                     &     (0.002)         &                     &     (0.002)         \\
+%             \addlinespace
+%             Distance to pickup (km)&                     &                     &                     &                     &                     &                     &       0.001&       <0.001         \\
+%                                 &                     &                     &                     &                     &                     &                     &     (<0.001)         &     (<0.001)         \\
+%             \addlinespace
+%             Oncall duration (mins)&                     &                     &                     &                     &                     &                     &       0.001&       0.001\\
+%                                 &                     &                     &                     &                     &                     &                     &     (<0.001)         &     (<0.001)         \\
+%             \addlinespace
+%             Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%             \addlinespace
+%             Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+%             \addlinespace
+%             Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+%             \addlinespace
+%             Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%             \addlinespace
+%             date                &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%             \midrule
+%             Observations        &\num{31108572}         &\num{31108572}         &\num{28087962}         &\num{28069984}         &\num{28069984}         &\num{27757937}         &\num{27683044}         &\num{27375698}         \\
+%             \(R^2\)             &     {0.108}         &     {0.127}         &     {0.140}         &     {0.143}         &     {0.143}         &     {0.143}         &     {0.143}         &     {0.144}         \\
+%             \bottomrule
+%             \end{tabular}
+%             }
+
+% 			\begin{tablenotes}
+%             Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Standard errors clustered by drivers in parentheses. 
+% 			\end{tablenotes}
+% %		\end{threeparttable}
+% 	\end{table}
+% \end{landscape}
 
 
 \end{document}
