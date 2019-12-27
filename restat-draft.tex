@@ -1691,54 +1691,54 @@ unanticipated shocks, and with potential and realized earnings.
 \caption{Caption}
     \label{tab:my_label}
     \centering
-{
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\footnotesize
-\begin{tabular}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
-\toprule
-			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stop working (dummy)}         \\
-			\cmidrule{2-6}
-            &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
-\midrule
-Cancellation (dummy)&     -0.0154\sym{***}&     -0.0168\sym{***}&     -0.0149\sym{***}&     -0.0137\sym{***}&     -0.0124\sym{***}\\
-            &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         \\
-\addlinespace
-No-show (dummy)&     -0.0116\sym{***}&     -0.0129\sym{***}&     -0.0115\sym{***}&     -0.0131\sym{***}&     -0.0116\sym{***}\\
-            &    (0.0015)         &    (0.0016)         &    (0.0016)         &    (0.0016)         &    (0.0016)         \\
-\addlinespace
-Placebo trip (dummy)&     -0.0007         &     -0.0005         &     -0.0005         &     -0.0005         &     -0.0005         \\
-            &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         \\
-\addlinespace
-Weather \& Market thickness&         {N}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
-Break and POB time&         {N}         &         {N}         &         {Y}         &         {Y}         &         {Y}         \\
-Oncall time and distance&         {N}         &         {N}         &         {N}         &         {Y}         &         {Y}         \\
-g(cumulative earnings)&         {N}         &         {N}         &         {N}         &         {N}         &         {Y}         \\
-\midrule
-\textit{Average marginal effect} & & & & & \\
-1 hour more of work&      0.0212         &      0.0212         &      0.0177         &      0.0177         &      0.0197         \\
-            &    (0.0003)         &    (0.0003)         &    (0.0005)         &    (0.0005)         &    (0.0005)         \\
-\addlinespace
-10 POB mins more last hour&                     &                     &     -0.0000         &      0.0001         &     -0.0005         \\
-            &                     &                     &    (0.0004)         &    (0.0004)         &    (0.0003)         \\
-\addlinespace
-10 POB km more last hour&                     &                     &      0.0017         &      0.0017         &      0.0002         \\
-            &                     &                     &    (0.0003)         &    (0.0003)         &    (0.0003)         \\
-\addlinespace
-10 SGD more of earnings&                     &                     &                     &                     &      0.0030         \\
-            &                     &                     &                     &                     &    (0.0003)         \\
-\addlinespace
-Mean hazard rate&      0.0535         &      0.0534         &      0.0534         &      0.0534         &      0.0534         \\
-Observations&\num{3792025}         &\num{3745117}         &\num{3745117}         &\num{3743047}         &\num{3743047}         \\
-Observations w/o singletons&\num{2887665}         &\num{2845257}         &\num{2845257}         &\num{2843351}         &\num{2843351}         \\
-Drivers     & \num{31961}         & \num{31958}         & \num{31958}         & \num{31958}         & \num{31958}         \\
-Days        &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         \\
-\(R^2\)     &      0.3342         &      0.3348         &      0.3361         &      0.3361         &      0.3374         \\
-\bottomrule
-\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-\end{tabular}
-% from quitspl1X2.tex - HL
-}
+    {
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \footnotesize
+    \begin{tabular}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+    \toprule
+    			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stop working (dummy)}         \\
+    			\cmidrule{2-6}
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+    \midrule
+    Cancellation (dummy)&     -0.0154\sym{***}&     -0.0168\sym{***}&     -0.0149\sym{***}&     -0.0137\sym{***}&     -0.0124\sym{***}\\
+                &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         \\
+    \addlinespace
+    No-show (dummy)&     -0.0116\sym{***}&     -0.0129\sym{***}&     -0.0115\sym{***}&     -0.0131\sym{***}&     -0.0116\sym{***}\\
+                &    (0.0015)         &    (0.0016)         &    (0.0016)         &    (0.0016)         &    (0.0016)         \\
+    \addlinespace
+    Placebo trip (dummy)&     -0.0007         &     -0.0005         &     -0.0005         &     -0.0005         &     -0.0005         \\
+                &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         \\
+    \addlinespace
+    Weather \& Market thickness&         {N}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
+    Break and POB time&         {N}         &         {N}         &         {Y}         &         {Y}         &         {Y}         \\
+    Oncall time and distance&         {N}         &         {N}         &         {N}         &         {Y}         &         {Y}         \\
+    g(cumulative earnings)&         {N}         &         {N}         &         {N}         &         {N}         &         {Y}         \\
+    \midrule
+    \textit{Average marginal effect} & & & & & \\
+    1 hour more of work&      0.0212         &      0.0212         &      0.0177         &      0.0177         &      0.0197         \\
+                &    (0.0003)         &    (0.0003)         &    (0.0005)         &    (0.0005)         &    (0.0005)         \\
+    \addlinespace
+    10 POB mins more last hour&                     &                     &     -0.0000         &      0.0001         &     -0.0005         \\
+                &                     &                     &    (0.0004)         &    (0.0004)         &    (0.0003)         \\
+    \addlinespace
+    10 POB km more last hour&                     &                     &      0.0017         &      0.0017         &      0.0002         \\
+                &                     &                     &    (0.0003)         &    (0.0003)         &    (0.0003)         \\
+    \addlinespace
+    10 SGD more of earnings&                     &                     &                     &                     &      0.0030         \\
+                &                     &                     &                     &                     &    (0.0003)         \\
+    \addlinespace
+    Mean hazard rate&      0.0535         &      0.0534         &      0.0534         &      0.0534         &      0.0534         \\
+    Observations&\num{3792025}         &\num{3745117}         &\num{3745117}         &\num{3743047}         &\num{3743047}         \\
+    Observations w/o singletons&\num{2887665}         &\num{2845257}         &\num{2845257}         &\num{2843351}         &\num{2843351}         \\
+    Drivers     & \num{31961}         & \num{31958}         & \num{31958}         & \num{31958}         & \num{31958}         \\
+    Days        &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         \\
+    \(R^2\)     &      0.3342         &      0.3348         &      0.3361         &      0.3361         &      0.3374         \\
+    \bottomrule
+    \multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+    \multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+    \end{tabular}
+    % from quitspl1X2.tex - HL
+    }
 	\begin{tablenotes}
 	\parindent 1em%  %ChaoQin
 	\small
