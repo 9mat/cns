@@ -1694,8 +1694,8 @@ unanticipated shocks, and with potential and realized earnings.
     {
     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \footnotesize
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
-    \begin{tabularx}{\textwidth}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+    % \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
     \toprule
     \toprule
     			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stop working (dummy)}         \\
@@ -1736,7 +1736,7 @@ unanticipated shocks, and with potential and realized earnings.
     Days        &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         \\
     \(R^2\)     &      0.3342         &      0.3348         &      0.3361         &      0.3361         &      0.3374         \\
     \bottomrule
-    \end{tabular}
+    \end{tabularx}
     % from quitspl1X2.tex - HL
     }
 	\begin{tablenotes}
