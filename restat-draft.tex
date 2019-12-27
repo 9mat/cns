@@ -1578,112 +1578,163 @@ unanticipated shocks, and with potential and realized earnings.
 
 \clearpage
 
-\begin{table}[]
-	\centering
-	\caption{Hazard Rate of Stopping Work, by Hour into Shift}
-	\label{tb:robustquitbyhour}
-    \footnotesize
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\setlength{\tabcolsep}{0pt}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}}
-        \toprule
-        \toprule
-                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
-        \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{6th hour}&\multicolumn{1}{c}{7th hour}&\multicolumn{1}{c}{8th hour}&\multicolumn{1}{c}{9th hour}&\multicolumn{1}{c}{10th  hour}&\multicolumn{1}{c}{10th hour}\\
-        \midrule
-        Cancellation (dummy)&     -0.0124\sym{***}&     -0.0158\sym{***}&     -0.0212\sym{***}&     -0.0285\sym{***}&     -0.0423\sym{***}&     -0.0419\sym{***}\\
-                    &    (0.0011)&    (0.0013)&    (0.0017)&    (0.0021)&    (0.0027)&    (0.0027)\\
-        \addlinespace
-        No-show (dummy)&     -0.0112\sym{***}&     -0.0139\sym{***}&     -0.0202\sym{***}&     -0.0262\sym{***}&     -0.0366\sym{***}&     -0.0361\sym{***}\\
-                    &    (0.0018)&    (0.0024)&    (0.0028)&    (0.0035)&    (0.0044)&    (0.0044)\\
-        \addlinespace
-        Earnings ('00 SGD):&            &            &            &            &            &            \\
-        \addlinespace
-        \quad first 5 hours&            &            &            &            &            &      0.0169\sym{***}\\
-                    &            &            &            &            &            &    (0.0017)\\
-        \addlinespace
-        \quad 6th hour&            &            &            &            &            &      0.0344\sym{***}\\
-                    &            &            &            &            &            &    (0.0030)\\
-        \addlinespace
-        \quad 7th hour&            &            &            &            &            &      0.0601\sym{***}\\
-                    &            &            &            &            &            &    (0.0030)\\
-        \addlinespace
-        \quad 8th hour&            &            &            &            &            &      0.0803\sym{***}\\
-                    &            &            &            &            &            &    (0.0030)\\
-        \addlinespace
-        \quad 9th hour&            &            &            &            &            &      0.0521\sym{***}\\
-                    &            &            &            &            &            &    (0.0032)\\
-        \addlinespace
-        \quad 10th hour&            &            &            &            &            &      0.0287\sym{***}\\
-                    &            &            &            &            &            &    (0.0037)\\
-        \midrule
-        Mean hazard rate&      0.0517&      0.0722&      0.1011&      0.1451&      0.1925&      0.1925\\
-        Observations&\num{2048669}&\num{1854081}&\num{1693622}&\num{1469578}&\num{1109971}&\num{1109708}\\
-        Clusters    & \num{33119}& \num{32685}& \num{31971}& \num{30747}& \num{28602}& \num{28602}\\
-        \(R^2\)     &       0.211&       0.239&       0.265&       0.289&       0.314&       0.316\\
-        \bottomrule
-    \end{tabularx}
+% \begin{table}[]
+% 	\centering
+% 	\caption{Hazard Rate of Stopping Work, by Hour into Shift}
+% 	\label{tb:robustquitbyhour}
+%     \footnotesize
+%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\setlength{\tabcolsep}{0pt}
+%     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}}
+%         \toprule
+%         \toprule
+%                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+%         \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{6th hour}&\multicolumn{1}{c}{7th hour}&\multicolumn{1}{c}{8th hour}&\multicolumn{1}{c}{9th hour}&\multicolumn{1}{c}{10th  hour}&\multicolumn{1}{c}{10th hour}\\
+%         \midrule
+%         Cancellation (dummy)&     -0.0124\sym{***}&     -0.0158\sym{***}&     -0.0212\sym{***}&     -0.0285\sym{***}&     -0.0423\sym{***}&     -0.0419\sym{***}\\
+%                     &    (0.0011)&    (0.0013)&    (0.0017)&    (0.0021)&    (0.0027)&    (0.0027)\\
+%         \addlinespace
+%         No-show (dummy)&     -0.0112\sym{***}&     -0.0139\sym{***}&     -0.0202\sym{***}&     -0.0262\sym{***}&     -0.0366\sym{***}&     -0.0361\sym{***}\\
+%                     &    (0.0018)&    (0.0024)&    (0.0028)&    (0.0035)&    (0.0044)&    (0.0044)\\
+%         \addlinespace
+%         Earnings ('00 SGD):&            &            &            &            &            &            \\
+%         \addlinespace
+%         \quad first 5 hours&            &            &            &            &            &      0.0169\sym{***}\\
+%                     &            &            &            &            &            &    (0.0017)\\
+%         \addlinespace
+%         \quad 6th hour&            &            &            &            &            &      0.0344\sym{***}\\
+%                     &            &            &            &            &            &    (0.0030)\\
+%         \addlinespace
+%         \quad 7th hour&            &            &            &            &            &      0.0601\sym{***}\\
+%                     &            &            &            &            &            &    (0.0030)\\
+%         \addlinespace
+%         \quad 8th hour&            &            &            &            &            &      0.0803\sym{***}\\
+%                     &            &            &            &            &            &    (0.0030)\\
+%         \addlinespace
+%         \quad 9th hour&            &            &            &            &            &      0.0521\sym{***}\\
+%                     &            &            &            &            &            &    (0.0032)\\
+%         \addlinespace
+%         \quad 10th hour&            &            &            &            &            &      0.0287\sym{***}\\
+%                     &            &            &            &            &            &    (0.0037)\\
+%         \midrule
+%         Mean hazard rate&      0.0517&      0.0722&      0.1011&      0.1451&      0.1925&      0.1925\\
+%         Observations&\num{2048669}&\num{1854081}&\num{1693622}&\num{1469578}&\num{1109971}&\num{1109708}\\
+%         Clusters    & \num{33119}& \num{32685}& \num{31971}& \num{30747}& \num{28602}& \num{28602}\\
+%         \(R^2\)     &       0.211&       0.239&       0.265&       0.289&       0.314&       0.316\\
+%         \bottomrule
+%     \end{tabularx}
 
-	\begin{tablenotes}
-		\parindent 1em%  %ChaoQin
-		\small
-        Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
-	\end{tablenotes}
-% 	\end{threeparttable}
-\end{table}
+% 	\begin{tablenotes}
+% 		\parindent 1em%  %ChaoQin
+% 		\small
+%         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+% 	\end{tablenotes}
+% % 	\end{threeparttable}
+% \end{table}
 
-\clearpage
+% \clearpage
 
-\begin{table}[]
-\hspace*{-2pt}\makebox[\linewidth][c]{%      
-    \begin{minipage}{18cm} %ChaoQin	
-	\centering
-	\caption{Earnings Rate after a Trip/Booking (SGD/h)}
-	\label{tb:robustwage}
-    \footnotesize
-	\setlength{\tabcolsep}{0pt}
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
-        \toprule
-            \multicolumn{1}{c}{\textit{DV: Subsequent earnings rate (SGD/h)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
-        \midrule
-        Cancellation (dummy)&       0.884\sym{***}&       0.581\sym{***}&       0.657\sym{***}&       0.359\sym{***}&       0.209\sym{***}&       0.190\sym{***}&       0.159\sym{***}\\
-                    &     (0.012)&     (0.011)&     (0.011)&     (0.011)&     (0.012)&     (0.012)&     (0.012)\\
-        \addlinespace
-        No-show (dummy)&       0.404\sym{***}&       0.042\sym{**}&       0.135\sym{***}&      -0.169\sym{***}&      -0.242\sym{***}&      -0.268\sym{***}&      -0.300\sym{***}\\
-                    &     (0.018)&     (0.017)&     (0.017)&     (0.017)&     (0.018)&     (0.018)&     (0.018)\\
-        \addlinespace
-        Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
-        Date FE     &            &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
-        Hour\(\times\)day-of-week FE&            &         {Y}&         {Y}&            &            &            &            \\
-        Postal code FE&            &            &         {Y}&            &            &            &            \\
-        Hour\(\times\)day-of-week\(\times\)zone FE&            &            &            &         {Y}&         {Y}&         {Y}&         {Y}\\
-        Additional Controls &            &            &            &            &         {Y}&         {Y}&         {Y}\\
-        Controls for cumulative hours &         {linear}&         {linear}&         {linear}&         {linear}&       {linear}&       {cubic}&       {cubic}\\
-        Controls for cumulative income &         &         &         &         &       &           &{cubic}\\
-        \midrule
-        Marginal effects & & & & & &\\
-        \quad Cumulative hour (at 8 hours)&      0.3957\sym{***}&      0.1511\sym{***}&      0.1512\sym{***}&      0.1487\sym{***}&      0.1677\sym{***}&      0.2899\sym{***}&      0.4919\sym{***}\\
-                    &    (0.0027)&    (0.0032)&    (0.0032)&    (0.0032)&    (0.0034)&    (0.0049)&    (0.0068)\\
-        \addlinespace
-        \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &     -1.2623\sym{***}\\
-                    &            &            &            &            &            &            &    (0.0258)\\
-        \addlinespace
-        Mean earnings rate&        24.0&        24.0&        23.9&        23.9&        23.9&        23.9&        23.9\\
-        Observations&\num{26166516}&\num{26166516}&\num{23488913}&\num{23475768}&\num{19632820}&\num{19632820}&\num{19632820}\\
-        Clusters    & \num{33634}& \num{33634}& \num{33632}& \num{33632}& \num{33615}& \num{33615}& \num{33615}\\
-        \(R^2\)     &       0.359&       0.435&       0.441&       0.445&       0.448&       0.449&       0.451\\
-        \bottomrule
-    \end{tabularx}
+% \begin{table}[]
+% \hspace*{-2pt}\makebox[\linewidth][c]{%      
+%     \begin{minipage}{18cm} %ChaoQin	
+% 	\centering
+% 	\caption{Earnings Rate after a Trip/Booking (SGD/h)}
+% 	\label{tb:robustwage}
+%     \footnotesize
+% 	\setlength{\tabcolsep}{0pt}
+%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
+%         \toprule
+%             \multicolumn{1}{c}{\textit{DV: Subsequent earnings rate (SGD/h)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
+%         \midrule
+%         Cancellation (dummy)&       0.884\sym{***}&       0.581\sym{***}&       0.657\sym{***}&       0.359\sym{***}&       0.209\sym{***}&       0.190\sym{***}&       0.159\sym{***}\\
+%                     &     (0.012)&     (0.011)&     (0.011)&     (0.011)&     (0.012)&     (0.012)&     (0.012)\\
+%         \addlinespace
+%         No-show (dummy)&       0.404\sym{***}&       0.042\sym{**}&       0.135\sym{***}&      -0.169\sym{***}&      -0.242\sym{***}&      -0.268\sym{***}&      -0.300\sym{***}\\
+%                     &     (0.018)&     (0.017)&     (0.017)&     (0.017)&     (0.018)&     (0.018)&     (0.018)\\
+%         \addlinespace
+%         Driver FE   &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
+%         Date FE     &            &         {Y}&         {Y}&         {Y}&         {Y}&         {Y}&         {Y}\\
+%         Hour\(\times\)day-of-week FE&            &         {Y}&         {Y}&            &            &            &            \\
+%         Postal code FE&            &            &         {Y}&            &            &            &            \\
+%         Hour\(\times\)day-of-week\(\times\)zone FE&            &            &            &         {Y}&         {Y}&         {Y}&         {Y}\\
+%         Additional Controls &            &            &            &            &         {Y}&         {Y}&         {Y}\\
+%         Controls for cumulative hours &         {linear}&         {linear}&         {linear}&         {linear}&       {linear}&       {cubic}&       {cubic}\\
+%         Controls for cumulative income &         &         &         &         &       &           &{cubic}\\
+%         \midrule
+%         Marginal effects & & & & & &\\
+%         \quad Cumulative hour (at 8 hours)&      0.3957\sym{***}&      0.1511\sym{***}&      0.1512\sym{***}&      0.1487\sym{***}&      0.1677\sym{***}&      0.2899\sym{***}&      0.4919\sym{***}\\
+%                     &    (0.0027)&    (0.0032)&    (0.0032)&    (0.0032)&    (0.0034)&    (0.0049)&    (0.0068)\\
+%         \addlinespace
+%         \quad Cumulative income (at 200 SGD)&            &            &            &            &            &            &     -1.2623\sym{***}\\
+%                     &            &            &            &            &            &            &    (0.0258)\\
+%         \addlinespace
+%         Mean earnings rate&        24.0&        24.0&        23.9&        23.9&        23.9&        23.9&        23.9\\
+%         Observations&\num{26166516}&\num{26166516}&\num{23488913}&\num{23475768}&\num{19632820}&\num{19632820}&\num{19632820}\\
+%         Clusters    & \num{33634}& \num{33634}& \num{33632}& \num{33632}& \num{33615}& \num{33615}& \num{33615}\\
+%         \(R^2\)     &       0.359&       0.435&       0.441&       0.445&       0.448&       0.449&       0.451\\
+%         \bottomrule
+%     \end{tabularx}
 
-	\begin{tablenotes}
-	\parindent 1em%  %ChaoQin
-	\small
-    Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
-	\end{tablenotes}
-	    \end{minipage}%	
-    }  %ChaoQin
-\end{table}
+% 	\begin{tablenotes}
+% 	\parindent 1em%  %ChaoQin
+% 	\small
+%     Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+% 	\end{tablenotes}
+% 	    \end{minipage}%	
+%     }  %ChaoQin
+% \end{table}
+
+
+
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+\toprule
+			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stop working (dummy)}         \\
+			\cmidrule{2-6}
+            &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\midrule
+Cancellation (dummy)&     -0.0154\sym{***}&     -0.0168\sym{***}&     -0.0149\sym{***}&     -0.0137\sym{***}&     -0.0124\sym{***}\\
+            &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         \\
+\addlinespace
+No-show (dummy)&     -0.0116\sym{***}&     -0.0129\sym{***}&     -0.0115\sym{***}&     -0.0131\sym{***}&     -0.0116\sym{***}\\
+            &    (0.0015)         &    (0.0016)         &    (0.0016)         &    (0.0016)         &    (0.0016)         \\
+\addlinespace
+Placebo trip (dummy)&     -0.0007         &     -0.0005         &     -0.0005         &     -0.0005         &     -0.0005         \\
+            &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         \\
+\addlinespace
+Weather \& Market thickness&         {N}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
+Break and POB time&         {N}         &         {N}         &         {Y}         &         {Y}         &         {Y}         \\
+Oncall time and distance&         {N}         &         {N}         &         {N}         &         {Y}         &         {Y}         \\
+g(cumulative earnings)&         {N}         &         {N}         &         {N}         &         {N}         &         {Y}         \\
+\midrule
+\textit{Average marginal effect} & & & & & \\
+1 hour more of work&      0.0212         &      0.0212         &      0.0177         &      0.0177         &      0.0197         \\
+            &    (0.0003)         &    (0.0003)         &    (0.0005)         &    (0.0005)         &    (0.0005)         \\
+\addlinespace
+10 POB mins more last hour&                     &                     &     -0.0000         &      0.0001         &     -0.0005         \\
+            &                     &                     &    (0.0004)         &    (0.0004)         &    (0.0003)         \\
+\addlinespace
+10 POB km more last hour&                     &                     &      0.0017         &      0.0017         &      0.0002         \\
+            &                     &                     &    (0.0003)         &    (0.0003)         &    (0.0003)         \\
+\addlinespace
+10 SGD more of earnings&                     &                     &                     &                     &      0.0030         \\
+            &                     &                     &                     &                     &    (0.0003)         \\
+\addlinespace
+Mean hazard rate&      0.0535         &      0.0534         &      0.0534         &      0.0534         &      0.0534         \\
+Observations&\num{3792025}         &\num{3745117}         &\num{3745117}         &\num{3743047}         &\num{3743047}         \\
+Observations w/o singletons&\num{2887665}         &\num{2845257}         &\num{2845257}         &\num{2843351}         &\num{2843351}         \\
+Drivers     & \num{31961}         & \num{31958}         & \num{31958}         & \num{31958}         & \num{31958}         \\
+Days        &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         \\
+\(R^2\)     &      0.3342         &      0.3348         &      0.3361         &      0.3361         &      0.3374         \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize Standard errors in parentheses}\\
+\multicolumn{6}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+\end{tabular}
+% from quitspl1X2.tex - HL
+}
+
 
 
 %  \begin{landscape}
