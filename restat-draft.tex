@@ -779,7 +779,7 @@ between C\&NS and driver behavior.
 In this section, we outline our regression models and discuss the implications of the estimation results.
 We first look at labor supply and examine (1) the decision to stop work after a C\&NS and (2) how long drivers
 continue to work after a C\&NS. We then study drivers' productivity after a C\&NS by examining (3) the idle
-percentage and (4) average hourly wage after each trip. We follow with the discussion on the dynamics and heterogeneity
+percentage and (4) earnings in the immediate hour after each trip. We follow with the discussion on the dynamics and heterogeneity
 of these effects, the net impact on shift income, and possible mechanisms for these effects. 
 Competing explanations are discussed and ruled out at the end of the section. For space reasons, we report
 results on (1) and (3) in the main text and relegate those on (2) and (4) in Appendix D. 
@@ -809,12 +809,16 @@ supply and absorb factors such as public holidays, school holidays, tourist seas
 of day fixed effects to control for within-day variation in market conditions, especially the difference 
 between peak and non-peak hours. In addition, we use different sets of hour fixed effects for different days 
 of the week, for weekday holidays, and for weekend holidays to capture distinct patterns of the taxi market on 
-workdays, off days, and holidays. (3)  We also include postal code fixed effects or hour $\times$ day of week
-$\times$ zone fixed effects to control for spatial or spatiotemporal differences in taxi demand and supply
-across the city. There are 312 zones, for an average area of 2.3 sq km for a zone. This is a relatively fine
-spatial division, and we expect little within-zone variation in unobserved confounders that may bias our 
-estimation. The  hour $\times$ day of week $\times$ zone fixed effects also control for weather and air 
-quality conditions. The 120,000 postal code fixed effects provide even finer control for spatial 
+workdays, off days, and holidays. 
+%(3)  We also include postal code fixed effects or hour $\times$ day of week
+% $\times$ zone fixed effects to control for spatial or spatiotemporal differences in taxi demand and supply
+% across the city. There are 312 zones, for an average area of 2.3 sq km for a zone. This is a relatively fine
+% spatial division, and we expect little within-zone variation in unobserved confounders that may bias our 
+% estimation. The  hour $\times$ day of week $\times$ zone fixed effects also control for weather and air 
+% quality conditions. 
+(3)  We also include postal code fixed effects or hour-day of week by postal code fixed effects to control 
+for spatiotemporal differences in taxi demand and supply across the city.
+The 120,000 postal code fixed effects provide very control for spatial 
 heterogeneity, since in Singapore each postal code is associated with a unique building, and each building
 usually has a designated pickup point for taxis. As a result, our estimates of C\&NS effects are identified 
 out of the within-zone driver-specific portion of C\&NS variation that is uncorrelated with date and hour. 
@@ -855,20 +859,20 @@ and assume a linear form for this function\footnote{We %follow \citet{farber2015
  and obtain robust results (available from the authors).}, as follows:
 \begin{equation}
 \label{eq:quit}
-{Quit}_{it} = \beta_{c}I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} + \alpha_i + f(H_{it}) + g(I_{it}) + \mathbf{X_{it}}'\mathbf{\gamma}  + u_{it}
+{Quit}_{it} = \beta_{c}C_{it} + \beta_{ns} {NS}_{it} + \alpha_i +  f(h_{it}) + g(y_{it}) + X_{it}\gamma  +  \epsilon_{it}
 \end{equation}
 where $i$ denotes a driver and $t$ denotes a taxi trip or booking. ${Quit}_{it}$ is a binary
 variable: ${Quit}_{it} = 1$ if trip or booking $t$ is the last trip/booking in a shift by driver $i$,
-and $Quit_{it} = 0$ otherwise. $I^{cancel}_{it}$ and $I^{noshow}_{it}$ are indicator variables for
-the cancellation and no-show status of the current booking, i.e., $I^{cancel}_{it}=1$ if trip $t$ 
-by driver $i$ is cancelled, and $0$ otherwise; and $I^{noshow}_{it}=1$ if trip $t$ by driver $i$ is a 
+and $Quit_{it} = 0$ otherwise. $C_{it}$ and ${NS}_{it}$ are indicator variables for
+the cancellation and no-show status of the current booking, i.e., $C_{it}=1$ if trip $t$ 
+by driver $i$ is cancelled, and $0$ otherwise; and ${NS}_{it}=1$ if trip $t$ by driver $i$ is a 
 no-show, and $0$ otherwise. $\alpha_i$ is the driver fixed effect, which accounts for not only drivers' 
 preferences with respect to work and non-work activities, but also their individual propensity to receive 
 and accept a booking. %The taxi operator informed us that the driver profile was taken into consideration when assigning bookings to drivers, potentially creating a selection bias between the driver characteristics and the number of bookings received. Including the driver fixed effects helps alleviate the concern about this selection bias.
-$f(H_{it})$ is a flexible function of the cumulative hours of work, which controls for the baseline 
-hazard rate of stopping at different point in time in the shift. $g(I_{it})$ is a flexible function 
-of the cumulative income and controls for driver's income targeting behavior. 
-$\mathbf{X_{it}}$ is the set of observable factors that affect stopping decisions.  
+$f(h_{it})$ is a flexible function of the cumulative hours of work $h_{it})$, which controls for the baseline 
+hazard rate of stopping at different point in time in the shift. $g(y_{it})$ is a flexible function 
+of the cumulative income $y_{it}$ and controls for driver's income targeting behavior. 
+$X_{it}$ is the set of observable factors that affect stopping decisions.  
 It includes a set of time and location fixed effects and other market factors to account for 
 future earnings opportunities; these variables are used by drivers to form their expectations 
 about future working conditions.
@@ -877,99 +881,105 @@ about future working conditions.
 
 %As a robustness check, in the next section we present estimates from a logistic regression on a subsample of drivers, and show that the results in this section are robust to the choice of functional form.
 
-Results of the linear probability model are reported in Table \ref{tb:robustquit}. Each of the seven 
-specifications in the table uses a different set of control variables and fixed effects. 
-The first specification, in Column (1), controls for cumulative working hours and driver fixed effects.
+Results of the linear probability model are reported in Table \ref{tb:robustquit}. 
+The first specification, in Column (1), controls for driver fixed effects, hour-day of week by building fixed effects, date fixed effects, and a cubic function of the cumulative hours.
 %, which is defined as the number of jobs (bookings or trips) within 1 km and within 1 hour. 
 %According to this specification, C\&NS status is associated with 1.8 and 2.0 ppts decrease in the hazard rate of stopping work. The pure OLS estimates (without any controls, not shown for brevity) are 4.2-ppts for cancellations and 4.1 ppts for no-shows, so the set of controls in Column (1) account for a substantial portion of correlation between C\&NS and drivers' labor supply decisions.%\footnote{To be specific, including cumulative hours to the pure OLS regression reduces the magnitude of estimates from 4.1 and 4.2 ppts down to 2.9 and 2.7 ppts; further including driver fixed effects reduces them to 2.2 and 2.4 ppts; including cumulative income does not change the estimates much, while the demand density helps lower them to 1.8 and 1.9 ppts as in Column (1). These specifications are omitted for brevity.}. 
 %This is expected and reasonable. 
-Cumulative hours are positively correlated with the decision to stop work, since the marginal disutility 
-of work increases with time. Regarding driver's characteristics, it is likely that hard working, motivated
-drivers bid more and receive more bookings than others, and hence are subject to more C\&NS. After 
-controlling for these factors, regression results estimate that a cancellation is associated with an
-average decrease of 2.2 ppts in the hazard rate of stopping work, and a no-show with an average decrease
-of 2.3 ppts. At the average hazard rate of stopping work of 6.6\%, this represents a one-third reduction.
+The estimates from this specification suggest that a cancellation is associated with an
+average decrease of 1.54 ppts (s.e. 0.09) in the hazard rate of stopping work, and a no-show with an average decrease
+of 1.16 ppts (s.e. 0.15). At the average hazard rate of stopping work of 5.35\%, this represents a 30\% reduction from the baseline hazard rate after a cancellation and 20\% reduction after a no-show.
 
 \begin{center}
 	[Insert Table \ref{tb:robustquit} here]
 \end{center}
 
-Specification (2) adds date fixed effects and hour of day fixed effects for each day of the week. 
-The concern is that different days, a different time of the day, and day of the week may exhibit different
-demand and supply patterns, and may also be correlated with C\&NS. Date fixed effects will capture long-term
-trend and seasonality in demand and supply; the hour $\times$ day of week fixed effects would be able to capture
-the variation pattern of demand and supply within a week---for example, the differences between off-peak hours
-and peak hours, and the differences between weekdays and weekends. The estimated magnitudes of C\&NS effects 
-do not change much. This suggests that most of the confounding factors related to timing of demand and supply
-are likely to have been captured by the previous sets of controls and fixed effects. 
+% Specification (2) adds date fixed effects and hour of day fixed effects for each day of the week. 
+% The concern is that different days, a different time of the day, and day of the week may exhibit different
+% demand and supply patterns, and may also be correlated with C\&NS. Date fixed effects will capture long-term
+% trend and seasonality in demand and supply; the hour $\times$ day of week fixed effects would be able to capture
+% the variation pattern of demand and supply within a week---for example, the differences between off-peak hours
+% and peak hours, and the differences between weekdays and weekends. The estimated magnitudes of C\&NS effects 
+% do not change much. This suggests that most of the confounding factors related to timing of demand and supply
+% are likely to have been captured by the previous sets of controls and fixed effects. 
 
-Specification (3) adds postal code fixed effects to control for spatial heterogeneity. The concern is that 
-different locations may differ in demand and supply density or search friction, which affect both drivers' 
-labor supply and the rate of C\&NS. As noted previously, in Singapore each building is assigned a unique postal 
-code and has a designated taxi pickup point, so postal code fixed effects are a very fine control for spatial
-heterogeneity, and therefore are able to absorb the differences between two drivers picking up customers at 
-two adjacent buildings. Including this set of fixed effects actually increases the magnitude of the estimated 
-cancellation and no-show effects to 2.6 ppts. This is consistent with our previous argument that if spatial 
-heterogeneity, such as demand and supply density or search friction, is the concern, our estimates are likely 
-to understate rather than overstate the true effect of C\&NS.
+Specification (2) adds weather conditions and and a set of measures for market thickness to account for potential irregular demand and supply factors that are not captured by the our time and location fixed effects. The added set of set of control variables does not cause any substantial changes in the estimates: The magnitudes of the C\&NS effects slightly increase to 1.67 ppt (s.e. 0.10) and 1.28 pt (s.e. 0.16). This is reassuring; the existing set of fixed effects appears capable of absorbing the major source of variation in unobserved market factors.
 
-Specification (4) controls for the interaction between time and location by including hour $\times$ day of
-week $\times$ zone fixed effects. Due to the large number of postal codes (120,000), we cannot interact time 
-with postal code fixed effects. 
-%\footnote{We have about 400 thousand cancellations and 100 thousand no-shows. The the number of postal codes is about 120 thousand, and hence interacting postal code fixed effects with time fixed effects would generate way more fixed effects than the number of ``positive" observations in our sample.}.
-This set of fixed effects would be able to flexibly capture spatiotemporal demand and supply patterns, such 
-as the fact that demand tends to move from residential areas to the business district on weekday mornings and
-in the opposite direction during the late afternoon. The magnitude of the C\&NS effects slightly decreases
-to 1.9 ppts. In total, more than 52,000 additional fixed effects are added to the regression, but the changes
-in the main estimates are minimal. This suggests that location and time interactions cannot explain the 
-observed relationship between C\&NS and drivers' labor supply decisions.
+Specification (3) adds controls for rest time and time with passenger on-board to account for the effect of fatigue: Driving with passengers on-board may be more tiring to taxi drivers, and having less time with passenger after a C\&NS may affect the drivers' decisions to end the shift. We control for both cumulative rest and passenger time since the start of the shift and the recent time in the last hour, and the estimated C\&NS effects remain robust at -1.48 ppts (s.e. 0.10) and -1.14 ppts (s.e. 0.16). Thus, fatigue does not seem to explain our C\&NS effects. This is consistent with anecdotal evidence from our discussion with local taxi drivers: C\&NS are commonly viewed as a nuisance rather than an opportunity for a breather.
 
-Specification (5) adds a large set of control variables to address several concerns about the exogeneity 
-of C\&NS. First, there may be irregular demand and supply factors that are not captured by the existing
-time and location fixed effects. To address this, we include a host of weather conditions (temperature,
-humidity, rain, air pollution), together with proxies for demand and supply density in nearby neighborhood 
-at the end of the trip/booking. Second, some drivers may have predetermined motivation to work harder on 
-certain days, and they may be more aggressive than usual in finding jobs and bidding for bookings, 
-which gains them more earnings opportunities but also more  C\&NS. To control for this, we add the number
-of previous bookings as a control, since more aggressive drivers should receive more bookings, 
-and if this behavior is a source of bias, including the number of previous bookings will attenuate the
-C\&NS effects. Lastly, we  include the duration and distance to pickup point to absorb possible selection
-bias by passenger due to waiting time and pickup conditions. Adding these variables to the regression 
-slightly increases the estimated effects of C\&NS to 2.0 and 2.1 ppts compared to the results in
-Specification (4). Adding these sets of controls incrementally or separately also results in similar 
-estimates. Therefore, we are confident that the above endogeneity concerns have minimal effects on our results.
+Specification (4) adds distance and duration to the pickup point to address the potential selection bias by passenger due to waiting time and pickup conditions. This set of variables also have little effects on the estimation results: The C\&NS effects remain robust at -1.36 ppts (s.e. 0.10) and -1.31 ppts (s.e. 0.16).
 
-Specification (6) allows for non-linear effects of cumulative hours, in the form of a flexible cubic function,
-to account for varying marginal effect of hours throughout a work shift. At $-2.1$ ppts and $-2.3$ ppts, 
-the new estimates are not meaningfully different from the previous specifications. We have experimented with 
-other forms of nonlinearity (e.g. higher-order polynomials, multi-step function, and a combination of both),
-and the results remain robust. 
+Specification (5) controls for cumulative income effects. Since realized earnings is the sum of anticipated and unanticipated earnings, if the income target is fixed, we would expect the realized earnings to soak up all the effects of unanticipated earnings. On the other hand, if the target is endogenous or adaptive, we would not expect the realized earnings to fully capture the effects of unanticipated shocks, since the effects of the anticipated portion of realized earnings will be offset by the variation in income targets. The magnitude of the estimated C\&NS effects in Specification (5) are slightly lower than that of Specification (4), but the differences, -1.23 ppts (s.e. 0.10) and -1.16 (s.e. 0.16) versus -1.36 ppts (s.e. 0.10) and -1.31 ppts (s.e. 0.16), are minimal, suggesting that the fixed target theory does not fully explain our results. Consequently, our results can be taken as an evidence in favor of an endogenous and/or adaptive reference point over a fixed reference point. 
+
+
+% % Specification (3) adds postal code fixed effects to control for spatial heterogeneity. The concern is that 
+% % different locations may differ in demand and supply density or search friction, which affect both drivers' 
+% % labor supply and the rate of C\&NS. As noted previously, in Singapore each building is assigned a unique postal 
+% % code and has a designated taxi pickup point, so postal code fixed effects are a very fine control for spatial
+% % heterogeneity, and therefore are able to absorb the differences between two drivers picking up customers at 
+% % two adjacent buildings. Including this set of fixed effects actually increases the magnitude of the estimated 
+% % cancellation and no-show effects to 2.6 ppts. This is consistent with our previous argument that if spatial 
+% % heterogeneity, such as demand and supply density or search friction, is the concern, our estimates are likely 
+% % to understate rather than overstate the true effect of C\&NS.
+
+% Specification (4) controls for the interaction between time and location by including hour $\times$ day of
+% week $\times$ zone fixed effects. Due to the large number of postal codes (120,000), we cannot interact time 
+% with postal code fixed effects. 
+% %\footnote{We have about 400 thousand cancellations and 100 thousand no-shows. The the number of postal codes is about 120 thousand, and hence interacting postal code fixed effects with time fixed effects would generate way more fixed effects than the number of ``positive" observations in our sample.}.
+% This set of fixed effects would be able to flexibly capture spatiotemporal demand and supply patterns, such 
+% as the fact that demand tends to move from residential areas to the business district on weekday mornings and
+% in the opposite direction during the late afternoon. The magnitude of the C\&NS effects slightly decreases
+% to 1.9 ppts. In total, more than 52,000 additional fixed effects are added to the regression, but the changes
+% in the main estimates are minimal. This suggests that location and time interactions cannot explain the 
+% observed relationship between C\&NS and drivers' labor supply decisions.
+
+% Specification (5) adds a large set of control variables to address several concerns about the exogeneity 
+% of C\&NS. First, there may be irregular demand and supply factors that are not captured by the existing
+% time and location fixed effects. To address this, we include a host of weather conditions (temperature,
+% humidity, rain, air pollution), together with proxies for demand and supply density in nearby neighborhood 
+% at the end of the trip/booking. Second, some drivers may have predetermined motivation to work harder on 
+% certain days, and they may be more aggressive than usual in finding jobs and bidding for bookings, 
+% which gains them more earnings opportunities but also more  C\&NS. To control for this, we add the number
+% of previous bookings as a control, since more aggressive drivers should receive more bookings, 
+% and if this behavior is a source of bias, including the number of previous bookings will attenuate the
+% C\&NS effects. Lastly, we  include the duration and distance to pickup point to absorb possible selection
+% bias by passenger due to waiting time and pickup conditions. Adding these variables to the regression 
+% slightly increases the estimated effects of C\&NS to 2.0 and 2.1 ppts compared to the results in
+% Specification (4). Adding these sets of controls incrementally or separately also results in similar 
+% estimates. Therefore, we are confident that the above endogeneity concerns have minimal effects on our results.
+
+% Specification (6) allows for non-linear effects of cumulative hours, in the form of a flexible cubic function,
+% to account for varying marginal effect of hours throughout a work shift. At $-2.1$ ppts and $-2.3$ ppts, 
+% the new estimates are not meaningfully different from the previous specifications. We have experimented with 
+% other forms of nonlinearity (e.g. higher-order polynomials, multi-step function, and a combination of both),
+% and the results remain robust. 
 
 %Table \ref{tb:robustquit}, 
-Specification (7) controls for cumulative income effects. As we have discussed in Section 3, if the income
-target is fixed, we would expect the realized earnings to soak up all the effects of unanticipated earnings.
-On the other hand, if the target is endogenous or adaptive, we would not expect the realized earnings to
-fully capture the effects of unanticipated shocks, since its effect is pulled down by the lower, 
-even non-existent, effects of anticipated earnings. The estimated C\&NS effects are almost identical to
-those in Specification (6), suggesting the fixed target theory does not explain our results. Consequently, 
-our results can be taken as an evidence in favor of an endogenous and/or adaptive reference point over a 
-fixed reference point. 
+% Specification (7) controls for cumulative income effects. As we have discussed in Section 3, if the income
+% target is fixed, we would expect the realized earnings to soak up all the effects of unanticipated earnings.
+% On the other hand, if the target is endogenous or adaptive, we would not expect the realized earnings to
+% fully capture the effects of unanticipated shocks, since its effect is pulled down by the lower, 
+% even non-existent, effects of anticipated earnings. The estimated C\&NS effects are almost identical to
+% those in Specification (6), suggesting the fixed target theory does not explain our results. Consequently, 
+% our results can be taken as an evidence in favor of an endogenous and/or adaptive reference point over a 
+% fixed reference point. 
 
-To allow for even more flexibility in capturing duration dependence of the hazard rate, we run separate 
-regressions for separate time intervals in the shift. This allows for the effects of not only cumulative 
-hours but also of other factors to change over time. As noted by \cite{thakral2018daily}, these regressions 
-are equivalent to local weighted regressions \citep{cleveland1988locally} with a uniform weight over a fixed
-time window, allowing for non-parametric identification of general smooth function over time.  
-Table \ref{tb:robustquitbyhour} reports the regression results for each of the hour from the sixth to the
-tenth hour into shift. Using smaller windows (30 tutes and 10 minutes) gives similar results (available 
-from the authors). The estimates are, once again, robust to the function assumption about the duration
-dependence of the hazard rate. This not only improves the confidence in the validity of our specification,
-but also provides strong evidence for the claim that C\&NS are random exogenous events over time. 
-Furthermore, these results highlight an additional advantage of our approach---using random earnings 
+Table \ref{tb:robustquit} also reports the marginal effects of cumulative working hours and cumulative earnings. According to Specification (5), an additional hour of work on average increases the likelihood of stopping work by 1.97 ppts (s.e. 0.04). This effect may reflect either the increasing marginal dis-utility of work in the neoclassical theory, or the hour-targeting behavior in the reference-dependent preference theory. With a reduction of 1.23 ppts in the hazard rate of stopping work, the effect of a cancellation is equivalent to the effect of 37 minutes fewer on the job. Similarly, the effect of a no-show is equivalent to 35 minutes of work fewer. In addition, a 10 SGD increase in cumulative earnings increase the hazard rate by 0.30 ppts (s.e. 0.02), and hence, a cancellation has the same effect as having 41 SGD less in cumulative earnings, and a no-show 39 SGD less.
+
+\subsubsection{Local weighted regressions}
+The hazard of stopping changes substantially throughout the shift and failure to adequatly control for the effects of hours can lead to spuriously significant estimates of the income effect due to strong correlation between hours and income \citep{thakral2018daily}. In Table \ref{tb:robustquit}, we use a flexible cubic function of cumulative hours to account for such effects. To allow for even more flexibility, following \cite{thakral2018daily}, we introduce a time-dependent stopping model:
+\begin{equation}
+\label{eq:lwr}
+    Quit_{it} = \beta_c(h_{it})C_{it} + \beta_{ns}(h_{it}){NS}_{it} + \alpha_i(h_{it}) + g(h_{it}, y_{it}) + X_{it}\gamma(h_{it}) + \epsilon_{it}
+\end{equation}
+
+Equation \eqref{eq:lwr} allows for different hazard equations at different time in the shift, which means that the effects of not only hours but also C\&NS and other independent variables are allowed to shift with time. We use local weighted regressions to estimate this model \citep{cleveland1988locally}. Table \ref{tb:robustquitbyhour} reports the estimates for the hazard equations at six different points of time in a shift. The estimates are, once again, robust to the function assumption about the duration dependence of the hazard rate: a C\&NS is associated with 10\% to 20\% drop in the hazard rate of stopping throughout the shift. This not only improves the confidence in the validity of our specification, but also provides strong evidence for the claim that C\&NS are random exogenous events over time. Furthermore, these results highlight an additional advantage of our approach---using random earnings 
 shocks---over the usual approach of using cumulative income, since cumulative income is highly correlated
-with working hours, making it difficult to disentangle the two effects.  Table \ref{tb:robustquitbyhour}, 
-Specification (6) controls for earnings in each of the hour prior to the trip and booking, to account for \cite{thakral2018daily}'s within-day adaptive reference point. The magnitude of the C\&NS effects is nearly 
-the same as those in Specification (5) of the same table.
+with working hours, making it difficult to disentangle the two effects.  
+
+% Table \ref{tb:robustquitbyhour}, 
+% Specification (6) controls for earnings in each of the hour prior to the trip and booking, to account for \cite{thakral2018daily}'s within-day adaptive reference point. The magnitude of the C\&NS effects is nearly 
+% the same as those in Specification (5) of the same table.
 
 
 \begin{center}
@@ -987,7 +997,23 @@ selective C\&NS decisions. Therefore, it is likely to reflect a causal relations
 drivers' labor supply.
 
 
+\subsubsection{The moderating effect of cumulative income} Under income targeting theory, the effect of unexpected income shock on labor supply is strongest when the cumulative income is approaching the reference point. In such a situation, a driver is likely to exceed the target if he continues for one more trip, but he would miss the target if he stops. Due to smaller marginal utility for income above the reference point, a negative income shock would decrease the value of continuing by less than the amount by which it would decrease the value of stopping, and hence, increasing the net value of continuing. However, if the cumulative income is too far from the reference point, the effect of the shock should be small. If the cumulative income is too high, the drivers are likely to exceed the target by a large margin and a shock would change the values of stopping and continuing by the same amount, resulting in no change in the net value of continuing. If the cumulative income is too low, especially at the end of the shift, there is little chance of meeting the target anyway regardless of the income shock. This constitutes a clear and testable implication of the income targeting theory: We expect a U-shaped moderating effects of cumulative income on the C\&NS effects if the income targeting behavior is present.
 
+To allow for the moderating effect of cumulative income, we estimate a time-income dependent hazard of stopping model:
+\begin{equation}
+    \label{eq:2dlwr}
+    Quit_{it} = \beta_c(h_{it}, y_{it}) {CNS}_{it} + f(h_{it}, y_{it}) + \alpha_{i}(h_{it}, y_{it}) + X_{it}\gamma(h_{it}, y_{it}) + \epsilon_{it}
+\end{equation}
+
+Equation \eqref{eq:2dlwr} allows the hazard equation to change with not only the duration on the job but also the cumulative income. $CNS_{it}$ is a dummy variable indicating if a booking is either a cancellation or no-show.  Since the difference between cancellation effects and no-show effects is insignificant most of the time, we combine the two dummy variables for cancellation for no-show into one to increase the statistical power. The equation is estimated with a series of local weighted regressions at five different time points, namely 8, 8.5, 9, 9.5, and 10 hours from the start of the shift, and eight different cumulative earnings levels, ranging from 80 SGD to 360 SGD, using different localized subsets of the data. Due to the data demanding nature of the local weighted regressions, we pool the data from street hail trips and all bookings to increase the precision of the estimates. The estimated normalized C\&NS effects, i.e. the C\&NS effects relative to the hazard rate of stopping at the respective time and income level, for 40 local weighted regressions are plotted in the five panels in Figure \ref{fg:2dulwr}, with each panel corresponding to a different point of time in the shift.
+
+
+The U-shaped pattern of the moderating effect of cumulative income can be observed clearly in all the five time points. The C\&NS effects are strongest and most significant when the income is in the range 150-250 SGD. The effects decrease in magnitude and become insignificant when the cumulative income is either too low or too high. This is consistent with income-targeting behavior: When cumulative income is too low, there is very low chance for the driver to reach the target, and hence it reduces the incentive to work more when drivers encounter adverse earnings shocks. On the other hand, when income is too high, it is likely that the driver has exceeded the target and extra earnings do not change the marginal utility of income.
+
+
+\begin{center}
+	[Insert Figure \ref{fg:2dulwr} here]
+\end{center}
 
 %Table \ref{tb:robustmins} conduct the similar analysis on the relationship between C\&NS and the remaining working time. While the dependent variable in Table \ref{tb:robustquit} reflect the short-term relationship between C\&NS and labor supply, i.e., how C\&NS affect the the decision to stop at a moment in time; the dependent variable in Table \ref{tb:robustmins} captures the lasting effects of C\&NS on labor supply. The most noticeable changes across specification is between the estimates in the first column and the second column. Including the time controls (hour-day of week fixed effects) decreases the estimated effects from an increase of 14 and 11 minutes of work down to 4.8 minutes. Nonetheless, the estimates in the rest of the specifications remain fairly similar to that of specification (2). Note that we do have time fixed effects (along with location fixed effects and other controls) in our main results, so our main results do not suffer from the bias as in specification (1). Overall, after controlling for time effect by including hour-day of week fixed effects, we do not observe any substantial changes due to location, previous bookings, nearby vehicles, distance to pickup, or passenger waiting time.
 
@@ -1003,9 +1029,9 @@ In this section, we present estimates of the effects of C\&NS on drivers' subseq
 % as follows:
 \begin{equation}
 \label{eq:outcomes}
-Y_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} + \alpha_i + f(H_{it}) + g(I_{it}) + \mathbf{X_{it}}'\mathbf{\gamma}  + u_{it}
+E_{it} = \beta_c C_{it} + \beta_{ns} {NS}_{it} + \alpha_i + f(h_{it}) + g(y_{it}) + X_{it}\gamma  + \epsilon_{it}
 \end{equation}
-$Y_{it}$ is driver $i$'s earnings within an hour from the end of the trip or booking. Table \ref{tb:robustwage} 
+$E_{it}$ is driver $i$'s earnings within an hour from the end of the booking. Table \ref{tb:robustwage} 
 reports the estimates for various sets of fixed effects and control variables.
 
 \begin{center}
@@ -1014,9 +1040,8 @@ reports the estimates for various sets of fixed effects and control variables.
 
 %Table \ref{tb:robustidle} shows that the idle percentage following a cancellation is 0.7--1.5 ppts lower than that following a completed trip or booking. The reduction in idle time can be due to the discovery of more earnings opportunities, but it can also be due to the driver taking longer to complete the same number of earnings opportunities.
 %As we show in Table \ref{tb:robustwage}, 
-Hourly earnings following a cancellation are on average 16 to 88 cents higher than those following a 
-completed trip or completed booking. After a cancellation, the driver is not only busier, but also earns
-better wages, suggesting that he is becoming more productive in his job. 
+Earnings in the hour following a cancellation are on average 76 cents to 160 cents higher than those following a 
+completed trip or completed booking. This represents an increase of 3.4\% to 7\% from the average earnings of 21.6 SGD.
 
 % The effects of no-shows are not always statistically significant or positive, and the magnitudes are smaller
 % than those of cancellations. One explanation is that a driver has to spend much more time trying to reach
@@ -1107,81 +1132,7 @@ Our results show that the %dynamic
 effects of adverse conditions on productivity can be context dependent,
 and are not always negative.
 
-\subsection{Effect heterogeneity}
 
-The results in previous sections suggest that taxi drivers may react to C\&NS in two ways: by prolonging 
-working hours and increasing productivity. In this section, we examine how these two responses interact 
-by looking at different groups of drivers.
-
-\subsubsection{Solo drivers versus sharing drivers}
-
-A vehicle may be shared by multiple drivers; the typical %work 
-arrangement is for two drivers to share one 
-vehicle and work different shifts in the day. With shared vehicles, drivers face time constraints, 
-since they must transfer the vehicle to the other driver at a predetermined time% (usually in the late afternoon or early morning)
-. However, there are also drivers who do not share their vehicle with any 
-other driver, and presumably have more flexibility in scheduling their shifts.
-We expect sharing drivers to have a higher cost of prolonging their shifts due to time constraints, 
-and hence may not be able to extend their working hours as much as solo drivers do when needed. 
-Because of this, a sharing driver will be more likely to resort to increasing productivity to compensate 
-for the loss from C\&NS% cancellation or no-show
-, in contrast to a solo driver.
-
-Table \ref{tb:heterogeneity}, Columns (1) and (3) report the estimates for Equations \eqref{eq:rmins} 
-and \eqref{eq:outcomes} with added interactions between solo driver dummy and booking status. Estimates
-in the first column show that solo drivers tend to increase their working time following a C\&NS more
-than sharing drivers. This is consistent with the hypothesis that solo drivers have lower cost of extending
-their working hours when needed due to their scheduling flexibility.
-
-Interestingly, the effect of the interaction between solo drivers and no-show/cancellation on average
-remaining hourly wage is negative, which suggests that solo drivers do not strive to increase their 
-productivity as much as sharing drivers do. The difference is 6 cents, and statistically significant.
-One explanation is substitutability between extending working hours and increasing productivity as a 
-response to an adverse event. Specifically, for solo drivers, having the ability to extend their working
-hours with less stringent constraints reduces their need and motivation to work harder each hour to cope
-with C\&NS.
-
-\begin{center}
-	[Insert Table \ref{tb:heterogeneity} here]
-\end{center}
-
-
-\subsubsection{More experienced versus less experienced drivers}
-
-Table \ref{tb:heterogeneity}, Columns (2) and (4) report estimates for Equations \eqref{eq:rmins} and 
-\eqref{eq:outcomes} with added interactions between booking status and an indicator for drivers who 
-joined the taxi company before 2014. The indicator is used as a proxy for experience. Drivers who joined
-earlier are presumably able to accumulate more knowledge and skills, which translate into better
-productivity adjustment when needed. The results in Column (4) show that the increase in average wage 
-following a cancellation for drivers who joined before 2014 is 24 cents, which is more than 50\% higher
-than the increase for drivers who joined after 2014.
-
-In terms of labor supply, the increase in the remaining work time following a cancellation for more 
-experienced drivers is on average 2.6 minutes shorter than less experienced drivers. This result is also
-consistent with labor supply adjustment and productivity adjustment being substitutable for each other as
-a response to adverse events. More experienced drivers, who can better adjust their productivity after a 
-cancellation or no-show, may not have to rely on extending their working hours to cope with such adverse 
-events as much as less experienced drivers do.
-
-The two heterogeneous effects suggest that working longer and increasing productivity are substitutable, 
-rather than complementary, devices when drivers respond to C\&NS. Drivers who have an advantage with one 
-device tend to employ it more, and thus have less motivation to squeeze the other.
-
-\subsection{The moderating effect of cumulative income} Table \ref{tb:quitincome} reports the estimated 
-C\&NS effects during the 9th hour of the shift and for five separate income intervals. The effects are 
-strongest and most significant when the income is in the range 150-200 SGD. The effects decrease in
-magnitude and become insignificant when the cumulative income is either too low or too high, while the
-baseline hazard rate does not change much. This is consistent with income-targeting behavior: When 
-cumulative income is too low, there is very low chance for the driver to reach the target, and hence 
-it reduces the incentive to work more when drivers encounter adverse earnings shocks. On the other hand,
-when income is too high, it is likely that the driver has exceeded the target and extra earnings do not 
-change the marginal utility of income. This also disproves the hypothesis that C\&NS effects are driven 
-by the disutility of working: There is no reason why the marginal disutility of work changes with the 
-level of cumulative income.
-
-\begin{center}
-	[Insert Table \ref{tb:quitincome} here]
-\end{center}
 
 \subsection{Net effect on total shift income}
 
@@ -1688,7 +1639,7 @@ unanticipated shocks, and with potential and realized earnings.
 
 
 \begin{table}[]
-	\caption{Hazard Rate of Stopping Work}
+	\caption{Hazard Rate of Stopping}
 	\label{tb:robustquit}    
     \centering
     {
@@ -1698,54 +1649,79 @@ unanticipated shocks, and with potential and realized earnings.
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
     \toprule
     \toprule
-    			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stop working (dummy)}         \\
+    			&\multicolumn{5}{c}{\textit{Dependent Variable:} Stopping work (dummy)}         \\
     			\cmidrule{2-6}
                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
     \midrule
-    Cancellation (dummy)&     -0.0154\sym{***}&     -0.0168\sym{***}&     -0.0149\sym{***}&     -0.0137\sym{***}&     -0.0124\sym{***}\\
-                &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         &    (0.0011)         \\
+    Cancellation (dummy)&     -0.0154\sym{***}&     -0.0167\sym{***}&     -0.0148\sym{***}&     -0.0136\sym{***}&     -0.0123\sym{***}\\
+                &    (0.0009)         &    (0.0010)         &    (0.0010)         &    (0.0010)         &    (0.0010)         \\
     \addlinespace
-    No-show (dummy)&     -0.0116\sym{***}&     -0.0129\sym{***}&     -0.0115\sym{***}&     -0.0131\sym{***}&     -0.0116\sym{***}\\
+    No-show (dummy)&     -0.0116\sym{***}&     -0.0128\sym{***}&     -0.0114\sym{***}&     -0.0131\sym{***}&     -0.0116\sym{***}\\
                 &    (0.0015)         &    (0.0016)         &    (0.0016)         &    (0.0016)         &    (0.0016)         \\
     \addlinespace
-    Placebo trip (dummy)&     -0.0007         &     -0.0005         &     -0.0005         &     -0.0005         &     -0.0005         \\
-                &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         &    (0.0007)         \\
-    \addlinespace
-    Weather \& Market thickness&         {N}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
-    Break and POB time&         {N}         &         {N}         &         {Y}         &         {Y}         &         {Y}         \\
-    Oncall time and distance&         {N}         &         {N}         &         {N}         &         {Y}         &         {Y}         \\
-    g(cumulative earnings)&         {N}         &         {N}         &         {N}         &         {N}         &         {Y}         \\
+    Weather \& Market thickness&         {}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
+    Break \& POB time&         {}         &         {}         &         {Y}         &         {Y}         &         {Y}         \\
+    Oncall time \& distance&         {}         &         {}         &         {}         &         {Y}         &         {Y}         \\
+    \(g(E_{it})\)&         {}         &         {}         &         {}         &         {}         &         {Y}         \\
     \midrule
-    \textit{Average marginal effect} & & & & & \\
-    1 hour more of work&      0.0212         &      0.0212         &      0.0177         &      0.0177         &      0.0197         \\
-                &    (0.0003)         &    (0.0003)         &    (0.0005)         &    (0.0005)         &    (0.0005)         \\
+    \textit{Average marginal effects} & & & & & \\
+    1 hour more of work&      0.0212\sym{***}    &      0.0212\sym{***} &      0.0177\sym{***}        &      0.0177\sym{***}         &      0.0197\sym{***}         \\
+                &    (0.0002)         &    (0.0002)         &    (0.0004)         &    (0.0004)         &    (0.0004)         \\
     \addlinespace
-    10 POB mins more last hour&                     &                     &     -0.0000         &      0.0001         &     -0.0005         \\
-                &                     &                     &    (0.0004)         &    (0.0004)         &    (0.0003)         \\
-    \addlinespace
-    10 POB km more last hour&                     &                     &      0.0017         &      0.0017         &      0.0002         \\
-                &                     &                     &    (0.0003)         &    (0.0003)         &    (0.0003)         \\
-    \addlinespace
-    10 SGD more of earnings&                     &                     &                     &                     &      0.0030         \\
-                &                     &                     &                     &                     &    (0.0003)         \\
-    \addlinespace
+    10 SGD more of earnings&                     &                     &                     &                     &      0.0030\sym{***}         \\
+                &                     &                     &                     &                     &    (0.0002)         \\
+    \midrule
     Mean hazard rate&      0.0535         &      0.0534         &      0.0534         &      0.0534         &      0.0534         \\
     Observations&\num{3792025}         &\num{3745117}         &\num{3745117}         &\num{3743047}         &\num{3743047}         \\
-    Observations w/o singletons&\num{2887665}         &\num{2845257}         &\num{2845257}         &\num{2843351}         &\num{2843351}         \\
+    %Observations without singletons&\num{2887665}         &\num{2845257}         &\num{2845257}         &\num{2843351}         &\num{2843351}         \\
     Drivers     & \num{31961}         & \num{31958}         & \num{31958}         & \num{31958}         & \num{31958}         \\
-    Days        &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         \\
     \(R^2\)     &      0.3342         &      0.3348         &      0.3361         &      0.3361         &      0.3374         \\
     \bottomrule
     \end{tabularx}
-    % from quitspl1X2.tex - HL
+    % from quitspl1X0.tex - HL
     }
 	\begin{tablenotes}
 	\small
-        \textit{Note.} Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers are searching for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if booking is the last job of the shift. All regressions include driver fixed effects, hour-day-of-week\(\times\)postal-code fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} include temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} include the number of bookings and street hail trips within 500 m and 5 minutes, within 1000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and POB} consist of the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{Oncall time and distance} are the duration and distance the drivers travel to pick up passengers. \textit{g(cumulative earnings)} is a cubic function of the cumulative earnings from shift start.  Standard errors clustered by drivers and dates in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        \textit{Note.} Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if booking is the last job of the shift. All regressions include driver fixed effects, hour-day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and POB} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{Oncall time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 \end{table}
 
 
+
+
+\begin{table}[]
+	\centering
+	\caption{Time-dependent Hazard Rate of Stopping}
+	\label{tb:robustquitbyhour}
+    \footnotesize
+    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\setlength{\tabcolsep}{0pt}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+    \toprule
+    \toprule
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+                &\multicolumn{1}{c}{7.5 hours}         &\multicolumn{1}{c}{8 hours}         &\multicolumn{1}{c}{8.5 hours}         &\multicolumn{1}{c}{9 hours}         &\multicolumn{1}{c}{9.5 hours}         &\multicolumn{1}{c}{10 hours}         \\
+    \midrule
+    Cancellation (dummy)&      -0.011\sym{***}&      -0.021\sym{***}&      -0.028\sym{***}&      -0.028\sym{***}&      -0.031\sym{***}&      -0.039\sym{***}\\
+                &     (0.003)         &     (0.004)         &     (0.004)         &     (0.005)         &     (0.005)         &     (0.006)         \\
+    \addlinespace
+    No-show (dummy)&      -0.012\sym{**} &      -0.010\sym{*}  &      -0.025\sym{***}&      -0.028\sym{***}&      -0.031\sym{***}&      -0.021\sym{**} \\
+                &     (0.005)         &     (0.006)         &     (0.007)         &     (0.008)         &     (0.008)         &     (0.009)         \\
+    \midrule
+    Mean hazard rate& \num{0.100}         & \num{0.120}         & \num{0.141}         & \num{0.162}         & \num{0.180}         & \num{0.191}         \\
+    Observations&\num{201817}         &\num{186871}         &\num{171843}         &\num{155346}         &\num{137647}         &\num{120058}         \\
+    Drivers     & \num{22749}         & \num{21498}         & \num{20026}         & \num{18411}         & \num{16721}         & \num{14825}         \\
+    \(R^2\)     &       0.432         &       0.446         &       0.454         &       0.470         &       0.489         &       0.506         \\
+    \bottomrule
+    \end{tabularx}
+
+	\begin{tablenotes}
+% 		\parindent 1em%  %ChaoQin
+		\small
+        \textit{Note.} Each column estimates a separate hazard rate equation at the respective number of hours into the shift using a local weighted regression with a 30-minute bandwidth and uniform weights. An observation a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour-day-of-week\(\times\)zone fixed effects, date fixed effects, a cubic function of the cumulative hours, weather conditions, measures for market thickness, break time and time with passenger, duration and distance to pickup. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+	\end{tablenotes}
+% 	\end{threeparttable}
+\end{table}
 
 
 
@@ -1765,46 +1741,36 @@ unanticipated shocks, and with potential and realized earnings.
     			\cmidrule{2-6}
                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
     \midrule
-    Cancellation (dummy)&      1.6095\sym{***}&      1.5403\sym{***}&      1.0822\sym{***}&      1.0133\sym{***}&      0.9793\sym{***}\\
-                &    (0.0521)         &    (0.0553)         &    (0.0554)         &    (0.0556)         &    (0.0567)         \\
+    Cancellation (dummy)&      1.5933\sym{***}&      1.5454\sym{***}&      1.0872\sym{***}&      1.0181\sym{***}&      0.9841\sym{***}\\
+                &    (0.0515)         &    (0.0527)         &    (0.0526)         &    (0.0530)         &    (0.0530)         \\
     \addlinespace
-    No-show (dummy)&      1.3785\sym{***}&      1.3256\sym{***}&      0.7524\sym{***}&      0.8512\sym{***}&      0.8205\sym{***}\\
-                &    (0.0882)         &    (0.0893)         &    (0.0888)         &    (0.0887)         &    (0.0885)         \\
+    No-show (dummy)&      1.3647\sym{***}&      1.3299\sym{***}&      0.7567\sym{***}&      0.8554\sym{***}&      0.8246\sym{***}\\
+                &    (0.0814)         &    (0.0825)         &    (0.0828)         &    (0.0835)         &    (0.0833)         \\
     \addlinespace
-    Placebo trip (dummy)&      0.1507\sym{***}&     -0.0431         &     -0.0427         &     -0.0418         &     -0.0410         \\
-                &    (0.0466)         &    (0.0399)         &    (0.0399)         &    (0.0401)         &    (0.0399)         \\
-    \addlinespace
-    Weather \& Market thickness&         {N}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
-    Break and POB time&         {N}         &         {N}         &         {Y}         &         {Y}         &         {Y}         \\
-    Oncall time and distance&         {N}         &         {N}         &         {N}         &         {Y}         &         {Y}         \\
-    g(cumulative earnings)&         {N}         &         {N}         &         {N}         &         {N}         &         {Y}         \\
+    Weather \& Market thickness&         {}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
+    Break \& POB time&         {}         &         {}         &         {Y}         &         {Y}         &         {Y}         \\
+    Oncall time \& distance&         {}         &         {}         &         {}         &         {Y}         &         {Y}         \\
+    \(g(E_{it})\)&         {}         &         {}         &         {}         &         {}         &         {Y}         \\
     \midrule
-    \textit{Average marginal effect} & & & & & \\
-    1 hour more of work&     -0.2404         &     -0.2420         &      0.0501         &      0.0465         &      0.2737         \\
-                &    (0.0121)         &    (0.0120)         &    (0.0136)         &    (0.0137)         &    (0.0200)         \\
+    \textit{Average marginal effects} & & & & & \\
+    1 hour more of work&     -0.2404\sym{***}         &     -0.2420\sym{***}         &      0.0501\sym{***}         &      0.0465\sym{***}         &      0.2737\sym{***}         \\
+                &    (0.0100)         &    (0.0100)         &    (0.0115)         &    (0.0115)         &    (0.0177)         \\
     \addlinespace
-    10 POB mins more last hour&                     &                     &     -0.3672         &     -0.3783         &     -0.3153         \\
-                &                     &                     &    (0.0221)         &    (0.0226)         &    (0.0195)         \\
-    \addlinespace
-    10 POB km more last hour&                     &                     &     -0.2184         &     -0.2141         &     -0.1534         \\
-                &                     &                     &    (0.0224)         &    (0.0225)         &    (0.0235)         \\
-    \addlinespace
-    10 SGD more of earnings&                     &                     &                     &                     &     -0.1218         \\
-                &                     &                     &                     &                     &    (0.0124)         \\
+    10 SGD more of earnings&                     &                     &                     &                     &     -0.1218\sym{***}         \\
+                &                     &                     &                     &                     &    (0.0099)         \\
     \midrule
-    Mean earnings&     \num{21.6142}  &     \num{21.6211}   &     \num{21.6211}         &     21.6210         &     21.6210         \\
+    Mean earnings in next hour&     \num{21.6}         &     \num{21.6}         &     \num{21.6}         &     \num{21.6}         &     \num{21.6}         \\
     Observations&\num{3304680}         &\num{3263901}         &\num{3263901}         &\num{3262162}         &\num{3262162}         \\
-    Observations w/o singletons&\num{2484277}         &\num{2448085}         &\num{2448085}         &\num{2446493}         &\num{2446493}         \\
+    % Observations without singletons&\num{2484277}         &\num{2448085}         &\num{2448085}         &\num{2446493}         &\num{2446493}         \\
     Drivers     & \num{31762}         & \num{31757}         & \num{31757}         & \num{31757}         & \num{31757}         \\
-    Days        &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         &    \num{90}         \\
     \(R^2\)     &      0.3952         &      0.3971         &      0.4036         &      0.4037         &      0.4041         \\
     \bottomrule
     \end{tabularx}
-    % from quitspl1X2.tex - HL
+    % from quitspl1X0.tex - HL
     }
 	\begin{tablenotes}
 	\small
-        \textit{Note.} Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers are searching for at least 3 minutes. The dependent variable for all columns is a the total earnings earned in 60 minutes immediately following the booking. All regressions include driver fixed effects, hour-day-of-week\(\times\)postal-code fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} include temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} include the number of bookings and street hail trips within 500 m and 5 minutes, within 1000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and POB} consist of the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{Oncall time and distance} are the duration and distance the drivers travel to pick up passengers. \textit{g(cumulative earnings)} is a cubic function of the cumulative earnings from shift start.  Standard errors clustered by drivers and dates in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        \textit{Note.} Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a the total earnings earned in 60 minutes immediately following the booking. All regressions include driver fixed effects, hour-day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and POB} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{Oncall time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 \end{table}
 
@@ -2068,41 +2034,42 @@ is the earnings received in the respective hour. $\textsuperscript{***}p < 0.01$
 %	\end{threeparttable}
 \end{table}
 
-\clearpage
+% \clearpage
 
-\begin{table}[]
-	\centering
-	\caption{C\&NS Effects in the 9th Hour, at Different Cumulative Income Intervals}
-	\label{tb:quitincome}
-%	\begin{threeparttable}
-    {
-    \footnotesize
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
-        \toprule
-        \toprule
-                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
-                    \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{50-100 SGD}&\multicolumn{1}{c}{100-150 SGD}&\multicolumn{1}{c}{150-200 SGD}&\multicolumn{1}{c}{250-300 SGD}&\multicolumn{1}{c}{300-350 SGD}\\
-        \midrule
-        Cancellation (dummy)&      0.0015&     -0.0219\sym{***}&     -0.0288\sym{***}&     -0.0166\sym{*}&     -0.0068\\
-                    &    (0.0188)&    (0.0074)&    (0.0051)&    (0.0086)&    (0.0187)\\
-        \addlinespace
-        No-show (dummy)&     -0.0132&     -0.0166\sym{*}&     -0.0264\sym{***}&     -0.0070&      0.0542\sym{*}\\
-                    &    (0.0293)&    (0.0114)&    (0.0081)&    (0.0148)&    (0.0330)\\
-        \midrule
-        Mean hazard rate&      0.1070&      0.1310&      0.1469&      0.1397&      0.1291\\
-        Observations& \num{34403}&\num{206394}&\num{466796}&\num{186600}& \num{46491}\\
-        \(R^2\)     &       0.557&       0.391&       0.348&       0.415&       0.487\\
-        \bottomrule
-    \end{tabularx}
-    }
-    \begin{tablenotes}
-    	\parindent 1em%  %ChaoQin
-		\small
-		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
-    \end{tablenotes}
+% HL: replace with figure \ref{fg:2dlwr}, no longer needed // 10 jan 2020
+% \begin{table}[]
+% 	\centering
+% 	\caption{C\&NS Effects in the 9th Hour, at Different Cumulative Income Intervals}
+% 	\label{tb:quitincome}
+% %	\begin{threeparttable}
+%     {
+%     \footnotesize
+%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
+%         \toprule
+%         \toprule
+%                     &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+%                     \multicolumn{1}{l}{\textit{DV: Stop working (dummy)}}&\multicolumn{1}{c}{50-100 SGD}&\multicolumn{1}{c}{100-150 SGD}&\multicolumn{1}{c}{150-200 SGD}&\multicolumn{1}{c}{250-300 SGD}&\multicolumn{1}{c}{300-350 SGD}\\
+%         \midrule
+%         Cancellation (dummy)&      0.0015&     -0.0219\sym{***}&     -0.0288\sym{***}&     -0.0166\sym{*}&     -0.0068\\
+%                     &    (0.0188)&    (0.0074)&    (0.0051)&    (0.0086)&    (0.0187)\\
+%         \addlinespace
+%         No-show (dummy)&     -0.0132&     -0.0166\sym{*}&     -0.0264\sym{***}&     -0.0070&      0.0542\sym{*}\\
+%                     &    (0.0293)&    (0.0114)&    (0.0081)&    (0.0148)&    (0.0330)\\
+%         \midrule
+%         Mean hazard rate&      0.1070&      0.1310&      0.1469&      0.1397&      0.1291\\
+%         Observations& \num{34403}&\num{206394}&\num{466796}&\num{186600}& \num{46491}\\
+%         \(R^2\)     &       0.557&       0.391&       0.348&       0.415&       0.487\\
+%         \bottomrule
+%     \end{tabularx}
+%     }
+%     \begin{tablenotes}
+%     	\parindent 1em%  %ChaoQin
+% 		\small
+% 		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+%     \end{tablenotes}
 
-\end{table}
+% \end{table}
 
 \clearpage
 
@@ -2449,7 +2416,17 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
 %	{\justifying\footnotesize\emph{Notes:} The figure shows drivers' average earnings in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NS. The dashed lines are for driver-hours in which there are some C\&NS.}
 \end{figure}
 
+\begin{figure}
+	{\centering
+		\caption{Normalized C\&NS effects over time and at different income levels} %ChaoQin
+		\includegraphics[width=0.75\textwidth]{./fg/cnsmfxulwr80to100.pdf}
+		\label{fg:2dulwr}
+	}
+\end{figure}
+
 \FloatBarrier
+
+
 
 \begin{appendices}
 	
@@ -3063,6 +3040,66 @@ product of the effect of unanticipated earnings on labor supply and the effect o
 % 	\end{table}
 % \end{landscape}
 
+
+\section{Effect heterogeneity}
+
+The results in previous sections suggest that taxi drivers may react to C\&NS in two ways: by prolonging 
+working hours and increasing productivity. In this section, we examine how these two responses interact 
+by looking at different groups of drivers.
+
+\subsubsection{Solo drivers versus sharing drivers}
+
+A vehicle may be shared by multiple drivers; the typical %work 
+arrangement is for two drivers to share one 
+vehicle and work different shifts in the day. With shared vehicles, drivers face time constraints, 
+since they must transfer the vehicle to the other driver at a predetermined time% (usually in the late afternoon or early morning)
+. However, there are also drivers who do not share their vehicle with any 
+other driver, and presumably have more flexibility in scheduling their shifts.
+We expect sharing drivers to have a higher cost of prolonging their shifts due to time constraints, 
+and hence may not be able to extend their working hours as much as solo drivers do when needed. 
+Because of this, a sharing driver will be more likely to resort to increasing productivity to compensate 
+for the loss from C\&NS% cancellation or no-show
+, in contrast to a solo driver.
+
+Table \ref{tb:heterogeneity}, Columns (1) and (3) report the estimates for Equations \eqref{eq:rmins} 
+and \eqref{eq:outcomes} with added interactions between solo driver dummy and booking status. Estimates
+in the first column show that solo drivers tend to increase their working time following a C\&NS more
+than sharing drivers. This is consistent with the hypothesis that solo drivers have lower cost of extending
+their working hours when needed due to their scheduling flexibility.
+
+Interestingly, the effect of the interaction between solo drivers and no-show/cancellation on average
+remaining hourly wage is negative, which suggests that solo drivers do not strive to increase their 
+productivity as much as sharing drivers do. The difference is 6 cents, and statistically significant.
+One explanation is substitutability between extending working hours and increasing productivity as a 
+response to an adverse event. Specifically, for solo drivers, having the ability to extend their working
+hours with less stringent constraints reduces their need and motivation to work harder each hour to cope
+with C\&NS.
+
+\begin{center}
+	[Insert Table \ref{tb:heterogeneity} here]
+\end{center}
+
+
+\subsubsection{More experienced versus less experienced drivers}
+
+Table \ref{tb:heterogeneity}, Columns (2) and (4) report estimates for Equations \eqref{eq:rmins} and 
+\eqref{eq:outcomes} with added interactions between booking status and an indicator for drivers who 
+joined the taxi company before 2014. The indicator is used as a proxy for experience. Drivers who joined
+earlier are presumably able to accumulate more knowledge and skills, which translate into better
+productivity adjustment when needed. The results in Column (4) show that the increase in average wage 
+following a cancellation for drivers who joined before 2014 is 24 cents, which is more than 50\% higher
+than the increase for drivers who joined after 2014.
+
+In terms of labor supply, the increase in the remaining work time following a cancellation for more 
+experienced drivers is on average 2.6 minutes shorter than less experienced drivers. This result is also
+consistent with labor supply adjustment and productivity adjustment being substitutable for each other as
+a response to adverse events. More experienced drivers, who can better adjust their productivity after a 
+cancellation or no-show, may not have to rely on extending their working hours to cope with such adverse 
+events as much as less experienced drivers do.
+
+The two heterogeneous effects suggest that working longer and increasing productivity are substitutable, 
+rather than complementary, devices when drivers respond to C\&NS. Drivers who have an advantage with one 
+device tend to employ it more, and thus have less motivation to squeeze the other.
 
 \end{document}
 
