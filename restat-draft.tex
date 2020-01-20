@@ -2124,28 +2124,22 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		{
 		\footnotesize
         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
-		\toprule
-		\toprule
-		                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
-		                    &\multicolumn{1}{p{2cm}}{\centering Duration with passenger}&\multicolumn{1}{p{2cm}}{\centering Break duration}&\multicolumn{1}{p{2cm}}{\centering Completed trips}&\multicolumn{1}{p{2cm}}{\centering Completed bookings}&\multicolumn{1}{p{2cm}}{\centering Street hail trips}\\
-		                    &\multicolumn{1}{p{2cm}}{\centering(mins)}&\multicolumn{1}{p{2cm}}{\centering (mins)}&\multicolumn{1}{p{2cm}}{\centering (count)}&\multicolumn{1}{p{2cm}}{\centering (count)}&\multicolumn{1}{p{2cm}}{\centering(count)}\\
-		\midrule
-		Cancellations in last hour (count)&      0.7041\sym{***}&     -0.5102\sym{***}&      0.0409\sym{***}&      0.0902\sym{***}&     -0.0392\sym{***}\\
-		                    &    (0.0179)         &    (0.0161)         &    (0.0014)         &    (0.0009)         &    (0.0015)         \\
-		\addlinespace
-		No-shows in last hour (count)&      0.5740\sym{***}&     -0.7992\sym{***}&      0.0610\sym{***}&      0.1011\sym{***}&     -0.0303\sym{***}\\
-		                    &    (0.0355)         &    (0.0319)         &    (0.0028)         &    (0.0018)         &    (0.0029)         \\
-		% \addlinespace
-		% Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &         {Yes}         &         {Yes}         \\
-		% \addlinespace
-		% Hour\(\times\)day of week FE&       {Yes}         &       {Yes}         &       {Yes}         &         {Yes}         &         {Yes}         \\
-		% \addlinespace
-		% Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &         {Yes}         &         {Yes}         \\
-		\midrule
-		Observations        &\num{13038157}         &\num{13038157}         &\num{13038157}         &\num{13038157}         &\num{13038157}         \\
-		\(R^2\)             &     {0.178}         &     {0.145}         &     {0.111}         &     {0.196}         &     {0.138}         \\
-		\bottomrule
+		\begin{tabularx}{\textwidth}{l*{7}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+        \toprule
+        \toprule
+                            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
+                            &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Break time in next hour (minutes)} &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Speed with POB in next hour (km/h)} &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Completed trips in next hour (count)} &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Distance to next job (km)} &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Time to next job (minutes)} &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Speed to next job (km/h)} &\multicolumn{1}{>{\centering\arraybackslash}p{1.5cm}}{Time with passenger in next hour (minutes)}\\
+        \midrule
+        Cancellation (dummy)&      -0.824\sym{***}&       4.044\sym{***}&       0.105\sym{***}&      -0.335\sym{***}&      -1.205\sym{***}&       0.365\sym{***}&       1.738\sym{***}\\
+                            &     (0.055)         &     (0.189)         &     (0.005)         &     (0.023)         &     (0.062)         &     (0.065)         &     (0.065)         \\
+        \addlinespace
+        No-show (dummy)     &      -0.860\sym{***}&       4.487\sym{***}&       0.107\sym{***}&      -0.174\sym{***}&      -1.034\sym{***}&       1.194\sym{***}&       1.688\sym{***}\\
+                            &     (0.086)         &     (0.324)         &     (0.008)         &     (0.037)         &     (0.098)         &     (0.098)         &     (0.103)         \\
+        \midrule
+        Mean outcome        & \num{5.261}         &\num{34.875}         & \num{1.832}         & \num{4.962}         &\num{14.219}         &\num{22.105}         &\num{25.527}         \\
+        Observations        &\num{3262162}         &\num{2999955}         &\num{3262162}         &\num{3262162}         &\num{3262162}         &\num{3262162}         &\num{3262162}         \\
+        \(R^2\)             & \num{0.282}         & \num{0.321}         & \num{0.337}         & \num{0.462}         & \num{0.378}         & \num{0.407}         & \num{0.354}         \\
+        \bottomrule
 		\end{tabularx}
 		}
 		\begin{tablenotes}
