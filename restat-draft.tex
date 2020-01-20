@@ -2369,6 +2369,19 @@ Observations&\num{11860677}&\num{11860677}&\num{11860677}\\
 %	{\justifying\footnotesize\emph{Note:} The figure shows drivers' average earnings in the immediate hour following each hour of day (top panel) and hour into shift (bottom panel). The solid lines are for driver-hours in which there are no C\&NS. The dashed lines are for driver-hours in which there are some C\&NS.}
 \end{figure}
 
+
+\begin{figure}
+	{\centering
+		\caption{Normalized C\&NS effects over time and at different income levels} %ChaoQin
+		\includegraphics[width=0.75\textwidth]{./fg/cnsmfxulwr80to100.pdf}
+		\label{fg:2dulwr}
+	}
+	\begin{figurenotes}
+	\small\ Each dot in the graph represents an estimate from a separate local weighted regression used to estimate the hazard of stopping at a specific time in the shift and a specific income level. The number in the title of each panel is the number of hours since the start of the shift at which the hazard is evaluated. The horizontal axis indicates the income level at which the hazard is evaluated. All local weighted regressions use a bandwidth of 30 minutes for time and 20 SGD for income, and uniform weight to weigh the observations. Normalized C\&NS effects are calculated by dividing the estimated C\&NS coefficients from the regressions by the local weighted hazard rates at the correspoding time in the shift and income level. 
+	\end{figurenotes}
+\end{figure}
+
+
 \begin{figure}
 	{\centering
 		\caption{Normalized C\&NS effects over time and at different income levels} %ChaoQin
