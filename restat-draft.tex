@@ -974,7 +974,7 @@ The hazard rate of stopping changes substantially throughout the shift and failu
 \end{equation}
 
 Equation \eqref{eq:lwr} allows for different hazard equations at different time in the shift, which means that the effects of not only hours but also C\&NS and other independent variables are allowed to shift with time. We use local weighted regressions to estimate this model \citep{cleveland1988locally}. For a given time $h$ in the shift, the regression solve a weighted least square problem to obtain the estimated coeffiecnts at $h$:
-\[\min_{\beta_c, \beta_{ns}, \alpha_i, \gamma, \lambda, g \sum_{it} w(h_{it}-h) (Quit_{it} - \beta_cC_{it} + \beta_{ns}{NS}_{it} + \alpha_i + g(y_{it}) + X_{it}\gamma\]
+\[\min_{\beta_c, \beta_{ns}, \alpha_i, \gamma, \lambda, g} \sum_{it} w(h_{it}-h) \left(Quit_{it} - \beta_cC_{it} + \beta_{ns}{NS}_{it} + \alpha_i + g(y_{it}) + \lambda h_{it} + X_{it}\gamma\right)^2\]
 
 Table \ref{tb:robustquitbyhour} reports the estimates for the hazard equations at six different points of time in a shift. The estimates are, once again, robust to the function assumption about the duration dependence of the hazard rate: a C\&NS is associated with 17\% to 20\% drop in the hazard rate of stopping throughout the shift. This not only improves the confidence in the validity of our specification, but also provides strong evidence for the claim that C\&NS are random exogenous events over time. Furthermore, these results highlight an additional advantage of our approach---using random earnings 
 shocks---over the usual approach of using cumulative income, since cumulative income is highly correlated
