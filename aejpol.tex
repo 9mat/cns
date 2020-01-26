@@ -2353,18 +2353,6 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 
 \begin{figure}
 	{\centering
-		\caption{Normalized C\&NS effects over time and at different income levels} %ChaoQin
-		\includegraphics[width=0.75\textwidth]{./fg/cnsmfxulwr80to100spl1.pdf}
-		\label{fg:2dulwrnoisy}
-	}
-	\begin{figurenotes}
-	\small\ Each dot in the graph represents an estimate from a separate local weighted regression used to estimate the hazard of stopping at a specific time in the shift and a specific income level. The number in the title of each panel is the number of hours since the start of the shift at which the hazard is evaluated. The horizontal axis indicates the income level at which the hazard is evaluated. All local weighted regressions use a bandwidth of 30 minutes for time and 20 SGD for income, and uniform weight to weigh the observations. Normalized C\&NS effects are calculated by dividing the estimated C\&NS coefficients from the regressions by the local weighted hazard rates at the correspoding time in the shift and income level. 
-	\end{figurenotes}
-\end{figure}
-
-
-\begin{figure}
-	{\centering
 		\caption{Normalized C\&NS effects over time and at different income levels (full sample estimation)} %ChaoQin
 		\includegraphics[width=0.75\textwidth]{./fg/cnsmfxulwr80to100.pdf}
 		\label{fg:2dulwr}
@@ -2694,9 +2682,18 @@ Due to the data demanding nature of local weighted regression, estimating Equati
 
 The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2dulwrnoisy}, which corresponds to the C\&NS effects on the hazard rate at 8 and 8.5 hours into the shift. The turning point seems to be between 150 SGD to 250 SGD. The C\&NS effects become insignificant when the income level either exceeds 280 or below 80. This pattern is less prominent in the latter three panels, which correspond to the hazard rates at 9, 9.5, and 10 hours, for two reasons. First, the estimates are noisier, especially at 9.5 and 10 hours, due to smaller sample size at these hours of the shift. Second, there seems to be a shift in the reference point  to the right after 9 hours of work, which can be explained by the fact that the drivers who work more than 9 hours are likely to set higher targets for themselves. This, coupled with the fact that there are very few observations to the right of the income range, makes the pattern in the later hours noisy and difficult to interpret. 
 
-\begin{center}
-	[Insert Figure \ref{fg:2dulwrnoisy} here]
-\end{center}
+
+
+\begin{figure}
+	{\centering
+		\caption{Normalized C\&NS effects over time and at different income levels} %ChaoQin
+		\includegraphics[width=0.75\textwidth]{./fg/cnsmfxulwr80to100spl1.pdf}
+		\label{fg:2dulwrnoisy}
+	}
+	\begin{figurenotes}
+	\small\ Each dot in the graph represents an estimate from a separate local weighted regression used to estimate the hazard of stopping at a specific time in the shift and a specific income level. The number in the title of each panel is the number of hours since the start of the shift at which the hazard is evaluated. The horizontal axis indicates the income level at which the hazard is evaluated. All local weighted regressions use a bandwidth of 30 minutes for time and 20 SGD for income, and uniform weight to weigh the observations. Normalized C\&NS effects are calculated by dividing the estimated C\&NS coefficients from the regressions by the local weighted hazard rates at the correspoding time in the shift and income level. 
+	\end{figurenotes}
+\end{figure}
 
 
 % \section{Theory}
