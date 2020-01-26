@@ -2433,182 +2433,185 @@ fluctuates around 8\%.
 %	[Insert Table \ref{tb:robustmins} here]
 %\end{center}
 
-\newpage
-\section{Effects of C\&NS on the remaining working time and the remaining idle percentage}
-\label{sec:outcome2and4}
-Another measure of labor supply is the duration a driver continues working on the shift after each trip or booking. 
-\begin{equation}
-\label{eq:rmins}
-{Remaining\_time}_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} + f(H_{it}) + g(I_{it}) + \mathbf{X_{it}}'\mathbf{\gamma} + \alpha_i + u_{it}
-\end{equation}
-${Remaining\_time}_{it}$ is the duration driver $i$ continues working after trip/booking $t$, i.e., the 
-duration from the end of $t$ %the trip or booking 
-to the end of the corresponding shift. %$I^{cancel}_{it}$ and $I^{noshow}_{it}$ are two dummy variables and equal to 1 if trip/booking $t$ is a cancellation or a no-show, respectively. $\alpha_i$ and $X_{it}$ are the driver fixed effects and the set of observable factors that may affect the driver $i$'s labor supply.
-Other variables are %defined 
-the same as in Equation \eqref{eq:quit}.
-Table \ref{tb:robustmins} reports estimates for eight specifications of Equation \eqref{eq:rmins},
-each of which uses a different set of control variables and fixed effects. While the dependent variable
-in Table \ref{tb:robustquit} reflects the short-term relationship between C\&NS and labor supply---i.e., 
-how C\&NS affect the decision to stop immediately after the trip or booking---the dependent variable
-in Table \ref{tb:robustmins} captures the lasting effects of C\&NS on labor supply. %Specification (1) includes cumulative hour, cumulative income, demand density, and driver fixed effects as control variables. According to this specification, a cancellation is associated with an average increase of 11.7 minutes in the remaining working time, and a no-show with an average increase of 9.2 minutes. However, the magnitudes of these coefficients are substantially lower when we account for date fixed effects as well as hour of day and day of week fixed effects in Specification (2), according to which the estimated increase in remaining work time after a C\&NS is only around 4 minutes. Controlling for spatial heterogeneity with  postal code fixed effects (Specification (3)) and controlling for spatiotemporal heterogeneity with the hour $\times$ day of week $\times$ zone fixed effects (Specification (4)) do not change the estimates much, and actually slightly increase the magnitude of the estimates. 
-%Specifications (5) to (7) separately control for number of cumulative bookings, number of vehicles within a radius of 500 m, distance to pickup location, and the on-call duration to take into account prior aggressive bidding behavior, supply density, and the factors that influence passengers' decisions to cancel or not show up, all of which are potentially correlated with drivers' labor supply decisions. 
-Specification (8) combines all of the aforementioned  control variables in the same regression. 
-%The results of these last four specifications are fairly consistent, with the 
-A cancellation is associated with an increase of 4.2 minutes in the remaining working time, and a no-show
-is associated with an increase of 5.9 minutes, which are about one-quarter to one-third of an average 
-trip's duration. The effect of cancellation on the remaining working time is equivalent to the effect of
-driving 10 minutes less or earning 8 SGD less, and the effect of no-show is equivalent to driving 14 minutes
-less or earning 11 SGD less. 
-%These numbers are also close to the estimates in Specifications (2) to (4), in which we do not control for these additional factors. Therefore, it is unlikely that these additional factors are driving the positive effects of C\&NS on remaining work time.
- Thus, it seems that remaining on the shift for a longer duration is another way by which Singapore's taxi 
- drivers respond to C\&NS.
- 	\begin{table}
- 	\hspace*{-2pt}\makebox[\linewidth][c]{%      
-    \begin{minipage}{20cm} %ChaoQin	
- 		\centering
- 		\caption{Remaining Work Time (mins)}
- 		\label{tb:robustmins}
-            \setlength{\tabcolsep}{5pt}
- 			\footnotesize
-% 			\input{tb/eq2mins.tex}
-            {
-            \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-            \begin{tabular}{l*{8}{c}}
-            \toprule
-            \toprule
-                                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
-            \midrule
-            Cancellation (dummy)&      11.66\sym{***}&       4.04\sym{***}&       4.40\sym{***}&       4.70\sym{***}&       4.21\sym{***}&       4.61\sym{***}&       3.62\sym{***}&       4.24\sym{***}\\
-                                &     (0.26)         &     (0.26)         &     (0.26)         &     (0.27)         &     (0.27)         &     (0.27)         &     (0.27)         &     (0.27)         \\
-            \addlinespace
-            No-show (dummy)     &       9.17\sym{***}&       3.93\sym{***}&       4.26\sym{***}&       4.70\sym{***}&       4.18\sym{***}&       4.63\sym{***}&       4.13\sym{***}&       5.93\sym{***}\\
-                                &     (0.42)         &     (0.39)         &     (0.40)         &     (0.40)         &     (0.40)         &     (0.40)         &     (0.41)         &     (0.42)         \\
-            \addlinespace
-            Cumulative hours    &     -36.96\sym{***}&     -26.33\sym{***}&     -26.33\sym{***}&     -26.28\sym{***}&     -25.91\sym{***}&     -26.24\sym{***}&     -26.16\sym{***}&     -25.77\sym{***}\\
-                                &     (0.17)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.21)         &     (0.21)         \\
-            \addlinespace
-            Cumulative income ('00 SGD)&     -37.79\sym{***}&     -44.88\sym{***}&     -44.78\sym{***}&     -44.70\sym{***}&     -53.54\sym{***}&     -44.68\sym{***}&     -44.66\sym{***}&     -53.61\sym{***}\\
-                                &     (0.60)         &     (0.58)         &     (0.58)         &     (0.58)         &     (0.63)         &     (0.58)         &     (0.58)         &     (0.63)         \\
-            \addlinespace
-            Demand density      &       4.59\sym{***}&       3.12\sym{***}&       6.12\sym{***}&       3.60\sym{***}&       3.11\sym{***}&       3.65\sym{***}&       3.63\sym{***}&       3.34\sym{***}\\
-                                &     (0.18)         &     (0.11)         &     (0.35)         &     (0.16)         &     (0.16)         &     (0.16)         &     (0.16)         &     (0.16)         \\
-            \addlinespace
-            Previous bookings (count)&                     &                     &                     &                     &       4.29\sym{***}&                     &                     &       4.39\sym{***}\\
-                                &                     &                     &                     &                     &     (0.09)         &                     &                     &     (0.09)         \\
-            \addlinespace
-            Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -8.89\sym{***}&                     &      -4.40\sym{***}\\
-                                &                     &                     &                     &                     &                     &     (1.18)         &                     &     (1.19)         \\
-            \addlinespace
-            Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.14         &      -0.80\sym{***}\\
-                                &                     &                     &                     &                     &                     &                     &     (0.17)         &     (0.18)         \\
-            \addlinespace
-            Oncall duration (mins)&                     &                     &                     &                     &                     &                     &       0.21\sym{***}&      -0.37\sym{***}\\
-                                &                     &                     &                     &                     &                     &                     &     (0.03)         &     (0.03)         \\
-            \addlinespace
-            Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-            \addlinespace
-            Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-            \addlinespace
-            Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-            \addlinespace
-            Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-            \addlinespace
-            date                &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-            \midrule
-            Observations        &\num{31108572}         &\num{31108572}         &\num{28087962}         &\num{28069984}         &\num{28069984}         &\num{27757937}         &\num{27683044}         &\num{27375698}         \\
-            \(R^2\)             &     {0.601}         &     {0.636}         &     {0.638}         &     {0.638}         &     {0.638}         &     {0.637}         &     {0.639}         &     {0.639}         \\
-            \bottomrule
-            \end{tabular}
-            }
- 			\begin{tablenotes}
- 				\parindent 1em%  %ChaoQin
-	        	\small
- 				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
- 			\end{tablenotes}
- 			    \end{minipage}%	
-    }  %ChaoQin
- 	\end{table}
+
+% 26/01/2020: drop, since no longte
+% \section{Effects of C\&NS on the remaining working time and the remaining idle percentage}
+% \label{sec:outcome2and4}
+% Another measure of labor supply is the duration a driver continues working on the shift after each trip or booking. 
+% \begin{equation}
+% \label{eq:rmins}
+% {Remaining\_time}_{it} = \beta_c I^{cancel}_{it} + \beta_{ns} I^{noshow}_{it} + f(H_{it}) + g(I_{it}) + \mathbf{X_{it}}'\mathbf{\gamma} + \alpha_i + u_{it}
+% \end{equation}
+% ${Remaining\_time}_{it}$ is the duration driver $i$ continues working after trip/booking $t$, i.e., the 
+% duration from the end of $t$ %the trip or booking 
+% to the end of the corresponding shift. %$I^{cancel}_{it}$ and $I^{noshow}_{it}$ are two dummy variables and equal to 1 if trip/booking $t$ is a cancellation or a no-show, respectively. $\alpha_i$ and $X_{it}$ are the driver fixed effects and the set of observable factors that may affect the driver $i$'s labor supply.
+% Other variables are %defined 
+% the same as in Equation \eqref{eq:quit}.
+% Table \ref{tb:robustmins} reports estimates for eight specifications of Equation \eqref{eq:rmins},
+% each of which uses a different set of control variables and fixed effects. While the dependent variable
+% in Table \ref{tb:robustquit} reflects the short-term relationship between C\&NS and labor supply---i.e., 
+% how C\&NS affect the decision to stop immediately after the trip or booking---the dependent variable
+% in Table \ref{tb:robustmins} captures the lasting effects of C\&NS on labor supply. %Specification (1) includes cumulative hour, cumulative income, demand density, and driver fixed effects as control variables. According to this specification, a cancellation is associated with an average increase of 11.7 minutes in the remaining working time, and a no-show with an average increase of 9.2 minutes. However, the magnitudes of these coefficients are substantially lower when we account for date fixed effects as well as hour of day and day of week fixed effects in Specification (2), according to which the estimated increase in remaining work time after a C\&NS is only around 4 minutes. Controlling for spatial heterogeneity with  postal code fixed effects (Specification (3)) and controlling for spatiotemporal heterogeneity with the hour $\times$ day of week $\times$ zone fixed effects (Specification (4)) do not change the estimates much, and actually slightly increase the magnitude of the estimates. 
+% %Specifications (5) to (7) separately control for number of cumulative bookings, number of vehicles within a radius of 500 m, distance to pickup location, and the on-call duration to take into account prior aggressive bidding behavior, supply density, and the factors that influence passengers' decisions to cancel or not show up, all of which are potentially correlated with drivers' labor supply decisions. 
+% Specification (8) combines all of the aforementioned  control variables in the same regression. 
+% %The results of these last four specifications are fairly consistent, with the 
+% A cancellation is associated with an increase of 4.2 minutes in the remaining working time, and a no-show
+% is associated with an increase of 5.9 minutes, which are about one-quarter to one-third of an average 
+% trip's duration. The effect of cancellation on the remaining working time is equivalent to the effect of
+% driving 10 minutes less or earning 8 SGD less, and the effect of no-show is equivalent to driving 14 minutes
+% less or earning 11 SGD less. 
+% %These numbers are also close to the estimates in Specifications (2) to (4), in which we do not control for these additional factors. Therefore, it is unlikely that these additional factors are driving the positive effects of C\&NS on remaining work time.
+%  Thus, it seems that remaining on the shift for a longer duration is another way by which Singapore's taxi 
+%  drivers respond to C\&NS.
+%  	\begin{table}
+%  	\hspace*{-2pt}\makebox[\linewidth][c]{%      
+%     \begin{minipage}{20cm} %ChaoQin	
+%  		\centering
+%  		\caption{Remaining Work Time (mins)}
+%  		\label{tb:robustmins}
+%             \setlength{\tabcolsep}{5pt}
+%  			\footnotesize
+% % 			\input{tb/eq2mins.tex}
+%             {
+%             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%             \begin{tabular}{l*{8}{c}}
+%             \toprule
+%             \toprule
+%                                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+%             \midrule
+%             Cancellation (dummy)&      11.66\sym{***}&       4.04\sym{***}&       4.40\sym{***}&       4.70\sym{***}&       4.21\sym{***}&       4.61\sym{***}&       3.62\sym{***}&       4.24\sym{***}\\
+%                                 &     (0.26)         &     (0.26)         &     (0.26)         &     (0.27)         &     (0.27)         &     (0.27)         &     (0.27)         &     (0.27)         \\
+%             \addlinespace
+%             No-show (dummy)     &       9.17\sym{***}&       3.93\sym{***}&       4.26\sym{***}&       4.70\sym{***}&       4.18\sym{***}&       4.63\sym{***}&       4.13\sym{***}&       5.93\sym{***}\\
+%                                 &     (0.42)         &     (0.39)         &     (0.40)         &     (0.40)         &     (0.40)         &     (0.40)         &     (0.41)         &     (0.42)         \\
+%             \addlinespace
+%             Cumulative hours    &     -36.96\sym{***}&     -26.33\sym{***}&     -26.33\sym{***}&     -26.28\sym{***}&     -25.91\sym{***}&     -26.24\sym{***}&     -26.16\sym{***}&     -25.77\sym{***}\\
+%                                 &     (0.17)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.20)         &     (0.21)         &     (0.21)         \\
+%             \addlinespace
+%             Cumulative income ('00 SGD)&     -37.79\sym{***}&     -44.88\sym{***}&     -44.78\sym{***}&     -44.70\sym{***}&     -53.54\sym{***}&     -44.68\sym{***}&     -44.66\sym{***}&     -53.61\sym{***}\\
+%                                 &     (0.60)         &     (0.58)         &     (0.58)         &     (0.58)         &     (0.63)         &     (0.58)         &     (0.58)         &     (0.63)         \\
+%             \addlinespace
+%             Demand density      &       4.59\sym{***}&       3.12\sym{***}&       6.12\sym{***}&       3.60\sym{***}&       3.11\sym{***}&       3.65\sym{***}&       3.63\sym{***}&       3.34\sym{***}\\
+%                                 &     (0.18)         &     (0.11)         &     (0.35)         &     (0.16)         &     (0.16)         &     (0.16)         &     (0.16)         &     (0.16)         \\
+%             \addlinespace
+%             Previous bookings (count)&                     &                     &                     &                     &       4.29\sym{***}&                     &                     &       4.39\sym{***}\\
+%                                 &                     &                     &                     &                     &     (0.09)         &                     &                     &     (0.09)         \\
+%             \addlinespace
+%             Vehicles within 500m ('000)&                     &                     &                     &                     &                     &      -8.89\sym{***}&                     &      -4.40\sym{***}\\
+%                                 &                     &                     &                     &                     &                     &     (1.18)         &                     &     (1.19)         \\
+%             \addlinespace
+%             Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.14         &      -0.80\sym{***}\\
+%                                 &                     &                     &                     &                     &                     &                     &     (0.17)         &     (0.18)         \\
+%             \addlinespace
+%             Oncall duration (mins)&                     &                     &                     &                     &                     &                     &       0.21\sym{***}&      -0.37\sym{***}\\
+%                                 &                     &                     &                     &                     &                     &                     &     (0.03)         &     (0.03)         \\
+%             \addlinespace
+%             Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%             \addlinespace
+%             Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+%             \addlinespace
+%             Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+%             \addlinespace
+%             Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%             \addlinespace
+%             date                &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+%             \midrule
+%             Observations        &\num{31108572}         &\num{31108572}         &\num{28087962}         &\num{28069984}         &\num{28069984}         &\num{27757937}         &\num{27683044}         &\num{27375698}         \\
+%             \(R^2\)             &     {0.601}         &     {0.636}         &     {0.638}         &     {0.638}         &     {0.638}         &     {0.637}         &     {0.639}         &     {0.639}         \\
+%             \bottomrule
+%             \end{tabular}
+%             }
+%  			\begin{tablenotes}
+%  				\parindent 1em%  %ChaoQin
+% 	        	\small
+%  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+%  			\end{tablenotes}
+%  			    \end{minipage}%	
+%     }  %ChaoQin
+%  	\end{table}
 
 
 
-%\begin{center}
-%	[Insert Table \ref{tb:robustidle} here]
-%\end{center}
-\FloatBarrier
+% %\begin{center}
+% %	[Insert Table \ref{tb:robustidle} here]
+% %\end{center}
+% \FloatBarrier
 
-%\begin{landscape}
-	\begin{table}[h]
-	\hspace*{-2pt}\makebox[\linewidth][c]{%      
-    \begin{minipage}{18cm} %ChaoQin	
- 		\centering
- 		\caption{Idle Percentage after a Trip/Booking (\%)}
- 		\label{tb:robustidle}
+% %\begin{landscape}
+% 	\begin{table}[h]
+% 	\hspace*{-2pt}\makebox[\linewidth][c]{%      
+%     \begin{minipage}{18cm} %ChaoQin	
+%  		\centering
+%  		\caption{Idle Percentage after a Trip/Booking (\%)}
+%  		\label{tb:robustidle}
 		
- 		% \begin{threeparttable}
- 			\footnotesize
- 			\setlength{\tabcolsep}{2pt}
- 			% \input{tb/eq4idle.tex}
-				{
-				\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-				\begin{tabular}{l*{8}{c}}
-				\toprule
-				\toprule
-				                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
-				\midrule
-				Cancellation (dummy)&      -1.515\sym{***}&      -1.161\sym{***}&      -1.218\sym{***}&      -0.894\sym{***}&      -0.897\sym{***}&      -0.746\sym{***}&      -0.772\sym{***}&      -0.724\sym{***}\\
-				                    &     (0.023)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.023)         &     (0.023)         \\
-				\addlinespace
-				No-show (dummy)     &      -0.704\sym{***}&      -0.225\sym{***}&      -0.313\sym{***}&       0.052\sym{*}         &       0.049\sym{*}         &       0.200\sym{***}&       0.312\sym{***}&       0.334\sym{***}\\
-				                    &     (0.036)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.036)         &     (0.036)         \\
-				\addlinespace
-				Cumulative hours    &      -1.616\sym{***}&      -1.209\sym{***}&      -1.185\sym{***}&      -1.177\sym{***}&      -1.176\sym{***}&      -1.182\sym{***}&      -1.156\sym{***}&      -1.158\sym{***}\\
-				                    &     (0.012)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         \\
-				\addlinespace
-				Cumulative income ('00 SGD)&       5.812\sym{***}&       4.329\sym{***}&       4.234\sym{***}&       4.208\sym{***}&       4.168\sym{***}&       4.215\sym{***}&       4.091\sym{***}&       4.054\sym{***}\\
-				                    &     (0.049)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.045)         &     (0.045)         \\
-				\addlinespace
-				Demand density      &      -2.315\sym{***}&      -1.677\sym{***}&      -3.760\sym{***}&      -1.537\sym{***}&      -1.540\sym{***}&      -1.569\sym{***}&      -1.545\sym{***}&      -1.591\sym{***}\\
-				                    &     (0.016)         &     (0.012)         &     (0.029)         &     (0.018)         &     (0.018)         &     (0.019)         &     (0.018)         &     (0.019)         \\
-				\addlinespace
-				Previous bookings (count)&                     &                     &                     &                     &       0.018\sym{**} &                     &                     &       0.018\sym{**} \\
-				                    &                     &                     &                     &                     &     (0.008)         &                     &                     &     (0.008)         \\
-				\addlinespace
-				Vehicles within 500m ('000)&                     &                     &                     &                     &                     &       9.606\sym{***}&                     &       9.337\sym{***}\\
-				                    &                     &                     &                     &                     &                     &     (0.098)         &                     &     (0.099)         \\
-				\addlinespace
-				Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.328\sym{***}&      -0.225\sym{***}\\
-				                    &                     &                     &                     &                     &                     &                     &     (0.015)         &     (0.014)         \\
-				\addlinespace
-				On-call duration (mins)&                     &                     &                     &                     &                     &                     &      -0.051\sym{***}&      -0.030\sym{***}\\
-				                    &                     &                     &                     &                     &                     &                     &     (0.003)         &     (0.003)         \\
-				\addlinespace
-				Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-				\addlinespace
-				Date FE           &       {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-				\addlinespace
-				Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-				\addlinespace
-				Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
-				\addlinespace
-				Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-				%\midrule
-				\addlinespace
-				Observations        &\num{26511775}         &\num{26511775}         &\num{23821515}         &\num{23808266}         &\num{23808266}         &\num{23543680}         &\num{23469766}         &\num{23209593}         \\
-				$R^2$             &     {0.320}         &     {0.365}         &     {0.372}         &     {0.373}         &     {0.373}         &     {0.373}         &     {0.374}         &     {0.374}         \\
-				\bottomrule
-				\end{tabular}
-				}
- 			\begin{tablenotes}
- 				\parindent 1em%  %ChaoQin
-	        	\small
- 				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
- 			\end{tablenotes}
- 		% \end{threeparttable}
- 		   \end{minipage}%	
-    }  %ChaoQin
- 	\end{table}
-% \end{landscape}
-\FloatBarrier
+%  		% \begin{threeparttable}
+%  			\footnotesize
+%  			\setlength{\tabcolsep}{2pt}
+%  			% \input{tb/eq4idle.tex}
+% 				{
+% 				\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 				\begin{tabular}{l*{8}{c}}
+% 				\toprule
+% 				\toprule
+% 				                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+% 				\midrule
+% 				Cancellation (dummy)&      -1.515\sym{***}&      -1.161\sym{***}&      -1.218\sym{***}&      -0.894\sym{***}&      -0.897\sym{***}&      -0.746\sym{***}&      -0.772\sym{***}&      -0.724\sym{***}\\
+% 				                    &     (0.023)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.022)         &     (0.023)         &     (0.023)         \\
+% 				\addlinespace
+% 				No-show (dummy)     &      -0.704\sym{***}&      -0.225\sym{***}&      -0.313\sym{***}&       0.052\sym{*}         &       0.049\sym{*}         &       0.200\sym{***}&       0.312\sym{***}&       0.334\sym{***}\\
+% 				                    &     (0.036)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.035)         &     (0.036)         &     (0.036)         \\
+% 				\addlinespace
+% 				Cumulative hours    &      -1.616\sym{***}&      -1.209\sym{***}&      -1.185\sym{***}&      -1.177\sym{***}&      -1.176\sym{***}&      -1.182\sym{***}&      -1.156\sym{***}&      -1.158\sym{***}\\
+% 				                    &     (0.012)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         &     (0.011)         \\
+% 				\addlinespace
+% 				Cumulative income ('00 SGD)&       5.812\sym{***}&       4.329\sym{***}&       4.234\sym{***}&       4.208\sym{***}&       4.168\sym{***}&       4.215\sym{***}&       4.091\sym{***}&       4.054\sym{***}\\
+% 				                    &     (0.049)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.046)         &     (0.045)         &     (0.045)         \\
+% 				\addlinespace
+% 				Demand density      &      -2.315\sym{***}&      -1.677\sym{***}&      -3.760\sym{***}&      -1.537\sym{***}&      -1.540\sym{***}&      -1.569\sym{***}&      -1.545\sym{***}&      -1.591\sym{***}\\
+% 				                    &     (0.016)         &     (0.012)         &     (0.029)         &     (0.018)         &     (0.018)         &     (0.019)         &     (0.018)         &     (0.019)         \\
+% 				\addlinespace
+% 				Previous bookings (count)&                     &                     &                     &                     &       0.018\sym{**} &                     &                     &       0.018\sym{**} \\
+% 				                    &                     &                     &                     &                     &     (0.008)         &                     &                     &     (0.008)         \\
+% 				\addlinespace
+% 				Vehicles within 500m ('000)&                     &                     &                     &                     &                     &       9.606\sym{***}&                     &       9.337\sym{***}\\
+% 				                    &                     &                     &                     &                     &                     &     (0.098)         &                     &     (0.099)         \\
+% 				\addlinespace
+% 				Distance to pickup (km)&                     &                     &                     &                     &                     &                     &      -0.328\sym{***}&      -0.225\sym{***}\\
+% 				                    &                     &                     &                     &                     &                     &                     &     (0.015)         &     (0.014)         \\
+% 				\addlinespace
+% 				On-call duration (mins)&                     &                     &                     &                     &                     &                     &      -0.051\sym{***}&      -0.030\sym{***}\\
+% 				                    &                     &                     &                     &                     &                     &                     &     (0.003)         &     (0.003)         \\
+% 				\addlinespace
+% 				Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+% 				\addlinespace
+% 				Date FE           &       {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+% 				\addlinespace
+% 				Hour\(\times\)day of week FE&         {-}         &       {Yes}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+% 				\addlinespace
+% 				Postal code FE      &         {-}         &         {-}         &       {Yes}         &         {-}         &         {-}         &         {-}         &         {-}         &         {-}         \\
+% 				\addlinespace
+% 				Hour\(\times\)day of week\(\times\)Zone FE&         {-}         &         {-}         &         {-}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
+% 				%\midrule
+% 				\addlinespace
+% 				Observations        &\num{26511775}         &\num{26511775}         &\num{23821515}         &\num{23808266}         &\num{23808266}         &\num{23543680}         &\num{23469766}         &\num{23209593}         \\
+% 				$R^2$             &     {0.320}         &     {0.365}         &     {0.372}         &     {0.373}         &     {0.373}         &     {0.373}         &     {0.374}         &     {0.374}         \\
+% 				\bottomrule
+% 				\end{tabular}
+% 				}
+%  			\begin{tablenotes}
+%  				\parindent 1em%  %ChaoQin
+% 	        	\small
+%  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+%  			\end{tablenotes}
+%  		% \end{threeparttable}
+%  		   \end{minipage}%	
+%     }  %ChaoQin
+%  	\end{table}
+% % \end{landscape}
+% \FloatBarrier
+
+
 
 \section{Instrumental-variables regression}
 \label{apx:iv}
