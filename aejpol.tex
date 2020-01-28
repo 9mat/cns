@@ -1996,102 +1996,11 @@ With the possibility of reference-dependent preference, policies that aim to com
 
 
 
-%\clearpage
-
-% \begin{table}[]
-% \hspace*{-2pt}\makebox[\linewidth][c]{%      
-%     \begin{minipage}{18cm} %ChaoQin	
-% 	\centering
-% 	\caption{Distance, Time and Speed to the Next Job}
-% 	\label{tb:nexttrip}
-% 	% \begin{threeparttable}
-% %		\small
-% 		\setlength{\tabcolsep}{0pt}
-% 		% \input{tb/nexttrip2.tex}
-% 		{
-%         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-% 		\footnotesize
-% 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}}
-% 		\toprule
-% 		\toprule
-% 	                    &\multicolumn{2}{c}{Distance to next job}&\multicolumn{2}{c}{Time to next job}&\multicolumn{2}{c}{Speed to next job}
-% 		                    \\
-% 		                    &\multicolumn{2}{c}{(km)}&\multicolumn{2}{c}{(mins)}&\multicolumn{2}{c}{(km/h)}
-% 		                    \\
-% 		                    \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-% 		                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
-
-% 		\midrule
-% 		Cancellation        &     -0.9560\sym{***}&     -0.8704\sym{***}&     -4.7513\sym{***}&     -4.5632\sym{***}&      3.6285\sym{***}&      3.7225\sym{***}\\
-% 		                    &    (0.0151)         &    (0.0152)         &    (0.0624)         &    (0.0627)         &    (0.0965)         &    (0.0979)         \\
-% 		\addlinespace
-% 		No-show             &     -1.0752\sym{***}&     -0.9916\sym{***}&     -4.9562\sym{***}&     -4.7723\sym{***}&      0.7910\sym{***}&      0.8913\sym{***}\\
-% 		                    &    (0.0188)         &    (0.0189)         &    (0.0801)         &    (0.0807)         &    (0.0754)         &    (0.0762)         \\
-% 		\addlinespace
-% 		Demand density      &                     &     -1.6811\sym{***}&                     &     -5.1314\sym{***}&                     &     -3.4812\sym{***}\\
-% 		                    &                     &    (0.0095)         &                     &    (0.0453)         &                     &    (0.0817)         \\
-% 		\addlinespace
-% 		Vehicles within 500 m ('000)&                     &      3.9700\sym{***}&                     &      7.1141\sym{***}&                     &      2.9125\sym{***}\\
-% 		                    &                     &    (0.0653)         &                     &    (0.2729)         &                     &    (0.4189)         \\
-% 		% \addlinespace
-% 		% Driver FE           &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-% 		% \addlinespace
-% 		% Date FE             &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-% 		% \addlinespace
-% 		% Hour\(\times\)day of week\(\times\)zone FE&       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         &       {Yes}         \\
-% 		%\midrule
-% 		\midrule
-% 		Observations        &\num{27769530}         &\num{27459427}         &\num{27769530}         &\num{27459427}         &\num{27769257}         &\num{27459154}         \\
-% 		\(R^2\)             &     {0.198}         &     {0.200}         &     {0.048}         &     {0.048}         &     {0.014}         &     {0.014}         \\
-% 		\bottomrule
-% 		\end{tabularx}
-% 		}
-% 		\begin{tablenotes}
-% 			\parindent 1em%  %ChaoQin
-% 		    \small
-% 			Each column is a separate regression. An observation is a trip or booking. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week\(\times\)zone fixed effects. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
-% 		\end{tablenotes}
-% 	% \end{threeparttable}
-% 	    \end{minipage}%	
-%     }  %ChaoQin
-% \end{table}
-
 
 \begin{table}[]
 	\centering
 	\caption{Net Effects of C\&NS on Total Shift Income}
 	\label{tb:overcompensate}
-%	\begin{threeparttable}
-% 			{
-% 			\footnotesize
-% 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{S}}
-% 			\toprule
-% 			\toprule
-% 			                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
-			                    
-% 			                 	&\multicolumn{1}{m{1.5cm}}{\centering Income in first 2 hours (SGD)} &\multicolumn{1}{m{1.5cm}}{\centering Income after 2 hours (SGD)} &\multicolumn{1}{m{1.5cm}}{\centering Shift income (SGD)}  &\multicolumn{1}{m{1.5cm}}{\centering Income in first 6 hours (SGD)}         &\multicolumn{1}{m{1.5cm}}{\centering Income after 6 hours (SGD)}         &\multicolumn{1}{m{1.5cm}}{\centering Shift income (SGD)}         \\
-% 			\midrule
-% 			Cancellations in first 2 hours (count)&      -0.971&       2.107&       1.136& & &\\
-% 			                    &     (0.035)         &     (0.130)         &     (0.136)& & &         \\
-% 			\addlinespace
-% 			No-shows in first 2 hours (count)&      -4.066&       2.482&      -1.583& & &\\
-% 			                    &     (0.068)         &     (0.256)         &     (0.267)& & &         \\
-% 			%\midrule
-% 			\addlinespace
-% 			Cancellations in first 6 hours (count)& & & &       1.846&       0.687&       2.533\\
-% 			                   & & &  &     (0.052)         &     (0.072)         &     (0.088)         \\
-% 			\addlinespace
-% 			No-shows in first 6 hours (count)& & & &      -1.290&       1.293&       0.003         \\
-% 			                    & & & &     (0.101)         &     (0.140)         &     (0.171)         \\
-
-% 			\midrule
-% 			Observations        &\num{2024814}         &\num{2024814}         &\num{2024814}    &\num{1618166}         &\num{1618166}         &\num{1618166}         \\
-% 			$R^2$             &     {0.365}         &     {0.497}         &     {0.522} &     {0.564}         &     {0.516}         &     {0.574}         \\
-% 			\bottomrule
-% 			\end{tabularx}
-% 			}
-			% \subcaption{Net effects of C\&NS}	
-			% \input{tb/shift2/shift_income.tex}	
 			{
 			\footnotesize
             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
@@ -2129,40 +2038,6 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 		\end{tablenotes}
 %	\end{threeparttable}
 \end{table}
-
-
-
-% \begin{table}[]
-%     \centering
-%     \footnotesize
-%     \caption{Robustness Check: No Immediate Pickups}
-%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-%     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{c}}
-%         \toprule
-%         \toprule
-%         &\multicolumn{2}{c}{Search \textgreater 3 mins}&\multicolumn{2}{c}{Search \textgreater 1 km}\\\cmidrule(lr){2-3}\cmidrule(lr){4-5}
-%         &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
-%         &\multicolumn{1}{p{2cm}}{\centering Stop working (dummy)}&\multicolumn{1}{p{2cm}}{\centering Remaining wage (SGD/h)}&\multicolumn{1}{p{2cm}}{\centering Stop working (dummy)}&\multicolumn{1}{p{2cm}}{\centering Remaining wage (SGD/h)}\\
-%         \midrule
-%         Cancellation (dummy)&     -0.0210\sym{***}&       0.637\sym{***}&     -0.0237\sym{***}&       0.708\sym{***}\\
-%                             &  (0.0006)&    (0.0189)&  (0.0006)&    (0.0202)\\
-%         \addlinespace
-%         No show (dummy) &     -0.0177\sym{***}&       0.558\sym{***}&     -0.0200\sym{***}&       0.649\sym{***}\\
-%                             &   (0.0011)&    (0.0324)&   (0.0011)&    (0.0340)\\
-%         \midrule
-%         Observations        &\num{13061593}&\num{12011136}&\num{11941228}&\num{10894349}\\
-%         \(R^2\)           &     {0.154}&     {0.396}&     {0.161}&     {0.394}\\
-%         \bottomrule
-%     \end{tabularx}
-%     \label{tb:immepickup}
-% 	\begin{tablenotes}
-% 		\parindent 1em%  %ChaoQin
-% 		\small
-% 	    Each column is a separate regression. An observation is a trip or a booking. All regressions include driver fixed effects, date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, cumulative hours, demand and supply density, weather conditions, number of cumulative bookings, on-call duration and distance. Dependent variable for Columns (1) and (3): dummy indicating the last trip/booking of the shift, for Columns (2) and (4): Average SGD earned per hour for the rest of the shift. Columns (1) and (2) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 3 mins. Columns (3) and (4) restrict the sample to trips and bookings after which the status of the drivers is FREE for at least 1 km. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
-% 	\end{tablenotes}
-% \end{table}
-
-
 
 \begin{table}
     \centering
