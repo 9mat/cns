@@ -1377,7 +1377,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 		% \input{tb/evidencefree.tex}
 % 		{
 % 		\footnotesize
-% 		\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 		\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}}
 % 		\toprule
 %     \toprule
@@ -1394,7 +1394,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 		\begin{tablenotes}
 % % 		\parindent 1em%  %ChaoQin
 % 		\small
-%         The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.
+%         The table reports summary statistics of the hour-level data. We exclude censored hours (the first and the last hours in each shift) and outliers (driver-hours with more than 5 cancellations or no-shows or with earnings more than 50 SGD). ``Stopping work" means that the hour is the last \emph{full} hour of the corresponding shift, i.e., the driver will end the shift at some time in the  next hour.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.
 % 		\end{tablenotes}
 % % 	\end{threeparttable}
 % \end{table}
@@ -1409,7 +1409,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 	\label{tb:robustquit}    
 %     \footnotesize	   
 % 	\setlength{\tabcolsep}{0pt}
-%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 %     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}} %ChaoQin
 %         \toprule
 %         \toprule
@@ -1448,7 +1448,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 	\begin{tablenotes}
 % 		\parindent 1em%  %ChaoQin
 % 		\small
-%         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+%         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 % 	\end{tablenotes}
 %     \end{minipage}%	
 %     }  %ChaoQin
@@ -1463,7 +1463,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 	\caption{Hazard Rate of Stopping Work, by Hour into Shift}
 % 	\label{tb:robustquitbyhour}
 %     \footnotesize
-%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 	\setlength{\tabcolsep}{0pt}
 %     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}}
 %         \toprule
@@ -1507,7 +1507,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 	\begin{tablenotes}
 % 		\parindent 1em%  %ChaoQin
 % 		\small
-%         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+%         Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 % 	\end{tablenotes}
 % % 	\end{threeparttable}
 % \end{table}
@@ -1522,7 +1522,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 	\label{tb:robustwage}
 %     \footnotesize
 % 	\setlength{\tabcolsep}{0pt}
-%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 %     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
 %         \toprule
 %             \multicolumn{1}{c}{\textit{DV: Subsequent earnings rate (SGD/h)}}&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}\\
@@ -1559,7 +1559,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 	\begin{tablenotes}
 % 	\parindent 1em%  %ChaoQin
 % 	\small
-%     Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+%     Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the subsequent earnings rate in SGD per hour, which is equal to the total income earned from the end of the trip till the end of the shift divided by the duration that the driver remains working. Additional controls consist of demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. For models with non-linear cumulative hour effect and/or cumulative income effects, the reported marginal effects are calculated for an increase of one hour at cumulative hours of 8 hours, and/or an increase of 100 SGD at a cumulative income of 200 SGD.  Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 % 	\end{tablenotes}
 % 	    \end{minipage}%	
 %     }  %ChaoQin
@@ -1572,7 +1572,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 	\label{tb:robustquit}    
     \centering
     {
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \footnotesize
     % \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
@@ -1611,7 +1611,7 @@ With the possibility of reference-dependent preference, policies that aim to com
     }
 	\begin{tablenotes}
 	\small
-        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 \end{table}
 
@@ -1623,7 +1623,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 	\caption{Time-dependent Hazard Rate of Stopping}
 	\label{tb:robustquitbyhour}
     \footnotesize
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 	\setlength{\tabcolsep}{0pt}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
     \toprule
@@ -1647,7 +1647,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 	\begin{tablenotes}
 % 		\parindent 1em%  %ChaoQin
 		\small
-        Each column estimates a separate hazard rate equation at the respective number of hours into the shift using a local weighted regression with a 30-minute bandwidth and uniform weights. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)zone fixed effects, date fixed effects, a cubic function of the cumulative hours, weather conditions, measures of market thickness, break time and time with passenger, duration and distance to pickup. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column estimates a separate hazard rate equation at the respective number of hours into the shift using a local weighted regression with a 30-minute bandwidth and uniform weights. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)zone fixed effects, date fixed effects, a cubic function of the cumulative hours, weather conditions, measures of market thickness, break time and time with passenger, duration and distance to pickup. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 % 	\end{threeparttable}
 \end{table}
@@ -1660,7 +1660,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 	\label{tb:robustwage}
     \centering
     {
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \footnotesize
     % \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
@@ -1699,7 +1699,7 @@ With the possibility of reference-dependent preference, policies that aim to com
     }
 	\begin{tablenotes}
 	\small
-        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a the total earnings earned in 60 minutes immediately following the booking. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a the total earnings earned in 60 minutes immediately following the booking. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 \end{table}
 
@@ -1712,7 +1712,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 %  			\footnotesize
 % % 			\input{tb/eq2mins.tex}
 % 			{
-% 				\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 				\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 				\begin{tabular}{l*{8}{S}}
 % 					\toprule
 % 					\toprule
@@ -1779,7 +1779,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 %  			\setlength{\tabcolsep}{2pt}
 %  			% \input{tb/eq3wage.tex}
 % 				{
-% 				\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 				\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 				\begin{tabular}{l*{8}{S}}
 % 				\toprule
 % 				\toprule
@@ -1848,7 +1848,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 
     {
     \footnotesize
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
     \toprule
     \toprule
@@ -1869,7 +1869,7 @@ With the possibility of reference-dependent preference, policies that aim to com
     }
 	\begin{tablenotes}
 	\small 
-      Each column is a separate regression. An observation is a booking. The dependent variable is the earnings earned in the duration after the end of the trip specified in each column. All regressions control for driver fixed effects, hour\(\times\)day- of-week\(\times\)building fixed effects, date fixed effects,  cumulative hours and income, weather, market thickness, break time, passenger on board time, distance and duration to pickup. Standard errors clustered by driver in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+      Each column is a separate regression. An observation is a booking. The dependent variable is the earnings earned in the duration after the end of the trip specified in each column. All regressions control for driver fixed effects, hour\(\times\)day- of-week\(\times\)building fixed effects, date fixed effects,  cumulative hours and income, weather, market thickness, break time, passenger on board time, distance and duration to pickup. Standard errors clustered by driver in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
     \end{tablenotes}
 \end{table}
 
@@ -1883,7 +1883,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % %	\begin{threeparttable}
 %     {
 %     \footnotesize
-%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 	\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
 %         \toprule
 %         \toprule
@@ -1905,7 +1905,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 %     \begin{tablenotes}
 %     	\parindent 1em%  %ChaoQin
 % 		\small
-% 		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+% 		Each column is a separate regression. An observation is a trip or a booking. Each column limits the sample to the set of observations in the 9th hour of work and within the specified range of cumulative income. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the trip or booking is the last of the shift. All specifications include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$zone fixed effects, demand density, number of vehicles within 500 m, temperature, relative humidity, PM 2.5, an indicator for rain, on-call duration, distance to pickup, number of previous bookings, and an indicator for booking. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 %     \end{tablenotes}
 
 % \end{table}
@@ -1921,7 +1921,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 		% \input{tb/earningsbreakdown.tex}		
 % 		{
 % 		\footnotesize
-%         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%         \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{c}}
 % 		\toprule
 % 		\toprule
@@ -1949,7 +1949,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 % 		\begin{tablenotes}
 % 			\parindent 1em%  %ChaoQin
 % 	    	\small
-% 			Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+% 			Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, date fixed effects, and hour of day\(\times\)day of week fixed effects. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 % 		\end{tablenotes}
 % %	\end{threeparttable}
 % \end{table}
@@ -1967,7 +1967,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 		% \input{tb/earningsbreakdown.tex}		
 		{
 		\footnotesize
-        \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+        \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 		\begin{tabularx}{\textwidth}{p{3.8cm}*{7}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
         \toprule
         \toprule
@@ -1989,7 +1989,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 		\begin{tablenotes}
 % 			\parindent 1em%  %ChaoQin
 	    	\small
-			Each column is a separate regression. An observation is a booking. The dependent variable of each regression is specified in the title of the respective column. All regressions control for driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, weather conditions, measures of market thickness, break time, time with passenger, cumulative hours, cumulative income, duration and distance to pickup point. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+			Each column is a separate regression. An observation is a booking. The dependent variable of each regression is specified in the title of the respective column. All regressions control for driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, weather conditions, measures of market thickness, break time, time with passenger, cumulative hours, cumulative income, duration and distance to pickup point. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 		\end{tablenotes}
 %	\end{threeparttable}
 % \end{table}
@@ -2003,7 +2003,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 	\label{tb:overcompensate}
 			{
 			\footnotesize
-            \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+            \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{2}{c}}
 % 			\multicolumn{3}{l}{Panel C: Effects of C\&NS on shift income}\\			
 			\toprule
@@ -2031,7 +2031,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 		    \parindent 1em%  %ChaoQin
 		    \small
 			Each column is a separate regression. An observation is a shift. %The regressions in panel (a) use the subsample of shifts that last more than 2 hours, panel (b) 6 hours. The regression in panel (c) uses the full sample of shifts. 
-Both regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+Both regressions control for driver fixed effects, date fixed effects, and shift start hour fixed effects. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 		\end{tablenotes}
 %	\end{threeparttable}
 % \end{table}
@@ -2044,7 +2044,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \centering
     \footnotesize
     \caption{Placebo Test}
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{c}} 
         \toprule
         \toprule
@@ -2074,7 +2074,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \begin{tablenotes}
     	\parindent 1em%  %ChaoQin
 		\small
-        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions control for driver fixed effects, hour-day-of-week by building fixed effects, date fixed effects, cumulative hours and income, weather, market thickness, break time, time with passenger, duration and distance to pickup. ``Placebo booking 1" is a dummy variable indicating if the respective driver is the nearest vacant driver to a C\&NS who ends a completed booking at most 1 km and 3 minutes away from the C\&NS. ``Placebo booking 2" is a dummy variable indicating if respective driver ends the booking within 200 m and 3 minutes from a C\&NS. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions control for driver fixed effects, hour-day-of-week by building fixed effects, date fixed effects, cumulative hours and income, weather, market thickness, break time, time with passenger, duration and distance to pickup. ``Placebo booking 1" is a dummy variable indicating if the respective driver is the nearest vacant driver to a C\&NS who ends a completed booking at most 1 km and 3 minutes away from the C\&NS. ``Placebo booking 2" is a dummy variable indicating if respective driver ends the booking within 200 m and 3 minutes from a C\&NS. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
     \end{tablenotes}
     \label{tb:placebo}
 \end{table}
@@ -2085,7 +2085,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \centering
     \footnotesize
     \caption{Robustness Check}
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{ll@{\extracolsep{\fill}}*{4}{c}}
     	\toprule
     	\toprule
@@ -2125,7 +2125,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 	\begin{tablenotes}
 		\parindent 1em%  %ChaoQin
 		\small
-	    Each row is a separate regression. An observation is a trip or a booking. The dependent variable for all rows is a binary variable ($Quit_{it}$) indicating if the trip/booking is the last job of the shift. Unless indicated otherwise, (1) the sample includes only bookings immediately after which the drivers search for at least 3 minutes; (2) all regressions control for driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects,  cumulative hours and income, weather, market thickness, break time, passenger-on-board time, distance and duration to pickup; and (3) the time-dependent hazard rate local weighted regressions use a bandwidth of 30 minutes and uniform weight; and the time-and-income-dependent hazard rate local weighted regressions use a bandwidth of 30 minutes and 20 SGD with uniform weight. Clustered standard errors in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+	    Each row is a separate regression. An observation is a trip or a booking. The dependent variable for all rows is a binary variable ($Quit_{it}$) indicating if the trip/booking is the last job of the shift. Unless indicated otherwise, (1) the sample includes only bookings immediately after which the drivers search for at least 3 minutes; (2) all regressions control for driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects,  cumulative hours and income, weather, market thickness, break time, passenger-on-board time, distance and duration to pickup; and (3) the time-dependent hazard rate local weighted regressions use a bandwidth of 30 minutes and uniform weight; and the time-and-income-dependent hazard rate local weighted regressions use a bandwidth of 30 minutes and 20 SGD with uniform weight. Clustered standard errors in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 	\end{tablenotes}
     \label{tb:robustcheck}
 \end{table}
@@ -2138,7 +2138,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 %     \centering
 %     \footnotesize
 %     \caption{Robustness Check: Variation in Drivers' Ability over Time and Location}
-%     \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 %     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{6}{c}} 
 %         \toprule
 %         \toprule
@@ -2159,7 +2159,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 %     \begin{tablenotes}
 %     	\parindent 1em%  %ChaoQin
 % 		\small
-%         Each column is a separate regression. An observation is a trip or a booking. Dependent variable: Stop working, i.e. the indicator for the last trip/booking of the shift. All regressions include date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, weather conditions, number of previous bookings, on-call duration, and distance. Columns (4) and (5) include driver fixed effects. Column (1) includes driver\(\times\)month fixed effects, Column (2) includes driver\(\times\)day-of-week fixed effects, and Column (3) includes driver\(\times\)region fixed effects. Columns (1), (2) and (3) use the full sample of trips and bookings. Column (4) uses only the subset of trips and bookings from the CBD. Column (5) uses the subset outside the CBD. Column (6) uses only bookings without destination information at the time of booking. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+%         Each column is a separate regression. An observation is a trip or a booking. Dependent variable: Stop working, i.e. the indicator for the last trip/booking of the shift. All regressions include date fixed effects, hour-of-day\(\times\)day-of-week\(\times\)zone fixed effects, controls for demand and supply density, weather conditions, number of previous bookings, on-call duration, and distance. Columns (4) and (5) include driver fixed effects. Column (1) includes driver\(\times\)month fixed effects, Column (2) includes driver\(\times\)day-of-week fixed effects, and Column (3) includes driver\(\times\)region fixed effects. Columns (1), (2) and (3) use the full sample of trips and bookings. Column (4) uses only the subset of trips and bookings from the CBD. Column (5) uses the subset outside the CBD. Column (6) uses only bookings without destination information at the time of booking. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 %     \end{tablenotes}
 %     \label{tb:drfe}
 %         \end{minipage}%	
@@ -2172,7 +2172,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \centering
     \footnotesize
     \caption{C\&NS Rate Serial Correlation}
-    \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{S}} 
         \toprule
         \toprule
@@ -2189,7 +2189,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     \begin{tablenotes}
     	\parindent 1em%  %ChaoQin
 		\small
-        Each column is a separate regression. Data: time series of hourly nationwide C\&NS rate (number of C\&NS divided by number of bookings in each hour). Dependent variable: hourly nationwide C\&NS rate. The top one percentile C\&NS rates are dropped from all regressions. Estimated by OLS with date fixed effects and hour-of-day\(\times\)day-of-week fixed effects. Column (1) uses the full sample. Column (2) uses only observations from hours from 5 am to 2 pm each day, Column (3) uses 2 pm to 10 pm, and Column (4) uses 10 pm to 5 am, respectively. Standard errors in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column is a separate regression. Data: time series of hourly nationwide C\&NS rate (number of C\&NS divided by number of bookings in each hour). Dependent variable: hourly nationwide C\&NS rate. The top one percentile C\&NS rates are dropped from all regressions. Estimated by OLS with date fixed effects and hour-of-day\(\times\)day-of-week fixed effects. Column (1) uses the full sample. Column (2) uses only observations from hours from 5 am to 2 pm each day, Column (3) uses 2 pm to 10 pm, and Column (4) uses 10 pm to 5 am, respectively. Standard errors in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
     \end{tablenotes}
     \label{tb:ccar}
 \end{table}
@@ -2339,7 +2339,7 @@ The data cleaning process includes the following steps
 %  			\footnotesize
 % % 			\input{tb/eq2mins.tex}
 %             {
-%             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%             \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 %             \begin{tabular}{l*{8}{c}}
 %             \toprule
 %             \toprule
@@ -2390,7 +2390,7 @@ The data cleaning process includes the following steps
 %  			\begin{tablenotes}
 %  				\parindent 1em%  %ChaoQin
 % 	        	\small
-%  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+%  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining work time in  minutes, i.e., the number of minutes from the end of the trip/booking to the end of the respective shift. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 %  			\end{tablenotes}
 %  			    \end{minipage}%	
 %     }  %ChaoQin
@@ -2416,7 +2416,7 @@ The data cleaning process includes the following steps
 %  			\setlength{\tabcolsep}{2pt}
 %  			% \input{tb/eq4idle.tex}
 % 				{
-% 				\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 				\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 				\begin{tabular}{l*{8}{c}}
 % 				\toprule
 % 				\toprule
@@ -2468,7 +2468,7 @@ The data cleaning process includes the following steps
 %  			\begin{tablenotes}
 %  				\parindent 1em%  %ChaoQin
 % 	        	\small
-%  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+%  				Each column is a separate regression. An observation is a trip or a booking. The dependent variable for all columns is the remaining idle percentage, i.e., percentage of time a driver is with a passenger during the remaining time (i.e., from the end of the trip/booking to the end of the shift). Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
 %  			\end{tablenotes}
 %  		% \end{threeparttable}
 %  		   \end{minipage}%	
@@ -2522,7 +2522,7 @@ the independent variables are exogenous. The F-statistics of weak identification
     \caption{Hazard Rate of Stopping Work: IV Regression}
     \label{tb:iv}
 {
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}} 
 %\begin{tabular}{l*{3}{c}}
 \toprule
@@ -2549,7 +2549,7 @@ Exogeneity test \(\chi^2\)-statistic&                     &                     
  			\begin{tablenotes}
  			\parindent 1em%  %ChaoQin
 		     \small
- 			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of exogeneity tests in square bracket. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
+ 			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of exogeneity tests in square bracket.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
  			\end{tablenotes}
 
 \end{table}
@@ -2763,7 +2763,7 @@ The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2
 % 			\footnotesize
 % % 		\input{tb/eq1quit.tex}
 % 			{
-% 			\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% 			\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 			\begin{tabular}{l*{8}{S}}
 % 			\toprule
 %       \toprule
@@ -2831,7 +2831,7 @@ The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2
 % 			\footnotesize
 % % 		\input{tb/eq1quit.tex}
 %             {
-%             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%             \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 %             \begin{tabular}{l*{8}{S}}
 %             \toprule
 %             \toprule
@@ -2961,7 +2961,7 @@ The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2
 % 			% \input{tb/hourlyreg.tex}
 % 			{
 % %			\def\arraystretch{0.5}%  1 is the default, change whatever you need
-%             \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%             \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 			\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{3}{c}}
 % 			\toprule
 % 			\toprule
@@ -3001,7 +3001,7 @@ The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2
 % 				\parindent 1em%  %ChaoQin
 % 		        \small
 % 				Each column is a separate regression. An observation is a driver-hour. All regressions control for driver fixed effects, hour of day fixed effects and date fixed effects. The dependent variable %in Columns (1), (2), and (3) 
-% is the earnings received in the respective hour. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+% is the earnings received in the respective hour.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 % %The dependent variable in Columns (4), (5), and (6) is the number of minutes without a passenger on board in the respective hour. Standard errors clustered by drivers in parentheses.
 % 			\end{tablenotes}
 % 		% \end{threeparttable}
@@ -3025,7 +3025,7 @@ The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2
 % 		{
 % %			\def\arraystretch{0.5}%  1 is the default, change whatever you need
 % 		\footnotesize
-%         \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%         \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 % 		\begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{c}}
 % 		\toprule
 % 		\toprule
@@ -3069,7 +3069,7 @@ The U-shaped pattern can be observed in the first two panels in Figure \ref{fg:2
 % 		\begin{tablenotes}
 % 	   %  	\parindent 1em%  %ChaoQin
 % 	    	\small
-% 			\textit{Notes}Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects, and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes; the dependent variable in Columns (3) and (4) is the remaining average wage in SGD/h. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+% 			\textit{Notes}Each column is a separate regression. An observation is a trip or a booking. All regressions control for driver fixed effects, date fixed effects, and hour of day fixed effects. Standard errors clustered by drivers in parentheses. The dependent variable in Columns (1) and (2) is the remaining time in minutes; the dependent variable in Columns (3) and (4) is the remaining average wage in SGD/h.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 % 		\end{tablenotes}
 % %	\end{threeparttable}
 % \end{table}
