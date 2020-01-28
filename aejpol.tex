@@ -508,7 +508,7 @@ There is no compensation to drivers for C\&NS.
 
 \subsection{Street hail trips and taxi bookings}
 Each observation in the data corresponds to either a street hail trip or a booking. For street hail trips, 
-we observe the start time and end time, pickup and destination postal code, 
+we observe the start time and end time, pickup and destination postal code (that is associated with a unique building), 
 travel distance, total fare, vehicle ID, and driver ID. For bookings, we observe the booking time, 
 requested pickup time, booking channel, booking status,  ID of the assigned vehicle, and, if the booking
 is completed, all information on the trip mentioned above. Bookings, with completed, failed, cancelled, 
@@ -556,7 +556,7 @@ Half of the shifts start between 4:00 a.m. and 10:00 a.m., and around one-third 
 or early evening (4:00 p.m. to 10:00 p.m.). The other 14\% of shifts start between 10:00 a.m. and 4:00 p.m.,
 and a small percentage start in the late evening or early morning (10:00 p.m. to 4:00 a.m.).
 
-We focus on two outcome variables: probability of ending a shift after each trip and subsequent earnings after each trip. The first variable measures driver's labor supply, and the second measures driver's productivity. The probability of ending a shift refers to whether the current trip is the last trip of a shift. The subsequent earnings refer the total fares that a driver earns during a period of time after a trip. The main specification uses earnings during the 60-minute time window immediately following the trips, but additional analyses also examine earnings in other time windows. 
+We focus on two outcome variables: probability of ending a shift after each trip and subsequent earnings after each trip. The first variable measures driver's labor supply, and the second measures driver's productivity. The probability of ending a shift refers to whether the current trip is the last trip of a shift. The subsequent earnings refer to the total fares that a driver earns during a period of time after a trip. The main specification uses earnings during the 60-minute time window immediately following the trips, but additional analyses also examine earnings in other time windows. 
 
 
 %\begin{center}
@@ -581,7 +581,7 @@ We focus on two outcome variables: probability of ending a shift after each trip
 % than the indicator for the last hour of work---as the outcome of interest when working with hour-level data.
 
 \subsection{Location and status data}
-All taxis in Singapore are equipped with an in-vehicle unit (IVU) that records the cab's status and GPS 
+All taxis in Singapore are equipped with an in-vehicle unit that records the cab's status and GPS 
 coordinates every 10 to 15 seconds. We have access to this dataset and utilize it to construct additional variables to supplement the analyses. Thanks to this dataset, we observe, at a very fine temporal frequency, the precise location of the vehicle as well as the state of the driver, i.e., whether he is on break, or on the way picking up the passenger, or having a passenger on board, or available for receiving bookings. Using these data, we compute the following variables: (1) the break duration by aggregating the duration between consecutive break states of the same driver, (2) the duration and  the distance to the pickup locations by aggregating the duration and distance between consecutive on-call states of the same driver, (3) the number of vacant vehicles within a certain radius from a building at a specific point in time, and (4) the distance travelled and the speed of a vacant driver searching for the next job. 
 
 \subsection{Control group, treated group, and placebo group}
@@ -704,7 +704,7 @@ cheaper alternatives. However, an oversupply of cabs also means higher competiti
 traffic congestion, and hence is likely to decrease drivers' earnings and willingness to work.  
 The factors that increase C\&NS are likely to be the factors that lower passengers' valuation of bookings
 and/or taking a taxi in general relative to other substitutes, and hence should hurt drivers.
-Our findings are the opposite: Drivers seem to have higher earnings and longer working time after 
+Our findings are the opposite: Drivers seem to be less likely to stop working and have higher earnings after 
 encountering C\&NS. Note that most of the aforementioned factors should have been absorbed by our
 time and location fixed effects, but even in unlikely cases in which some factors are not captured, 
 our estimates can still be viewed as the lower bounds of drivers' behavioral responses to C\&NS.
@@ -773,7 +773,7 @@ of 1.16 ppts (s.e. 0.15). At the average hazard rate of stopping work of 5.35\%,
 
 Specification (2) adds weather conditions and a set of measures for market thickness to account for potential irregular demand and supply factors that are not captured by the time and location fixed effects. The added set of control variables does not cause any substantial changes in the estimates: The magnitudes of the C\&NS coefficients increase slightly to 1.67 ppt (s.e. 0.10) and 1.28 pt (s.e. 0.16). This is reassuring; the existing set of fixed effects appears capable of absorbing the major source of variation in unobserved market factors.
 
-Specification (3) adds controls for rest time and time with passenger on board to account for the effect of fatigue: If driving with passengers on board is more tiring than idle driving, then C\&NS may create an opportunity for the drivers to have a breather between jobs. We control for both cumulative rest and passenger time since the start of the shift and the recent time in the last hour, and the estimated C\&NS effects remain robust at -1.48 ppts (s.e. 0.10) and -1.14 ppts (s.e. 0.16). Thus, fatigue does not seem to explain our C\&NS effects. This is consistent with anecdotal evidence from our discussion with local taxi drivers: C\&NS are commonly viewed as a nuisance rather than an opportunity for a breather.
+Specification (3) adds controls for rest time and time with passenger on board to account for the effect of fatigue: If driving with passengers on board is more tiring than idle driving, then C\&NS may create an opportunity for the drivers to have a breather between jobs. We control for both cumulative rest and passenger time since the start of the shift and in the last hour, and the estimated C\&NS effects remain robust at -1.48 ppts (s.e. 0.10) and -1.14 ppts (s.e. 0.16). Thus, fatigue does not seem to explain our C\&NS effects. This is consistent with anecdotal evidence from our discussion with local taxi drivers: C\&NS are commonly viewed as a nuisance rather than an opportunity for a breather.
 
 Specification (4) adds distance and duration to the pickup point to address the potential selection bias by passenger due to waiting time and pickup conditions. This set of variables also has little effects on the estimation results: The C\&NS effects remain robust at -1.36 ppts (s.e. 0.10) and -1.31 ppts (s.e. 0.16).
 
@@ -864,7 +864,7 @@ In summary, when regressing on different sets of controls and fixed effects, est
 drivers' decisions to stop work remain consistently negative, and the magnitudes vary
 % in a small range
 from 17\% to 30\% reduction in the hazard rate of stopping. This negative relationship between C\&NS and the decision to stop work cannot
-be entirely explained by time effects, location effects, drivers' charateristics, fatigue, or passengers' 
+be entirely explained by time effects, location effects, drivers' characteristics, fatigue, or passengers' 
 selective C\&NS decisions. Therefore, it is likely to reflect a causal relationship between C\&NS and 
 drivers' labor supply.
 
@@ -881,7 +881,7 @@ Equation \eqref{eq:2dlwr} allows the hazard equation to change with both the dur
 use one indicator for C\&NS to increase the statistical power. The equation is estimated with a series of local weighted regressions at five different time points equally spaced between 8 hours and 10 hours from the start of the shift, and eight different cumulative earnings levels, ranging from 80 SGD to 360 SGD, using different localized subsets of the data.  %The estimated normalized C\&NS effects, i.e. the C\&NS effects relative to the hazard rate of stopping at the respective time and income level, for 40 local weighted regressions are plotted in the five panels in Figure \ref{fg:2dulwrnoisy}.
  Due to the data demanding nature of the local weighted regressions, we  pool the data from street hail trips and all other bookings to increase the precision of the estimates and plot the results in Figure \ref{fg:2dulwr}.%, which demonstrates a less noisy and more interpretable pattern.
 
-The U-shaped pattern of the moderating effect of cumulative income can be observed clearly at all the five time points. The C\&NS effects are strongest and most significant when the income is in the range 150-250 SGD. This turning point slightly shifts to the right to around 250 SGD once the cumulative hours passed 9 hours. The C\&NS effects decrease in magnitude and become insignificant when the cumulative income is either too low or too high. This is consistent with income-targeting behavior: When cumulative income is too low, there is very low chance for the driver to reach the target, and hence it reduces the incentive to work more when drivers encounter adverse earnings shocks. On the other hand, when income is too high, it is likely that the driver has exceeded the target and extra earnings do not change the marginal utility of income. We also run these local weighted regression models with the subset of data as used in the main analysis and obtained similar but less precise results (See Appendix \ref{apx:CI}).
+The U-shaped pattern of the moderating effect of cumulative income can be observed clearly at all the five time points. The C\&NS effects are strongest and most significant when the income is in the range 150-250 SGD. This turning point slightly shifts to the right to around 250 SGD once the cumulative hours passed 9 hours. The C\&NS effects decrease in magnitude and become insignificant when the cumulative income is either too low or too high. This is consistent with income-targeting behavior: When cumulative income is too low, there is very low chance for the driver to reach the target, and hence it reduces the incentive to work more when drivers encounter adverse earnings shocks. On the other hand, when income is too high, it is likely that the driver has exceeded the target and extra earnings do not change the marginal utility of income. We also run these local weighted regression models with the subset of data used in the main analysis and obtained similar but less precise results (Appendix \ref{apx:CI}).
 
 
 \begin{center}
@@ -1105,7 +1105,7 @@ The shift income is 70 cents higher on average in shifts with some no-shows.
 \subsection{Robustness}
 
 \paragraph{Placebo test}
-We conduct the following placebo tests to rule out the concern that the results are driven by unobserved demand and supply factors. We match each C\&NS with the nearest vacant driver who ends a trip within 3 minutes of the C\&NS, and assign imaginary placebo C\&NS to that driver. Alternatively, we also match each C\&NS with all the vacant drivers who end a trip within 200 m and 3 minutes of the C\&NS and use them as the second group of placebo subsjects. Using the nearest driver is likely to give us a better match, while using all nearby drivers increases the sample size of placebo group and the statistical power of the test. Both of these tests are based on the following rationale: Due to location and time proximity, the drivers with the placebo C\&NS are subject to the same market conditions as the drivers with the actual C\&NS, and thus, the effects of the placebo C\&NS will capture any spurious correlation between C\&NS and labor supply due to market demand and supply. Estimates in Table \ref{tb:placebo} show that both groups of placebo C\&NS have insignificant and negligible effects on the drivers' subsequent labor decisions. As a result, we can rule out unobserved market conditions as an explanation for our results.
+We conduct the following placebo tests to rule out the concern that the results are driven by unobserved demand and supply factors. We match each C\&NS with the nearest vacant driver who ends a trip within 3 minutes of the C\&NS, and assign imaginary placebo C\&NS to that driver. Alternatively, we also match each C\&NS with all the vacant drivers who end a trip within 200 m and 3 minutes of the C\&NS and use them as the second group of placebo subjects. Using the nearest driver is likely to give us a better match, while using all nearby drivers increases the sample size of placebo group and the statistical power of the test. Both of these tests are based on the following rationale: Due to location and time proximity, the drivers with the placebo C\&NS are subject to the same market conditions as the drivers with the actual C\&NS, and thus, the effects of the placebo C\&NS will capture any spurious correlation between C\&NS and labor supply due to market demand and supply. Estimates in Table \ref{tb:placebo} show that both groups of placebo C\&NS have insignificant and negligible effects on the drivers' subsequent labor decisions. As a result, we can rule out unobserved market conditions as an explanation for our results.
 
 \begin{center}
     [Insert Table \ref{tb:placebo} here]
@@ -1116,7 +1116,7 @@ We conduct the following placebo tests to rule out the concern that the results 
 
 In the next two rows, we use different subsets of the full data for estimation. Recall that, in order to have as fair a comparison between C\&NS and other trips as possible, in the main analyses, we limit the sample to a subset of bookings that end with no immediate pickups within three minutes. In Row (3), we use all bookings, and in Row (4) we further pool the data from both bookings and street hail trips together. The estimates are robust regardless of the sample used.
 
-In Row (5) to Row (8), we  estimate the C\&NS effects separately for morning shifts and night shifts, and for work days and off days. These subdivisions of the data represent major variation in the working conditions for taxi drivers over time. We observe a significantly smaller C\&NS effects during night shifts than during morning shifts. Nonetheless, the estimated coefficients remain negative and statistically significant across the four subsamples.
+In Row (5) to Row (8), we  estimate the C\&NS effects separately for day shifts and night shifts, and for work days and off days. These subdivisions of the data represent major variation in the working conditions for taxi drivers over time. We observe a significantly smaller C\&NS effects during night shifts than during day shifts. Nonetheless, the estimated coefficients remain negative and statistically significant across the four subsamples.
 
 
 In Row (9) to Row (11), we allow the driver fixed effects to vary by months, by days of week, and by regions \footnote {The Singapore government divides Singapore into 5 regions, 22 areas, and 352 zones for development purpose}. One concern is that there can be driver-specific factors that  are correlated with C\&NS. For instance, drivers may learn over time to predict and avoid C\&NS, some drivers may be more experienced than others, or may have unobserved plans and seek bookings with destinations that are convenient for their plans. We argue that this is unlikely in our setting. First, all regressions control for driver fixed effects, so any driver-specific differences have been absorbed by the fixed effects;
@@ -1611,7 +1611,7 @@ With the possibility of reference-dependent preference, policies that aim to com
     }
 	\begin{tablenotes}
 	\small
-        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour-day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 \end{table}
 
@@ -1647,7 +1647,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 	\begin{tablenotes}
 % 		\parindent 1em%  %ChaoQin
 		\small
-        Each column estimates a separate hazard rate equation at the respective number of hours into the shift using a local weighted regression with a 30-minute bandwidth and uniform weights. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour-day-of-week\(\times\)zone fixed effects, date fixed effects, a cubic function of the cumulative hours, weather conditions, measures of market thickness, break time and time with passenger, duration and distance to pickup. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+        Each column estimates a separate hazard rate equation at the respective number of hours into the shift using a local weighted regression with a 30-minute bandwidth and uniform weights. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)zone fixed effects, date fixed effects, a cubic function of the cumulative hours, weather conditions, measures of market thickness, break time and time with passenger, duration and distance to pickup. Standard errors clustered by drivers in parentheses. $\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
 	\end{tablenotes}
 % 	\end{threeparttable}
 \end{table}
@@ -1838,7 +1838,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 %  \end{landscape}
 
 
-\clearpage
+%\clearpage
 
 
 
@@ -1996,7 +1996,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 
 
 
-\clearpage
+%\clearpage
 
 % \begin{table}[]
 % \hspace*{-2pt}\makebox[\linewidth][c]{%      
@@ -2224,7 +2224,7 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
     	(4)  & All bookings and street hail trips & -0.013\sym{***} (0.000) & -0.017\sym{***} (0.001) & 0.067 \\
     	\midrule
     	\multicolumn{5}{l}{\textit{Subsamples by time}} \\
-    	(5)  & Morning shifts & -0.015\sym{***} (0.001) & -0.018\sym{***} (0.002) & 0.040 \\
+    	(5)  & Day shifts & -0.015\sym{***} (0.001) & -0.018\sym{***} (0.002) & 0.040 \\
     	(6)  & Night shifts & -0.004\sym{***} (0.001) & -0.006\sym{***} (0.002) & 0.059 \\
     	(7)  & Non-holiday weekdays & -0.013\sym{***} (0.001) & -0.011\sym{***} (0.002) & 0.052 \\
     	(8)  & Weekends and holidays & -0.011\sym{***} (0.002) & -0.012\sym{***} (0.003) & 0.058 \\
