@@ -690,60 +690,6 @@ With the possibility of reference-dependent preference, policies that aim to com
 
 \FloatBarrier
 
-\begin{table}[htb]
-	\centering
-	\caption{\scshape{Summary Statistics}} %ChaoQin: I cap all the words, not artical/conjunctions, and prepositions
-	\label{tb:sumstat1}
-		\footnotesize
-        \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*6{S}}
-        \toprule
-        \toprule
-        \multicolumn{7}{l}{Panel A: Summary statistics of completed trips}\\
-        \toprule
-                            		&         \multicolumn{1}{c}{Obs}&        \multicolumn{1}{c}{{Mean}}&        \multicolumn{1}{c}{SD}&          \multicolumn{1}{c}{Q1}&      \multicolumn{1}{c}{{Median}}&          \multicolumn{1}{c}{Q3}\\
-        \midrule
-        Street hail trips                &                &            &            &            &            &            \\
-        \hspace{3mm}Trip fare (SGD)      &  \num{23801832}&       12.85&        7.33&        7.45&       10.90&       16.40\\
-        \hspace{3mm}Trip duration (mins) &  \num{23801832}&       16.02&        9.52&        8.98&       14.43&       21.12\\
-				\addlinespace
-        Completed bookings               &                &            &            &            &            &            \\
-        \hspace{3mm}Trip fare (SGD)      &   \num{6692929}&       17.57&        7.68&       11.85&       16.05&       21.65\\
-        \hspace{3mm}Trip duration (mins) &   \num{6692929}&       20.12&       10.28&       12.73&       18.75&       25.63\\
-  		\addlinespace
-	     Completed trips                 &                &            &            &            &            &            \\
-        \hspace{3mm}Trip fare (SGD)      &  \num{30494761}&       13.88&        7.66&        8.20&       12.05&       17.85\\
-        \hspace{3mm}Trip duration (mins) &  \num{30494761}&       16.91&        9.84&        9.65&       15.37&       22.22\\
-        \bottomrule
-				\addlinespace
-				\addlinespace
-
-        \multicolumn{7}{l}{Panel B: Summary statistics of shifts}\\
-        \toprule
-                            		     &         \multicolumn{1}{c}{Obs}&        \multicolumn{1}{c}{{Mean}}&        \multicolumn{1}{c}{SD}&          \multicolumn{1}{c}{Q1}&      \multicolumn{1}{c}{{Median}}&          \multicolumn{1}{c}{Q3}\\
-        \midrule
-        Shift income (SGD)               &     \num{2122256}&      199.50&       85.75&      138.98&      194.00&      252.15\\
-        Shift duration (hours)           &     \num{2122256}&        8.57&        3.39&        6.38&        8.58&       10.54\\
-        Shift wage (SGD/h)               &     \num{2122256}&       24.16&        8.45&       19.52&       23.96&       28.42\\
-        Idle percentage                  &     \num{2122256}&       51.29&       12.93&       42.51&       50.92&       60.00\\
-        Number of street hail trips      &     \num{2122256}&       11.22&        5.57&        7.00&       11.00&       15.00\\
-        Number of completed bookings     &     \num{2122256}&        3.15&        2.94&        1.00&        2.00&        5.00\\
-        Number of cancellations          &     \num{2122256}&        0.23&        0.57&        0.00&        0.00&        0.00\\
-        Number of no-shows               &     \num{2122256}&        0.06&        0.26&        0.00&        0.00&        0.00\\
-        Start after 4am and before 10am  &     \num{2122256}&        0.49&        0.50&        0.00&        0.00&        1.00\\
-        Start after 10am and before 4pm  &     \num{2122256}&        0.14&        0.34&        0.00&        0.00&        0.00\\
-        Start after 4pm and before 10pm  &     \num{2122256}&        0.33&        0.47&        0.00&        0.00&        1.00\\
-        \bottomrule
-        \end{tabularx}
-
-		\begin{tablenotes}
-		\parindent 1em%  %ChaoQin
-		\small
-        Panel A reports the summary statistics of the trip-level data. Trip fare for booking trips includes booking fees; trip duration for booking trips excludes on-call time. Completed trips include both street hail trips and completed bookings. Panel B reports summary statistics of shift-level data. Each observation is a shift, defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
-		\end{tablenotes}	
-	
-\end{table}
-
-
 
 \clearpage
 
@@ -1251,6 +1197,63 @@ Exogeneity test \(\chi^2\)-statistic&                     &                     
  			 An observation is a booking. All regressions include driver fixed effects, date fixed effects, hour$\times$day-of-week$\times$postal-code fixed effects, demand, free vehicle count within 500 m and 1 km radius from pickup location, and a cubic function of cumulative hours. Standard errors clustered by drivers in parentheses. p-value of exogeneity tests in square bracket.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$.  
  			\end{tablenotes}
 
+\end{table}
+
+
+\section{Sumarry statistics}
+
+
+\begin{table}[htb]
+	\centering
+	\caption{\scshape{Summary Statistics}} %ChaoQin: I cap all the words, not artical/conjunctions, and prepositions
+	\label{tb:sumstat1}
+		\footnotesize
+        \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*6{S}}
+        \toprule
+        \toprule
+        \multicolumn{7}{l}{Panel A: Summary statistics of completed trips}\\
+        \toprule
+                            		&         \multicolumn{1}{c}{Obs}&        \multicolumn{1}{c}{{Mean}}&        \multicolumn{1}{c}{SD}&          \multicolumn{1}{c}{Q1}&      \multicolumn{1}{c}{{Median}}&          \multicolumn{1}{c}{Q3}\\
+        \midrule
+        Street hail trips                &                &            &            &            &            &            \\
+        \hspace{3mm}Trip fare (SGD)      &  \num{23801832}&       12.85&        7.33&        7.45&       10.90&       16.40\\
+        \hspace{3mm}Trip duration (mins) &  \num{23801832}&       16.02&        9.52&        8.98&       14.43&       21.12\\
+				\addlinespace
+        Completed bookings               &                &            &            &            &            &            \\
+        \hspace{3mm}Trip fare (SGD)      &   \num{6692929}&       17.57&        7.68&       11.85&       16.05&       21.65\\
+        \hspace{3mm}Trip duration (mins) &   \num{6692929}&       20.12&       10.28&       12.73&       18.75&       25.63\\
+  		\addlinespace
+	     Completed trips                 &                &            &            &            &            &            \\
+        \hspace{3mm}Trip fare (SGD)      &  \num{30494761}&       13.88&        7.66&        8.20&       12.05&       17.85\\
+        \hspace{3mm}Trip duration (mins) &  \num{30494761}&       16.91&        9.84&        9.65&       15.37&       22.22\\
+        \bottomrule
+				\addlinespace
+				\addlinespace
+
+        \multicolumn{7}{l}{Panel B: Summary statistics of shifts}\\
+        \toprule
+                            		     &         \multicolumn{1}{c}{Obs}&        \multicolumn{1}{c}{{Mean}}&        \multicolumn{1}{c}{SD}&          \multicolumn{1}{c}{Q1}&      \multicolumn{1}{c}{{Median}}&          \multicolumn{1}{c}{Q3}\\
+        \midrule
+        Shift income (SGD)               &     \num{2122256}&      199.50&       85.75&      138.98&      194.00&      252.15\\
+        Shift duration (hours)           &     \num{2122256}&        8.57&        3.39&        6.38&        8.58&       10.54\\
+        Shift wage (SGD/h)               &     \num{2122256}&       24.16&        8.45&       19.52&       23.96&       28.42\\
+        Idle percentage                  &     \num{2122256}&       51.29&       12.93&       42.51&       50.92&       60.00\\
+        Number of street hail trips      &     \num{2122256}&       11.22&        5.57&        7.00&       11.00&       15.00\\
+        Number of completed bookings     &     \num{2122256}&        3.15&        2.94&        1.00&        2.00&        5.00\\
+        Number of cancellations          &     \num{2122256}&        0.23&        0.57&        0.00&        0.00&        0.00\\
+        Number of no-shows               &     \num{2122256}&        0.06&        0.26&        0.00&        0.00&        0.00\\
+        Start after 4am and before 10am  &     \num{2122256}&        0.49&        0.50&        0.00&        0.00&        1.00\\
+        Start after 10am and before 4pm  &     \num{2122256}&        0.14&        0.34&        0.00&        0.00&        0.00\\
+        Start after 4pm and before 10pm  &     \num{2122256}&        0.33&        0.47&        0.00&        0.00&        1.00\\
+        \bottomrule
+        \end{tabularx}
+
+		\begin{tablenotes}
+		\parindent 1em%  %ChaoQin
+		\small
+        Panel A reports the summary statistics of the trip-level data. Trip fare for booking trips includes booking fees; trip duration for booking trips excludes on-call time. Completed trips include both street hail trips and completed bookings. Panel B reports summary statistics of shift-level data. Each observation is a shift, defined as a series of consecutive trips and bookings by the same driver less than 6 hours apart. 
+		\end{tablenotes}	
+	
 \end{table}
 
 
