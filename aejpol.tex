@@ -315,28 +315,23 @@ to the indicated pickup point and, if the passenger shows up, drives him/her to 
 There is no compensation to drivers for C\&NS.
 
 \subsection{Street hail trips and taxi bookings}
-Each observation in the data corresponds to either a street hail trip or a booking. For street hail trips, 
-we observe the start time and end time, pickup and destination postal code (that is associated with a unique building), 
-travel distance, total fare, vehicle ID, and driver ID. For bookings, we observe the booking time, 
-requested pickup time, booking channel, booking status,  ID of the assigned vehicle, and, if the booking
-is completed, all information on the trip mentioned above. Bookings, with completed, failed, cancelled, 
-or no-show status\footnote{``completed" indicates completed bookings, ``failed" indicates bookings for
-which the system failed to find a cab to assign to them, ``cancelled" indicates bookings that are cancelled
-by the passenger, either before or after the system assigns a cab to them, and ``no-show" indicates bookings 
-in which the passenger did not show up.}, take up 27\% of  total observations: 76\% of all bookings are 
-completed, 13\% are cancelled, 10\% are failed, and slightly more than 1\% are no-shows.
-
 The data include 24,828,442 street hail trips and 9,114,421 bookings made between December 1, 2016 and
-February 28, 2017. During that period, 33,849 drivers were working and 17,468 vehicles were in operation.%
-\footnote{A driver can drive multiple vehicles, although the great majority of drivers stick with one vehicle.} 
+February 28, 2017. 76\% of all bookings are 
+completed, 13\% are cancelled, 10\% are failed\footnote{Failed bookings are bookings for which the system failed to find a cab to assign to them}, and slightly more than 1\% are no-shows
+%Each observation in the data corresponds to either a street hail trip or a booking. For street hail trips, 
+%we observe the start time and end time, pickup and destination postal code (that is associated with a unique building), 
+%travel distance, total fare, vehicle ID, and driver ID. For bookings, we observe the booking time, 
+%requested pickup time, booking channel, booking status,  ID of the assigned vehicle, and, if the booking
+%is completed, all information on the trip mentioned above. Bookings, with completed, failed, cancelled, 
+%or no-show status, take up 27\% of  total observations: .
+During that period, 33,849 drivers were working and 17,468 vehicles were in operation.%
+%\footnote{A driver can drive multiple vehicles, although the great majority of drivers stick with one vehicle.} 
 Of the drivers, 98\% are males, 78\% are over the age of 50, and 84\% have worked for the company for more than
-two years. Around 11\% drivers are solo drivers, 35\% share a cab with one other driver, 30\% with two other 
-drivers, and 24\% with at least three other drivers.
+two years.
+%Around 11\% drivers are solo drivers, 35\% share a cab with one other driver, 30\% with two other 
+%drivers, and 24\% with at least three other drivers.
 
-Following the literature \citep{farber2015you,agarwal2015singaporean,martin2017quit,chen2015dynamic}, we 
-cluster trips and bookings into shifts. A shift is defined as a series of trips and bookings less than 6 
-hours apart by the same driver. In other words, any gap between two consecutive trips or bookings of more
-than 6 hours marks the end of one shift and the beginning of the next. 
+
 
 We conduct several data-cleaning steps to remove irrelevant or erroneous observations and outliers (see Appendix \ref{apx:DataCleaning}).
 In total, 92\% of the original data survive this procedure. Of these, 76.51\% are
@@ -348,8 +343,11 @@ booking trip takes 20.12 minutes and earns 17.57 SGD, inclusive of booking fees 
 	[Insert Table \ref{tb:sumstat1} here]
 \end{center}
 
-
-Summary statistics for shifts are reported in Panel B of Table \ref{tb:sumstat1}. 
+Following the literature \citep{farber2015you,agarwal2015singaporean,martin2017quit,chen2015dynamic}, we 
+cluster trips and bookings into shifts. A shift is defined as a series of trips and bookings less than 6 
+hours apart by the same driver. In other words, any gap between two consecutive trips or bookings of more
+than 6 hours marks the end of one shift and the beginning of the next. 
+%Summary statistics for shifts are reported in Panel B of Table \ref{tb:sumstat1}. 
 We identified 2,122,256 shifts in total. On average, a shift lasts for 8.6 hours and earns the driver 200 SGD. 
 During a shift, an average driver is idle (not on fare) around one-half the time, and receives 11.2 street
 hail trips and 3.2 bookings.  Singapore taxi drivers' time utilization is on par with Uber and Lyft drivers,
@@ -367,7 +365,6 @@ All taxis in Singapore are equipped with an in-vehicle unit that records the cab
 coordinates every 10 to 15 seconds. We have access to this dataset and utilize it to construct additional variables to supplement the analyses. Thanks to this dataset, we observe, at a very fine temporal frequency, the precise location of the vehicle as well as the state of the driver, i.e., whether he is on break, or on the way picking up the passenger, or having a passenger on board, or available for receiving bookings. Using these data, we compute the following variables: (1) the break duration by aggregating the duration between consecutive break states of the same driver, (2) the duration and  the distance to the pickup locations by aggregating the duration and distance between consecutive on-call states of the same driver, (3) the number of vacant vehicles within a certain radius from a building at a specific point in time, and (4) the distance travelled and the speed of a vacant driver searching for the next job. 
 
 \subsection{Control group, treated group, and placebo group}
-
 A major threat to our identification strategy is the possibility that the market condition at the end of a C\&NS is not comparable to that at the end of a completed trip. For instance, a big sport event or a concert may generate a lot of demand to a specific location and a lot of C\&NS as well, and a driver who receives a C\&NS during such an event can easily find another job afterwards.
 To avoid such circumstances and make the drivers' decisions after a C\&NS and their decisions after a completed trip as comparable as possible, our main analyses will use a subset of the data in which taxi drivers are exposed to almost identical environment, except for the status of the last trip. The subset of the data that we use are the bookings after which taxi drivers become available and actively search for jobs for at least three minutes. In other words, we exclude all street hail trips as well as the subset of bookings where the drivers find a job within three minutes. In the language of experimental design, our control group is the decisions made by drivers who have no immediate pickups after completing a booking, and the treated group is the decisions made by drivers who have no immediate pickups after ending a C\&NS. As we show in various robustness checks, our results are robust to other data selection. Using the subsample of all bookings, or the full sample of both bookings and street hail trips results in similar estimates for the C\&NS effects.
 
