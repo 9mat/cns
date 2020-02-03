@@ -51,6 +51,7 @@
 % This command determines the leading (vertical space between lines) in draft mode
 % with 1.5 corresponding to "double" spacing.
 % \draftSpacing{1.5}
+\singlespacing
 
 % break up long URL at hyphens
 \def\UrlBreaks{\do\/\do-}
@@ -110,6 +111,7 @@
 
 \maketitle
 
+\section{Introduction}
 
 \label{sec:intro}
 Despite being a building block for many economic models and playing an imperative role in the 
@@ -142,10 +144,8 @@ Our analysis shows that drivers work longer and earn more following
 C\&NS, apparently seeking to compensate for the loss and reach the income target. 
 These effects are strong in the first hour after a 
 C\&NS and fade away afterward. Interestingly, the C\&NS effects are strongest when cumulative income 
-is %moderate and
- close to the average shift income, and become weaker and insignificant when the income 
+is close to the average shift income, and become weaker and insignificant when the income 
 level is too high or too low. 
-% 
 The magnitude of the C\&NS effects is economically significant: A C\&NS
 is associated with 23\% reduction from the mean hazard rate of stopping work at a given time, and a no-show associated with 22\% reduction. 
 The cancellation effect is equivalent to that of additional 38 minutes of work, or additional 41 Singapore dollars 
@@ -153,20 +153,14 @@ The cancellation effect is equivalent to that of additional 38 minutes of work, 
 (Table \ref{tb:robustquit}, Column (5)). 
 
 
-These results have important policy implications. Negative shocks are an integral part of our lives: Researchers' articles are rejected by editors, factory workers are unable to work due to machine breakdowns, and taxi drivers' bookings get cancelled by riders. When observing a worker encounter such unanticipated and unwanted events,  firms and policy makers may want to compensate the worker to make up for their loss. However, if income targeting behavior is present, it is important to recognize that the compensation can have the side effect of reducing the workers' labor supply and own income. From a firm's perspective, this can be detrimental to its profit. From a policy marker's perspective, due to reduced marginal utility of income after reaching the reference point, the perceived value from such a compensation will be smaller when giving to someone who is near the target than giving to someone who is really behind the target. In fact, to maximize the perceived welfare impact of a compensation, it is best not to give it to the workers right away as part of their daily income, since not only will it reduce the motivation to work and hence reduce the workers' own income, but also the workers may even discount its value once they pass the target. Instead, the equivalent compensation should be saved and given out only when workers encounter extreme shocks or anticipated shocks, during which the compensation will not affect their labor supply and its welfare value will not get discounted.
-
-The main threats to our empirical strategy are: (1) unobserved demand and apply factors, (2) unobserved drivers' plans and motivation, (3) drivers' ability to predict C\&NS, and (4) fatigue due to time with passenger. We conduct several placebo tests and rule out threat (1): C\&NS have no effects on nearby vacant drivers, who are subject to the same market conditions as the drivers who encounter C\&NS. Moreover, the C\&NS effects persist even after controlling for hour\(\times\)day-of-week\(\times\)building fixed effects as well as time-varying measures of market thickness at both local and global scales. We show that threat (2) cannot explain the C\&NS effects for two reasons. First, past earnings, which should reflect drivers' plans and motivation, do not predict future C\&NS occurrence. Second, the results are robust even when we limit the sample to a subset of the data in which drivers do not know the booking destination and are unable to plan ahead. Driver fixed effects, driver\(\times\)month fixed effects, driver\(\times\)day-of-week, and driver\(\times\)region\footnote {The Singapore government divides Singapore into 5 regions, 55 areas, and 323 zones for development purpose} fixed effects are separately included in different specifications to control for threat (3) and the results remain robust in all these specifications. We explicitly control for threat (4) with the number of break minutes and minutes with passengers in the last hour, and the effects of these factors are small and, in most specifications, insignificant, and hence, unable to account for our results.
-
-
+%These results have important policy implications. Negative shocks are an integral part of our lives: Researchers' articles are rejected by editors, factory workers are unable to work due to machine breakdowns, and taxi drivers' bookings get cancelled by riders. When observing a worker encounter such unanticipated and unwanted events,  firms and policy makers may want to compensate the worker to make up for their loss. However, if income targeting behavior is present, it is important to recognize that the compensation can have the side effect of reducing the workers' labor supply and own income. From a firm's perspective, this can be detrimental to its profit. From a policy marker's perspective, due to reduced marginal utility of income after reaching the reference point, the perceived value from such a compensation will be smaller when giving to someone who is near the target than giving to someone who is really behind the target. In fact, to maximize the perceived welfare impact of a compensation, it is best not to give it to the workers right away as part of their daily income, since not only will it reduce the motivation to work and hence reduce the workers' own income, but also the workers may even discount its value once they pass the target. Instead, the equivalent compensation should be saved and given out only when workers encounter extreme shocks or anticipated shocks, during which the compensation will not affect their labor supply and its welfare value will not get discounted.
 
 \paragraph{Contributions} 
 Our paper makes three contributions to the literature on daily labor supply 
-of flexible-hour workers. The first is to provide a new, cleaner test %ing approach 
-and new, more compelling evidence for reference-dependent labor supply. Our results provide strong evidence for reference-dependent 
-preference among Singapore's taxi drivers, which is not a surprise given the mixed findings from numerous 
-studies in similar contexts. The novel aspect of our results is that we obtain such findings by exploiting
-an \textit{unanticipated} source of random income shocks, C\&NS, that are naturally encountered by workers
-in the market to identify the income reference effect. This constitutes a direct and stronger test for the
+of flexible-hour workers. The first is to provide a new, cleaner test 
+and new, more compelling evidence for reference-dependent labor supply. 
+by exploiting an \textit{unanticipated} source of random income shocks, C\&NS, that are naturally encountered by workers
+in the market. This constitutes a direct and stronger test for the
 class of reference-dependent preference models described by \citet{kHoszegi2006model} or any models that 
 allow the reference point to adjust to workers' anticipation. This extends the literature, because the
 interpretation of our results is free of concern about the relative strength of anticipated versus 
@@ -175,7 +169,7 @@ unanticipated variation in income or the exact process by which the reference po
 In addition, our independent variables, C\&NS, are not only unanticipated, but also \textit{externally} 
 determined---since they are passengers', not drivers', decisions---which enables a better identification
 strategy. Previous studies use two common approaches to identify reference dependence. The first is to
-look for negative correlation between hours of work and average daily wage, as in \citet{camerer1997labor}. \citet{oettinger1999empirical} and \citet{farber2005tomorrow}  criticize this approach on three grounds:
+look for negative correlation between hours of work and average daily wage, as in \citet{camerer1997labor}. \citet{oettinger1999empirical} and \citet{farber2005tomorrow} criticize this approach on three grounds:
 (1) the use of realized earnings, which are an equilibrium outcome, as a proxy for wage rate is questionable; 
 (2) wages are not constant within a day, and using average daily wage may constitute a misspecification; and
 (3) construction of the wage rate, by dividing total earnings by total hours of work, is prone to measurement
@@ -198,37 +192,37 @@ decisions to cancel or not show up and workers' decisions to continue supplying 
 to be much smaller than the set of market factors that influence two related outcomes by the same agent,
 workers' earnings and labor supply, that may bias estimates using the intra-day income approach.
 
-We exploit a novel dataset provided by a major taxi operator in Singapore,
-which covers 3 months of street hail trips and taxi bookings by more than 30,000 drivers and comprises 34
-million observations for the period December 1, 2016--February 28, 2017. To the best of our knowledge, 
-this is the first taxi dataset of this size used in a research study that contains detailed information 
-about not only street hail trips and taxi bookings, but also C\&NS. 
+%We exploit a novel dataset provided by a major taxi operator in Singapore,
+%which covers 3 months of street hail trips and taxi bookings by more than 30,000 drivers and comprises 34
+%million observations for the period December 1, 2016--February 28, 2017. To the best of our knowledge, 
+%this is the first taxi dataset of this size used in a research study that contains detailed information 
+%about not only street hail trips and taxi bookings, but also C\&NS. 
+%
+%We employ fixed effects regression as our main methodology, utilizing multiple sets of fixed effects 
+%to absorb unobserved market conditions and driver characteristics. We also leverage the rich set of 
+%features present in our dataset to address various endogeneity concerns. Our estimates are robust, 
+%in terms of both direction and magnitude, across a wide range of specifications. We conduct a placebo 
+%test to further confirm that our results are not driven by unobserved market factors or selection. Lastly, 
+%although our main specification is linear, we have conducted extensive specification checks that allow for
+%various forms of nonlinearity to confirm that our results are not driven by functional assumptions.
+%
+%As a robustness check, we also employ an instrumental variables approach, using the free taxicab count near 
+%the pickup location and around the booking time as exogenous source of variation affecting the C\&NS rate.
+%The rationale and the results of this approach are discussed in Appendix \ref{apx:iv}. 
+%Since the exogeneity test fails to reject the exogeneity of C\&NS, 
+%we choose to use fixed effects regression as our main approach.
 
-We employ fixed effects regression as our main methodology, utilizing multiple sets of fixed effects 
-to absorb unobserved market conditions and driver characteristics. We also leverage the rich set of 
-features present in our dataset to address various endogeneity concerns. Our estimates are robust, 
-in terms of both direction and magnitude, across a wide range of specifications. We conduct a placebo 
-test to further confirm that our results are not driven by unobserved market factors or selection. Lastly, 
-although our main specification is linear, we have conducted extensive specification checks that allow for
-various forms of nonlinearity to confirm that our results are not driven by functional assumptions.
-
-As a robustness check, we also employ an instrumental variables approach, using the free taxicab count near 
-the pickup location and around the booking time as exogenous source of variation affecting the C\&NS rate.
-The rationale and the results of this approach are discussed in Appendix \ref{apx:iv}. 
-Since the exogeneity test fails to reject the exogeneity of C\&NS, 
-we choose to use fixed effects regression as our main approach.
-
-Our second contribution is that our results provide clean and convincing evidence for the adaptive nature
+Our second contribution is that our results provide evidence for the adaptive nature
 of the reference point. This complements findings in the growing literature on the path of reference points
 over time \citep{dellavigna2017reference,thakral2018daily}. We find that the timing of income shocks matters:
 A recent C\&NS has a stronger effect on labor decisions, and the effect lasts for no more than 2 hours. 
 In this regard, our results are most closely related to those of \citet{thakral2018daily}, who find that 
 recent earnings have stronger effects on the hazard of stopping work than distant earnings in the same day.
-In one of our specifications, we account for \citeauthor{thakral2018daily}'s effects by controlling for
-individual earnings during a different time period in the shift, but C\&NS effects persist. Therefore,
-though similar in nature, \citeauthor{thakral2018daily}'s model does not entirely explain our results. 
-It also shows that different sources of income shocks may change the reference in different ways, or at
-a different speed, and more research should be done on this subject.
+%In one of our specifications, we account for \citeauthor{thakral2018daily}'s effects by controlling for
+%individual earnings during a different time period in the shift, but C\&NS effects persist. Therefore,
+%though similar in nature, \citeauthor{thakral2018daily}'s model does not entirely explain our results. 
+%It also shows that different sources of income shocks may change the reference in different ways, or at
+%a different speed, and more research should be done on this subject.
 
 Our third contribution is that we investigate not only the extensive margin of labor supply---the decision
 to stop working---but also the intensive margin: %how long to work and 
@@ -254,8 +248,7 @@ but our interest is in how workers cope with C\&NS rather than customer satisfac
 
 The rest of the paper is organized as follows. 
 Section \ref{sec:background} presents the background of Singapore's taxi industry and an overview of the data. 
-We %develop a stylized model of daily labor supply in Section \ref{sec:theory}, 
-report the main results in Section \ref{sec:main}, and conclude in Section \ref{sec:conclude}.
+We report the main results in Section \ref{sec:main}, and conclude in Section \ref{sec:conclude}.
 
 \section{Industry Background and Data Description}
 \label{sec:background}
@@ -277,10 +270,11 @@ per million residents. In contrast, New York City, with 783 sq km in land area a
 pick up passengers in the outer boroughs.}, for an average of 1,540 cabs per million residents.
 
 There are seven taxi operators 
-%\footnote{\url{https://www.lta.gov.sg/content/ltaweb/en/public-transport/taxis\%20and\%20private\%20hire\%20cars/taxi-operators.html}} 
+%\footnote{\url{https://www.lta.gov.sg/content/ltaweb/en/public-transport/taxis\%20and\%20private\%20hire\%20cars/taxi-operators.html}}
 and two main ride-hailing services (Grab and Uber) in Singapore.\footnote{Grab acquired Uber's
 Southeast Asia business in March 2018. %, and the acquisition is pending approval by the Competition Commission of Singapore. 
-During the period in our sample, the two companies operated independently.} Only Singaporean citizens
+%During the period in our sample, the two companies operated independently.
+} Only Singaporean citizens
 with a Taxi Driver's Vocational License are allowed to work as taxi drivers. Drivers can join either 
 as hirer drivers, who lease cabs directly from the operators, or as relief drivers, who arrange the 
 lease privately with hirers. Daily rental fee varies with the model and age of the vehicle, 
@@ -291,8 +285,8 @@ highly variable, with various surcharges based on time and location of the trip.
 For standard taxis, the base fare consists of (1) a flag-down fare of 3.2 to 3.9 SGD, 
 (2) a variable distance rate of 22 to 25 cents for every 400 m in the first 10 km and for every 350 m thereafter, 
 and (3) a waiting time fare of 22 to 25 cents for every 45 seconds. Time-based surcharges can be as high as 50\% 
-of the meter fare between midnight and 6:00 a.m. Location surcharges range from 2 to 5 SGD. Bookings incur a fixed
-fee, which varies with pick-up time, taxi type, and how far in advance the booking is made. For normal taxis,
+of the meter fare between midnight and 6:00 a.m. Location surcharges range from 2 to 5 SGD. 
+Bookings incur a fixed fee, which varies with pick-up time, taxi type, and how far in advance the booking is made. For normal taxis,
 the booking fee is 3.3 SGD during peak hours (6:00 p.m. to midnight every day and 6:00 a.m. to 9:30 a.m. 
 on weekdays) and 2.3 SGD during non-peak hours; however, it can be as high as 20 SGD for advance booking
 with Chrysler cabs. The booking fee is added to the trip bill after the trip is completed. 
@@ -429,6 +423,11 @@ In this section, we outline our regression models and discuss the implications o
 We first look at labor supply and examine the decision to stop work after a C\&NS.
 We then study drivers' productivity after a C\&NS by examining the earnings in the immediate hour after each trip. 
 Competing explanations are discussed and ruled out at the end of the section.
+
+
+
+The main threats to our empirical strategy are: (1) unobserved demand and apply factors, (2) unobserved drivers' plans and motivation, (3) drivers' ability to predict C\&NS, and (4) fatigue due to time with passenger. We conduct several placebo tests and rule out threat (1): C\&NS have no effects on nearby vacant drivers, who are subject to the same market conditions as the drivers who encounter C\&NS. Moreover, the C\&NS effects persist even after controlling for hour\(\times\)day-of-week\(\times\)building fixed effects as well as time-varying measures of market thickness at both local and global scales. We show that threat (2) cannot explain the C\&NS effects for two reasons. First, past earnings, which should reflect drivers' plans and motivation, do not predict future C\&NS occurrence. Second, the results are robust even when we limit the sample to a subset of the data in which drivers do not know the booking destination and are unable to plan ahead. Driver fixed effects, driver\(\times\)month fixed effects, driver\(\times\)day-of-week, and driver\(\times\)region\footnote {The Singapore government divides Singapore into 5 regions, 55 areas, and 323 zones for development purpose} fixed effects are separately included in different specifications to control for threat (3) and the results remain robust in all these specifications. We explicitly control for threat (4) with the number of break minutes and minutes with passengers in the last hour, and the effects of these factors are small and, in most specifications, insignificant, and hence, unable to account for our results.
+
 
 To identify the effects of C\&NS, we exploit the fact that C\&NS are passengers' decisions and unlikely to be
 affected by driver behavior. However, there may still be endogeneity issues if passengers base their decisions 
