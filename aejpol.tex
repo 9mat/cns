@@ -838,84 +838,84 @@ With the possibility of reference-dependent preference, policies that aim to com
 \end{table}
 
 
-\begin{table}[]
-	\caption{Earnings in next hour}
-	\label{tb:robustwage}
-    \centering
-    {
-    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \footnotesize
-    % \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
-    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
-    \toprule
-    \toprule
-    			&\multicolumn{5}{c}{\textit{Dependent variable}: Earnings in next hour (SGD)} \\
-    			\cmidrule{2-6}
-                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
-    \midrule
-    Cancellation (dummy)&      1.5933\sym{***}&      1.5454\sym{***}&      1.0872\sym{***}&      1.0181\sym{***}&      0.9841\sym{***}\\
-                &    (0.0515)         &    (0.0527)         &    (0.0526)         &    (0.0530)         &    (0.0530)         \\
-    \addlinespace
-    No-show (dummy)&      1.3647\sym{***}&      1.3299\sym{***}&      0.7567\sym{***}&      0.8554\sym{***}&      0.8246\sym{***}\\
-                &    (0.0814)         &    (0.0825)         &    (0.0828)         &    (0.0835)         &    (0.0833)         \\
-    \addlinespace
-    Weather \& Market thickness&         {}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
-    Break \& passenger time&         {}         &         {}         &         {Y}         &         {Y}         &         {Y}         \\
-    On-call time \& distance&         {}         &         {}         &         {}         &         {Y}         &         {Y}         \\
-    \(g(E_{it})\)&         {}         &         {}         &         {}         &         {}         &         {Y}         \\
-    \midrule
-    \textit{Average marginal effects} & & & & & \\
-    1 hour more of work&     -0.2404\sym{***}         &     -0.2420\sym{***}         &      0.0501\sym{***}         &      0.0465\sym{***}         &      0.2737\sym{***}         \\
-                &    (0.0100)         &    (0.0100)         &    (0.0115)         &    (0.0115)         &    (0.0177)         \\
-    \addlinespace
-    10 SGD more of earnings&                     &                     &                     &                     &     -0.1218\sym{***}         \\
-                &                     &                     &                     &                     &    (0.0099)         \\
-    \midrule
-    Mean earnings in next hour&     \num{21.6}         &     \num{21.6}         &     \num{21.6}         &     \num{21.6}         &     \num{21.6}         \\
-    Observations&\num{3304680}         &\num{3263901}         &\num{3263901}         &\num{3262162}         &\num{3262162}         \\
-    % Observations without singletons&\num{2484277}         &\num{2448085}         &\num{2448085}         &\num{2446493}         &\num{2446493}         \\
-    Drivers     & \num{31762}         & \num{31757}         & \num{31757}         & \num{31757}         & \num{31757}         \\
-    \(R^2\)     &      0.3952         &      0.3971         &      0.4036         &      0.4037         &      0.4041         \\
-    \bottomrule
-    \end{tabularx}
-    % from quitspl1X0.tex - HL
-    }
-	\begin{tablenotes}
-	\small
-        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a the total earnings earned in 60 minutes immediately following the booking. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
-	\end{tablenotes}
-\end{table}
+% \begin{table}[]
+% 	\caption{Earnings in next hour}
+% 	\label{tb:robustwage}
+%     \centering
+%     {
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \footnotesize
+%     % \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
+%     \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+%     \toprule
+%     \toprule
+%     			&\multicolumn{5}{c}{\textit{Dependent variable}: Earnings in next hour (SGD)} \\
+%     			\cmidrule{2-6}
+%                 &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+%     \midrule
+%     Cancellation (dummy)&      1.5933\sym{***}&      1.5454\sym{***}&      1.0872\sym{***}&      1.0181\sym{***}&      0.9841\sym{***}\\
+%                 &    (0.0515)         &    (0.0527)         &    (0.0526)         &    (0.0530)         &    (0.0530)         \\
+%     \addlinespace
+%     No-show (dummy)&      1.3647\sym{***}&      1.3299\sym{***}&      0.7567\sym{***}&      0.8554\sym{***}&      0.8246\sym{***}\\
+%                 &    (0.0814)         &    (0.0825)         &    (0.0828)         &    (0.0835)         &    (0.0833)         \\
+%     \addlinespace
+%     Weather \& Market thickness&         {}         &         {Y}         &         {Y}         &         {Y}         &         {Y}         \\
+%     Break \& passenger time&         {}         &         {}         &         {Y}         &         {Y}         &         {Y}         \\
+%     On-call time \& distance&         {}         &         {}         &         {}         &         {Y}         &         {Y}         \\
+%     \(g(E_{it})\)&         {}         &         {}         &         {}         &         {}         &         {Y}         \\
+%     \midrule
+%     \textit{Average marginal effects} & & & & & \\
+%     1 hour more of work&     -0.2404\sym{***}         &     -0.2420\sym{***}         &      0.0501\sym{***}         &      0.0465\sym{***}         &      0.2737\sym{***}         \\
+%                 &    (0.0100)         &    (0.0100)         &    (0.0115)         &    (0.0115)         &    (0.0177)         \\
+%     \addlinespace
+%     10 SGD more of earnings&                     &                     &                     &                     &     -0.1218\sym{***}         \\
+%                 &                     &                     &                     &                     &    (0.0099)         \\
+%     \midrule
+%     Mean earnings in next hour&     \num{21.6}         &     \num{21.6}         &     \num{21.6}         &     \num{21.6}         &     \num{21.6}         \\
+%     Observations&\num{3304680}         &\num{3263901}         &\num{3263901}         &\num{3262162}         &\num{3262162}         \\
+%     % Observations without singletons&\num{2484277}         &\num{2448085}         &\num{2448085}         &\num{2446493}         &\num{2446493}         \\
+%     Drivers     & \num{31762}         & \num{31757}         & \num{31757}         & \num{31757}         & \num{31757}         \\
+%     \(R^2\)     &      0.3952         &      0.3971         &      0.4036         &      0.4037         &      0.4041         \\
+%     \bottomrule
+%     \end{tabularx}
+%     % from quitspl1X0.tex - HL
+%     }
+% 	\begin{tablenotes}
+% 	\small
+%         Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a the total earnings earned in 60 minutes immediately following the booking. All regressions include driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. Control variables for \textit{Weather} are temperature, relative humidity, PM 2.5, rain duration and rainfall. Control variables for \textit{Market thickness} are the number of bookings and street hail trips within 500 m and 5 minutes, within 1,000 m and 5 minutes, and within the same zone and clock hour, and the number of vacant vehicle within 500 m and 5 minutes. Control variables for \textit{Break and passenger time} are the number of break minutes and the number of minutes with passenger from shift start, and in the last hour. \textit{On-call time and distance} are the duration and distance the drivers travel to pick up passengers. \(g(E_{it})\) is a cubic function of the cumulative earnings. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+% 	\end{tablenotes}
+% \end{table}
 
-\begin{table}[]
-	\caption{Dynamic Effects of Cancellations and No-shows}
-	\label{tb:dynw}
+% \begin{table}[]
+% 	\caption{Dynamic Effects of Cancellations and No-shows}
+% 	\label{tb:dynw}
 
-    {
-    \footnotesize
-    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-    \begin{tabularx}{\textwidth}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
-    \toprule
-    \toprule
-                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
-                &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings within 30 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline30 to 60 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline60 to 90 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline90 to 120 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline120 to 150 minutes after end of trip}\\
-    \midrule
-    Cancellation (dummy)&       0.817\sym{***}&       0.300\sym{***}&       0.168\sym{***}&      -0.002         &      -0.055         \\
-                &     (0.032)         &     (0.038)         &     (0.042)         &     (0.044)         &     (0.047)         \\
-    \addlinespace
-    No-show (dummy)&       0.786\sym{***}&       0.181\sym{***}&      -0.003         &      -0.005         &      -0.022         \\
-                &     (0.050)         &     (0.059)         &     (0.065)         &     (0.071)         &     (0.074)         \\
-    \midrule
-    Observations&     \num{3448782}         &     \num{3262162}         &     \num{3080039}         &     \num{2901961}         &     \num{2728509}         \\
-    \(R^2\)     &       0.375         &       0.339         &       0.327         &       0.329         &       0.328         \\
-    \bottomrule
-    \end{tabularx}
-    % from dynwspl1X0.tex
-    }
-	\begin{tablenotes}
-	\small 
-      Each column is a separate regression. An observation is a booking. The dependent variable is the earnings earned in the duration after the end of the trip specified in each column. All regressions control for driver fixed effects, hour\(\times\)day- of-week\(\times\)building fixed effects, date fixed effects,  cumulative hours and income, weather, market thickness, break time, passenger on board time, distance and duration to pickup. Standard errors clustered by driver in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
-    \end{tablenotes}
-\end{table}
+%     {
+%     \footnotesize
+%     \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+%     \begin{tabularx}{\textwidth}{l*{5}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
+%     \toprule
+%     \toprule
+%                 &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+%                 &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings within 30 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline30 to 60 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline60 to 90 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline90 to 120 minutes after end of trip} &\multicolumn{1}{>{\centering\arraybackslash}p{2.2cm}}{Earnings\newline120 to 150 minutes after end of trip}\\
+%     \midrule
+%     Cancellation (dummy)&       0.817\sym{***}&       0.300\sym{***}&       0.168\sym{***}&      -0.002         &      -0.055         \\
+%                 &     (0.032)         &     (0.038)         &     (0.042)         &     (0.044)         &     (0.047)         \\
+%     \addlinespace
+%     No-show (dummy)&       0.786\sym{***}&       0.181\sym{***}&      -0.003         &      -0.005         &      -0.022         \\
+%                 &     (0.050)         &     (0.059)         &     (0.065)         &     (0.071)         &     (0.074)         \\
+%     \midrule
+%     Observations&     \num{3448782}         &     \num{3262162}         &     \num{3080039}         &     \num{2901961}         &     \num{2728509}         \\
+%     \(R^2\)     &       0.375         &       0.339         &       0.327         &       0.329         &       0.328         \\
+%     \bottomrule
+%     \end{tabularx}
+%     % from dynwspl1X0.tex
+%     }
+% 	\begin{tablenotes}
+% 	\small 
+%       Each column is a separate regression. An observation is a booking. The dependent variable is the earnings earned in the duration after the end of the trip specified in each column. All regressions control for driver fixed effects, hour\(\times\)day- of-week\(\times\)building fixed effects, date fixed effects,  cumulative hours and income, weather, market thickness, break time, passenger on board time, distance and duration to pickup. Standard errors clustered by driver in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+%     \end{tablenotes}
+% \end{table}
 
 \begin{table}[]
 %	\addtocounter{table}{-1}
