@@ -700,7 +700,8 @@ With the possibility of reference-dependent preference, policies that aim to com
 		\def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 		\footnotesize
 		% \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{c}}
-		\begin{tabular}{lccccccc}
+% 		\begin{tabular}{lccccccc}
+        \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{7}{S[table-format = 0.4, table-space-text-pre={**}, table-space-text-post={-**}]}}
 			\toprule
 			\toprule
 			                                &                             \multicolumn{5}{c}{Stopping work (dummy)}                              & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}}{Stopping work at 8.5 hours (dummy)}       & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}}{Stopping work at 9.5 hours (dummy)}       \\
@@ -730,7 +731,7 @@ With the possibility of reference-dependent preference, policies that aim to com
 			Drivers                         & \num{31961}             & \num{31958}             & \num{31958}             & \num{31958}             & \num{31958}             & \num{20026}                   & \num{16721}                   \\
 			\(R^2\)                         & 0.3342                  & 0.3348                  & 0.3361                  & 0.3361                  & 0.3374                  & 0.454                         & 0.489                         \\ 
 			\bottomrule
-		\end{tabular}
+		\end{tabularx}
 		% combine quitspl1X0.tex and robustquitbyhour - HL
 	}
 \end{table}
