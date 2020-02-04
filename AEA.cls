@@ -564,7 +564,8 @@
   %\def\@oddhead{{\small\textit{\MakeUppercase{VOL. \@pubVolume\ \ NO. \@pubIssue\hfil\@shortTitle\hfil\thepage}}}}
   \def\@oddhead{{\small\textit{\MakeUppercase{\hfil\@shortTitle}\hfil\thepage}}}
 %  \def\@evenhead{{\small\textit{\MakeUppercase{\thepage\hfil\@issueName\hfil\@pubMonth\ \@pubYear}}}}
-  \def\@evenhead{{\small\textit{\thepage\hfil\MakeUppercase{\@issueName}}}}
+%   \def\@evenhead{{\small\textit{\thepage\hfil\MakeUppercase{\@issueName}}}}
+  \def\@evenhead{{\small\textit{\thepage\hfil}}
 }
 
 \if@JEP
