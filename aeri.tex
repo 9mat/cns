@@ -130,13 +130,12 @@ find evidence for drivers' daily income target. Other studies, such as
 We propose a novel approach, by exploiting \textit{unanticipated} sources of external 
 income shocks that workers encounter repeatedly over time, to test for reference-dependent labor supply.
 We focus on Singapore's taxi industry, and the income shocks we use are 
-booking cancellations and passenger no-shows---i.e., in which a passenger makes a booking but fails 
+booking cancellations and passenger no-shows (C\&NS hereafter)---i.e., in which a passenger makes a booking but fails 
 to follow through with the trip, resulting in the loss of time, mileage, and potential earnings
 for the driver. Passengers' decisions to cancel a booking or not show up are made with 
 little interaction with the driver, and hence are unlikely to be predicted by drivers and factored 
 into their daily income target prior to the booking. Since the subsequent wage rate is not affected 
-by these idiosyncratic events, the neoclassical model would predict no relationship between cancellations 
-and no-shows (C\&NS hereafter) and the subsequent supply of labor. In contrast, under reference-dependent 
+by these idiosyncratic events, the neoclassical model would predict no relationship between C\&NS and the subsequent supply of labor. In contrast, under reference-dependent 
 preference, we would expect drivers to work harder because after C\&NS, their realized earnings will fall 
 below the typical level they can achieve with the same amount of worked hours but without C\&NS. 
 
@@ -147,10 +146,10 @@ C\&NS and fade away afterward. Interestingly, the C\&NS effects are strongest wh
 is close to the average shift income, and become weaker and insignificant when the income 
 level is too high or too low. 
 The magnitude of the C\&NS effects is economically significant: A C\&NS
-is associated with 23\% reduction from the mean hazard rate of stopping work at a given time, and a no-show associated with 22\% reduction. 
-The cancellation effect is equivalent to that of additional 38 minutes of work, or additional 41 Singapore dollars 
-(SGD, 1 SGD = 0.7 USD during the data period) of realized earnings having on the decision to stop 
-(Table \ref{tb:robustquit}, Column (5)). 
+is associated with 22-23\% reduction from the mean hazard rate of stopping work at a given time, %and a no-show associated with 22\% reduction. The cancellation effect
+which is equivalent to that of additional 38 minutes of work, or additional 41 Singapore dollars 
+(SGD, 1 SGD = 0.7 USD during the data period) of realized earnings having on the decision to stop.
+% (Table \ref{tb:robustquit}, Column (5)). 
 
 
 %These results have important policy implications. Negative shocks are an integral part of our lives: Researchers' articles are rejected by editors, factory workers are unable to work due to machine breakdowns, and taxi drivers' bookings get cancelled by riders. When observing a worker encounter such unanticipated and unwanted events,  firms and policy makers may want to compensate the worker to make up for their loss. However, if income targeting behavior is present, it is important to recognize that the compensation can have the side effect of reducing the workers' labor supply and own income. From a firm's perspective, this can be detrimental to its profit. From a policy marker's perspective, due to reduced marginal utility of income after reaching the reference point, the perceived value from such a compensation will be smaller when giving to someone who is near the target than giving to someone who is really behind the target. In fact, to maximize the perceived welfare impact of a compensation, it is best not to give it to the workers right away as part of their daily income, since not only will it reduce the motivation to work and hence reduce the workers' own income, but also the workers may even discount its value once they pass the target. Instead, the equivalent compensation should be saved and given out only when workers encounter extreme shocks or anticipated shocks, during which the compensation will not affect their labor supply and its welfare value will not get discounted.
@@ -170,12 +169,12 @@ Further, our independent variables, C\&NS, are not only unanticipated, but also 
 determined---since they are passengers', not drivers', decisions---which enables a better identification
 strategy. Previous studies use two common approaches to identify reference dependence. The first is to
 look for negative correlation between hours of work and average daily wage, as in \citet{camerer1997labor}; %. \citet{oettinger1999empirical} and \citet{farber2005tomorrow} criticize this approach on three grounds:  (1) the use of realized earnings, which are an equilibrium outcome, as a proxy for wage rate is questionable;  (2) wages are not constant within a day, and using average daily wage may constitute a misspecification; and (3) construction of the wage rate, by dividing total earnings by total hours of work, is prone to measurement error and division bias.  
-and the second approach is to examine the correlation between intra-day earnings and the hazard of stopping work throughout the day. 
+and the second  is to examine the correlation between intra-day earnings and the hazard of stopping work throughout the day. 
 %Although this approach reduces concern about measurement error and division bias, and is able to account for the dynamic nature of earnings and labor supply, it is not entirely free of potential endogeneity issues. Intra-day income, in the form of either cumulative earnings up to a certain point in time, or total earnings in a specific hour into the shift, is an outcome variable jointly determined by market demand and workers' behaviors, and is likely correlated with unobserved market factors and workers' characteristics that may also contribute to workers' decision to stop working. 
 Both approaches are prone either to misspecification, measurement error, division bias, or endogeneity concern due to omitted variables \citep{oettinger1999empirical, farber2005tomorrow}. 
 
-In contrast, the shocks we use in this paper---decisions made by agents on the other side of the market without
-any direct interaction with workers---are external, and hence unlikely to be subject to confounding factors 
+In contrast, the shocks we use in this paper %---decisions made by agents on the other side of the market without any direct interaction with workers---
+are external, and hence unlikely to be subject to confounding factors 
 due to unobserved worker heterogeneity. The shocks may still be correlated with market conditions, however, 
 and to address this issue we leverage our novel dataset to construct a rich set of control variables---arguably 
 the most detailed set of controls in this line of study so far. Even in this regard, our approach still tends
@@ -238,8 +237,7 @@ but our focus is on the behavioral effects rather than the operational aspects o
 The paper is also related to the literature on service quality management \citep{cohen2018frustration},
 but our interest is in how workers cope with C\&NS rather than customer satisfaction and retention. 
 
-The rest of the paper is organized as follows. Section \ref{sec:background} presents the background of Singapore's taxi industry and %an overview of 
-the data. We report the main results in Section \ref{sec:main}, and conclude in Section \ref{sec:conclude}.
+%The rest of the paper is organized as follows. Section \ref{sec:background} presents the background of Singapore's taxi industry and %an overview of the data. We report the main results in Section \ref{sec:main}, and conclude in Section \ref{sec:conclude}.
 
 \section{Industry Background and Data Description}
 \label{sec:background}
@@ -267,28 +265,19 @@ per million residents, which is more than 3 times that in New York City.
 % } 
 % There are seven taxi operators. 
 %Only Singaporean citizens with a Taxi Driver's Vocational License are allowed to work as taxi drivers. Drivers can join either as hirer drivers, who lease cabs directly from the operators, or as relief drivers, who arrange the lease privately with hirers. 
-Drivers rent vehicles from taxi operators at a daily rental between 70 SGD and 120 SGD, depending on the model and age of the vehicle.
+Drivers rent vehicles from taxi operators at a daily rental of 70-120 SGD, depending on the model and age of the vehicle.
 %, and typically falls between 70 SGD and 120 SGD.
 
-All cabs in Singapore are fitted with electronic meters. Taxi fare structures are regulated but 
-highly variable, with various surcharges based on time and location of the trip. 
+%All cabs in Singapore are fitted with electronic meters. 
+Taxi fare structures in Singapore are regulated but highly variable, with various surcharges based on time and location of the trip. 
 %For standard taxis, the base fare consists of (1) a flag-down fare of 3.2 to 3.9 SGD, (2) a variable distance rate of 22 to 25 cents for every 400 m in the first 10 km and for every 350 m thereafter, and (3) a waiting time fare of 22 to 25 cents for every 45 seconds. Time-based surcharges can be as high as 50\% of the meter fare between midnight and 6:00 a.m. Location surcharges range from 2 to 5 SGD. 
- Bookings incur a fixed fee of %which varies with pick-up time, taxi type, and how far in advance the booking is made. For normal taxis, the booking fee is 
-3.3 SGD during peak hours (6:00 p.m. to midnight every day and 6:00 a.m. to 9:30 a.m. 
-on weekdays) and 2.3 SGD during non-peak hours.
+Booking taxis via mobile app, SMS, hotline, and web portal is very common; bookings incur a fixed fee of %which varies with pick-up time, taxi type, and how far in advance the booking is made. For normal taxis, the booking fee is 
+3.3 SGD during peak hours (6:00 p.m. to midnight every day and 6:00 a.m. to 9:30 a.m. on weekdays) and 2.3 SGD during non-peak hours. 
 The booking fee is added to the trip bill after the trip is completed. 
-Bookings can be made through a number of channels, including mobile app, SMS, hotline, and web portal.
-Mobile apps are by far the most popular way to book a cab, accounting for more than 57\% of bookings.
+%Bookings can be made through a number of channels, including mobile app, SMS, hotline, and web portal. Mobile apps are by far the most popular way to book a cab, accounting for more than 57\% of bookings.
 
-The booking fee is a nontrivial portion of the total fare. The typical booking fee (3.3 SGD) equals 
-23\% of the average trip fare exclusive of the booking fee. Furthermore, there is no penalty for C\&NS, which makes street hail trips 
-much more cost effective for passengers, except for the uncertainty of these trips. 
-As a result, if a passenger, while waiting for the booking, sees an empty taxi passing by, 
-it is likely that she will jump on the taxi and forgo the booking. By doing so, not only does she avoid
-paying the nontrivial booking fee, but also shorten the waiting time. Calling back to cancel the booking is optional,
-and hence this can result in either a cancellation or a no-show. Taxi drivers operate independently; 
-therefore, many C\&NS incidents are due to \textit{random} encounters between the waiting passenger and an
-empty taxi on the street.
+The booking fee is a nontrivial portion of the total fare. The typical booking fee (3.3 SGD) equals 23\% of the average trip fare exclusive of the booking fee. Furthermore, there is no penalty for C\&NS, which makes street hail trips 
+much more cost effective for passengers, except for the uncertainty of these trips. As a result, if a passenger, while waiting for the booking, sees an empty taxi passing by, it is likely that she will jump on the taxi and forgo the booking. By doing so, not only does she avoid paying the nontrivial booking fee, but also shorten the waiting time. Calling back to cancel the booking is optional, and hence this can result in either a cancellation or a no-show. Taxi drivers operate independently; therefore, many C\&NS incidents are due to \textit{random} encounters between the waiting passenger and an empty taxi on the street.
 
 The taxi operator employs a booking bidding system. The booking process proceeds as follows. 
 First, a passenger makes a booking %via one of the available channels and provides relevant information such as 
@@ -328,7 +317,7 @@ Following the literature \citep{farber2015you,agarwal2015singaporean}%,martin201
 , we cluster trips and bookings into shifts. A shift is defined as a series of trips and bookings less than 6 
 hours apart by the same driver. %In other words, any gap between two consecutive trips or bookings of more than 6 hours marks the end of one shift and the beginning of the next. 
 %Summary statistics for shifts are reported in Panel B of Table \ref{tb:sumstat1}. 
-We identified 2,122,256 shifts in total. On average, a shift lasts for 8.6 hours and earns the driver 200 SGD. 
+We identified 2,122,256 shifts in total. An average shift lasts for 8.6 hours and earns the driver 200 SGD. 
 During a shift, an average driver is idle (not on fare) around one-half the time, and receives 11.2 street
 hail trips and 3.2 bookings. % Singapore taxi drivers' time utilization is on par with Uber and Lyft drivers,
 %and far above that of traditional taxi drivers in the U.S. \citep{cramer2016disruptive}.
@@ -338,7 +327,7 @@ a driver on average encounters a cancellation once every 4-5 shifts and a no-sho
 %or early evening (4:00 p.m. to 10:00 p.m.). The other 14\% of shifts start between 10:00 a.m. and 4:00 p.m.,
 %and a small percentage start in the late evening or early morning (10:00 p.m. to 4:00 a.m.).
 
-We focus on two outcome variables: probability of ending a shift after each trip and subsequent earnings after each trip. The first variable measures driver's labor supply, and the second measures driver's productivity. The probability of ending a shift refers to whether the current trip is the last trip of a shift. The subsequent earnings refer to the total fares that a driver earns during a period of time after a trip. The main specification uses earnings during the 60-minute time window immediately following the trips, but additional analyses also examine earnings in other time windows. 
+%We focus on two outcome variables: probability of ending a shift after each trip and subsequent earnings after each trip. The first variable measures driver's labor supply, and the second measures driver's productivity. The probability of ending a shift refers to whether the current trip is the last trip of a shift. The subsequent earnings refer to the total fares that a driver earns during a period of time after a trip. The main specification uses earnings during the 60-minute time window immediately following the trips, but additional analyses also examine earnings in other time windows. 
 
 \subsection{Location and status data}
 All taxis in Singapore are equipped with an in-vehicle unit that records the cab's status and GPS 
@@ -347,9 +336,9 @@ observe, at a very fine temporal frequency, the precise location of the vehicle 
 
 \subsection{Control group, treated group, and placebo group}
 A major threat to our identification strategy is the possibility that the market condition at the end of a C\&NS is not comparable to that at the end of a completed trip. For instance, a big sport event or a concert may generate a lot of demand to a specific location and a lot of C\&NS as well, and a driver who receives a C\&NS during such an event can easily find another job afterwards.
-To avoid such circumstances, our main analyses will use a subset of the data in which taxi drivers are exposed to almost identical environment. The subset of the data that we use are the bookings after which taxi drivers become available and actively search for jobs for at least three minutes. In other words, we exclude all street hail trips as well as the subset of bookings where the drivers find a job within three minutes. In the language of experimental design, our control group is the decisions made by drivers who have no immediate pickups after completing a booking, and the treated group is the decisions made by drivers who have no immediate pickups after ending a C\&NS. As we show in various robustness checks, our results are robust to other data selection, such as using the subsample of all bookings, or the full sample of both bookings and street hail trips.% results in similar estimates for the C\&NS effects.
+To avoid such circumstances, our main analyses will use a subset of the data in which taxi drivers are exposed to almost identical environment. The subset of the data that we use are the bookings after which taxi drivers become available and actively search for jobs for at least three minutes. In other words, we exclude all street hail trips as well as the subset of bookings where the drivers find a job within three minutes. In the language of experimental design, our control group is the decisions made by drivers who have no immediate pickups after completing a booking, and our treated group is the decisions made by drivers who have no immediate pickups after ending a C\&NS. As we show in various robustness checks, our results are robust to other data selection, such as using the subsample of all bookings, or the full sample of both bookings and street hail trips.% results in similar estimates for the C\&NS effects.
 
-To credibly rule out the influence of market conditions on our results, we conduct a placebo test. We use vacant drivers who completed a booking within a small radius and time window from a C\&NS as the placebo subjects. Due to time and spatial proximity, these drivers are likely to be exposed to the same market environment as those who receive C\&NS. The placebo effect, which is the difference in subsequent labor decisions between the placebo group and the control group, would reflect the portion of the C\&NS effects that is  due to the correlation with market factors. Our analysis shows that the placebo effect is small and statistically insignificant, which rules out the correlation with market conditions as the explanation for the C\&NS effects, and suggests that the C\&NS effects that we identify are causal.
+To credibly rule out the influence of market conditions on our results, we conduct a placebo test. We use vacant drivers who completed a booking within a small radius and time window from a C\&NS as the placebo subjects. Due to time and spatial proximity, these drivers are likely to be exposed to the same market environment as those who receive C\&NS. The placebo effect, which is the difference in subsequent labor decisions between the placebo group and the control group, would reflect the portion of the C\&NS effects that is  due to the correlation with market factors. Our analysis shows that the placebo effect is small and statistically insignificant, which rules out the correlation with market conditions as the explanation for the C\&NS effects, and suggests our identified C\&NS effects are causal.
 
 
 \subsection{Model-free evidence}
@@ -358,7 +347,7 @@ This section presents several patterns from the hourly aggregated data. %We cons
 The left panel of Figure \ref{fg:quitbyhour}
 shows the proportion of drivers who stop work after each hour of a shift, separately for
 hours with some C\&NS (dashed line) and without C\&NS (solid line).
-The hazard rate of stopping increases steadily with the duration the drivers stay on the job.%, which can be explained by the increasing marginal disutlity of working. 
+%The hazard rate of stopping increases steadily with the duration the drivers stay on the job, which can be explained by the increasing marginal disutlity of working. 
 What is interesting is that, throughout the shift, the rate of stopping is consistently lower in the hours with some C\&NS than the hours without any C\&NS. The drivers, on average, are less likely to end the shift in the next hour after encountering C\&NS, regardless of how long they have been on the job.
 
 The right panel of Figure \ref{fg:quitbyhour} shows the average earnings in the next hour if the drivers continue to work, separately for hours with some C\&NS (dashed line) and without any C\&NS (solid line).
@@ -367,8 +356,8 @@ Regardless of the timing in the shift, driver-hours with some C\&NS are associat
 
 
 The above patterns demonstrate %a significant negative correlation between C\&NS and the decision to stop work, as well as a significant positive correlation between C\&NS and subsequent earnings. In other words, 
-that drivers are less likely to stop work and tend to earn more following C\&NS. In subsequent
-sections, we will develop regression models  that control for various sources of confounding factors and
+that drivers are less likely to stop work and tend to earn more following C\&NS. %In subsequent sections, 
+We next develop regression models  that control for various sources of confounding factors and
 potential endogeneity and present evidence for a causal relationship between C\&NS and driver behavior.
 
 \section{Models and Results}
@@ -380,10 +369,10 @@ potential endogeneity and present evidence for a causal relationship between C\&
 % Competing explanations are discussed and ruled out at the end of the section.
 
 To identify the effects of C\&NS, we exploit the fact that C\&NS are passengers' decisions and unlikely %to be
-affected by driver behavior, and hence variation in C\&NS encounters are exogenous from the drivers' perspective.
+affected by driver behavior, and hence variation in C\&NS encounters is exogenous from the drivers' perspective.
 Passengers have access to very little information about the driver during the booking process: They are informed of only the vehicle's plate number and the estimated time of arrival; and hence C\&NS are mostly due to passenger-specific shocks, such as hailing a random empty taxi that happens to pass.
 
-The main threats to our empirical strategy are: (1) unobserved demand and apply factors, (2) unobserved drivers' plans and motivation, (3) drivers' ability to predict C\&NS, and (4) fatigue due to time with passenger. We conduct several placebo tests and rule out threat (1): C\&NS have no effects on nearby vacant drivers, who are subject to the same market conditions as the drivers who encounter C\&NS. Moreover, the C\&NS effects persist even after controlling for hour\(\times\)day-of-week\(\times\)postal code fixed effects as well as time-varying measures of market thickness at both local and global scales.
+The main threats to our empirical strategy are: (1) unobserved demand and supply factors, (2) unobserved drivers' plans and motivation, (3) drivers' ability to predict C\&NS, and (4) fatigue due to time with passenger. We conduct several placebo tests and rule out threat (1): C\&NS have no effects on nearby vacant drivers, who are subject to the same market conditions as the drivers who encounter C\&NS. Moreover, the C\&NS effects persist even after controlling for hour\(\times\)day-of-week\(\times\)postal code fixed effects as well as time-varying measures of market thickness at both local and global scales.
 The 120,000 postal code fixed effects provide very fine control for spatial 
 heterogeneity, since in Singapore each postal code is associated with a unique building, and each building
 usually has a designated pickup point for taxis. As a result, our estimates of C\&NS effects are identified 
@@ -404,7 +393,8 @@ We also conduct a robustness check from a logistic regression on a subsample of 
 \label{eq:quit}
 {Quit}_{it} = \beta_{c}C_{it} + \beta_{ns} {NS}_{it} + \alpha_i +  f(h_{it}) + g(y_{it}) + X_{it}\gamma  +  \epsilon_{it}
 \end{equation}
-where $i$ denotes a driver and $t$ denotes a taxi trip or booking. ${Quit}_{it}$ is a binary indicator 
+where %$i$ denotes a driver and $t$ denotes a taxi trip or booking. 
+${Quit}_{it}$ is a binary indicator 
 %variable: ${Quit}_{it} = 1$
  if trip or booking $t$ is the last trip/booking in a shift by driver $i$%,and $Quit_{it} = 0$ otherwise
 . $C_{it}$ and ${NS}_{it}$ are indicator variables for
@@ -412,10 +402,11 @@ the cancellation and no-show status of the current booking%, i.e., $C_{it}=1$ if
 %by driver $i$ is cancelled, and $0$ otherwise; and ${NS}_{it}=1$ if trip $t$ by driver $i$ is a 
 %no-show, and $0$ otherwise
 . $\alpha_i$ is the driver fixed effect, which accounts for not only drivers' 
-preferences with respect to work and non-work activities, but also their individual propensity to receive 
+preferences for %with respect to 
+work and non-work activities, but also their individual propensity to receive 
 and accept a booking. 
 $f(h_{it})$ is a flexible function of the cumulative hours of work $h_{it}$, which controls for the baseline 
-hazard rate of stopping at different point in time in the shift. $g(y_{it})$ is a flexible function 
+hazard rate of stopping at different points in time in the shift. $g(y_{it})$ is a flexible function 
 of the cumulative income $y_{it}$.
 $X_{it}$ is the set of observable factors that affect stopping decisions.  
 It includes a set of time and location fixed effects and other market factors to account for 
@@ -425,7 +416,7 @@ about future working conditions.
 
 Results %of the linear probability model 
 are reported in Table \ref{tb:robustquit}. 
-The first specification, in Column (1), controls for driver fixed effects, hour\(\times\)day-of-week\(\times\) building fixed effects, date fixed effects, and a cubic function of the cumulative hours. The estimates %from this specification 
+The first specification, in Column (1), controls for driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. The estimates %from this specification 
 suggest that a cancellation is associated with an average decrease of 1.54 ppts (s.e. 0.09) in the hazard rate of stopping work, and a no-show with an average decrease
 of 1.16 ppts (s.e. 0.15). At the average hazard rate of stopping work of 5.35\%, this represents a 30\% reduction from the baseline hazard rate after a cancellation and 20\% reduction after a no-show.
 
@@ -435,7 +426,9 @@ of 1.16 ppts (s.e. 0.15). At the average hazard rate of stopping work of 5.35\%,
 
 Specification (2) adds weather conditions and a set of measures for market thickness to account for potential irregular demand and supply factors that are not captured by the time and location fixed effects. The added set of control variables does not cause any substantial changes in the estimates: The magnitudes of the C\&NS coefficients increase slightly to 1.67 ppt (s.e. 0.10) and 1.28 pt (s.e. 0.16). This is reassuring; the existing set of fixed effects appears capable of absorbing the major source of variation in unobserved market factors.
 
-Specification (3) adds controls for rest time and time with passenger on board to account for the effect of fatigue: If driving with passengers on board is more tiring than idle driving, then C\&NS may create an opportunity for the drivers to have a breather between jobs. We control for both cumulative rest and passenger time since the start of the shift and in the last hour, and the estimated C\&NS effects remain robust at -1.48 ppts (s.e. 0.10) and -1.14 ppts (s.e. 0.16). Thus, fatigue does not seem to explain our C\&NS effects. %This is consistent with anecdotal evidence from our discussion with local taxi drivers: C\&NS are commonly viewed as a nuisance rather than an opportunity for a breather.
+Specification (3) adds controls for rest time and time with passengers %on board
+ to account for the effect of fatigue: If driving with passengers %on board 
+is more tiring than idle driving, then C\&NS may create an opportunity for the drivers to have a breather between jobs. We control for both cumulative rest and passenger time since the start of the shift and in the last hour, and the estimated C\&NS effects remain robust at -1.48 ppts (s.e. 0.10) and -1.14 ppts (s.e. 0.16). Thus, fatigue does not seem to explain our C\&NS effects. %This is consistent with anecdotal evidence from our discussion with local taxi drivers: C\&NS are commonly viewed as a nuisance rather than an opportunity for a breather.
 
 Specification (4) adds distance and duration to the pickup point to address the potential selection bias by passenger due to waiting time and pickup conditions. This set of variables also has little effects on the estimation results: The C\&NS effects remain robust at -1.36 ppts (s.e. 0.10) and -1.31 ppts (s.e. 0.16).
 
@@ -443,7 +436,8 @@ Specification (5) controls for cumulative income effects. If the income target i
 are minimal, which suggests that the effects of realized earnings do not fully soak up the effects of unanticipated shocks caused by C\&NS, and hence, the fixed target theory does not fully explain our results. Consequently, our results can be taken as evidence in favor of an endogenous and/or adaptive reference point over a fixed reference point. 
 
 
-Table \ref{tb:robustquit} also reports the marginal effects of cumulative working hours and cumulative earnings. According to Specification (5), an additional hour of work on average increases the likelihood of stopping work by 1.97 ppts (s.e. 0.04). This effect may reflect either the increasing marginal disutility of work in the neoclassical theory, or the hour-targeting behavior in the reference-dependent preference theory. With a reduction of 1.23 ppts in the hazard rate of stopping work, the effect of a cancellation is equivalent to the effect of 37 minutes less on the job. Similarly, the effect of a no-show is equivalent to 35 minutes less of work. In addition, a 10 SGD increase in cumulative earnings increases the hazard rate of stopping by 0.30 ppts (s.e. 0.02), and hence, a cancellation has the same effect as having 41 SGD less in cumulative earnings, and a no-show 39 SGD less.
+Table \ref{tb:robustquit} also reports the marginal effects of cumulative working hours and cumulative earnings. According to Specification (5), an additional hour of work on average increases the likelihood of stopping work by 1.97 ppts (s.e. 0.04). This effect may reflect either the increasing marginal disutility of work in the neoclassical theory, or the hour-targeting behavior in the reference-dependent preference theory. With a reduction of 1.23 ppts in the hazard rate of stopping work, the effect of a cancellation (no-show) is equivalent to the effect of 37 (35) minutes less on the job. %Similarly, the effect of a no-show is equivalent to 35 minutes less of work. 
+In addition, a 10 SGD increase in cumulative earnings increases the hazard rate of stopping by 0.30 ppts (s.e. 0.02), and hence, a cancellation (no-show) has the same effect as having 41 (39) SGD less in cumulative earnings.%, and a no-show 39 SGD less.
 
 \subsubsection{Time-dependent hazard of stopping}
 The hazard rate of stopping changes substantially throughout the shift and failure to adequately control for the effects of cumulative hours can lead to spuriously significant estimates of the income effect due to strong correlation between hours and income% \citep{thakral2018daily}
@@ -453,10 +447,13 @@ The hazard rate of stopping changes substantially throughout the shift and failu
     Quit_{it} = \beta_c(h_{it})C_{it} + \beta_{ns}(h_{it}){NS}_{it} + \alpha_i(h_{it}) + g(h_{it}, y_{it}) + X_{it}\gamma(h_{it}) + \epsilon_{it}
 \end{equation}
 
-Equation \eqref{eq:lwr} allows for different hazard equations at different time in the shift, which means that the effects of not only hours but also C\&NS and other independent variables are allowed to shift with time. We use local weighted regressions to estimate this model \citep{cleveland1988locally}. For a given time $h$ in the shift, the regression solves a weighted least squares problem to obtain the estimated coefficients at $h$:
+Equation \eqref{eq:lwr} allows for different hazard equations at different time in the shift, which means that the effects of not only hours but also C\&NS and other independent variables are allowed to shift with time. We use local weighted regressions to estimate this model \citep{cleveland1988locally}. For a given time $h$ in the shift, the regression solves a weighted least squares problem to estimate the coefficients at $h$:
 \[\min_{\beta_c, \beta_{ns}, \alpha_i, \gamma, \lambda, g} \sum_{it} w(h_{it}-h) \left(Quit_{it} - (\beta_cC_{it} + \beta_{ns}{NS}_{it} + \alpha_i + g(y_{it}) + \lambda h_{it} + X_{it}\gamma\right))^2\]
 
-$w(h_{it}-h)$ is the weighting function, which typically gives more weight to observation closer to $h$. A local weighted regression with a uniform weight\footnote{A uniform weight with bandwidth $b$ means setting $w(h_{it}-h) = 1$ for observations with $|h_{it}-h|<b$ and setting $w(h_{it}-h) = 0$ otherwise. Another commonly used weight is the tricube weight: $w(h_{it}-h) = \left(1-(|h_{it}-h|/b)^3\right)^3$ if $|h_{it}-h|<b$, and $w(h_{it}-h) = 0$ otherwise.} is equivalent to an ordinary least squares (OLS) regression using a subset of the data around the point $h$. Columns (6) and (7) in Table \ref{tb:robustquit} report the estimates for the hazard equations at 8.5 hours and 9.5 hours into the shift. The estimates are, once again, robust to the functional assumption about the duration dependence of the hazard rate: A C\&NS is associated with 17\% to 20\% drop in the hazard rate of stopping.  This not only improves the confidence in the validity of our specification, but also provides strong evidence for the claim that C\&NS are random exogenous events over time. Furthermore, these results highlight an additional advantage of our approach---using random earnings shocks---over the usual approach of using cumulative income, since cumulative income is highly correlated
+$w(h_{it}-h)$ is the weighting function.%, which typically gives more weight to observation closer to $h$. A local weighted regression with a uniform weight
+\footnote{A uniform weight with bandwidth $b$ means setting $w(h_{it}-h) = 1$ for observations with $|h_{it}-h|<b$ and setting $w(h_{it}-h) = 0$ otherwise. Another commonly used weight is the tricube weight: $w(h_{it}-h) = \left(1-(|h_{it}-h|/b)^3\right)^3$ if $|h_{it}-h|<b$, and $w(h_{it}-h) = 0$ otherwise.} 
+%is equivalent to an ordinary least squares (OLS) regression using a subset of the data around the point $h$. 
+Columns (6) and (7) in Table \ref{tb:robustquit} report the estimates for the hazard equations at 8.5 hours and 9.5 hours into the shift. The estimates are, once again, robust to the functional assumption about the duration dependence of the hazard rate: A C\&NS is associated with 17\% to 20\% drop in the hazard rate of stopping.  This not only improves the confidence in the validity of our specification, but also provides strong evidence for the claim that C\&NS are random exogenous events over time. Furthermore, these results highlight an additional advantage of our approach---using random earnings shocks---over the usual approach of using cumulative income, since cumulative income is highly correlated
 with working hours, making it difficult to disentangle the two effects.  
 
 
@@ -496,7 +493,10 @@ In this section, we present estimates of the effects of C\&NS on drivers' subseq
 E_{it} = \beta_c C_{it} + \beta_{ns} {NS}_{it} + \alpha_i + f(h_{it}) + g(y_{it}) + X_{it}\gamma  + \epsilon_{it}
 \end{equation}
 
-$E_{it}$ is driver $i$'s earnings within an hour from the end of the booking, and the right-hand side variables are as defined in Equation \ref{eq:quit}. The first five columns in Table \ref{tb:robustwage} reports the estimates for various sets of fixed effects and control variables. The estimated effects of both cancellations and no-shows on the earnings in the next hour are positive and significant across all five specifications. The magnitudes of the effects are also robust to the inclusion of the additional sets of control variables: A cancellation is associated with an average increase between 0.98 SGD (s.e. 0.05, Specification (5)) and 1.59 SGD (s.e. 0.05, Specification (1)) in the earnings, and a no-show with an increase between 0.76 SGD (s.e. 0.08, Specification (3)) to 1.36 SGD (s.e. 0.08, Specification (1)). The only notable change in the estimated coefficients is due to the inclusion of the break time and the time with passenger in Specification (3), which seems to account for 30\% of the cancellation effect and 40\% the no-show effect in Specification (2). While fatigue does not seem to affect the decision to stop---accounting for only 10\% of the C\&NS effects on the hazard rate of stopping in Table \ref{tb:robustquit}---it seems to have a meaningful effect on the subsequent productivity. However, there is still 70\% of the cancellation effect and 60\% of the no-show effect on earnings that cannot be explained by fatigue, or by the additional sets of control variables in Specifications (4) and (5). The average earnings increase of 0.98 SGD in an hour after a cancellation, according to Specification (5) with the full set of controls, represents a 4.5\% increase from the baseline hourly earnings of 21.6 SGD, while the no-show effect, 0.82 SGD, represents a 3.8\% increase. The increase in the subsequent earnings suggests that the drivers choose to work not only  longer but also more diligently after encountering the negative events of C\&NS.
+$E_{it}$ is driver $i$'s earnings within an hour from the end of the booking%, and the right-hand side variables are as defined in Equation \ref{eq:quit}
+. The first five columns in Table \ref{tb:robustwage} report the estimates for various sets of fixed effects and control variables. The estimated effects of both cancellations and no-shows on the earnings in the next hour are positive and significant across all five specifications. The magnitudes of the effects are also robust to the inclusion of the additional sets of control variables: A cancellation is associated with an average increase between 0.98 SGD (s.e. 0.05, Specification (5)) and 1.59 SGD (s.e. 0.05, Specification (1)) in the earnings, and a no-show with an increase between 0.76 SGD (s.e. 0.08, Specification (3)) to 1.36 SGD (s.e. 0.08, Specification (1)). The only notable change in the estimated coefficients is with the inclusion of the break time and the time with passenger in Specification (3), which seems to account for 30\% of the cancellation effect and 40\% the no-show effect in Specification (2). While fatigue does not seem to affect the decision to stop---accounting for only 10\% of the C\&NS effects on the hazard rate of stopping in Table \ref{tb:robustquit}---it seems to have a meaningful effect on the subsequent productivity. However, there is still 70\% (60\%) of the cancellation (no-show) effect %and 60\% of the no-show effect 
+on earnings that cannot be explained by fatigue, or by the additional sets of control variables in Specifications (4) and (5). The average earnings increase of 0.98 SGD in an hour after a cancellation%, according to Specification (5) with the full set of controls,
+ represents a 4.5\% increase from the baseline hourly earnings of 21.6 SGD, while the no-show effect, 0.82 SGD, represents a 3.8\% increase. The increase in the subsequent earnings suggests that the drivers choose to work not only  longer but also more diligently after encountering the negative events of C\&NS.
 
 
 To see how the effects of C\&NS on earnings change over time, we reestimate Equation \eqref{eq:outcomes} changing the dependent variable to the earnings in different 30-minute intervals after the end of a trip. Columns (6)-(7) in Table \ref{tb:robustwage} report the estimation results for the earnings in the two 30-minute intervals in the second hour after the trip. The C\&NS effects decay quickly over time. The cancellation effect on the earnings in the interval 60 to 90 minutes after the trip is only an increase of 17 cents (s.e. 4.2), or 1.5\% increase from the average half-hourly earnings of 11.6 SGD. It becomes statistically insignificant after 90 minutes. The no-show effect decays even faster, and becomes statistically insignificant after one hour.
@@ -513,13 +513,16 @@ time, consistent with the results in Table \ref{tb:robustwage}.
 
 
 \subsection{How drivers increase the rate of earnings after cancellations and no-shows}
-The work arrangement in the taxi industry enables taxi drivers to have some room to adjust their rate of earnings if needed. When motivated, they may reduce their break time, are willing to take more jobs, drive faster, relocate to places with more earnings opportunities, etc. These actions may incur additional effort, but under heightened motivation and/or increased pressure to hit an income target, drivers may engage 
+The work arrangement in the taxi industry enables taxi drivers to have some room to adjust their rate of earnings if needed. When motivated, they may reduce their break time, be willing to take more jobs, drive faster, relocate to places with more earnings opportunities, etc. These actions may incur additional effort, but under heightened motivation and/or increased pressure to hit an income target, drivers may engage 
 in these actions to improve their income.
 
 Table \ref{tb:earningsbreakdown} shows that after C\&NS, taxi drivers adjust their labor and productivity along multiple margins. In the immediate hour following C\&NS, they reduce the break time by 15\% %or 0.82 minutes (
 for cancellation and by 16\% %or 0.86 minutes (
-for no-show from an average break time of 5.3 minutes), increase the speed when with passenger by more than 10\% to complete the jobs faster %(an increase of 4 km/h (s.e. 0.19) and 4.5 km/h (s.e. 0.32) from the average speed 35 km/h),
+for no-show from an average break time of 5.3 minutes, increase the speed when with passenger by more than 10\% to complete the jobs faster %(an increase of 4 km/h (s.e. 0.19) and 4.5 km/h (s.e. 0.32) from the average speed 35 km/h),
  and are able to finish 6\% more trips. They also drive faster and spend less time and distance to find the next job. These improvements add up and result in 1.74 minutes (s.e. 0.06) more fare-generating time with passenger on board in the hour following a cancellation and 1.68 minutes (s.e. 0.10) more following a no-show, a 7\% increase from the baseline of 25 minutes.  
+
+
+The effects of C\&NS on extensive and intensive margins combined lead to 3.4 SGD increase in shift income after a cancellation and 0.68 SGD increase after a no-show (Table A3).
 
 \begin{center}
 	[Insert Table \ref{tb:earningsbreakdown} here]
@@ -562,9 +565,9 @@ for no-show from an average break time of 5.3 minutes), increase the speed when 
 We conduct the following placebo tests to rule out the concern that the results are driven by unobserved demand and supply factors. We match each C\&NS with the nearest vacant driver who ends a trip within 3 minutes of the C\&NS, and assign imaginary placebo C\&NS to that driver. Alternatively, we also match each C\&NS with all the vacant drivers who end a trip within 200 m and 3 minutes of the C\&NS and use them as the second group of placebo subjects. Using the nearest driver is likely to give us a better match, while using all nearby drivers increases the sample size of placebo group and the statistical power of the test. Both of these tests are based on the following rationale: Due to location and time proximity, the drivers with the placebo C\&NS are subject to the same market conditions as the drivers with the actual C\&NS, and thus, the effects of the placebo C\&NS will capture any spurious correlation between C\&NS and labor supply due to market demand and supply. Both placebo tests %effects are estimated to 
 have negligible, statistically insignificant effects on either the decisions to stop or subsequent earnings. As a result, we can rule out unobserved market conditions as an explanation for our results.
 
-\begin{center}
-    [Insert Table \ref{tb:placebo} here]
-\end{center}
+%\begin{center}
+ %   [Insert Table \ref{tb:placebo} here]
+%\end{center}
 
 
 \paragraph{Alternative samples and specifications} Our results are robust to (1) alternative standard errors clustering strategy with either clustering by dates or two-way clustering by dates and drivers, (2) using the sample of all bookings, (3) using the sample of all bookings and street hail trips, (4) using different bandwidth (10 minutes and 5 minutes) and weighting scheme (uniform and tricube) for the local weighted regressions. The inclusion of driver\(\times\)month fixed effects, driver\(\times\)day-of-week fixed effects, and driver\(\times\)region fixed effects also does not affect our estimates, an evidence that unobserved driver factors cannot explain our results. The C\&NS effects are present even when we split the data into day shifts and night shifts, work days and off days, central business district (CBD) pickup and non-CBD pickups.  
@@ -615,7 +618,8 @@ have negligible, statistically insignificant effects on either the decisions to 
 \label{sec:conclude}
 In this paper, we investigate the effects of booking cancellations and passenger no-shows on taxi 
 drivers' behaviors. Our analysis shows that following C\&NS, drivers work longer and earn more per hour
-for the remaining work time of a shift, as if they strive to make up for the loss from such adverse actions, and the effects are strongest when the cumulative income is close to the average shift income. 
+for the remaining work time of a shift%, as if they strive to make up for the loss from such adverse actions
+, and the effects are strongest when the cumulative income is close to the average shift income. 
 These effects are strong in the immediate following hour and fade away afterward. Furthermore, the effects are most pronounced when the cumulative income is approaching the typical daily average income, and become small and insignificant when the cumulative income is either too low or too high.
 
 
