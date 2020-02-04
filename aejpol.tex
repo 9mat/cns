@@ -595,32 +595,32 @@ We conduct the following placebo tests to rule out the concern that the results 
 \end{center}
 
 
-\paragraph{Alternative samples and specifications} Our results are robust to (1) alternative standard errors by either clustering by dates or two-way clustering by dates and drivers, (2) using the sample of all bookings, (3) using the sample of all bookings and street hail trips, (4) using different bandwidth (10 minutes and 5 minutes) and weighting scheme (uniform and tricube) for the local weighted regressions. The inclusion of the driver by month fixed effects, the drivers by day of week fixed effects, and the driver by region fixed effects also does not affect our estimates, an evidence that unobserved driver factors cannot explain our results. The C\&NS effects are present when we split the data into day shifts and night shifts, work days and off days, central business district (CBD) pickup and non-CBD pickups,
+\paragraph{Alternative samples and specifications} Our results are robust to (1) alternative standard errors by either clustering by dates or two-way clustering by dates and drivers, (2) using the sample of all bookings, (3) using the sample of all bookings and street hail trips, (4) using different bandwidth (10 minutes and 5 minutes) and weighting scheme (uniform and tricube) for the local weighted regressions. The inclusion of the driver by month fixed effects, the drivers by day of week fixed effects, and the driver by region fixed effects also does not affect our estimates, an evidence that unobserved driver factors cannot explain our results. The C\&NS effects are present when we split the data into day shifts and night shifts, work days and off days, central business district (CBD) pickup and non-CBD pickups. 
 
-Table \ref{tb:robustcheck} presents a list of robustness checks that we conduct to ensure that our results are not sensitive to model specification or sample selection. In the first two rows, we try different clustering strategies  to make sure that the significance of the C\&NS is not driven solely by the size of the sample or the failure to account for the correlation structure between observations. In the main analyses, we have used clustering by drivers, and the estimates here show that clustering by dates, or two-way clustering by both dates and drivers result in similar levels of statistical significance. 
+% Table \ref{tb:robustcheck} presents a list of robustness checks that we conduct to ensure that our results are not sensitive to model specification or sample selection. In the first two rows, we try different clustering strategies  to make sure that the significance of the C\&NS is not driven solely by the size of the sample or the failure to account for the correlation structure between observations. In the main analyses, we have used clustering by drivers, and the estimates here show that clustering by dates, or two-way clustering by both dates and drivers result in similar levels of statistical significance. 
 
-In the next two rows, we use different subsets of the full data for estimation. Recall that, in order to have as fair a comparison between C\&NS and other trips as possible, in the main analyses, we limit the sample to a subset of bookings that end with no immediate pickups within three minutes. In Row (3), we use all bookings, and in Row (4) we further pool the data from both bookings and street hail trips together. The estimates are robust regardless of the sample used.
+% In the next two rows, we use different subsets of the full data for estimation. Recall that, in order to have as fair a comparison between C\&NS and other trips as possible, in the main analyses, we limit the sample to a subset of bookings that end with no immediate pickups within three minutes. In Row (3), we use all bookings, and in Row (4) we further pool the data from both bookings and street hail trips together. The estimates are robust regardless of the sample used.
 
-In Row (5) to Row (8), we  estimate the C\&NS effects separately for day shifts and night shifts, and for work days and off days. These subdivisions of the data represent major variation in the working conditions for taxi drivers over time. We observe a significantly smaller C\&NS effects during night shifts than during day shifts. Nonetheless, the estimated coefficients remain negative and statistically significant across the four subsamples.
-
-
-In Row (9) to Row (11), we allow the driver fixed effects to vary by months, by days of week, and by regions. One concern is that there can be driver-specific factors that  are correlated with C\&NS. For instance, drivers may learn over time to predict and avoid C\&NS, some drivers may be more experienced than others, or may have unobserved plans and seek bookings with destinations that are convenient for their plans. We argue that this is unlikely in our setting. First, all regressions control for driver fixed effects, so any driver-specific differences have been absorbed by the fixed effects;
-hence learning, experience, and plans only matter to our results if there is variation within drivers. 
-Variation along the temporal dimension is unlikely, because the majority of drivers in our sample are highly
-experienced (84\% have worked for the company for at least 2 years) and we do not expect their taxi-related
-ability to vary significantly over the course of three months. Variation along the spatial dimension is also
-unlikely, because Singapore is a small city-state with a highly developed traffic network and urban landscape,
-so most taxi drivers are able to become familiar with most areas after a short time on the job. The estimates in Row (9) to (10) further support these arguments. The driver by month fixed effects in Row (9) is to account for a possible learning effect over time, while the driver by day of week in Row (10) is to account for the possibility that some drivers are more familiar with the weekday market than the weekend market, and vice versa. Row (11) allows the driver fixed effects to vary across regions to account for the fact 
-that some drivers may be more familiar with certain regions than others. All of the estimates for C\&NS effects
-on stopping work in these three columns are similar to results in previous sections. Row (12) estimates the C\&NS effects for the trips and bookings from CBD, an area that must be very familiar to all the drivers and in which we expect little heterogeneity in
-learning and experience. Cancellations reduce the hazard rate of working by 0.9 ppt (s.e. 0.1), which 
-represents a 23\% decrease from the average hazard rate in the CBD region (3.9\%). In comparison, as
-reported in Row (13), cancellations reduce the hazard rate in non-CBD region by 1.9 ppt (s.e. 0.2), 
-or a 28\% decrease from the average non-CBD hazard rate of 6.7\%. These results show that differences in
-drivers' ability, experience, or plans do not explain C\&NS effects on labor supply
+% In Row (5) to Row (8), we  estimate the C\&NS effects separately for day shifts and night shifts, and for work days and off days. These subdivisions of the data represent major variation in the working conditions for taxi drivers over time. We observe a significantly smaller C\&NS effects during night shifts than during day shifts. Nonetheless, the estimated coefficients remain negative and statistically significant across the four subsamples.
 
 
-Row (14) to (19) use different bandwidth sizes and weighting schemes to estimate the local weighted regressions. The results are overall robust to the choice of bandwidth and weights. However, the precision of the estimates decreases sharply when we estimate the time and income specific hazard equation.
+% In Row (9) to Row (11), we allow the driver fixed effects to vary by months, by days of week, and by regions. One concern is that there can be driver-specific factors that  are correlated with C\&NS. For instance, drivers may learn over time to predict and avoid C\&NS, some drivers may be more experienced than others, or may have unobserved plans and seek bookings with destinations that are convenient for their plans. We argue that this is unlikely in our setting. First, all regressions control for driver fixed effects, so any driver-specific differences have been absorbed by the fixed effects;
+% hence learning, experience, and plans only matter to our results if there is variation within drivers. 
+% Variation along the temporal dimension is unlikely, because the majority of drivers in our sample are highly
+% experienced (84\% have worked for the company for at least 2 years) and we do not expect their taxi-related
+% ability to vary significantly over the course of three months. Variation along the spatial dimension is also
+% unlikely, because Singapore is a small city-state with a highly developed traffic network and urban landscape,
+% so most taxi drivers are able to become familiar with most areas after a short time on the job. The estimates in Row (9) to (10) further support these arguments. The driver by month fixed effects in Row (9) is to account for a possible learning effect over time, while the driver by day of week in Row (10) is to account for the possibility that some drivers are more familiar with the weekday market than the weekend market, and vice versa. Row (11) allows the driver fixed effects to vary across regions to account for the fact 
+% that some drivers may be more familiar with certain regions than others. All of the estimates for C\&NS effects
+% on stopping work in these three columns are similar to results in previous sections. Row (12) estimates the C\&NS effects for the trips and bookings from CBD, an area that must be very familiar to all the drivers and in which we expect little heterogeneity in
+% learning and experience. Cancellations reduce the hazard rate of working by 0.9 ppt (s.e. 0.1), which 
+% represents a 23\% decrease from the average hazard rate in the CBD region (3.9\%). In comparison, as
+% reported in Row (13), cancellations reduce the hazard rate in non-CBD region by 1.9 ppt (s.e. 0.2), 
+% or a 28\% decrease from the average non-CBD hazard rate of 6.7\%. These results show that differences in
+% drivers' ability, experience, or plans do not explain C\&NS effects on labor supply
+
+
+% Row (14) to (19) use different bandwidth sizes and weighting schemes to estimate the local weighted regressions. The results are overall robust to the choice of bandwidth and weights. However, the precision of the estimates decreases sharply when we estimate the time and income specific hazard equation.
 
 \begin{center}
 	[Insert Table \ref{tb:robustcheck} here]
