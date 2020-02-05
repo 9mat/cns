@@ -478,7 +478,7 @@ CNS and other independent variables can change over time. We use local weighted 
 \[\min_{\beta_c, \beta_{ns}, \alpha_i, \gamma, \lambda, g} \sum_{it} w(h_{it}-h) \left(Quit_{it} - (\beta_cC_{it} + \beta_{ns}{NS}_{it} + \alpha_i + g(y_{it}) + \lambda h_{it} + X_{it}\gamma\right))^2\]
 
 $w$ is the weighting function.%, which typically gives more weight to observation closer to $h$. A local weighted regression with a uniform weight
-\footnote{A uniform weight with bandwidth $b$ sets $w(d) = 1$ if $|d|<b$ and $w(d) = 0$ otherwise. Another commonly used weight is the tricube weight: $w(h_{it}-h) = \left(1-(|h_{it}-h|/b)^3\right)^3$ if $|h_{it}-h|<b$, and $w(h_{it}-h) = 0$ otherwise.} 
+\footnote{A uniform weight with bandwidth $b$ sets $w(d) = 1$ if $|d|<b$ and $w(d) = 0$ otherwise. Another commonly used weight is the tricube weight: $w(d) = \left(1-(|d|/b)^3\right)^3$ if $|d|<b$, and $w(d) = 0$ otherwise.} 
 %is equivalent to an ordinary least squares (OLS) regression using a subset of the data around the point $h$. 
 Columns (6) and (7) in Table \ref{tb:robustquit} report the estimates for the hazard equations at 8.5 hours and 9.5 hours into the shift. The estimates are robust to the functional assumption about the duration dependence of the hazard rate: A CNS is associated with a 17\% to 20\% drop in the hazard rate of stopping. 
 % This not only improves the confidence in the validity of our specification, but also 
