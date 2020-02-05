@@ -474,7 +474,7 @@ CNS and other independent variables can change over time. We use local weighted 
 $w(h_{it}-h)$ is the weighting function.%, which typically gives more weight to observation closer to $h$. A local weighted regression with a uniform weight
 \footnote{A uniform weight with bandwidth $b$ sets $w(h_{it}-h) = 1$ if $|h_{it}-h|<b$ and $w(h_{it}-h) = 0$ otherwise. Another commonly used weight is the tricube weight: $w(h_{it}-h) = \left(1-(|h_{it}-h|/b)^3\right)^3$ if $|h_{it}-h|<b$, and $w(h_{it}-h) = 0$ otherwise.} 
 %is equivalent to an ordinary least squares (OLS) regression using a subset of the data around the point $h$. 
-Columns (6) and (7) in Table \ref{tb:robustquit} report the estimates for the hazard equations at 8.5 hours and 9.5 hours into the shift. The estimates are robust to the functional assumption about the duration dependence of the hazard rate: A CNS is associated with 17\% to 20\% drop in the hazard rate of stopping. 
+Columns (6) and (7) in Table \ref{tb:robustquit} report the estimates for the hazard equations at 8.5 hours and 9.5 hours into the shift. The estimates are robust to the functional assumption about the duration dependence of the hazard rate: A CNS is associated with a 17\% to 20\% drop in the hazard rate of stopping. 
 % This not only improves the confidence in the validity of our specification, but also 
 This provides further evidence that CNS are random exogenous events over time
 and highlights an advantage of using variation in random earnings shocks over 
