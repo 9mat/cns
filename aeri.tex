@@ -299,7 +299,7 @@ with pick-up location and drop-off location (for app bookings only)%, and reques
 nearby drivers. Third, drivers bid for the booking by stating how quickly they can reach the passenger 
 by choosing between 4-6 minutes, 6-8 minutes, and 8-10 minutes. The driver with the best bid wins the
 booking and drives to the pickup location. During this process, the passenger can cancel the booking
-at any time and the driver is informed % of the cancellation
+at any time and the driver is informed of % of the cancellation
 instantly. Otherwise, the driver proceeds
 to the indicated pickup point and, if the passenger shows up, drives him/her to the destination. 
 There is no compensation to drivers for CNS.
@@ -344,18 +344,19 @@ a driver on average encounters a cancellation once every 4-5 shifts and a no-sho
 
 \subsection{Location and status data}
 All taxis in Singapore are equipped with an in-vehicle unit that records the cab's status and GPS 
-coordinates every 10 to 15 seconds. We have access to this dataset and %utilize it to construct additional variables to supplement the analyses. Thanks to this dataset, we 
-observe, at high frequency, the precise vehicle location and the driver's state, i.e., whether he is on break, on the way picking up the passenger, having a passenger on board, or available for booking. Using these data, we compute the following variables: (1) the break duration by aggregating the duration between consecutive break states of the same driver, (2) the duration and  the distance to the pickup locations by aggregating the duration and distance between consecutive on-call states of the same driver, (3) the number of vacant vehicles within a certain radius from a building at a specific point in time, and (4) the distance traveled and the speed of a vacant driver searching for the next job. 
+coordinates every 10 to 15 seconds. We %have access to this dataset and utilize it to construct additional variables to supplement the analyses. Thanks to this dataset, we 
+observe, at high frequency, the precise vehicle location and the driver's state, i.e., whether he is on break, on the way picking up the passenger, having a passenger on board, or available for bookings. Using these data, we compute the following variables: (1) the break duration by aggregating the duration between consecutive break states of the same driver, (2) the duration and  the distance to the pickup locations by aggregating the duration and distance between consecutive on-call states of the same driver, (3) the number of vacant vehicles within a certain radius from a building at a specific point in time, and (4) the distance traveled and the speed of a vacant driver searching for the next job. 
 
-\subsection{Control group, treated group, and placebo group}
+\subsection{Control group, treatment group, and placebo group}
+
 A major threat to our identification strategy is the possibility that the market condition at the end of a CNS is not comparable to that at the end of a completed trip. For instance, a big sports event or a concert may generate excess demand at a specific location, and a driver who receives a CNS during such an event can easily find another job afterward.
 To avoid such circumstances, 
 % our main analyses will use a subset of the data in which taxi drivers are exposed to almost identical environment. The subset of the data that we use are the bookings after which taxi drivers become available and actively search for jobs for at least three minutes. In other words, 
-we exclude all street hail trips as well as the subset of bookings where the drivers find a job within three minutes. In the language of experimental design, our control group is the decisions made by drivers who have no pickups within three minutes after completing a booking, and our treated group is the decisions made by drivers who have no pickups within three minutes after ending a CNS. As we show in various robustness checks, our results are robust to other data selection, such as using the subsample of all bookings, or the full sample of both bookings and street hail trips.% results in similar estimates for the CNS effects.
+we exclude all street hail trips as well as the subset of bookings where the drivers find a job within three minutes. In the language of experimental design, our control group is the decisions made by drivers who have no pickups within three minutes after completing a booking, and our treatment group is the decisions made by drivers who have no pickups within three minutes after ending a CNS. As we show in various robustness checks, our results are robust to other data selection, such as using the subsample of all bookings, or the full sample of both bookings and street hail trips.% results in similar estimates for the CNS effects.
 
-To credibly rule out the influence of market conditions on our results, we conduct a placebo test. We use vacant drivers who completed a booking within a small radius and time window from a CNS as the placebo subjects. Due to time and spatial proximity, these drivers are likely to be exposed to the same market environment as those who receive CNS.
+To credibly rule out the influence of market conditions on our results, we conduct a placebo test. We use vacant drivers who completed a booking within a small radius and time window from a CNS as the placebo subjects. Due to time and spatial proximity, these drivers are likely exposed to the same market environment as those who receive CNS.
 % The placebo effect, which is the difference in subsequent labor decisions between the placebo group and the control group, would reflect the portion of the CNS effects that is  due to the correlation with market factors. 
-Our analysis shows that the placebo effect is small and statistically insignificant, which rules out correlation with market conditions as the explanation for the CNS effects, and suggests our identified CNS effects are causal.
+Our analysis shows that the placebo effect is small and statistically insignificant, which rules out the correlation with market conditions as the explanation for the CNS effects, and suggests our identified CNS effects are causal.
 
 
 \subsection{Model-free evidence}
@@ -403,7 +404,7 @@ Threat (2) cannot explain the CNS effects for two reasons. First, past earnings,
 \subsection{Impact on labor supply}
 Following prior literature on taxi drivers' labor supply \citep{farber2005tomorrow,farber2015you,agarwal2015singaporean}%chen2015dynamic}
 , we develop a hazard model to analyze drivers' decisions to stop work. At the end of each trip or booking, a driver must decide whether
-to continue working or end the shift by weighing the costs and benefits of continuing to that of stopping. 
+to continue working or end the shift by comparing the costs and benefits of continuing to those of stopping. 
 % Following \citet{farber2005tomorrow,farber2015you}, w
 We formulate this decision as a linear probability model,% 
 % and assume a linear form for this function
@@ -439,7 +440,7 @@ about future working conditions.
 
 
 The results %of the linear probability model 
-are reported in Table \ref{tb:robustquit}. 
+are in Table \ref{tb:robustquit}. 
 The first specification, in Column (1), controls for driver fixed effects, hour\(\times\)day-of-week\(\times\)building fixed effects, date fixed effects, and a cubic function of the cumulative hours. The estimates %from this specification 
 suggest that a cancellation is associated with an average decrease of 1.54 ppts (s.e. 0.09) in the hazard rate of stopping work, and a no-show with an average decrease
 of 1.16 ppts (s.e. 0.15). At the average hazard rate of stopping work of 5.35\%, this represents a 30\% reduction from the baseline hazard rate after a cancellation and a 20\% reduction after a no-show.
@@ -596,7 +597,7 @@ The effects of CNS on extensive and intensive margins combined lead to S\$3.45 (
 We match each CNS with the nearest vacant driver who ends a trip within 3 minutes of the CNS and assign imaginary placebo CNS to that driver. Alternatively, we also match each CNS with all the vacant drivers who end a trip within 200 m and 3 minutes of the CNS and use them as the second group of placebo subjects. Using the nearest driver is likely to produce better matches while using all nearby drivers increases the size of the placebo group and the statistical power of the test. 
 % Both of these tests are based on the following rationale: Due to location and time proximity, the drivers with the placebo CNS are subject to the same market conditions as the drivers with the actual CNS, and thus, the effects of the placebo CNS will capture any spurious correlation between CNS and labor supply due to market demand and supply. 
 Both placebo tests %effects are estimated to 
-have negligible, statistically insignificant effects on either the decisions to stop or subsequent earnings. As a result, we can rule out unobserved market conditions as an explanation for our results.
+have negligible, statistically insignificant effects on either the decisions to stop or subsequent earnings (Table A4). As a result, we can rule out unobserved market conditions as an explanation for our results.
 
 %\begin{center}
  %   [Insert Table \ref{tb:placebo} here]
