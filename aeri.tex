@@ -1288,9 +1288,14 @@ Both regressions control for driver fixed effects, date fixed effects, and shift
 \end{table}
 
 
-{
-\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
-\begin{tabular}{l*{4}{c}}
+
+    \centering
+    \footnotesize
+    \caption{Placebo Test}
+    \label{tb:placebotest}
+    \def\sym#1{}%\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+    \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}*{4}{c}} 
+        \toprule
 \toprule
                     &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
 \midrule
@@ -1305,10 +1310,13 @@ Observations        &     3743047         &     3743047         &     3262162   
 Drivers             &       31958         &       31958         &       31757         &       31757         \\
 \(R^2\)             &      0.3374         &      0.3374         &      0.4041         &      0.4041         \\
 \bottomrule
-\multicolumn{5}{l}{\footnotesize Standard errors in parentheses}\\
-\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.1\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
-\end{tabular}
-}
+    \end{tabularx}
+    \begin{tablenotes}
+    	\parindent 1em%  %ChaoQin
+		\small
+        Each column is a separate regression. An observation is a booking. The sample includes only bookings immediately after which the drivers search for at least 3 minutes. The dependent variable for all columns is a binary variable ($Quit_{it}$) indicating if the booking is the last job of the shift. All regressions control for driver fixed effects, hour-day-of-week by building fixed effects, date fixed effects, cumulative hours and income, weather, market thickness, break time, time with passenger, duration and distance to pickup. ``Placebo booking 1" is a dummy variable indicating if the respective driver is the nearest vacant driver to a CNS who ends a completed booking at most 1 km and 3 minutes away from the CNS. ``Placebo booking 2" is a dummy variable indicating if respective driver ends the booking within 200 m and 3 minutes from a CNS. Standard errors clustered by drivers in parentheses.%$\textsuperscript{***}p < 0.01$, $\textsuperscript{**}p < 0.05$, $\textsuperscript{*}p < 0.10$. 
+    \end{tablenotes}
+
 
 
 \FloatBarrier
