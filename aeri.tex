@@ -465,7 +465,7 @@ The hazard rate of stopping changes substantially throughout the shift and failu
 \end{equation}
 
 Equation \eqref{eq:lwr} allows for different hazard equations at different time in the shift, which means that the effects of %not only hours but also 
-C\&NS and other independent variables can shift with time. We use local weighted regressions to estimate this model \citep{cleveland1988locally}. For a given time $h$ in the shift, the regression solves a weighted least squares problem to estimate the coefficients at $h$:
+C\&NS and other independent variables can change over time. We use local weighted regressions to estimate this model \citep{cleveland1988locally}. For a given time $h$ in the shift, the regression solves a weighted least squares problem to estimate the coefficients at $h$:
 \[\min_{\beta_c, \beta_{ns}, \alpha_i, \gamma, \lambda, g} \sum_{it} w(h_{it}-h) \left(Quit_{it} - (\beta_cC_{it} + \beta_{ns}{NS}_{it} + \alpha_i + g(y_{it}) + \lambda h_{it} + X_{it}\gamma\right))^2\]
 
 $w(h_{it}-h)$ is the weighting function.%, which typically gives more weight to observation closer to $h$. A local weighted regression with a uniform weight
