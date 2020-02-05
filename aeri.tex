@@ -83,10 +83,12 @@
 % \onehalfspacing
 
 \newif\ifpagecount
-\answerstrue % comment out to hide answers
+\pagecounttrue % comment out to hide answers
 
 % no page number (to reduce AERI word count)
+\ifpagecount
 \pagestyle{empty}
+\fi
 
 % \title{Making Lemonade from Lemons: Taxi Drivers' Response to Cancellations and No-shows}
 \title{Unanticipated Income Shocks and Daily Labor Supply: Taxi Drivers' Response to Cancellations and No-shows}
@@ -116,8 +118,9 @@
 
 \maketitle
 
-
+\ifpagecount
 \newpage
+\fi
 
 \label{sec:intro}
 Despite being a building block for many economic models and playing an imperative role in the 
